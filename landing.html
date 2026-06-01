@@ -1,0 +1,2958 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eljárási térkép szülőknek – Kötelező védőoltási ügyek</title>
+    <meta name="description" content="Végleges eljárási térkép szülőknek kötelező védőoltási ügyekben: intézmények, iratok, határidők, jogorvoslatok.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================================================
+           DESIGN RENDSZER – VÁLTOZÓK (light)
+           ========================================================================== */
+        :root {
+            --color-bg-primary: hsl(210, 40%, 98%);
+            --color-bg-secondary: #FFFFFF;
+            --color-bg-elevated: #FFFFFF;
+            --color-text-primary: hsl(220, 25%, 15%);
+            --color-text-secondary: hsl(215, 16%, 38%);
+            --color-primary-main: hsl(220, 90%, 56%);
+            --color-primary-light: hsl(220, 100%, 96%);
+            --color-primary-hover: hsl(220, 85%, 48%);
+            --color-accent-teal: hsl(175, 80%, 25%);
+            --color-accent-teal-light: hsl(175, 60%, 96%);
+            --color-warning-bg: hsl(40, 100%, 97%);
+            --color-warning-border: hsl(40, 90%, 75%);
+            --color-warning-text: hsl(30, 90%, 30%);
+            --color-warning-strong: hsl(25, 90%, 25%);
+            --color-neutral-border: hsl(214, 32%, 91%);
+            --color-neutral-soft: hsl(210, 40%, 95%);
+
+            /* Sophisticated Sand-Ivory Hero & Dossier Palette */
+            --color-hero-bg: hsl(38, 28%, 95%);
+            --color-hero-border: hsl(38, 15%, 86%);
+            --color-dossier-bg: hsl(38, 30%, 97%);
+            --color-dossier-border: hsl(38, 18%, 88%);
+
+            --severity-crit-color: hsl(0, 84%, 60%);
+            --severity-crit-text: hsl(0, 74%, 25%);
+            --severity-crit-bg: hsl(0, 100%, 97%);
+            --severity-crit-border: hsl(0, 82%, 88%);
+            --severity-high-color: hsl(35, 92%, 52%);
+            --severity-high-text: hsl(30, 90%, 30%);
+            --severity-high-bg: hsl(40, 100%, 97%);
+            --severity-high-border: hsl(40, 90%, 75%);
+            --severity-med-color: hsl(175, 80%, 25%);
+            --severity-low-color: hsl(210, 16%, 60%);
+            --severity-low-text: hsl(215, 16%, 38%);
+
+            --font-family-base: 'Inter', sans-serif;
+            --font-family-heading: 'Merriweather', serif;
+
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2.25rem;
+            --spacing-2xl: 3.5rem;
+            --spacing-3xl: 5.5rem; /* Massive visual breathing room */
+
+            --container-max-width: 1200px;
+            --content-max-width: 850px;
+            
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+
+            --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.03), 0 1px 2px rgba(15, 23, 42, 0.02);
+            --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+            --shadow-lg: 0 16px 24px -6px rgba(15, 23, 42, 0.06), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
+
+            --transition-base: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ==========================================================================
+           DARK MODE
+           ========================================================================== */
+        [data-theme="dark"] {
+            --color-bg-primary: hsl(222, 47%, 4%);
+            --color-bg-secondary: hsl(223, 47%, 7%);
+            --color-bg-elevated: hsl(223, 47%, 10%);
+            --color-text-primary: hsl(210, 40%, 98%);
+            --color-text-secondary: hsl(215, 20%, 70%);
+            --color-primary-main: hsl(217, 91%, 60%);
+            --color-primary-light: hsla(217, 91%, 60%, 0.12);
+            --color-primary-hover: hsl(217, 95%, 68%);
+            --color-accent-teal: hsl(172, 66%, 50%);
+            --color-accent-teal-light: hsla(172, 66%, 50%, 0.08);
+            --color-warning-bg: hsla(40, 100%, 50%, 0.06);
+            --color-warning-border: hsl(40, 90%, 45%);
+            --color-warning-text: hsl(40, 100%, 75%);
+            --color-warning-strong: hsl(40, 100%, 85%);
+            --color-neutral-border: hsl(223, 47%, 16%);
+            --color-neutral-soft: hsl(223, 47%, 10%);
+
+            --color-hero-bg: hsl(223, 47%, 10%);
+            --color-hero-border: hsl(223, 47%, 18%);
+            --color-dossier-bg: hsl(223, 47%, 10%);
+            --color-dossier-border: hsl(223, 47%, 18%);
+
+            --severity-crit-color: hsl(0, 84%, 65%);
+            --severity-crit-text: hsl(0, 100%, 80%);
+            --severity-crit-bg: hsla(0, 84%, 60%, 0.12);
+            --severity-crit-border: hsl(0, 70%, 40%);
+            --severity-high-color: hsl(35, 92%, 60%);
+            --severity-high-text: hsl(40, 100%, 75%);
+            --severity-high-bg: hsla(35, 92%, 52%, 0.1);
+            --severity-high-border: hsl(35, 75%, 45%);
+            --severity-med-color: hsl(172, 66%, 50%);
+            --severity-low-color: hsl(215, 20%, 50%);
+            --severity-low-text: hsl(215, 20%, 70%);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --color-bg-primary: hsl(222, 47%, 4%);
+                --color-bg-secondary: hsl(223, 47%, 7%);
+                --color-bg-elevated: hsl(223, 47%, 10%);
+                --color-text-primary: hsl(210, 40%, 98%);
+                --color-text-secondary: hsl(215, 20%, 70%);
+                --color-primary-main: hsl(217, 91%, 60%);
+                --color-primary-light: hsla(217, 91%, 60%, 0.12);
+                --color-primary-hover: hsl(217, 95%, 68%);
+                --color-accent-teal: hsl(172, 66%, 50%);
+                --color-accent-teal-light: hsla(172, 66%, 50%, 0.08);
+                --color-warning-bg: hsla(40, 100%, 50%, 0.06);
+                --color-warning-border: hsl(40, 90%, 45%);
+                --color-warning-text: hsl(40, 100%, 75%);
+                --color-warning-strong: hsl(40, 100%, 85%);
+                --color-neutral-border: hsl(223, 47%, 16%);
+                --color-neutral-soft: hsl(223, 47%, 10%);
+
+                --color-hero-bg: hsl(223, 47%, 10%);
+                --color-hero-border: hsl(223, 47%, 18%);
+                --color-dossier-bg: hsl(223, 47%, 10%);
+                --color-dossier-border: hsl(223, 47%, 18%);
+
+                --severity-crit-color: hsl(0, 84%, 65%);
+                --severity-crit-text: hsl(0, 100%, 80%);
+                --severity-crit-bg: hsla(0, 84%, 60%, 0.12);
+                --severity-crit-border: hsl(0, 70%, 40%);
+                --severity-high-color: hsl(35, 92%, 60%);
+                --severity-high-text: hsl(40, 100%, 75%);
+                --severity-high-bg: hsla(35, 92%, 52%, 0.1);
+                --severity-high-border: hsl(35, 75%, 45%);
+                --severity-med-color: hsl(172, 66%, 50%);
+                --severity-low-color: hsl(215, 20%, 50%);
+                --severity-low-text: hsl(215, 20%, 70%);
+            }
+        }
+
+        /* ==========================================================================
+           ALAP STÍLUS
+           ========================================================================== */
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+
+        body {
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            font-family: var(--font-family-base);
+            line-height: 1.625;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* Spacious visual margins between major sections */
+        #main > section {
+            margin-bottom: var(--spacing-3xl);
+            padding-top: var(--spacing-md);
+        }
+
+        #hero .hero-container,
+        #súlyosság > p,
+        #súlyosság > ul,
+        #súlyosság > h3,
+        #lépések > p,
+        #lépések > .toolbar,
+        .chapter,
+        #alapmondatok > p,
+        #akcióterv > p,
+        .action-item,
+        #intézmények > p,
+        #checklist > p,
+        #checklist > h3,
+        .checklist {
+            max-width: var(--content-max-width);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Wide Grid alignments with spacious padding gaps */
+        .severity-grid,
+        .quotes-grid,
+        .institution-grid,
+        .checklist-grid {
+            max-width: var(--container-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            gap: var(--spacing-xl) !important; /* Elegant wide gap */
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-family-heading);
+            color: var(--color-text-primary);
+            line-height: 1.25;
+            margin-top: 0;
+        }
+
+        /* Modernized Elegant Scrollbar */
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: var(--color-bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--color-neutral-border); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-text-secondary); }
+
+        h1 { font-size: 2.5rem; margin-bottom: var(--spacing-md); letter-spacing: -0.02em; }
+        h2 { font-size: 1.625rem; margin-top: var(--spacing-2xl); margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-sm); border-bottom: 2px solid var(--color-neutral-border); }
+        h3 { font-size: 1.25rem; margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm); }
+        h4 { font-size: 1.05rem; margin-top: var(--spacing-md); margin-bottom: var(--spacing-xs); font-family: var(--font-family-base); font-weight: 600; }
+
+        p { margin: 0 0 var(--spacing-md) 0; color: var(--color-text-secondary); }
+        ul, ol { padding-left: 1.5rem; margin: 0 0 var(--spacing-md) 0; }
+        li { margin-bottom: var(--spacing-xs); color: var(--color-text-secondary); }
+        a { color: var(--color-primary-main); text-decoration: none; font-weight: 500; transition: var(--transition-base); }
+        a:hover { color: var(--color-primary-hover); text-decoration: underline; }
+
+        :focus-visible {
+            outline: 3px solid var(--color-primary-main);
+            outline-offset: 3px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -60px;
+            left: 20px;
+            background: var(--color-primary-main);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-md);
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            box-shadow: var(--shadow-md);
+            transition: top 0.2s;
+        }
+        .skip-link:focus { top: 0; }
+
+        /* ==========================================================================
+           FEJLÉC ÉS NAVIGÁCIÓ (Glassmorphism)
+           ========================================================================== */
+        .site-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--color-neutral-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            transition: background 0.3s, border-color 0.3s;
+        }
+        [data-theme="dark"] .site-header {
+            background: rgba(9, 13, 26, 0.85);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            gap: var(--spacing-md);
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+        .brand-title {
+            font-family: var(--font-family-heading);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+        .brand-sub {
+            display: block;
+            font-family: var(--font-family-base);
+            font-weight: 500;
+            font-size: 0.76rem;
+            color: var(--color-accent-teal);
+            margin-top: 1px;
+            letter-spacing: 0.02em;
+        }
+        [data-theme="dark"] .brand-sub {
+            color: var(--color-primary-main);
+        }
+
+        .top-nav {
+            display: flex;
+            gap: var(--spacing-xs);
+            align-items: center;
+        }
+        .top-nav a {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            position: relative;
+        }
+        .top-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary-main);
+            transition: var(--transition-base);
+            transform: translateX(-50%);
+        }
+        .top-nav a:hover {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            background: var(--color-primary-light);
+        }
+        .top-nav a:hover::after {
+            width: 60%;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--color-neutral-border);
+            color: var(--color-text-secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition-base);
+            margin-left: var(--spacing-sm);
+            box-shadow: var(--shadow-sm);
+        }
+        .theme-toggle:hover {
+            background: var(--color-primary-light);
+            border-color: var(--color-primary-main);
+            color: var(--color-primary-main);
+            transform: rotate(15deg);
+        }
+        .theme-toggle .icon-sun { display: none; }
+        .theme-toggle .icon-moon { display: inline; }
+        [data-theme="dark"] .theme-toggle .icon-sun { display: inline; }
+        [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: inline; }
+            :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+        }
+
+        /* ==========================================================================
+           HERO SECTION (Warm Sand-Ivory & Amber Editorial Cover)
+           ========================================================================== */
+        .hero {
+            background: var(--color-hero-bg);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl) var(--spacing-xl);
+            margin: var(--spacing-xl) auto;
+            border: 1px solid var(--color-hero-border);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Elegant SVG dot-grid visual map pattern in background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(hsl(38, 15%, 82%) 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+        [data-theme="dark"] .hero::before {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: var(--spacing-2xl);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+            .hero { padding: var(--spacing-lg); }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--color-bg-secondary);
+            color: var(--color-warning-strong);
+            padding: 0.4rem 0.9rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--spacing-md);
+            border: 1px solid var(--color-hero-border);
+            text-transform: uppercase;
+            box-shadow: var(--shadow-sm);
+        }
+        [data-theme="dark"] .hero-badge {
+            background: var(--color-bg-elevated);
+            color: var(--color-warning-text);
+        }
+
+        .hero-content h1 {
+            font-size: 2.35rem;
+            line-height: 1.22;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            letter-spacing: -0.02em;
+        }
+        .hero-content .lead {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.65;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--color-hero-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl) var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+        }
+        [data-theme="dark"] .hero-card {
+            background: rgba(18, 24, 41, 0.75);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-card-header h3 {
+            margin-top: 0;
+            font-size: 1.08rem;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-lg);
+            font-family: var(--font-family-base);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            font-size: 0.88rem;
+            letter-spacing: 0.05em;
+            color: var(--color-accent-teal);
+            border-bottom: 1px dashed var(--color-hero-border);
+            padding-bottom: var(--spacing-sm);
+        }
+        [data-theme="dark"] .hero-card-header h3 {
+            color: var(--color-primary-main);
+            border-bottom-color: rgba(255,255,255,0.05);
+        }
+
+        .hero-points {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg); /* Airier lists */
+        }
+        .hero-points li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            line-height: 1.45;
+        }
+        .hero-point-icon {
+            font-size: 1.2rem;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent-teal);
+        }
+        [data-theme="dark"] .hero-point-icon {
+            color: var(--color-primary-main);
+        }
+
+        /* ==========================================================================
+           SÚLYOSSÁGI KÁRTYÁK
+           ========================================================================== */
+        .severity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        .severity-card {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-top: 4px solid var(--color-neutral-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg); /* spacious padding */
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-sm);
+        }
+        .severity-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        [data-theme="dark"] .severity-card {
+            background: var(--color-bg-elevated);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+        .severity-card h4 {
+            margin: 0 0 var(--spacing-xs) 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+        .severity-card p {
+            font-size: 0.88rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+            line-height: 1.45;
+        }
+        .severity-card.crit { border-top-color: var(--severity-crit-color); }
+        .severity-card.crit h4 { color: var(--severity-crit-color); }
+        .severity-card.high { border-top-color: var(--severity-high-color); }
+        .severity-card.high h4 { color: var(--severity-high-color); }
+        .severity-card.med { border-top-color: var(--severity-med-color); }
+        .severity-card.med h4 { color: var(--color-accent-teal); }
+        .severity-card.low { border-top-color: var(--severity-low-color); }
+        .severity-card.low h4 { color: var(--severity-low-color); }
+
+        /* ==========================================================================
+           FEJEZET BLOKK (Lépések Registry timeline)
+           ========================================================================== */
+        .chapter {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl); /* extremely spacious padding */
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: var(--transition-base);
+        }
+        .chapter:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+            border-color: var(--color-neutral-border);
+        }
+        [data-theme="dark"] .chapter {
+            background: var(--color-bg-elevated);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+        [data-theme="dark"] .chapter:hover {
+            border-color: var(--color-primary-main);
+        }
+
+        .chapter-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px dashed var(--color-neutral-border);
+            padding-bottom: var(--spacing-sm);
+        }
+        [data-theme="dark"] .chapter-header {
+            border-bottom-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Registry Stamp styling for milestones */
+        .chapter-num {
+            font-family: var(--font-family-base);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-accent-teal);
+            background: var(--color-accent-teal-light);
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid rgba(13, 92, 84, 0.12);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+        }
+        [data-theme="dark"] .chapter-num {
+            color: var(--color-primary-main);
+            background: rgba(96, 165, 250, 0.1);
+            border-color: rgba(96, 165, 250, 0.2);
+        }
+
+        .chapter-svg {
+            color: var(--color-accent-teal);
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            transition: var(--transition-base);
+        }
+        [data-theme="dark"] .chapter-svg {
+            color: var(--color-primary-main);
+        }
+        .chapter:hover .chapter-svg {
+            transform: scale(1.1);
+        }
+        .chapter h3 {
+            margin: 0;
+            flex: 1;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+        }
+
+        /* ==========================================================================
+           ESEMÉNY KÁRTYA (összecsukható)
+           ========================================================================== */
+        .event {
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-md);
+            margin-top: var(--spacing-md);
+            background: var(--color-bg-secondary);
+            overflow: hidden;
+            transition: var(--transition-base);
+        }
+        .event:hover {
+            box-shadow: var(--shadow-sm);
+            border-color: var(--color-primary-main);
+        }
+        [data-theme="dark"] .event {
+            background: var(--color-bg-secondary);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+        [data-theme="dark"] .event:hover {
+            border-color: var(--color-primary-main);
+        }
+
+        .event.critical { border-left: 4px solid var(--severity-crit-color); }
+        .event.high { border-left: 4px solid var(--severity-high-color); }
+        .event.medium { border-left: 4px solid var(--color-accent-teal); }
+        .event.low { border-left: 4px solid var(--severity-low-color); }
+
+        .event-toggle {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            padding: var(--spacing-md) var(--spacing-lg);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-family: var(--font-family-base);
+            color: var(--color-text-primary);
+            transition: background 0.2s;
+        }
+        .event-toggle:hover { background: var(--color-neutral-soft); }
+
+        .event-toggle .event-id {
+            font-weight: 700;
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+            min-width: 32px;
+        }
+        .event-toggle .event-title {
+            flex: 1;
+            font-weight: 600;
+            font-size: 0.98rem;
+            letter-spacing: -0.01em;
+        }
+        .event-toggle .caret {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-secondary);
+            transition: transform 0.2s;
+            font-size: 0.75rem;
+        }
+        .event[aria-expanded="true"] .caret { transform: rotate(180deg); }
+
+        .event-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .event[aria-expanded="true"] .event-content {
+            max-height: 3000px;
+        }
+        .event-body {
+            padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+            border-top: 1px solid var(--color-neutral-border);
+            color: var(--color-text-secondary);
+            font-size: 0.92rem;
+        }
+        [data-theme="dark"] .event-body {
+            border-top-color: rgba(255, 255, 255, 0.05);
+        }
+        .event-body p { margin-top: var(--spacing-md); }
+        .event-body p:first-child { margin-top: var(--spacing-md); }
+        .event-body ul { margin: var(--spacing-sm) 0; }
+        .event-body li { color: var(--color-text-secondary); }
+
+        /* ==========================================================================
+           Javasolt mondat doboz (Dossier Cream Legal Paper style)
+           ========================================================================== */
+        .quote-box {
+            background: var(--color-dossier-bg);
+            border: 1px solid var(--color-dossier-border);
+            border-left: 4px solid var(--color-accent-teal);
+            padding: var(--spacing-lg);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: var(--spacing-md);
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+        }
+        [data-theme="dark"] .quote-box {
+            background: rgba(18, 24, 41, 0.5);
+            border-color: rgba(255,255,255,0.05);
+            border-left-color: var(--color-accent-teal);
+        }
+        .quote-box::before {
+            content: "Javasolt mondat";
+            position: absolute;
+            top: -10px;
+            left: var(--spacing-md);
+            background: var(--color-accent-teal);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        .quote-text {
+            font-style: italic;
+            color: var(--color-text-primary);
+            font-size: 0.92rem;
+            line-height: 1.55;
+            flex: 1;
+            margin: 0;
+        }
+        .copy-btn {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            color: var(--color-text-secondary);
+            padding: 0.35rem 0.65rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.72rem;
+            font-weight: 600;
+            font-family: var(--font-family-base);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-sm);
+        }
+        .copy-btn:hover {
+            background: var(--color-primary-light);
+            border-color: var(--color-primary-main);
+            color: var(--color-primary-main);
+            transform: translateY(-1px);
+        }
+        [data-theme="dark"] .copy-btn {
+            background: var(--color-bg-elevated);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        [data-theme="dark"] .copy-btn:hover {
+            background: rgba(96, 165, 250, 0.1);
+            border-color: var(--color-primary-main);
+        }
+
+        .copy-success-bubble {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--color-text-primary);
+            color: var(--color-bg-secondary);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            font-size: 0.88rem;
+            font-weight: 500;
+            z-index: 1000;
+            pointer-events: none;
+            transform: translateY(0);
+            animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        [data-theme="dark"] .copy-success-bubble {
+            background: var(--color-primary-main);
+            color: #FFFFFF;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(1rem); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .copy-success-bubble.fade-out {
+            opacity: 0;
+            transform: translateY(-0.5rem);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        /* ==========================================================================
+           BADGES
+           ========================================================================== */
+        .ds-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+        .ds-badge--institution { background-color: var(--color-primary-light); color: var(--color-primary-main); }
+        .ds-badge--severity-crit { background-color: var(--severity-crit-bg); color: var(--severity-crit-text); border: 1px solid var(--severity-crit-border); }
+        .ds-badge--severity-high { background-color: var(--severity-high-bg); color: var(--severity-high-text); border: 1px solid var(--severity-high-border); }
+        .ds-badge--severity-med { background-color: var(--color-accent-teal-light); color: var(--color-accent-teal); }
+        .ds-badge--severity-low { background-color: var(--color-neutral-soft); color: var(--color-text-secondary); border: 1px solid var(--color-neutral-border); }
+
+        .event-toggle .badges {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================================================
+           ALAPMONDATOK (Dossier Cream textured card grid)
+           ========================================================================== */
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-xl); /* extremely spacious gap */
+            margin: var(--spacing-lg) 0;
+        }
+        .quote-card {
+            background: var(--color-dossier-bg);
+            border: 1px solid var(--color-dossier-border);
+            border-left: 4px solid var(--color-accent-teal);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: var(--spacing-lg); /* spacious padding */
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: var(--spacing-sm);
+        }
+        .quote-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        [data-theme="dark"] .quote-card {
+            background: rgba(18, 24, 41, 0.5);
+            border-color: rgba(255,255,255,0.05);
+        }
+        .quote-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed var(--color-dossier-border);
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
+        }
+        [data-theme="dark"] .quote-card-header {
+            border-bottom-color: rgba(255, 255, 255, 0.05);
+        }
+        .quote-card .quote-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-accent-teal);
+            font-weight: 700;
+            margin: 0;
+        }
+        .quote-card p {
+            margin: 0;
+            font-style: italic;
+            color: var(--color-text-primary);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        /* ==========================================================================
+           AKCIÓTERV ACCORDION
+           ========================================================================== */
+        .action-item {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+        }
+        .action-item:hover {
+            border-color: var(--color-primary-main);
+        }
+        [data-theme="dark"] .action-item {
+            background: var(--color-bg-elevated);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+        .action-toggle {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            padding: var(--spacing-md) var(--spacing-lg);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            font-family: var(--font-family-base);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            font-size: 0.98rem;
+        }
+        .action-toggle:hover { background: var(--color-neutral-soft); }
+        .action-toggle .caret { margin-left: auto; transition: transform 0.2s; }
+        .action-item[aria-expanded="true"] .caret { transform: rotate(180deg); }
+
+        .action-svg {
+            color: var(--color-accent-teal);
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        [data-theme="dark"] .action-svg {
+            color: var(--color-primary-main);
+        }
+
+        .action-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .action-item[aria-expanded="true"] .action-content { max-height: 2000px; }
+        .action-body {
+            padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+            border-top: 1px solid var(--color-neutral-border);
+        }
+        [data-theme="dark"] .action-body {
+            border-top-color: rgba(255, 255, 255, 0.05);
+        }
+        .action-body ol { margin-top: var(--spacing-sm); }
+
+        /* ==========================================================================
+           INTÉZMÉNYEK
+           ========================================================================== */
+        .institution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        .institution-card {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl) var(--spacing-lg); /* spacious padding */
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        .institution-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary-main);
+        }
+        [data-theme="dark"] .institution-card {
+            background: var(--color-bg-elevated);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+        .institution-icon-container {
+            width: 42px;
+            height: 42px;
+            background: var(--color-primary-light);
+            border-radius: var(--radius-sm);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primary-main);
+        }
+        .institution-card h4 {
+            color: var(--color-text-primary);
+            margin: 0;
+            font-size: 1.05rem;
+            font-family: var(--font-family-base);
+            font-weight: 700;
+        }
+        .institution-card p {
+            font-size: 0.88rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ==========================================================================
+           CHECKLIST (Interactive click-to-check)
+           ========================================================================== */
+        .checklist {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-md) auto;
+            box-shadow: var(--shadow-sm);
+        }
+        [data-theme="dark"] .checklist {
+            background: var(--color-bg-elevated);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+        .checklist h4 {
+            color: var(--color-accent-teal);
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-family-base);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        [data-theme="dark"] .checklist h4 {
+            color: var(--color-primary-main);
+        }
+
+        .checklist ul { list-style: none; padding: 0; margin: 0; }
+        .checklist li {
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--color-text-primary);
+            font-size: 0.92rem;
+            cursor: pointer;
+            user-select: none;
+            transition: var(--transition-base);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+        }
+        .checklist li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--color-accent-teal);
+            border-radius: 4px;
+            background: transparent;
+            transition: var(--transition-base);
+        }
+        [data-theme="dark"] .checklist li::before {
+            border-color: var(--color-accent-teal);
+        }
+        .checklist li:hover::before {
+            background: rgba(15, 118, 110, 0.1);
+        }
+        
+        /* Interactive Checked State */
+        .checklist li.checked {
+            color: var(--color-text-secondary);
+            text-decoration: line-through;
+            opacity: 0.8;
+        }
+        .checklist li.checked::before {
+            background: var(--color-accent-teal);
+            border-color: var(--color-accent-teal);
+        }
+        [data-theme="dark"] .checklist li.checked::before {
+            background: var(--color-primary-main);
+            border-color: var(--color-primary-main);
+        }
+        .checklist li.checked::after {
+            content: "✓";
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            color: white;
+            font-size: 11px;
+            font-weight: 900;
+        }
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        /* ==========================================================================
+           WARNING BOX ÉS DISCLAIMER
+           ========================================================================== */
+        .ds-warning-box {
+            background-color: var(--color-warning-bg);
+            border-left: 4px solid var(--color-warning-border);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            color: var(--color-warning-text);
+            font-size: 0.92rem;
+            margin: var(--spacing-md) 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .ds-warning-box strong { color: var(--color-warning-strong); }
+
+        .site-footer {
+            background: var(--color-bg-secondary);
+            border-top: 1px solid var(--color-neutral-border);
+            margin-top: var(--spacing-3xl);
+            padding: var(--spacing-xl) 0;
+        }
+        [data-theme="dark"] .site-footer {
+            background: var(--color-bg-secondary);
+            border-top-color: rgba(255, 255, 255, 0.05);
+        }
+        .footer-disclaimer {
+            background: var(--color-warning-bg);
+            border: 1px solid var(--color-warning-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            color: var(--color-warning-text);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .footer-disclaimer-icon {
+            font-size: 1.3rem;
+            line-height: 1;
+            color: var(--color-warning-border);
+        }
+        .footer-disclaimer strong { color: var(--color-warning-strong); }
+        .footer-meta {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 0.82rem;
+            margin-top: var(--spacing-lg);
+        }
+
+        /* ==========================================================================
+           TOOLBAR (lépések felett)
+           ========================================================================== */
+        .toolbar {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================================================
+           RESZPONZIVITÁS
+           ========================================================================== */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.85rem; }
+            h2 { font-size: 1.35rem; }
+            .hero { padding: var(--spacing-lg); }
+            .event-toggle { flex-wrap: wrap; padding: var(--spacing-md); }
+            .event-toggle .event-id { min-width: auto; }
+            .event-toggle .badges { margin-top: var(--spacing-xs); width: 100%; }
+            .top-nav { gap: 2px; }
+            .top-nav a { font-size: 0.8rem; padding: 4px 6px; }
+            .theme-toggle { width: 36px; height: 36px; margin-left: 2px; }
+        }
+
+    </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Ugrás a tartalomra</a>
+
+<header class="site-header" role="banner">
+    <div class="container">
+        <div class="brand">
+            <span class="brand-title">Eljárási térkép</span>
+            <span class="brand-sub">Kötelező védőoltási ügyek – szülőknek</span>
+        </div>
+        <nav class="top-nav" aria-label="Gyors navigáció">
+            <a href="#súlyosság">Súlyosság</a>
+            <a href="#lépések">Lépések</a>
+            <a href="#alapmondatok">Mondatok</a>
+            <a href="#akcióterv">Akcióterv</a>
+            <a href="#intézmények">Intézmények</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Téma váltása" title="Téma váltása (világos / sötét)">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀️</span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<main id="main" class="container">
+
+    <!-- ======================================================================
+         HERO
+         ====================================================================== -->
+            <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">⚖️ HIVATALOS ELJÁRÁSI ÚTMUTATÓ</div>
+                <h1 id="hero-title">Végleges eljárási térkép szülőknek kötelező védőoltási ügyekben</h1>
+                <p class="lead">
+                    Ez az oldal azt mutatja be, milyen események történhetnek, ha a szülő a gyermek kötelező védőoltása kapcsán nem automatikusan járul hozzá, hanem előbb teljes körű tájékoztatást, olthatósági vizsgálatot, dokumentumokat, halasztást, szakvéleményt vagy jogalap-tisztázást kér.
+                </p>
+                <p class="lead">
+                    A cél nem az oltás megtagadására buzdítás, hanem az, hogy a szülő felismerje az intézmények szerepét, az eljárási hibákat, a mentendő iratokat, és írásban, bizonyíthatóan tudjon reagálni.
+                </p>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <h3>Mit segít átlátni ez az útmutató?</h3>
+                </div>
+                <ul class="hero-points" aria-label="Az oldal segít felismerni">
+                    <li>
+                        <span class="hero-point-icon">🏛️</span>
+                        <span>Melyik intézmény milyen szerepben jár el az eljárás során</span>
+                    </li>
+                    <li>
+                        <span class="hero-point-icon">📁</span>
+                        <span>Milyen iratokat kaphat, és miket kell feltétlenül kikérnie</span>
+                    </li>
+                    <li>
+                        <span class="hero-point-icon">⚠️</span>
+                        <span>Milyen eljárási hibák és határidő-csapdák fordulhatnak elő</span>
+                    </li>
+                    <li>
+                        <span class="hero-point-icon">✉️</span>
+                        <span>Hogyan tud írásban, bizonyítható módon reagálni és nyilatkozni</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         0. ALAPKERET
+         ====================================================================== -->
+    <section id="súlyosság" aria-labelledby="sev-title">
+        <h2 id="sev-title">0. Alapkeret – tájékoztatáskérés vagy oltásmegtagadás?</h2>
+        <p>
+            A szülő gyakran csak kérdéseket tesz fel, de az orvos, a védőnő, az iskolaorvos, a népegészségügy, a családsegítő vagy a gyámhivatal ezt később „oltásmegtagadásként", „együttműködés hiányaként" vagy „gyermekveszélyeztetésként" értelmezheti. A kommunikációs keret ezért kulcsfontosságú.
+        </p>
+
+        <h3>Események súlyossági besorolása</h3>
+        <p>Az alábbi kategóriák segítenek eldönteni, milyen gyorsan kell reagálni írásban.</p>
+        <div class="severity-grid">
+            <div class="severity-card crit">
+                <h4>Kritikus</h4>
+                <p>Azonnali írásbeli reakció, határidő-naplózás, lehetőség szerint jogi segítség.</p>
+            </div>
+            <div class="severity-card high">
+                <h4>Magas</h4>
+                <p>Fontos jelzés, amelyből hatósági eljárás indulhat. Dokumentálás, írásbeli reagálás.</p>
+            </div>
+            <div class="severity-card med">
+                <h4>Közepes</h4>
+                <p>Érdemi nyilatkozat nem, csak az írásbeliség kérése. Iratok mentése.</p>
+            </div>
+            <div class="severity-card low">
+                <h4>Alacsony</h4>
+                <p>Konkrét jogkövetkezmény nélküli nyomás. Mentés, de nincs sürgős jogi lépés.</p>
+            </div>
+        </div>
+
+        <h3>Kerülendő és javasolt mondatok</h3>
+        <ul>
+            <li><strong>Kerülendő:</strong> „Nem oltatom be.", „Megtagadom.", „Soha nem kap oltást."</li>
+            <li><strong>Javasolt:</strong> „Nem oltásmegtagadást közöltem, hanem teljes körű, egyéniesített tájékoztatást kértem."</li>
+        </ul>
+        <div class="quote-box">
+            <span class="quote-text">A gyermekem egészségi állapotára tekintettel az olthatóság egyedi elbírálását kérem. A döntéshez szükséges dokumentumokat és szakmai válaszokat még nem kaptam meg. A tájékoztatás teljesítéséig felelős szülői döntést nem tudok hozni.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         AZ ELJÁRÁS LÉPÉSEI
+         ====================================================================== -->
+    <section id="lépések" aria-labelledby="steps-title">
+        <h2 id="steps-title">Az eljárás lépései – időrendben</h2>
+        <p>Minden fejezet összecsukható. Kattintson a címre a részletekért. A „Javasolt mondat" doboz kimásolható és felhasználható a hivatalos válaszlevélben.</p>
+        <div class="toolbar">
+            <button class="ds-button" id="expandAll" type="button">Összes lenyitása</button>
+            <button class="ds-button" id="collapseAll" type="button">Összes becsukása</button>
+        </div>
+
+        <!-- 1. KÓRHÁZ -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 01</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="12" y1="9" x2="12" y2="15"/></svg>
+                <h3>Kórház / újszülött / BCG</h3>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-1-1" aria-expanded="false">
+                    <span class="event-id">1.1</span>
+                    <span class="event-title">BCG-oltás nyomás alatt a kórházban</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Kórház</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-1-1" role="region">
+                    <div class="event-body">
+                        <p>A kórház a szülő jelzése ellenére automatikusan beadná a BCG-oltást, nyomást gyakorol, és az elmaradást „megtagadásként" rögzítené. A hazabocsátást összekapcsolhatják az oltási döntéssel, a szülői nyilatkozat nyoma pedig eltűnhet.</p>
+                        <h4>Mit kell elmenteni?</h4>
+                        <ul>
+                            <li>kórházi zárójelentés, újszülött dokumentáció, oltási könyv</li>
+                            <li>szülői nyilatkozat másolata, átvételi igazolás</li>
+                            <li>oltóanyag neve, gyártója, tételszáma, lejárata, betegtájékoztató</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem rögzíteni, hogy nem oltásmegtagadást tettem, hanem a gyermekem egészségét érintő invazív egészségügyi beavatkozás előtt teljes körű, egyéniesített tájékoztatást, az oltóanyag pontos beazonosítását, valamint az olthatóság egyedi elbírálását kérem.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. VÉDŐNŐ -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 02</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <h3>Védőnői szakasz</h3>
+            </div>
+
+            <div class="event medium" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-2-1" aria-expanded="false">
+                    <span class="event-id">2.1</span>
+                    <span class="event-title">A védőnő telefonon, e-mailben, Messengerben sürget</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Védőnő</span>
+                        <span class="ds-badge ds-badge--severity-med">Közepes</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-2-1" role="region">
+                    <div class="event-body">
+                        <p>A védőnő telefonon hívogat, időpontot akar egyeztetni, „jelentenie kell", „kötelező", „ha nem oltat, családsegítő / népegészségügy / gyámügy lesz" – de nem küld hivatalos, visszakövethető iratot. A telefonos beszélgetés később torzulhat.</p>
+                        <h4>Mit kell tenni?</h4>
+                        <ul>
+                            <li>Telefonon csak annyit mondani: „Kérem, küldje meg írásban."</li>
+                            <li>Ne vitázzon telefonon, ne közöljön oltási döntést.</li>
+                            <li>Minden hívás után küldjön rövid írásos összefoglalót.</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Telefonon érdemi jognyilatkozatot nem kívánok tenni. Kérem, megkeresését, annak jogalapját, célját, határidejét és a kért nyilatkozat pontos tartalmát írásban megküldeni.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-2-2" aria-expanded="false">
+                    <span class="event-id">2.2</span>
+                    <span class="event-title">A védőnő felszólítást / pótoltási értesítőt küld</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Védőnő</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-2-2" role="region">
+                    <div class="event-body">
+                        <p>A megadott pótoltási időpont túl közeli, vagy már elmúlt, mire a levél megérkezik. A levél nem tértivevényes, nincs pontos határidő, esetleg hibás adatokat tartalmaz.</p>
+                        <h4>Mit kell ellenőrizni?</h4>
+                        <ul>
+                            <li>Ki a feladó és a címzett, pontosan melyik oltásról van szó</li>
+                            <li>Mikor írták, mikor adták postára, mikor vette át</li>
+                            <li>Volt-e elegendő idő az átvétel és az oltási időpont között</li>
+                            <li>Minden elmaradt oltásra külön megvolt-e a szükséges felszólítási lánc</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">A megkeresésben szereplő időpont a levél tényleges átvételekor már elmúlt / az átvételt követően olyan közeli időpontra esett, hogy érdemi felkészülésre, tájékozódásra és nyilatkozattételre nem volt lehetőség. Kérem új, szabályszerű, írásban közölt időpont megküldését.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-2-3" aria-expanded="false">
+                    <span class="event-id">2.3</span>
+                    <span class="event-title">A védőnő jelzést tesz</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Védőnő</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-2-3" role="region">
+                    <div class="event-body">
+                        <p>A jelzés a népegészségügyhöz, a gyermekjóléti szolgálathoz, a családsegítőhöz, a gyámhivatalhoz, az iskolához vagy a háziorvoshoz / iskolaorvoshoz kerülhet. A jelzésben „oltásmegtagadás", „együttműködés hiánya", „veszélyeztetés" szerepelhet.</p>
+                        <h4>Mit kell kikérni?</h4>
+                        <ul>
+                            <li>a jelzés teljes másolatát, dátumát, a címzett szerv nevét</li>
+                            <li>a jelzés jogalapját, az átadott adatok körét</li>
+                            <li>az adatkezelési jogalapot, a jelzés mellékleteit</li>
+                            <li>azt, hogy a védőnő milyen iratok alapján állította a tényeket</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megküldeni, hogy részemről pontosan mely magatartást, mely dátummal, milyen bizonyíték alapján minősítettek oltásmegtagadásnak vagy együttműködés hiányának. Kérem továbbá a megtett jelzés teljes tartalmát és adatkezelési jogalapját.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. ISKOLA -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 03</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                <h3>Iskola / iskolaorvos / kampányoltás</h3>
+            </div>
+
+            <div class="event medium" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-3-1" aria-expanded="false">
+                    <span class="event-id">3.1</span>
+                    <span class="event-title">Iskola vagy óvoda oltási könyvet kér</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Iskola</span>
+                        <span class="ds-badge ds-badge--severity-med">Közepes</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-3-1" role="region">
+                    <div class="event-body">
+                        <p>Beiratkozáskor oltási könyvet vagy másolatot kérnek, és a felvételt, jelenlétet vagy ügyintézést ehhez kötik. Egészségügyi adatok kerülhetnek illetéktelen szereplőkhöz.</p>
+                        <h4>Mit kell kérni?</h4>
+                        <ul>
+                            <li>pontos jogszabályhelyet, adatkezelési tájékoztatót</li>
+                            <li>adatkezelési célt, kezelt adatok körét, tárolás idejét</li>
+                            <li>hozzáférők körét, valamint hogy a felvétel feltétele-e a bemutatás</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megjelölni, hogy pontosan mely jogszabályhely alapján kérik a gyermek egészségügyi adatainak, illetve oltási könyvének bemutatását vagy másolatát, továbbá kérem megküldeni az adatkezelés célját, jogalapját, időtartamát és a hozzáférésre jogosult személyek körét.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-3-2" aria-expanded="false">
+                    <span class="event-id">3.2</span>
+                    <span class="event-title">KRÉTA-üzenet iskolai oltásról</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Iskolaorvos</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-3-2" role="region">
+                    <div class="event-body">
+                        <p>Előző este vagy pár nappal korábban szólnak, nem világos az oltás fajtája, nincs oltóanyag-adat, nincs egyéniesített tájékoztatás, a gyermek az iskolában van, a szülő nem. A KRÉTA-üzenetet később elégséges tájékoztatásként kezelhetik.</p>
+                        <h4>Mit kell tenni?</h4>
+                        <ul>
+                            <li>Azonnal írásban nyilatkozni az iskolának, igazgatónak, osztályfőnöknek, iskolaorvosnak és védőnőnek</li>
+                            <li>Rögzíteni, hogy a gyermek szülői jelenlét nélkül nem oltható</li>
+                            <li>Kérni a teljes oltóanyag-adatcsomagot és az egyéniesített tájékoztatást</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Nyilatkozom, hogy gyermekem bármilyen egészségügyi vizsgálatához, invazív beavatkozásához vagy védőoltásához a tudtom, előzetes írásbeli tájékoztatásom és jelenlétem nélkül nem járulok hozzá.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event medium" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-3-3" aria-expanded="false">
+                    <span class="event-id">3.3</span>
+                    <span class="event-title">Iskolaorvos vagy védőnő nem válaszol szakmai kérdésekre</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Iskolaorvos</span>
+                        <span class="ds-badge ds-badge--severity-med">Közepes</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-3-3" role="region">
+                    <div class="event-body">
+                        <p>Azt mondják, „nem kompetensek", „csak végrehajtják", „a népegészségügyhöz forduljon", nem veszik át a levelet, nem adnak írásos választ. A hatóság később úgy látja, mintha a szülő nem működött volna együtt.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Amennyiben álláspontjuk szerint a feltett kérdések megválaszolására nem rendelkeznek hatáskörrel vagy szakmai kompetenciával, kérem megjelölni az illetékes személyt vagy szervet, illetve kérem beadványom hivatalból történő továbbítását az illetékes szervhez.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. ORVOSI -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 04</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14h6M9 18h6M9 10h3"/></svg>
+                <h3>Orvosi tájékoztatás, olthatóság, betegkarton</h3>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-4-1" aria-expanded="false">
+                    <span class="event-id">4.1</span>
+                    <span class="event-title">Az orvos nem ad teljes körű, egyéniesített tájékoztatást</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Háziorvos</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-4-1" role="region">
+                    <div class="event-body">
+                        <p>Csak általános betegtájékoztatót küld, linket küld, jogszabályt idéz, a kérdésekre nem válaszol, a kockázatokat nem egyéniesíti, nem dokumentálja, hogy a gyermek alkalmas-e oltásra.</p>
+                        <h4>Mit kell kérni?</h4>
+                        <ul>
+                            <li>oltóanyag nevét, gyártót, tételszámot, lejáratot, összetevőlistát</li>
+                            <li>ellenjavallatokat, mellékhatásokat</li>
+                            <li>a gyermek egyedi kockázatainak értékelését, korábbi betegségek, reakciók figyelembevételét</li>
+                            <li>annak rögzítését, hogy ki vállalja a szakmai felelősséget az olthatóság megállapításáért</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megjelölni, hogy gyermekem egyedi egészségi állapotára, kórelőzményére, korábbi reakcióira és családi anamnézisére tekintettel ki, mikor, milyen vizsgálat alapján állapította meg az oltás végrehajthatóságát.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-4-2" aria-expanded="false">
+                    <span class="event-id">4.2</span>
+                    <span class="event-title">Az orvos nem adja ki a teljes betegkartont</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Háziorvos</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-4-2" role="region">
+                    <div class="event-body">
+                        <p>Csak részleges dokumentációt ad, csak időpontlistát, csak saját praxisidejére vonatkozó adatokat, halogatja a kiadást, másik intézményhez küldi a szülőt. Hatósági eljárásban hátrányba kerülhet a szülő.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem a gyermekemre vonatkozó teljes egészségügyi dokumentáció, betegkarton, oltási dokumentáció, beutalók, szakvélemények, leletek, státuszvizsgálatok és továbbított egészségügyi adatok másolatának kiadását.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-4-3" aria-expanded="false">
+                    <span class="event-id">4.3</span>
+                    <span class="event-title">Olthatóságot állapítanak meg dokumentált vizsgálat nélkül</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Háziorvos</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-4-3" role="region">
+                    <div class="event-body">
+                        <p>Az orvos nem látja a gyermeket, nem vizsgálja meg, nem nézi át a betegkartont, nem kér szakorvosi véleményt. A hatóság mégis úgy tekinti, hogy az oltás beadható, és a bizonyítási terhet a szülőre tolja.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Álláspontom szerint az általános oltási kötelezettség fennállása önmagában nem igazolja, hogy az adott gyermeknél az oltás konkrétan, egyedileg és kockázatmentesen végrehajtható. Kérem az olthatóság dokumentált orvosi elbírálását.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. HALASZTÁS -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 05</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="16" r="3"/><polyline points="12 14 12 16 13.5 16"/></svg>
+                <h3>Halasztás, mentesítés, oltási szaktanácsadó</h3>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-5-1" aria-expanded="false">
+                    <span class="event-id">5.1</span>
+                    <span class="event-title">A szülő halasztást kér</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Háziorvos</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-5-1" role="region">
+                    <div class="event-body">
+                        <p>A gyermek kivizsgálás alatt áll, korábbi oltás után panasz volt, szakorvosi vizsgálat folyamatban. A kezelőorvos szóban halasztana, de írásban nem meri leírni, a népegészségügy pedig nem fogadja el a halasztást.</p>
+                        <h4>Mit kell kérni?</h4>
+                        <ul>
+                            <li>írásos kezelőorvosi halasztást, indokát, időtartamát</li>
+                            <li>szükséges vizsgálatok listáját, kontroll időpontját</li>
+                            <li>annak megjelölését, hogy az oltás jelenleg miért nem időszerű</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">A védőoltást nem tagadom meg, azonban a gyermek egészségi állapotának tisztázásáig, a szükséges szakorvosi vizsgálatok lezárásáig és az olthatóság egyedi elbírálásáig az oltás halasztását kérem.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-5-2" aria-expanded="false">
+                    <span class="event-id">5.2</span>
+                    <span class="event-title">A hatóság mentesítési eljárásba akarja terelni az ügyet</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Népegészségügy</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-5-2" role="region">
+                    <div class="event-body">
+                        <p>A szülő tájékoztatást kér, de a hatóság azt válaszolja: kérjen mentesítést. A mentesítési eljárásban szigorúbb orvosi papírokat kérnek, a tájékoztatási jog háttérbe szorul.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Nem mentesítési kérelmet terjesztettem elő, hanem az oltással kapcsolatos teljes körű, egyéniesített tájékoztatást, az oltóanyag pontos beazonosítását, valamint gyermekem olthatóságának dokumentált elbírálását kértem. A mentesítési eljárás szükségességéről kizárólag ezen információk birtokában tudok felelősen dönteni.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event medium" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-5-3" aria-expanded="false">
+                    <span class="event-id">5.3</span>
+                    <span class="event-title">Oltási szaktanácsadóhoz irányítják a szülőt</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Szaktanácsadó</span>
+                        <span class="ds-badge ds-badge--severity-med">Közepes</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-5-3" role="region">
+                    <div class="event-body">
+                        <p>A védőnő, orvos vagy népegészségügy oltási tanácsadót javasol, de nem világos, kötelező-e, milyen jogkörrel dönt, kiváltja-e a kezelőorvosi döntést, ki viseli a felelősséget.</p>
+                        <h4>Mit kell kérni?</h4>
+                        <ul>
+                            <li>a szaktanácsadó jogszabályi alapját, hatáskörét, döntési jogkörét</li>
+                            <li>végzettségét, felelősségét, kötelezhetőségét</li>
+                            <li>hogy felülírhatja-e a kezelőorvosi vagy szakorvosi véleményt</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megjelölni, hogy a klinikai védőoltási szaktanácsadó megkeresésének pontos jogszabályi alapja mi, milyen hatósági vagy orvosszakmai döntési jogkörrel rendelkezik, és véleménye milyen viszonyban áll a kezelőorvosi, illetve szakorvosi állásponttal.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. MELLÉKHATÁS -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 06</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <h3>Mellékhatás / OKNE / oltóanyag-azonosítás</h3>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-6-1" aria-expanded="false">
+                    <span class="event-id">6.1</span>
+                    <span class="event-title">Korábbi oltás után tünet jelentkezett</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Háziorvos</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-6-1" role="region">
+                    <div class="event-body">
+                        <p>Ekcéma, láz, görcs, allergiás tünet, neurológiai tünet, regresszió vagy más panasz jelentkezik, de az orvos nem veszi komolyan, nem jelenti le OKNE-eseményként, a következő oltást ennek ellenére sürgetik.</p>
+                        <h4>Mit kell tenni?</h4>
+                        <ul>
+                            <li>Írásban bejelenteni az orvosnak, OKNE-bejelentést kérni</li>
+                            <li>Másolatban küldeni a népegészségügynek</li>
+                            <li>Kérni az ügy felfüggesztését a kivizsgálás lezárásáig</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem a korábbi védőoltást követően jelentkezett tünetek oltást követő nemkívánatos eseményként történő bejelentését és kivizsgálását. A kivizsgálás lezárásáig álláspontom szerint újabb oltás időpontjának kitűzése nem megalapozott.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-6-2" aria-expanded="false">
+                    <span class="event-id">6.2</span>
+                    <span class="event-title">Nem azonosítható a beadott vagy beadandó oltóanyag</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Háziorvos</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-6-2" role="region">
+                    <div class="event-body">
+                        <p>Nincs matrica, tételszám, lejárat, gyártó; az oltási könyvben csak kézzel írt sorszám szerepel; a hatóság nem adja ki az oltóanyag-adatokat.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megjelölni, hogy a gyermekem részére beadni kívánt oltóanyag pontosan mely gyártótól, mely forgalomba hozatali engedély alapján, mely sarzsszámmal, milyen lejárati idővel, milyen magyar nyelvű alkalmazási előírással és betegtájékoztatóval kerülne alkalmazásra.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. NÉPEGÉSZSÉGÜGY -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 07</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg>
+                <h3>Népegészségügyi hatósági eljárás</h3>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-7-1" aria-expanded="false">
+                    <span class="event-id">7.1</span>
+                    <span class="event-title">A népegészségügy eljárást indít</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Népegészségügy</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-7-1" role="region">
+                    <div class="event-body">
+                        <p>A védőnő jelzése alapján megindul az eljárás, felszólítás érkezik, teljesítési határidőt adnak, bírságot helyeznek kilátásba, határozat vagy végzés születik. A hatóság a védőnői jelzésre épít, a szülő korábbi kérdéseit figyelmen kívül hagyja.</p>
+                        <h4>Mit kell kérni?</h4>
+                        <ul>
+                            <li>eljárásindítás dátumát, jelzés forrását, jelzés teljes másolatát</li>
+                            <li>ügyiratszámot, jogalapot, hatáskört, illetékességet, ügyintézési határidőt</li>
+                            <li>a bizonyítékok listáját, a hatóság által beszerzett orvosi álláspontokat</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megküldeni az eljárás alapjául szolgáló jelzés teljes másolatát, annak mellékleteit, az eljárás megindításának dátumát, jogalapját, valamint azt, hogy pontosan milyen tény alapján minősítik az ügyet oltásmegtagadásnak vagy kötelezettségszegésnek.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-7-2" aria-expanded="false">
+                    <span class="event-id">7.2</span>
+                    <span class="event-title">A népegészségügy nem válaszol a szakmai kérdésekre</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Népegészségügy</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-7-2" role="region">
+                    <div class="event-body">
+                        <p>Csak jogszabályt idéz, általános választ ad, más szervhez irányít, nem válaszol az oltóanyaggal, kockázattal, ellenjavallattal, felelősséggel kapcsolatos kérdésekre – ennek ellenére határidőt ad vagy bírságol.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Álláspontom szerint a hatóság nem léphet tovább érdemi kötelezésre vagy szankcióra úgy, hogy a gyermekem egészségi állapotát, az oltóanyag konkrét adatait, az ellenjavallatokat, a kockázatokat és a felelősségi kérdéseket érintő korábbi beadványaimra nem adott érdemi választ.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-7-3" aria-expanded="false">
+                    <span class="event-id">7.3</span>
+                    <span class="event-title">Hibás határozat vagy hibás tényállás</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Népegészségügy</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-7-3" role="region">
+                    <div class="event-body">
+                        <p>Rossz oltástípus, más gyermek neve, hibás dátum, sablonos veszélyeztetés, hatályon kívüli jogszabály, nincs tényállás, nincs egyedi indokolás. A hibás határozat jogerőre emelkedhet, ha nem reagálnak rá.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem a határozat tényállásának kijavítását és kiegészítését, mivel az iratban szereplő adatok, oltástípus, személyi adatok, illetve a szülői magatartás minősítése nem felel meg a valóságnak.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. CSALÁDSEGÍTŐ -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 08</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <h3>Családsegítő / gyermekjóléti szolgálat</h3>
+            </div>
+
+            <div class="event medium" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-8-1" aria-expanded="false">
+                    <span class="event-id">8.1</span>
+                    <span class="event-title">A családsegítő telefonon jelentkezik</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Családsegítő</span>
+                        <span class="ds-badge ds-badge--severity-med">Közepes</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-8-1" role="region">
+                    <div class="event-body">
+                        <p>Időpontot kér, lakásra menne, környezettanulmányt említ, „védelembe vétel lesz", nem küld hivatalos iratot, nem világos, kinek a megbízásából jár el. A szóbeli kommunikációból később „nem együttműködés" lehet.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem írásban megküldeni, hogy milyen ügyben, mely szerv megbízásából, milyen jogszabályi felhatalmazás alapján, milyen célból és milyen iratok alapján kívánnak eljárni.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-8-2" aria-expanded="false">
+                    <span class="event-id">8.2</span>
+                    <span class="event-title">Környezettanulmány / családlátogatás</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Családsegítő</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-8-2" role="region">
+                    <div class="event-body">
+                        <p>Bejelentés nélkül érkeznek, lakásba akarnak bemenni, a gyermek környezetét vizsgálnák, oltási ügyből általános családvizsgálat lesz, a lakókörülményeket összekapcsolják az oltással.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megjelölni, hogy az oltási ügyhöz kapcsolódóan pontosan milyen jogalapon és milyen konkrét tényállás tisztázása érdekében szükséges a lakókörnyezet vizsgálata.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-8-3" aria-expanded="false">
+                    <span class="event-id">8.3</span>
+                    <span class="event-title">Jegyzőkönyv, együttműködési megállapodás, gondozási terv</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Családsegítő</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-8-3" role="region">
+                    <div class="event-body">
+                        <p>Aláíratnak egy dokumentumot, nem adnak időt elolvasni, nem engedik lefotózni, nem adnak saját példányt. A dokumentumban „oltásmegtagadás", „elhanyagolás", „veszélyeztetés" szerepelhet. Gondozási terv készül a védelembe vételi határozat előtt.</p>
+                        <h4>Mit kell tenni?</h4>
+                        <ul>
+                            <li>Helyben nem aláírni ismeretlen iratot</li>
+                            <li>Másolatot kérni, jogszabályi alapot kérni</li>
+                            <li>Írásban jelezni, ha a tartalommal nem ért egyet, és kérni a téves állítások kijavítását</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Az iratot helyben, jogi és tartalmi áttanulmányozás nélkül nem kívánom aláírni. Kérem az irat másolatának kiadását, a jogalap megjelölését, valamint annak biztosítását, hogy észrevételeimet írásban megtehessem.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. GYÁMHIVATAL -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 09</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/><path d="M12 6v6l4 2"/></svg>
+                <h3>Gyámhivatal / védelembe vétel</h3>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-9-1" aria-expanded="false">
+                    <span class="event-id">9.1</span>
+                    <span class="event-title">Gyámhivatali idézés érkezik</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Gyámhivatal</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-9-1" role="region">
+                    <div class="event-body">
+                        <p>Idézés tárgyalásra, de nem világos az ügy, kevés idő marad, későn érkezik, a szülő még nem látott iratanyagot. A tárgyaláson a szülő felkészületlenül jelenik meg, távollétét „nem együttműködésként" értelmezhetik.</p>
+                        <h4>Mit kell azonnal ellenőrizni?</h4>
+                        <ul>
+                            <li>átvétel és tárgyalás dátumát, ügyiratszámot, ügy tárgyát, jogalapot</li>
+                            <li>idézés szabályosságát, van-e eljárásindító végzés / értesítés</li>
+                            <li>volt-e lehetőség iratbetekintésre</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Az idézésből nem állapítható meg egyértelműen az eljárás tárgya, jogalapja és az eljárás alapjául szolgáló tényállás. Kérem az eljárás megindításáról szóló irat, az ügy teljes iratjegyzéke és az iratbetekintés lehetőségének megküldését.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-9-2" aria-expanded="false">
+                    <span class="event-id">9.2</span>
+                    <span class="event-title">Iratbetekintés nélkül tartanának tárgyalást</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Gyámhivatal</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-9-2" role="region">
+                    <div class="event-body">
+                        <p>A szülő iratbetekintést kér, nem válaszolnak, a tárgyalást mégis megtartanák, a hatóság már rendelkezik jelzésekkel, amelyeket a szülő nem látott. A valótlan jelzéseket nem tudja időben cáfolni.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Iratbetekintés hiányában érdemi nyilatkozatot tenni nem áll módomban. Kérem a tárgyalás elhalasztását és az ügy teljes iratanyagába történő betekintés biztosítását.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-9-3" aria-expanded="false">
+                    <span class="event-id">9.3</span>
+                    <span class="event-title">Védelembe vételi eljárás indul</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Gyámhivatal</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-9-3" role="region">
+                    <div class="event-body">
+                        <p>A gyámhivatal gyermekveszélyeztetésre hivatkozik, az alap az oltás elmaradása, a családsegítő javaslata és a védőnői jelzés alapján járnak el, a szülőt együttműködésre köteleznék. Az oltási ügy gyermekvédelmi üggyé alakul.</p>
+                        <h4>Mit kell kérni?</h4>
+                        <ul>
+                            <li>konkrét veszélyeztető magatartást, bizonyítékokat</li>
+                            <li>jelzés teljes iratát, családsegítői javaslatot, védőnői jelentést</li>
+                            <li>iskolai / orvosi adatokat, a gyermek aktuális egészségügyi állapotára vonatkozó tényeket</li>
+                            <li>azt, hogy miért nem elegendő a népegészségügyi eljárás</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem pontosan megjelölni, hogy mely konkrét, bizonyított tény alapján állapítják meg a gyermek veszélyeztetettségét, és miben különbözik ez az oltással kapcsolatos tájékoztatási és olthatósági vita népegészségügyi tárgyától.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-9-4" aria-expanded="false">
+                    <span class="event-id">9.4</span>
+                    <span class="event-title">A gyermeket szülő nélkül hallgatnák meg</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Gyámhivatal</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-9-4" role="region">
+                    <div class="event-body">
+                        <p>Iskolában, családsegítőnél vagy gyámhivatalban külön hallgatnák meg a gyermeket, a szülőt nem engednék be. A gyermek szavait félreértelmezhetik, a szülő nem tudja ellenőrizni a kérdéseket, a jegyzőkönyv pontatlan lehet.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Törvényes képviselőként kérem, hogy gyermekem bármilyen meghallgatására kizárólag előzetes írásbeli értesítésem mellett, jelenlétemben kerüljön sor. Amennyiben ettől el kívánnak térni, kérem annak pontos jogszabályi indokolását.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. KÉZBESÍTÉS -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 10</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <h3>Kézbesítés / határidők / iratbetekintés</h3>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-10-1" aria-expanded="false">
+                    <span class="event-id">10.1</span>
+                    <span class="event-title">Hibás vagy vitatható kézbesítés</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Posta</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-10-1" role="region">
+                    <div class="event-body">
+                        <p>A levelet bedobják a postaládába, a tértivevényes iratot nem személyesen kézbesítik, a szülő nem kapta meg, hibás névre érkezik, más veszi át, nem világos az átvétel időpontja. A határidő elindulhat, jogorvoslati határidő is elveszhet.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megküldeni az irat kézbesítését igazoló dokumentumokat, különösen a tértivevényt, a kézbesítési adatokat, az átvevő személyét, az átvétel időpontját és a kézbesítési kísérletek adatait.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-10-2" aria-expanded="false">
+                    <span class="event-id">10.2</span>
+                    <span class="event-title">Határidő vagy időpont már elmúlt</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Hatóság</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-10-2" role="region">
+                    <div class="event-body">
+                        <p>A levélben szereplő időpont az átvételkor már elmúlt, a tárgyalás túl közeli, az oltási időpontot túl rövid határidővel tűzték ki, nem volt reális felkészülési idő. A hatóság mulasztásként kezeli a meg nem jelenést.</p>
+                        <div class="quote-box">
+            <span class="quote-text">A megjelölt időpont a levél tényleges átvételekor már elmúlt / olyan közeli volt, hogy azon objektíve nem tudtam megjelenni, illetve érdemi nyilatkozatra felkészülni nem volt lehetőségem. Kérem új, szabályszerű időpont kitűzését.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-10-3" aria-expanded="false">
+                    <span class="event-id">10.3</span>
+                    <span class="event-title">Iratbetekintési kérelem</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Hatóság</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-10-3" role="region">
+                    <div class="event-body">
+                        <p>Minden esetben kérjen iratbetekintést, ha védőnő jelzett, családsegítő jelentkezett, népegészségügyi eljárás indult, gyámhivatal idézett, védelembe vételi ügy indult, NAV-irat érkezett vagy határozat, végzés született.</p>
+                        <h4>Mit kell kérni?</h4>
+                        <ul>
+                            <li>teljes iratanyag, iratjegyzék, jelzések, jegyzőkönyvek</li>
+                            <li>környezettanulmány, gondozási terv, védőnői jelentés</li>
+                            <li>orvosi válaszok, hatóságok közötti levelezés, kézbesítési igazolások</li>
+                            <li>belső feljegyzések, döntés-előkészítő iratok, ha megismerhetők</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem az ügyben keletkezett valamennyi iratba történő betekintés biztosítását, valamint az iratjegyzék, a jelzések, jegyzőkönyvek, szakmai vélemények, hatóságok közötti levelezések és kézbesítési igazolások másolatának megküldését.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. NAV -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 11</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
+                <h3>NAV / bírság / végrehajtás</h3>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-11-1" aria-expanded="false">
+                    <span class="event-id">11.1</span>
+                    <span class="event-title">NAV-felszólítás érkezik</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">NAV</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-11-1" role="region">
+                    <div class="event-body">
+                        <p>A NAV meghatározott cselekmény teljesítésére szólít fel, eljárási bírságot helyez kilátásba, bírságot szab ki, végrehajtási eljárást indít, más hatóság megkeresése alapján jár el. A szülő csak a NAV-nál vitatkozik, miközben az alapügy máshol van.</p>
+                        <h4>Mit kell kérni?</h4>
+                        <ul>
+                            <li>végrehajtást kérő szerv neve, alapügy száma, alapul szolgáló határozat</li>
+                            <li>végrehajtandó cselekmény pontos megjelölése, NAV hatásköre</li>
+                            <li>bírság jogalapja, jogorvoslati lehetőség, végrehajthatóság kezdete, kézbesítési adatok</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megjelölni, hogy a NAV mely hatóság mely számú, mikor véglegessé vált határozata alapján jár el, pontosan mi a végrehajtandó cselekmény, és mire terjed ki a NAV hatásköre az ügyben.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-11-2" aria-expanded="false">
+                    <span class="event-id">11.2</span>
+                    <span class="event-title">A NAV bírságot szab ki</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">NAV</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-11-2" role="region">
+                    <div class="event-body">
+                        <p>Első bírság, ismételt bírság, végrehajtási költség, behajtás, inkasszó. A bírságot befizetik anélkül, hogy az alapügyet vitatnák, a hatóságok egymásra mutogatnak.</p>
+                        <h4>Lehetséges kifogási irányok</h4>
+                        <ul>
+                            <li>az alapul szolgáló határozat nem végrehajtható</li>
+                            <li>a határozatot nem kézbesítették szabályszerűen</li>
+                            <li>az alapügyben bírósági eljárás folyik, azonnali jogvédelem van folyamatban</li>
+                            <li>a gyermek olthatósága nincs dokumentáltan elbírálva</li>
+                            <li>halasztás / kivizsgálás / OKNE-ügy folyamatban van</li>
+                            <li>passzív TAJ / külföldi lakcím / külföldi oltási igazolás miatt az alapkötelezés vitatott</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Álláspontom szerint a végrehajtás alapjául szolgáló kötelezés végrehajthatósága vitatott, mivel az alapügyben az olthatóság, a tájékoztatási kötelezettség teljesítése, valamint a határozat szabályszerű kézbesítése és véglegessége nem tisztázott.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. BÍRÓSÁG -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 12</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="20"/><line x1="5" y1="7" x2="19" y2="7"/><path d="M19 7c0 3-2 5-5 5h-4c-3 0-5-2-5-5"/></svg>
+                <h3>Bíróság / azonnali jogvédelem</h3>
+            </div>
+
+            <div class="event critical" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-12-1" aria-expanded="false">
+                    <span class="event-id">12.1</span>
+                    <span class="event-title">Közigazgatási per indul</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Bíróság</span>
+                        <span class="ds-badge ds-badge--severity-crit">Kritikus</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-12-1" role="region">
+                    <div class="event-body">
+                        <p>Népegészségügyi határozat, gyámhivatali határozat, bírság, védelembe vétel után, vagy ha fellebbezésnek nincs helye, de keresetlevél benyújtható. Fő kockázat: a szülő elmulasztja a keresetindítási határidőt, nem kér azonnali jogvédelmet.</p>
+                        <h4>Mit kell tenni?</h4>
+                        <ul>
+                            <li>határidőt azonnal naptárba írni, ügyvéd bevonását mérlegelni</li>
+                            <li>keresetlevelet előkészíteni, azonnali jogvédelmet kérni, ha az oltás végrehajtása visszafordíthatatlan</li>
+                            <li>minden bizonyítékot csatolni, hatósági eljárás felfüggesztését kérni párhuzamos ügyekben</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem az azonnali jogvédelem biztosítását, mivel az oltás beadása visszafordíthatatlan egészségügyi beavatkozás, és a jogorvoslat csak akkor lehet hatékony, ha a végrehajtás a bírósági döntésig nem történik meg.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-12-2" aria-expanded="false">
+                    <span class="event-id">12.2</span>
+                    <span class="event-title">Bírósági tárgyalás</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Bíróság</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-12-2" role="region">
+                    <div class="event-body">
+                        <p>Figyelni kell a védiratra, a hatósági bizonyítékokra, az iratanyag teljességére, a jegyzőkönyv pontosságára, a bizonyítási indítványokra, a szóban előadott nyilatkozatokra, a bírói kérdésekre és az elutasított bizonyítékokra.</p>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem, hogy nyilatkozatom szó szerint kerüljön jegyzőkönyvbe, mivel az ügy megítélése szempontjából lényeges, hogy nem oltásmegtagadást, hanem tájékoztatáskérést, olthatósági vizsgálatot és jogalap-tisztázást terjesztettem elő.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13. PASSZÍV TAJ -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 13</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <h3>Passzív TAJ / külföldi lakcím / külföldi oltás</h3>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-13-1" aria-expanded="false">
+                    <span class="event-id">13.1</span>
+                    <span class="event-title">A gyermek külföldön született vagy külföldi kapcsolódása van</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Hatóság</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-13-1" role="region">
+                    <div class="event-body">
+                        <p>Külföldön nem volt kötelező az oltás, külföldi lakcím, passzív TAJ, külföldi oltási igazolás van, de a magyar hatóság mégis pótlást kér. A védőnői gondozás vagy magyar alapellátás jogalapja vitatott.</p>
+                        <h4>Mit kell összegyűjteni?</h4>
+                        <ul>
+                            <li>külföldi lakcímigazolás, TAJ státusz, külföldi oltási igazolás</li>
+                            <li>külföldi egészségügyi dokumentáció, magyar tartózkodás kezdete</li>
+                            <li>óvodai / iskolai beiratkozás dátuma, gyermekorvosi ellátás és védőnői gondozás kezdete</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem tisztázni, hogy a gyermek külföldi lakcímére, passzív TAJ-státuszára, külföldi egészségügyi dokumentációjára és külföldi oltási jogállására tekintettel pontosan milyen jogszabályhely alapján állapítják meg a magyar oltási kötelezettség végrehajthatóságát.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14. ADATVÉDELEM -->
+        <div class="chapter">
+            <div class="chapter-header">
+                <span class="chapter-num">MÉRFÖLDKŐ 14</span>
+                <svg class="chapter-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <h3>Adatvédelem / egészségügyi adatok továbbítása</h3>
+            </div>
+
+            <div class="event high" aria-expanded="false">
+                <button class="event-toggle" aria-controls="ev-14-1" aria-expanded="false">
+                    <span class="event-id">14.1</span>
+                    <span class="event-title">Egészségügyi adat kerül más szervhez</span>
+                    <span class="badges">
+                        <span class="ds-badge ds-badge--institution">Adatvédelem</span>
+                        <span class="ds-badge ds-badge--severity-high">Magas</span>
+                    </span>
+                    <span class="caret">▼</span>
+                </button>
+                <div class="event-content" id="ev-14-1" role="region">
+                    <div class="event-body">
+                        <p>Védőnő adatot ad családsegítőnek, iskola a védőnőnek, orvos a népegészségügynek, népegészségügy a gyámügynek, családsegítő az orvostól kér adatot – a szülő erről nem kap tájékoztatást. Szenzitív adatok vándorolnak, valótlan vagy pontatlan adat is terjedhet.</p>
+                        <h4>Mit kell kérni?</h4>
+                        <ul>
+                            <li>adatkezelési jogalapot, adatkezelő megnevezését, címzettek körét</li>
+                            <li>továbbított adatok listáját, dátumát, célját, adatforrást</li>
+                            <li>helyesbítés lehetőségét</li>
+                        </ul>
+                        <div class="quote-box">
+            <span class="quote-text">Kérem megküldeni, hogy az ügyben mely személyes és egészségügyi adatokat, mely szervnek, milyen dátummal, milyen célból és milyen jogalapon továbbították.</span>
+            <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                <span class="copy-icon">📋</span>
+                <span class="copy-label">Másolás</span>
+            </button>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ======================================================================
+         ALAPMONDATOK
+         ====================================================================== -->
+    <section id="alapmondatok" aria-labelledby="quotes-title">
+        <h2 id="quotes-title">Alapmondatok minden szakaszra</h2>
+        <p>Az alábbi nyolc mondat bármelyik szakaszban alkalmazható, a konkrét ügyre szabva. Kimásolhatók és a hivatalos válaszlevélbe illeszthetők.</p>
+        <div class="quotes-grid">
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <span class="quote-label">Tájékoztatáskérés</span>
+                    <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-label">Másolás</span>
+                    </button>
+                </div>
+                <p>„Nem oltásmegtagadást közöltem, hanem a gyermekem egészségi állapotára tekintettel teljes körű, egyéniesített tájékoztatást, olthatósági elbírálást és dokumentált szakmai választ kértem."</p>
+            </div>
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <span class="quote-label">Jogalap-kérés</span>
+                    <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-label">Másolás</span>
+                    </button>
+                </div>
+                <p>„Kérem megjelölni a megkeresés, felszólítás, jelzés vagy eljárási cselekmény pontos jogszabályi alapját."</p>
+            </div>
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <span class="quote-label">Iratbetekintés</span>
+                    <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-label">Másolás</span>
+                    </button>
+                </div>
+                <p>„Kérem az ügyben keletkezett valamennyi iratba történő betekintés biztosítását, valamint az iratjegyzék és a rendelkezésre álló iratok másolatának megküldését."</p>
+            </div>
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <span class="quote-label">Veszélyeztetés vitatása</span>
+                    <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-label">Másolás</span>
+                    </button>
+                </div>
+                <p>„Kérem pontosan megjelölni, hogy mely konkrét, bizonyított tény alapján állapítják meg a gyermek veszélyeztetettségét, és milyen szakmai bizonyíték támasztja alá ezt az állítást."</p>
+            </div>
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <span class="quote-label">Olthatóság</span>
+                    <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-label">Másolás</span>
+                    </button>
+                </div>
+                <p>„Kérem megjelölni, hogy ki, mikor, milyen vizsgálat, dokumentáció és felelősségvállalás alapján állapította meg gyermekem olthatóságát."</p>
+            </div>
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <span class="quote-label">Kézbesítés</span>
+                    <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-label">Másolás</span>
+                    </button>
+                </div>
+                <p>„Kérem megküldeni az irat kézbesítését igazoló dokumentumokat, a tértivevényt, a ragszám szerinti kézbesítési adatokat és az átvevő személyére vonatkozó információkat."</p>
+            </div>
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <span class="quote-label">Családsegítő</span>
+                    <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-label">Másolás</span>
+                    </button>
+                </div>
+                <p>„Kérem írásban megküldeni, hogy milyen ügyben, mely szerv megbízásából, milyen jogszabályi felhatalmazás alapján, milyen célból és milyen iratok alapján kívánnak eljárni."</p>
+            </div>
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <span class="quote-label">NAV</span>
+                    <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-label">Másolás</span>
+                    </button>
+                </div>
+                <p>„Kérem megjelölni, hogy a NAV mely hatóság mely számú határozata alapján jár el, mi a végrehajtandó cselekmény, és pontosan mire terjed ki a NAV hatásköre."</p>
+            </div>
+            <div class="quote-card">
+                <div class="quote-card-header">
+                    <span class="quote-label">Bírósági jogvédelem</span>
+                    <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-label">Másolás</span>
+                    </button>
+                </div>
+                <p>„Kérem az azonnali jogvédelem biztosítását, mivel az oltás beadása visszafordíthatatlan egészségügyi beavatkozás, és a jogorvoslat csak akkor lehet hatékony, ha a végrehajtás a bírósági döntésig nem történik meg."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         AKCIÓTERV
+         ====================================================================== -->
+    <section id="akcióterv" aria-labelledby="action-title">
+        <h2 id="action-title">Rövid akcióterv szülőknek</h2>
+        <p>Ha az alábbi szereplők megkeresik, az alábbi lépéseket kövesse. Kattintson a forgatókönyvre a lépésekért.</p>
+
+        <div class="action-item" aria-expanded="false">
+            <button class="action-toggle" aria-controls="act-1" aria-expanded="false">
+                <svg class="action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span>Ha védőnő / iskola / orvos keres</span>
+                <span class="caret">▼</span>
+            </button>
+            <div class="action-content" id="act-1" role="region">
+                <div class="action-body">
+                    <ol>
+                        <li>Ne tegyen szóbeli oltásmegtagadó nyilatkozatot.</li>
+                        <li>Kérjen mindent írásban.</li>
+                        <li>Kérje a jogalapot.</li>
+                        <li>Kérje az oltóanyag adatait.</li>
+                        <li>Kérje az egyéniesített tájékoztatást.</li>
+                        <li>Kérje az olthatóság dokumentált elbírálását.</li>
+                        <li>Mentsen el minden üzenetet és borítékot.</li>
+                        <li>Válaszoljon írásban, igazolható módon.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-item" aria-expanded="false">
+            <button class="action-toggle" aria-controls="act-2" aria-expanded="false">
+                <svg class="action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M12 2v9M8 5h8M8 8h8M5 11h14"/></svg>
+                <span>Ha népegészségügyi levél jön</span>
+                <span class="caret">▼</span>
+            </button>
+            <div class="action-content" id="act-2" role="region">
+                <div class="action-body">
+                    <ol>
+                        <li>Nézze meg: végzés, határozat vagy felszólítás?</li>
+                        <li>Írja fel az átvétel dátumát.</li>
+                        <li>Ellenőrizze a határidőt.</li>
+                        <li>Kérjen iratbetekintést.</li>
+                        <li>Kérje a védőnői jelzést.</li>
+                        <li>Kérje a jogalapot és hatáskört.</li>
+                        <li>Kérje a tájékoztatási kérdések megválaszolását.</li>
+                        <li>Ne hagyja válasz nélkül.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-item" aria-expanded="false">
+            <button class="action-toggle" aria-controls="act-3" aria-expanded="false">
+                <svg class="action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Ha családsegítő keres</span>
+                <span class="caret">▼</span>
+            </button>
+            <div class="action-content" id="act-3" role="region">
+                <div class="action-body">
+                    <ol>
+                        <li>Kérje írásban a jogalapot.</li>
+                        <li>Kérje, ki rendelte el az eljárást.</li>
+                        <li>Kérje az ügy tárgyát.</li>
+                        <li>Ne írjon alá helyben semmit.</li>
+                        <li>Kérjen saját példányt.</li>
+                        <li>Kérjen iratbetekintést.</li>
+                        <li>Írásban kifogásolja a valótlan állításokat.</li>
+                        <li>Ne engedje, hogy a tájékoztatáskérést oltásmegtagadásként rögzítsék.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-item" aria-expanded="false">
+            <button class="action-toggle" aria-controls="act-4" aria-expanded="false">
+                <svg class="action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="20"/><line x1="5" y1="7" x2="19" y2="7"/><path d="M19 7c0 3-2 5-5 5h-4c-3 0-5-2-5-5"/></svg>
+                <span>Ha gyámhivatal idéz</span>
+                <span class="caret">▼</span>
+            </button>
+            <div class="action-content" id="act-4" role="region">
+                <div class="action-body">
+                    <ol>
+                        <li>Ellenőrizze az átvétel és tárgyalás közti időt.</li>
+                        <li>Kérjen iratbetekintést.</li>
+                        <li>Kérje az eljárás jogalapját és tárgyát.</li>
+                        <li>Kérjen halasztást, ha nem volt idő felkészülni.</li>
+                        <li>Kérje a jelzések teljes másolatát.</li>
+                        <li>Írásban rögzítse, hogy együttműködik.</li>
+                        <li>Vitatassa a konkrét veszélyeztetés hiányát.</li>
+                        <li>Jegyzőkönyvbe vetesse a kifogásait.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-item" aria-expanded="false">
+            <button class="action-toggle" aria-controls="act-5" aria-expanded="false">
+                <svg class="action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
+                <span>Ha NAV-levél jön</span>
+                <span class="caret">▼</span>
+            </button>
+            <div class="action-content" id="act-5" role="region">
+                <div class="action-body">
+                    <ol>
+                        <li>Tisztázza, mi az alapügy.</li>
+                        <li>Kérje az alapul szolgáló határozatot.</li>
+                        <li>Kérje a végrehajtást kérő szerv megjelölését.</li>
+                        <li>Kérje a végrehajtandó cselekmény pontos leírását.</li>
+                        <li>Ellenőrizze a kézbesítést és véglegességet.</li>
+                        <li>Írásban vitassa a végrehajthatóságot, ha az alapügyben nyitott kérdés van.</li>
+                        <li>Közben az alapügyi hatóságnál is reagáljon.</li>
+                        <li>Határidőt ne mulasszon.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         INTÉZMÉNYEK
+         ====================================================================== -->
+    <section id="intézmények" aria-labelledby="inst-title">
+        <h2 id="inst-title">Intézménykalauz</h2>
+        <p>Az alábbi intézmények mindegyike megjelenhet a szülő eljárásában. Mindegyik más-más szerepet tölt be, és más típusú iratot, nyilatkozatot, határozatot hozhat.</p>
+        <div class="institution-grid">
+            <div class="institution-card">
+                <div class="institution-icon-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="12" y1="9" x2="12" y2="15"/></svg>
+                </div>
+                <h4>Kórház / szülészet</h4>
+                <p>Újszülött-, BCG- és egyéb oltások beadásának helyszíne. Az oltás dokumentálásáért, a tájékoztatásért és a szülői nyilatkozat átvételéért felelős.</p>
+            </div>
+            <div class="institution-card">
+                <div class="institution-icon-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+                <h4>Védőnő</h4>
+                <p>Az oltási nyomon követés első számú szereplője. Jelezhet a népegészségügynek, a családsegítőnek vagy a háziorvosnak.</p>
+            </div>
+            <div class="institution-card">
+                <div class="institution-icon-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h4>Háziorvos / iskolaorvos</h4>
+                <p>Az oltás tényleges beadója, az olthatóság orvosi elbírálásáért felelős. Betegkartont, oltási dokumentációt kezel.</p>
+            </div>
+            <div class="institution-card">
+                <div class="institution-icon-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                </div>
+                <h4>Iskola / óvoda</h4>
+                <p>Az oltási könyv bemutatását kérheti, a KRÉTA-üzeneteken keresztül értesít, de oltást nem ad be.</p>
+            </div>
+            <div class="institution-card">
+                <div class="institution-icon-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg>
+                </div>
+                <h4>Népegészségügy</h4>
+                <p>Hatósági eljárást indíthat, határozatot, végzést, felszólítást hozhat, bírságot szabhat ki.</p>
+            </div>
+            <div class="institution-card">
+                <div class="institution-icon-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h4>Családsegítő / gyermekjóléti szolgálat</h4>
+                <p>Jelzést tehet a gyámhivatalnak, környezettanulmányt készíthet, gondozási tervet készíthet.</p>
+            </div>
+            <div class="institution-card">
+                <div class="institution-icon-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h4>Gyámhivatal</h4>
+                <p>Ideiglenes hatályú intézkedést, védelembe vételt rendelhet el, nevelésbe vételt kezdeményezhet.</p>
+            </div>
+            <div class="institution-card">
+                <div class="institution-icon-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
+                </div>
+                <h4>NAV</h4>
+                <p>Más hatóság határozata alapján végrehajtást indíthat, bírságot szabhat ki, behajtást foganatosíthat.</p>
+            </div>
+            <div class="institution-card">
+                <div class="institution-icon-container">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="20"/><line x1="5" y1="7" x2="19" y2="7"/><path d="M19 7c0 3-2 5-5 5h-4c-3 0-5-2-5-5"/></svg>
+                </div>
+                <h4>Bíróság</h4>
+                <p>Közigazgatási per, azonnali jogvédelem, gyermekvédelmi per – az utolsó szintű jogorvoslat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         CHECKLIST
+         ====================================================================== -->
+    <section id="checklist" aria-labelledby="check-title">
+        <h2 id="check-title">Bizonyítékgyűjtés és időrend</h2>
+        <p>Minden szülő vezessen pontos időrendet. Az alábbi checklist segít, mit kell mentenie, hogyan kell jelölnie az iratokat, és milyen dokumentumokat kell megőriznie.</p>
+
+        <div class="checklist">
+            <div class="checklist-grid">
+                <div>
+                    <h4>Időrend – kötelező adatok</h4>
+                    <ul>
+                        <li>esemény dátuma</li>
+                        <li>irat kelte</li>
+                        <li>postára adás dátuma</li>
+                        <li>átvétel dátuma</li>
+                        <li>határidő, válasz dátuma</li>
+                        <li>címzett, feladó</li>
+                        <li>ügyiratszám, ragszám</li>
+                        <li>irat típusa, rövid tartalom</li>
+                        <li>következő teendő</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Minden iratnál jelölni kell</h4>
+                    <ul>
+                        <li>ki küldte, milyen jogcímen</li>
+                        <li>milyen határidővel</li>
+                        <li>milyen következményt helyez kilátásba</li>
+                        <li>van-e jogorvoslat</li>
+                        <li>milyen bizonyítékra hivatkozik</li>
+                        <li>van-e hibás adat vagy jogszabály</li>
+                        <li>van-e hiányzó melléklet</li>
+                        <li>szükséges-e iratbetekintés vagy válasz</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h3>Legfontosabb mentendő dokumentumok</h3>
+        <div class="checklist">
+            <div class="checklist-grid">
+                <ul>
+                    <li>oltási könyv</li>
+                    <li>betegkarton</li>
+                    <li>védőnői levelek</li>
+                    <li>iskolaorvosi levelek</li>
+                    <li>KRÉTA-üzenetek</li>
+                    <li>e-mailek</li>
+                    <li>Messenger / SMS üzenetek</li>
+                    <li>borítékok, ragszámok</li>
+                    <li>tértivevények</li>
+                    <li>postai nyomkövetések</li>
+                </ul>
+                <ul>
+                    <li>népegészségügyi végzések / határozatok</li>
+                    <li>családsegítői jegyzőkönyvek</li>
+                    <li>környezettanulmányok</li>
+                    <li>gondozási tervek</li>
+                    <li>gyámhivatali idézések, határozatok</li>
+                    <li>NAV-levelek</li>
+                    <li>bírósági iratok</li>
+                    <li>orvosi szakvélemények</li>
+                    <li>halasztások, OKNE-bejelentések</li>
+                    <li>közérdekű adatigénylések, panaszok, válaszlevelek</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>A végleges térkép rövid lényege – 10 stratégiai pont</h3>
+        <ol>
+            <li>Nem szabad „oltásmegtagadásként" keretezni az ügyet.</li>
+            <li>Minden esetben teljes körű, egyéniesített tájékoztatást kell kérni.</li>
+            <li>Az olthatóságot nem szabad automatikusnak elfogadni.</li>
+            <li>Minden jelzést, iratot és hatósági lépést ki kell kérni.</li>
+            <li>A családsegítő és gyámhivatal esetén a konkrét veszélyeztetés bizonyítását kell kérni.</li>
+            <li>A kézbesítés, határidő és iratbetekintés sokszor döntő jelentőségű.</li>
+            <li>A NAV-szakaszt külön kell választani az alapügytől.</li>
+            <li>Bírósági szakaszban azonnali jogvédelem nélkül a jogorvoslat kiüresedhet.</li>
+            <li>Minden iratot, borítékot, ragszámot, választ és jegyzőkönyvet meg kell őrizni.</li>
+            <li>A cél nem a vita fokozása, hanem a dokumentált, jogszerű, írásbeli és bizonyítható szülői együttműködés.</li>
+        </ol>
+    </section>
+
+</main>
+
+<footer class="site-footer" id="disclaimer" role="contentinfo">
+    <div class="container">
+        <div class="footer-disclaimer">
+            <span class="footer-disclaimer-icon">⚠️</span>
+            <div><strong>Figyelmeztetés:</strong> Az oldalon szereplő információk kizárólag tájékoztató jellegűek, nem minősülnek jogi vagy egészségügyi tanácsadásnak. Konkrét ügyben minden esetben javasolt ügyvéd, orvos vagy megfelelő szakember bevonása.
+        </div>
+        </div>
+        <p class="footer-meta">Eljárási térkép szülőknek – kötelező védőoltási ügyek · Tájékoztató jellegű tartalom</p>
+    </div>
+</footer>
+
+<script>
+(function() {
+    'use strict';
+
+    /* ============ TÉMA KEZELÉS ============ */
+    const THEME_KEY = 'eljarasi-terkep-theme';
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+
+    function getStoredTheme() {
+        try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; }
+    }
+    function setStoredTheme(value) {
+        try { localStorage.setItem(THEME_KEY, value); } catch (e) {}
+    }
+    function getSystemTheme() {
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            root.setAttribute('data-theme', 'dark');
+        } else if (theme === 'light') {
+            root.setAttribute('data-theme', 'light');
+        } else {
+            root.removeAttribute('data-theme');
+        }
+    }
+    function initTheme() {
+        const stored = getStoredTheme();
+        if (stored === 'dark' || stored === 'light') {
+            applyTheme(stored);
+        } else {
+            applyTheme(getSystemTheme());
+        }
+    }
+
+    initTheme();
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const current = root.getAttribute('data-theme');
+            const effective = current || getSystemTheme();
+            const next = effective === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            setStoredTheme(next);
+        });
+    }
+
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+            if (!getStoredTheme()) {
+                applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    }
+
+    /* ============ ACCORDION ============ */
+    function toggleEvent(btn) {
+        const eventEl = btn.closest('.event, .action-item');
+        if (!eventEl) return;
+        const expanded = eventEl.getAttribute('aria-expanded') === 'true';
+        eventEl.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    }
+
+    document.querySelectorAll('.event-toggle, .action-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            toggleEvent(btn);
+        });
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleEvent(btn);
+            }
+        });
+    });
+
+    const expandAll = document.getElementById('expandAll');
+    const collapseAll = document.getElementById('collapseAll');
+    if (expandAll) {
+        expandAll.addEventListener('click', function() {
+            document.querySelectorAll('.event').forEach(function(el) {
+                el.setAttribute('aria-expanded', 'true');
+                const btn = el.querySelector('.event-toggle');
+                if (btn) btn.setAttribute('aria-expanded', 'true');
+            });
+        });
+    }
+    if (collapseAll) {
+        collapseAll.addEventListener('click', function() {
+            document.querySelectorAll('.event').forEach(function(el) {
+                el.setAttribute('aria-expanded', 'false');
+                const btn = el.querySelector('.event-toggle');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+    /* ============ MÁSOLÁS UTILITY ============ */
+    document.querySelectorAll('.copy-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Accordion nyitás megakadályozása lépéseknél
+            
+            let text = '';
+            const textEl = btn.closest('.quote-box')?.querySelector('.quote-text') || 
+                           btn.closest('.quote-card')?.querySelector('p');
+            
+            if (textEl) {
+                text = textEl.textContent.trim().replace(/^„|”$/g, '');
+            } else {
+                return;
+            }
+
+            navigator.clipboard.writeText(text).then(function() {
+                const label = btn.querySelector('.copy-label');
+                const icon = btn.querySelector('.copy-icon');
+                const originalLabel = label ? label.textContent : 'Másolás';
+                const originalIcon = icon ? icon.textContent : '📋';
+
+                if (label) label.textContent = 'Másolva!';
+                if (icon) icon.textContent = '✓';
+                btn.classList.add('copied');
+
+                showSuccessBubble('Szöveg sikeresen másolva a vágólapra!');
+
+                setTimeout(function() {
+                    if (label) label.textContent = originalLabel;
+                    if (icon) icon.textContent = originalIcon;
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Nem sikerült a másolás: ', err);
+            });
+        });
+    });
+
+    function showSuccessBubble(message) {
+        // Remove existing if any
+        document.querySelectorAll('.copy-success-bubble').forEach(el => el.remove());
+
+        const bubble = document.createElement('div');
+        bubble.className = 'copy-success-bubble';
+        bubble.innerHTML = '✨ ' + message;
+        document.body.appendChild(bubble);
+
+        setTimeout(function() {
+            bubble.classList.add('fade-out');
+            setTimeout(function() {
+                bubble.remove();
+            }, 300);
+        }, 2200);
+    }
+
+    /* ============ INTERAKTÍV CHECKLIST ============ */
+    document.querySelectorAll('.checklist ul li').forEach(function(li) {
+        li.addEventListener('click', function() {
+            li.classList.toggle('checked');
+        });
+    });
+
+})();
+</script>
+
+</body>
+</html>
