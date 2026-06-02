@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kezdőlap · Eljárási Térkép</title>
+<meta name="description" content="Szülői kötelező védőoltási eljárási térkép és információs oldal. Bizonyítható, jogszerű írásos együttműködés szülőknek.">
+<meta name="theme-color" content="#0F0F0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles-v2.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Ugrás a tartalomra</a>
+
+
+<header class="hdr" role="banner">
+  <div class="container hdr__inner">
+    <a href="index.html" class="hdr__brand" aria-label="Eljárási Térkép - kezdőlap">
+      <span class="hdr__brand-glyph" aria-hidden="true">É</span>
+      <span>Eljárási Térkép</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Fő navigáció">
+      <a href="index.html" aria-current="page">Kezdőlap</a>
+      <a href="index.html#events" >Eseménytérkép</a>
+      <a href="alapkeret.html" >Alapkeret</a>
+      <a href="akcioterv.html" >Akcióterv</a>
+      <a href="alapmondatok.html" >Alapmondatok</a>
+      <a href="tudastar.html" >Tudástár</a>
+    </nav>
+    <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-nav" class="is-hidden" style="background: var(--color-surface-2); border-bottom: 1px solid var(--color-border); padding: var(--sp-4);">
+    <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+      <a href="index.html" style="color: var(--color-text); font-weight: 500;">Kezdőlap</a>
+      <a href="index.html#events" style="color: var(--color-text); font-weight: 500;">Eseménytérkép</a>
+      <a href="alapkeret.html" style="color: var(--color-text); font-weight: 500;">Alapkeret</a>
+      <a href="akcioterv.html" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
+      <a href="alapmondatok.html" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
+      <a href="tudastar.html" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('mobile-nav');
+      m.classList.toggle('is-hidden');
+    }
+  </script>
+</header>
+
+
+<main id="main">
+
+<section class="ds-hero" aria-labelledby="ds-title" style="position: relative; overflow: hidden; padding-block: clamp(4rem, 12vw, 8rem) clamp(3rem, 8vw, 6rem);">
+  <!-- SaaS style background glowing orbs -->
+  <div style="position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 80vw; height: 80vw; max-width: 600px; max-height: 600px; background: radial-gradient(circle, var(--color-accent-soft) 0%, transparent 70%); opacity: 0.5; z-index: -1; pointer-events: none; mix-blend-mode: screen;"></div>
+  
+  <div class="container ds-hero__inner" style="text-align: center; max-width: 850px; display: flex; flex-direction: column; align-items: center; gap: var(--sp-5);">
+    
+    <!-- Top badge (SaaS style) -->
+    <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 100px; background: var(--color-surface-2); border: 1px solid var(--color-border); font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--color-text-muted);">
+      <span class="status-pill" style="display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 100px; background: var(--color-success-bg); color: var(--color-success); font-weight: 600; font-size: 10px; letter-spacing: 0.5px;">
+        <span class="pulse-dot" aria-hidden="true" style="margin-right: 4px;"></span>AKTÍV
+      </span>
+      <span>Verzió 2.0.0</span>
+    </div>
+
+    <h1 id="ds-title" class="ds-hero__title" style="font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1.1; margin: 0; font-weight: 800; letter-spacing: -0.03em; background: linear-gradient(135deg, var(--color-text) 30%, var(--color-accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Oltásmentesítés gyakorlatban
+    </h1>
+    
+    <p class="ds-hero__sub" style="margin-inline: auto; font-size: clamp(1.125rem, 2.5vw, 1.375rem); line-height: 1.6; color: var(--color-text-muted); max-width: 60ch; margin-bottom: var(--sp-2);">
+      Hogyan folytassunk jogszerű, írásbeli és igazolható kommunikációt az egészségügyi és hatósági szereplőkkel? Teljes körű eljárási útmutató szülőknek.
+    </p>
+    
+    <div class="btn-row" style="justify-content: center; gap: var(--sp-4); margin-top: var(--sp-2);">
+      <a href="#events" class="btn btn--primary" style="padding: 14px 28px; font-size: 1rem; border-radius: 100px; font-weight: 600; box-shadow: 0 4px 24px -6px var(--color-accent);">Eseménytérkép megnyitása</a>
+      <a href="alapmondatok.html" class="btn btn--secondary" style="padding: 14px 28px; font-size: 1rem; border-radius: 100px; font-weight: 600;">Másolható levelek</a>
+    </div>
+  </div>
+</section>
+
+<aside class="disclaimer" role="note" aria-label="Fontos jogi figyelmeztetés" style="margin-top: -1px; position: relative; z-index: 2; background: oklch(0.15 0.02 240); border-top: 1px solid oklch(0.25 0.04 240); border-bottom: 1px solid oklch(0.25 0.04 240);">
+  <div class="container disclaimer__inner" style="max-width: 900px; margin-inline: auto;">
+    <span class="disclaimer__glyph" aria-hidden="true" style="background: var(--color-accent); color: var(--color-text-inverse);">!</span>
+    <p class="disclaimer__body" style="color: oklch(0.85 0.02 240);"><strong>Ez az oldal nem nyújt jogi tanácsadást.</strong> A leírt eljárások és javasolt mondatok tájékoztató jellegűek, nem helyettesítik az ügyvédi szakvéleményt. Minden hivatalos levelezést írásban, igazolható módon folytasson.</p>
+  </div>
+</aside>
+
+<section class="ds-section" id="events" aria-labelledby="events-section-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// ESEMÉNYEK ÉS LÉPÉSEK</span>
+      <h2 id="events-section-title" class="ds-section__title">Eseménytérkép</h2>
+      <p class="ds-section__desc">Keresd ki az aktuális élethelyzetednek megfelelő eseményt. Szűrd a lépéseket kategória, eljáró intézmény vagy súlyosság szerint.</p>
+    </header>
+
+    <!-- Search & Filter Controls -->
+    <div class="filter-section">
+      <div class="search-box">
+        <input type="text" id="search-input" class="search-box__input" placeholder="Keresés az események címe, leírása vagy száma alapján (pl. '2.2', 'védőnő', 'bírság')...">
+      </div>
+      
+      <div class="filter-group">
+        <span class="filter-group__label">Kategóriák</span>
+        <div class="filter-buttons">
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-val="Tájékoztatás">Tájékoztatás</button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-val="Iratkezelés">Iratkezelés</button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-val="Eljárás">Eljárás</button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-val="Kommunikáció">Kommunikáció</button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-val="Határidő">Határidő</button>
+          <button type="button" class="filter-btn" data-filter-type="category" data-filter-val="Adatvédelem">Adatvédelem</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-group__label">Intézmények</span>
+        <div class="filter-buttons">
+          <button type="button" class="filter-btn" data-filter-type="institution" data-filter-val="Védőnő">Védőnő</button>
+          <button type="button" class="filter-btn" data-filter-type="institution" data-filter-val="Háziorvos / Iskolaorvos">Háziorvos / Iskolaorvos</button>
+          <button type="button" class="filter-btn" data-filter-type="institution" data-filter-val="NNK · Népegészségügy">NNK · Népegészségügy</button>
+          <button type="button" class="filter-btn" data-filter-type="institution" data-filter-val="Családsegítő">Családsegítő</button>
+          <button type="button" class="filter-btn" data-filter-type="institution" data-filter-val="Gyámhivatal">Gyámhivatal</button>
+          <button type="button" class="filter-btn" data-filter-type="institution" data-filter-val="NAV">NAV</button>
+          <button type="button" class="filter-btn" data-filter-type="institution" data-filter-val="Bíróság">Bíróság</button>
+          <button type="button" class="filter-btn" data-filter-type="institution" data-filter-val="Iskola / Óvoda">Iskola / Óvoda</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-group__label">Súlyosság</span>
+        <div class="filter-buttons">
+          <button type="button" class="filter-btn" data-filter-type="severity" data-filter-val="Alacsony">Alacsony</button>
+          <button type="button" class="filter-btn" data-filter-type="severity" data-filter-val="Közepes">Közepes</button>
+          <button type="button" class="filter-btn" data-filter-type="severity" data-filter-val="Magas">Magas</button>
+          <button type="button" class="filter-btn" data-filter-type="severity" data-filter-val="Kritikus">Kritikus</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Grid -->
+    <div class="event-grid">
+      
+      <a href="event-1-1.html" class="ev-card" data-categories="Eljárás,Tájékoztatás" data-institution="Háziorvos / Iskolaorvos" data-severity="Kritikus">
+        <span class="ev-card__id">§ 1.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">Háziorvos / Iskolaorvos</span>
+          <span class="badge badge--cat">Eljárás</span><span class="badge badge--cat">Tájékoztatás</span>
+        </div>
+        <h3 class="ev-card__title">BCG-oltást akarnak beadni a szülő hozzájárulása nélkül vagy nyomás alatt</h3>
+        <p class="ev-card__desc">A kórház automatikusan beadná a BCG-t. A szülő előzetesen jelzi, hogy teljes körű tájékoztatás nélkül nem járul hozzá.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-2-1.html" class="ev-card" data-categories="Kommunikáció" data-institution="Védőnő" data-severity="Közepes">
+        <span class="ev-card__id">§ 2.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">Védőnő</span>
+          <span class="badge badge--cat">Kommunikáció</span>
+        </div>
+        <h3 class="ev-card__title">a védőnő telefonon, e-mailben, Messengerben vagy szóban sürget</h3>
+        <p class="ev-card__desc">A védőnő telefonon hívogat. Időpontot akar egyeztetni.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-2-2.html" class="ev-card" data-categories="Iratkezelés,Határidő" data-institution="Védőnő" data-severity="Magas">
+        <span class="ev-card__id">§ 2.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Védőnő</span>
+          <span class="badge badge--cat">Iratkezelés</span><span class="badge badge--cat">Határidő</span>
+        </div>
+        <h3 class="ev-card__title">a védőnő felszólítást / pótoltási értesítőt küld</h3>
+        <p class="ev-card__desc">Pótoltási időpontot ad. Az időpont túl közeli.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-2-3.html" class="ev-card" data-categories="Eljárás" data-institution="Védőnő" data-severity="Magas">
+        <span class="ev-card__id">§ 2.3</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Védőnő</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">a védőnő jelzést tesz</h3>
+        <p class="ev-card__desc">népegészségügynek; gyermekjóléti szolgálatnak;</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-3-1.html" class="ev-card" data-categories="Adatvédelem,Iratkezelés" data-institution="Iskola / Óvoda" data-severity="Közepes">
+        <span class="ev-card__id">§ 3.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">Iskola / Óvoda</span>
+          <span class="badge badge--cat">Adatvédelem</span><span class="badge badge--cat">Iratkezelés</span>
+        </div>
+        <h3 class="ev-card__title">iskola vagy óvoda oltási könyvet kér</h3>
+        <p class="ev-card__desc">Beiratkozáskor oltási könyvet kérnek. Másolatot kérnek.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-3-2.html" class="ev-card" data-categories="Kommunikáció,Tájékoztatás" data-institution="Iskola / Óvoda" data-severity="Közepes">
+        <span class="ev-card__id">§ 3.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">Iskola / Óvoda</span>
+          <span class="badge badge--cat">Kommunikáció</span><span class="badge badge--cat">Tájékoztatás</span>
+        </div>
+        <h3 class="ev-card__title">KRÉTA-üzenet, e-mail vagy telefonos értesítés érkezik iskolai oltásról</h3>
+        <p class="ev-card__desc">Előző este vagy néhány nappal korábban szólnak. Nem világos, pontosan milyen oltást adnának.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-3-3.html" class="ev-card" data-categories="Tájékoztatás,Kommunikáció" data-institution="Háziorvos / Iskolaorvos" data-severity="Közepes">
+        <span class="ev-card__id">§ 3.3</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">Háziorvos / Iskolaorvos</span>
+          <span class="badge badge--cat">Tájékoztatás</span><span class="badge badge--cat">Kommunikáció</span>
+        </div>
+        <h3 class="ev-card__title">iskolaorvos / védőnő nem válaszol szakmai kérdésekre</h3>
+        <p class="ev-card__desc">Azt mondják, „nem kompetensek”. Azt mondják, „csak végrehajtják”.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-4-1.html" class="ev-card" data-categories="Tájékoztatás" data-institution="Háziorvos / Iskolaorvos" data-severity="Magas">
+        <span class="ev-card__id">§ 4.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Háziorvos / Iskolaorvos</span>
+          <span class="badge badge--cat">Tájékoztatás</span>
+        </div>
+        <h3 class="ev-card__title">az orvos nem ad teljes körű, egyéniesített tájékoztatást</h3>
+        <p class="ev-card__desc">Csak általános betegtájékoztatót küld. Linket küld.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-4-2.html" class="ev-card" data-categories="Iratkezelés" data-institution="Háziorvos / Iskolaorvos" data-severity="Magas">
+        <span class="ev-card__id">§ 4.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Háziorvos / Iskolaorvos</span>
+          <span class="badge badge--cat">Iratkezelés</span>
+        </div>
+        <h3 class="ev-card__title">az orvos nem adja ki a teljes betegkartont</h3>
+        <p class="ev-card__desc">Csak részleges dokumentációt ad. Csak időpontlistát ad.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-4-3.html" class="ev-card" data-categories="Eljárás" data-institution="Háziorvos / Iskolaorvos" data-severity="Magas">
+        <span class="ev-card__id">§ 4.3</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Háziorvos / Iskolaorvos</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">olthatóságot állapítanak meg dokumentált vizsgálat nélkül</h3>
+        <p class="ev-card__desc">Az orvos nem látja a gyermeket. Nem vizsgálja meg.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-5-1.html" class="ev-card" data-categories="Eljárás" data-institution="Háziorvos / Iskolaorvos" data-severity="Közepes">
+        <span class="ev-card__id">§ 5.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">Háziorvos / Iskolaorvos</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">a szülő halasztást kér</h3>
+        <p class="ev-card__desc">A gyermek kivizsgálás alatt áll. Korábbi oltás után panasz volt.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-5-2.html" class="ev-card" data-categories="Eljárás" data-institution="NNK · Népegészségügy" data-severity="Közepes">
+        <span class="ev-card__id">§ 5.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">a hatóság mentesítési eljárásba akarja terelni az ügyet</h3>
+        <p class="ev-card__desc">A szülő tájékoztatást kér. A hatóság azt válaszolja: kérjen mentesítést.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-5-3.html" class="ev-card" data-categories="Eljárás" data-institution="NNK · Népegészségügy" data-severity="Közepes">
+        <span class="ev-card__id">§ 5.3</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">oltási szaktanácsadóhoz irányítják a szülőt</h3>
+        <p class="ev-card__desc">A védőnő, orvos vagy népegészségügy oltási tanácsadót javasol. Nem világos, kötelező-e.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-6-1.html" class="ev-card" data-categories="Eljárás" data-institution="Háziorvos / Iskolaorvos" data-severity="Kritikus">
+        <span class="ev-card__id">§ 6.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">Háziorvos / Iskolaorvos</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">korábbi oltás után tünet jelentkezett</h3>
+        <p class="ev-card__desc">Ekcéma, láz, görcs, allergiás tünet, neurológiai tünet, regresszió vagy más panasz jelentkezik. Az orvos nem veszi komolyan.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-6-2.html" class="ev-card" data-categories="Tájékoztatás" data-institution="Háziorvos / Iskolaorvos" data-severity="Közepes">
+        <span class="ev-card__id">§ 6.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">Háziorvos / Iskolaorvos</span>
+          <span class="badge badge--cat">Tájékoztatás</span>
+        </div>
+        <h3 class="ev-card__title">nem azonosítható a beadott vagy beadandó oltóanyag</h3>
+        <p class="ev-card__desc">Nincs matrica. Nincs tételszám.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-7-1.html" class="ev-card" data-categories="Eljárás" data-institution="NNK · Népegészségügy" data-severity="Kritikus">
+        <span class="ev-card__id">§ 7.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">a népegészségügy eljárást indít</h3>
+        <p class="ev-card__desc">A védőnő jelzése alapján megindul az eljárás. Felszólítás érkezik.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-7-2.html" class="ev-card" data-categories="Tájékoztatás" data-institution="NNK · Népegészségügy" data-severity="Magas">
+        <span class="ev-card__id">§ 7.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Tájékoztatás</span>
+        </div>
+        <h3 class="ev-card__title">a népegészségügy nem válaszol a szakmai kérdésekre</h3>
+        <p class="ev-card__desc">Csak jogszabályt idéz. Általános választ ad.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-7-3.html" class="ev-card" data-categories="Iratkezelés" data-institution="NNK · Népegészségügy" data-severity="Kritikus">
+        <span class="ev-card__id">§ 7.3</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Iratkezelés</span>
+        </div>
+        <h3 class="ev-card__title">hibás határozat vagy hibás tényállás</h3>
+        <p class="ev-card__desc">Rossz oltástípus szerepel. Más gyermek neve marad a határozatban.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-8-1.html" class="ev-card" data-categories="Kommunikáció" data-institution="Családsegítő" data-severity="Közepes">
+        <span class="ev-card__id">§ 8.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">Családsegítő</span>
+          <span class="badge badge--cat">Kommunikáció</span>
+        </div>
+        <h3 class="ev-card__title">a családsegítő telefonon jelentkezik</h3>
+        <p class="ev-card__desc">Időpontot kér. Lakásra menne.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-8-2.html" class="ev-card" data-categories="Eljárás" data-institution="Családsegítő" data-severity="Magas">
+        <span class="ev-card__id">§ 8.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Családsegítő</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">környezettanulmány / családlátogatás</h3>
+        <p class="ev-card__desc">Bejelentés nélkül érkeznek. Lakásba akarnak bemenni.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-8-3.html" class="ev-card" data-categories="Iratkezelés" data-institution="Családsegítő" data-severity="Magas">
+        <span class="ev-card__id">§ 8.3</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Családsegítő</span>
+          <span class="badge badge--cat">Iratkezelés</span>
+        </div>
+        <h3 class="ev-card__title">jegyzőkönyv, együttműködési megállapodás, gondozási terv</h3>
+        <p class="ev-card__desc">Aláíratnak egy dokumentumot. Nem adnak időt elolvasni.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-9-1.html" class="ev-card" data-categories="Eljárás" data-institution="Gyámhivatal" data-severity="Magas">
+        <span class="ev-card__id">§ 9.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Gyámhivatal</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">gyámhivatali idézés érkezik</h3>
+        <p class="ev-card__desc">Idézés érkezik tárgyalásra. Nem világos, milyen ügyben.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-9-2.html" class="ev-card" data-categories="Iratkezelés" data-institution="Gyámhivatal" data-severity="Kritikus">
+        <span class="ev-card__id">§ 9.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">Gyámhivatal</span>
+          <span class="badge badge--cat">Iratkezelés</span>
+        </div>
+        <h3 class="ev-card__title">iratbetekintés nélkül tartanának tárgyalást</h3>
+        <p class="ev-card__desc">A szülő iratbetekintést kér. Nem válaszolnak.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-9-3.html" class="ev-card" data-categories="Eljárás" data-institution="Gyámhivatal" data-severity="Kritikus">
+        <span class="ev-card__id">§ 9.3</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">Gyámhivatal</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">védelembe vételi eljárás indul</h3>
+        <p class="ev-card__desc">A gyámhivatal gyermekveszélyeztetésre hivatkozik. Az alap az oltás elmaradása.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-9-4.html" class="ev-card" data-categories="Kommunikáció" data-institution="Gyámhivatal" data-severity="Kritikus">
+        <span class="ev-card__id">§ 9.4</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">Gyámhivatal</span>
+          <span class="badge badge--cat">Kommunikáció</span>
+        </div>
+        <h3 class="ev-card__title">a gyermeket szülő nélkül hallgatnák meg</h3>
+        <p class="ev-card__desc">Iskolában beszélnének a gyermekkel. Családsegítő külön kérdezné.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-10-1.html" class="ev-card" data-categories="Iratkezelés" data-institution="NNK · Népegészségügy" data-severity="Magas">
+        <span class="ev-card__id">§ 10.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Iratkezelés</span>
+        </div>
+        <h3 class="ev-card__title">hibás vagy vitatható kézbesítés</h3>
+        <p class="ev-card__desc">A levelet bedobják a postaládába. Tértivevényes iratot nem személyesen kézbesítenek.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-10-2.html" class="ev-card" data-categories="Határidő" data-institution="NNK · Népegészségügy" data-severity="Kritikus">
+        <span class="ev-card__id">§ 10.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Határidő</span>
+        </div>
+        <h3 class="ev-card__title">határidő vagy időpont már elmúlt</h3>
+        <p class="ev-card__desc">A levélben szereplő időpont az átvételkor már elmúlt. A tárgyalás túl közeli.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-10-3.html" class="ev-card" data-categories="Iratkezelés" data-institution="NNK · Népegészségügy" data-severity="Magas">
+        <span class="ev-card__id">§ 10.3</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Iratkezelés</span>
+        </div>
+        <h3 class="ev-card__title">iratbetekintési kérelem</h3>
+        <p class="ev-card__desc">Mindig, ha: védőnő jelzett;</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-11-1.html" class="ev-card" data-categories="Eljárás" data-institution="NAV" data-severity="Kritikus">
+        <span class="ev-card__id">§ 11.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">NAV</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">NAV-felszólítás érkezik</h3>
+        <p class="ev-card__desc">A NAV meghatározott cselekmény teljesítésére szólít fel. Eljárási bírságot helyez kilátásba.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-11-2.html" class="ev-card" data-categories="Eljárás" data-institution="NAV" data-severity="Kritikus">
+        <span class="ev-card__id">§ 11.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">NAV</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">a NAV bírságot szab ki</h3>
+        <p class="ev-card__desc">Első bírság. Ismételt bírság.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-12-1.html" class="ev-card" data-categories="Eljárás" data-institution="Bíróság" data-severity="Kritikus">
+        <span class="ev-card__id">§ 12.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">Bíróság</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">közigazgatási per indul</h3>
+        <p class="ev-card__desc">népegészségügyi határozat után; gyámhivatali határozat után;</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-12-2.html" class="ev-card" data-categories="Kommunikáció" data-institution="Bíróság" data-severity="Kritikus">
+        <span class="ev-card__id">§ 12.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">Bíróság</span>
+          <span class="badge badge--cat">Kommunikáció</span>
+        </div>
+        <h3 class="ev-card__title">bírósági tárgyalás</h3>
+        <p class="ev-card__desc">védirat; hatósági bizonyítékok;</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-13-1.html" class="ev-card" data-categories="Eljárás" data-institution="NNK · Népegészségügy" data-severity="Magas">
+        <span class="ev-card__id">§ 13.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">a gyermek külföldön született vagy külföldi kapcsolódása van</h3>
+        <p class="ev-card__desc">Külföldön nem volt kötelező az oltás. A gyermeknek külföldi lakcíme van.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+
+      <a href="event-14-1.html" class="ev-card" data-categories="Adatvédelem" data-institution="NNK · Népegészségügy" data-severity="Magas">
+        <span class="ev-card__id">§ 14.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">NNK · Népegészségügy</span>
+          <span class="badge badge--cat">Adatvédelem</span>
+        </div>
+        <h3 class="ev-card__title">egészségügyi adat kerül más szervhez</h3>
+        <p class="ev-card__desc">Védőnő adatot ad családsegítőnek. Iskola adatot ad védőnőnek.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+      
+      
+      <div id="no-results" class="no-results is-hidden">
+        Sajnos nincs a keresési feltételeknek megfelelő esemény. Próbáld más szűrőkkel vagy kulcsszavakkal!
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" id="categories" aria-labelledby="cat-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// TÉMAKÖRÖK</span>
+      <h2 id="cat-title" class="ds-section__title">Kategóriák</h2>
+      <p class="ds-section__desc">Kategóriák szerinti szűréshez kattints az alábbi csempék egyikére.</p>
+    </header>
+
+    <div class="cat-grid">
+      <a href="#category-Tájékoztatás" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">T</span>
+        <span class="cat-tile__name">Tájékoztatás</span>
+        <span class="cat-tile__count">6</span>
+      </a>
+      <a href="#category-Iratkezelés" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">I</span>
+        <span class="cat-tile__name">Iratkezelés</span>
+        <span class="cat-tile__count">8</span>
+      </a>
+      <a href="#category-Eljárás" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">E</span>
+        <span class="cat-tile__name">Eljárás</span>
+        <span class="cat-tile__count">15</span>
+      </a>
+      <a href="#category-Kommunikáció" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">K</span>
+        <span class="cat-tile__name">Kommunikáció</span>
+        <span class="cat-tile__count">6</span>
+      </a>
+      <a href="#category-Határidő" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">H</span>
+        <span class="cat-tile__name">Határidő</span>
+        <span class="cat-tile__count">2</span>
+      </a>
+      <a href="#category-Adatvédelem" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">A</span>
+        <span class="cat-tile__name">Adatvédelem</span>
+        <span class="cat-tile__count">2</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" id="institutions" aria-labelledby="ins-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// SZEREPLŐK</span>
+      <h2 id="ins-title" class="ds-section__title">Intézmények</h2>
+      <p class="ds-section__desc">Az eljárás résztvevői és feladatköreik. Kattints az intézmény nevére az ahhoz kapcsolódó események szűréséhez.</p>
+    </header>
+
+    <div class="ins-grid">
+      <a href="#institution-Védőnő" class="ins-tile" style="text-decoration: none; color: inherit;">
+        <span class="ins-tile__name">Védőnő</span>
+        <span class="ins-tile__role">Családlátogatás, oltási nyomon követés, jelzés a népegészségügy felé.</span>
+      </a>
+      <a href="#institution-Háziorvos / Iskolaorvos" class="ins-tile" style="text-decoration: none; color: inherit;">
+        <span class="ins-tile__name">Háziorvos / Iskolaorvos</span>
+        <span class="ins-tile__role">Oltás beadása, egyéniesített tájékoztatás, betegkarton vezetése.</span>
+      </a>
+      <a href="#institution-NNK · Népegészségügy" class="ins-tile" style="text-decoration: none; color: inherit;">
+        <span class="ins-tile__name">NNK · Népegészségügy</span>
+        <span class="ins-tile__role">Hatósági eljárás, felszólítás, határozat, bírság.</span>
+      </a>
+      <a href="#institution-Családsegítő" class="ins-tile" style="text-decoration: none; color: inherit;">
+        <span class="ins-tile__name">Családsegítő</span>
+        <span class="ins-tile__role">Környezettanulmány, jelzés a gyámhivatalnak, gondozási terv.</span>
+      </a>
+      <a href="#institution-Gyámhivatal" class="ins-tile" style="text-decoration: none; color: inherit;">
+        <span class="ins-tile__name">Gyámhivatal</span>
+        <span class="ins-tile__role">Védelembe vétel, ideiglenes hatályú elhelyezés, határozat.</span>
+      </a>
+      <a href="#institution-NAV" class="ins-tile" style="text-decoration: none; color: inherit;">
+        <span class="ins-tile__name">NAV</span>
+        <span class="ins-tile__role">Eljárási bírság, végrehajtás, behajtás.</span>
+      </a>
+      <a href="#institution-Bíróság" class="ins-tile" style="text-decoration: none; color: inherit;">
+        <span class="ins-tile__name">Bíróság</span>
+        <span class="ins-tile__role">Közigazgatási per, azonnali jogvédelem, jogerős döntés.</span>
+      </a>
+      <a href="#institution-Iskola / Óvoda" class="ins-tile" style="text-decoration: none; color: inherit;">
+        <span class="ins-tile__name">Iskola / Óvoda</span>
+        <span class="ins-tile__role">Beiratkozás, KRÉTA-üzenet, kampányoltás szervezése.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT AND LINKS SECTION -->
+<section class="ds-section" aria-labelledby="support-links-title" style="background: var(--color-surface-2); border-top: 1px solid var(--color-border); margin-top: var(--sp-6);">
+  <div class="container">
+    <h2 id="support-links-title" class="sr-only">Hasznos linkek és Támogatás</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--sp-6);">
+      
+      <!-- Oszlop 1: Hasznos linkek -->
+      <div style="display: flex; flex-direction: column; gap: var(--sp-4);">
+        <h3 class="h4" style="margin: 0; color: var(--color-text);">Hasznos linkek</h3>
+        
+        <a href="https://www.facebook.com/groups/1997084810767425" target="_blank" rel="noopener noreferrer" class="ins-tile" style="text-decoration: none; color: inherit; align-items: center; display: flex; padding: var(--sp-3) var(--sp-4); gap: var(--sp-3);">
+          <div style="flex: 1;">
+            <span class="ins-tile__name" style="font-size: var(--fs-small);">Soha többé kötelező oltás mozgalom</span>
+            <span class="ins-tile__role">Facebook csoport</span>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-text-muted);"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+
+        <a href="https://www.facebook.com/groups/gyerekoltasok/" target="_blank" rel="noopener noreferrer" class="ins-tile" style="text-decoration: none; color: inherit; align-items: center; display: flex; padding: var(--sp-3) var(--sp-4); gap: var(--sp-3);">
+          <div style="flex: 1;">
+            <span class="ins-tile__name" style="font-size: var(--fs-small);">Oltás mellékhatások gyerekeknél</span>
+            <span class="ins-tile__role">Facebook csoport</span>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-text-muted);"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+
+        <a href="https://bellatrixprogram.hu/" target="_blank" rel="noopener noreferrer" class="ins-tile" style="text-decoration: none; color: inherit; align-items: center; display: flex; padding: var(--sp-3) var(--sp-4); gap: var(--sp-3);">
+          <div style="flex: 1;">
+            <span class="ins-tile__name" style="font-size: var(--fs-small);">BellaTrix Program</span>
+            <span class="ins-tile__role">Weboldal</span>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-text-muted);"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+
+      <!-- Oszlop 2: Támogatás -->
+      <div style="display: flex; flex-direction: column; gap: var(--sp-4);">
+        <h3 class="h4" style="margin: 0; color: var(--color-text);">Támogasd az ügyünk!</h3>
+        <p style="color: var(--color-text-muted); font-size: var(--fs-small); line-height: 1.6; margin: 0;">Ha szeretnéd támogatni a harcoló szülőket, akkor azt az alábbi módon tudod megtenni:</p>
+        
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--r-md); padding: var(--sp-4); display: flex; flex-direction: column; gap: var(--sp-4); box-shadow: var(--shadow-sm); height: 100%;">
+          
+          <div>
+            <div style="font-size: var(--fs-micro); color: var(--color-text-subtle); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-bottom: 2px;">Kedvezményezett</div>
+            <div style="font-weight: 600; color: var(--color-text);">Lisai Elek János Alapítvány</div>
+          </div>
+          
+          <div>
+            <div style="font-size: var(--fs-micro); color: var(--color-text-subtle); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-bottom: 6px;">IBAN / bankszámlaszám</div>
+            <div style="display: flex; gap: var(--sp-2); align-items: center; flex-wrap: wrap;">
+              <code id="iban-szam" style="font-family: var(--font-mono); font-size: clamp(0.9rem, 2vw, 1.05rem); color: var(--color-accent); font-weight: 700; background: var(--color-surface-2); padding: 6px 10px; border-radius: var(--r-sm); border: 1px solid var(--color-border); margin: 0; flex-grow: 1;">HU68120231320183245100100001</code>
+              <button type="button" class="btn btn--secondary btn--sm copy-btn" data-copy-target="iban-szam" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; margin: 0; min-width: 100px; justify-content: center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span data-copy-label>Másolás</span>
+              </button>
+            </div>
+          </div>
+          
+          <div>
+            <div style="font-size: var(--fs-micro); color: var(--color-text-subtle); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-bottom: 2px;">Közlemény</div>
+            <div style="font-weight: 600; color: var(--color-text);">BellaTrix</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer class="ftr" role="contentinfo">
+  <div class="container">
+    <div class="ftr__grid">
+      <div class="ftr__col ftr__about">
+        <h4>Az oldalról</h4>
+        <p>Tájékoztató jellegű, közérthető nyelven írt eljárási útmutató szülőknek, kötelező védőoltási ügyekre. Nem minősül jogi tanácsadásnak.</p>
+        <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>AKTÍV</span>
+      </div>
+      <div class="ftr__col">
+        <h4>Tartalom</h4>
+        <ul>
+          <li><a href="index.html#events">Események</a></li>
+          <li><a href="alapkeret.html">Alapkeret</a></li>
+          <li><a href="akcioterv.html">Akcióterv</a></li>
+          <li><a href="alapmondatok.html">Alapmondatok</a></li>
+          <li><a href="tudastar.html">Tudástár</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Segítség</h4>
+        <ul>
+          <li><a href="index.html#categories">Kategóriák</a></li>
+          <li><a href="index.html#institutions">Intézmények</a></li>
+          <li><a href="tudastar.html#sulyossag">Súlyosságok</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Verzió</h4>
+        <ul>
+          <li><span class="mono" style="color: var(--color-text-subtle);">v2.0.0</span></li>
+          <li><span class="mono" style="color: var(--color-text-subtle);">Build 2026.06.02</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bottom">
+      <span>© 2026 Eljárási Térkép</span>
+      <span>Utolsó frissítés: 2026-06-02</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="script-v3.js"></script>
+</body>
+</html>

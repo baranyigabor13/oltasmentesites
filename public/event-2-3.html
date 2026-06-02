@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>§ 2.3 a védőnő jelzést tesz · Eljárási Térkép</title>
+<meta name="description" content="Szülői kötelező védőoltási eljárási térkép és információs oldal. Bizonyítható, jogszerű írásos együttműködés szülőknek.">
+<meta name="theme-color" content="#0F0F0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles-v2.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Ugrás a tartalomra</a>
+
+
+<header class="hdr" role="banner">
+  <div class="container hdr__inner">
+    <a href="index.html" class="hdr__brand" aria-label="Eljárási Térkép - kezdőlap">
+      <span class="hdr__brand-glyph" aria-hidden="true">É</span>
+      <span>Eljárási Térkép</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Fő navigáció">
+      <a href="index.html" >Kezdőlap</a>
+      <a href="index.html#events" aria-current="page">Eseménytérkép</a>
+      <a href="alapkeret.html" >Alapkeret</a>
+      <a href="akcioterv.html" >Akcióterv</a>
+      <a href="alapmondatok.html" >Alapmondatok</a>
+      <a href="tudastar.html" >Tudástár</a>
+    </nav>
+    <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-nav" class="is-hidden" style="background: var(--color-surface-2); border-bottom: 1px solid var(--color-border); padding: var(--sp-4);">
+    <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+      <a href="index.html" style="color: var(--color-text); font-weight: 500;">Kezdőlap</a>
+      <a href="index.html#events" style="color: var(--color-text); font-weight: 500;">Eseménytérkép</a>
+      <a href="alapkeret.html" style="color: var(--color-text); font-weight: 500;">Alapkeret</a>
+      <a href="akcioterv.html" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
+      <a href="alapmondatok.html" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
+      <a href="tudastar.html" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('mobile-nav');
+      m.classList.toggle('is-hidden');
+    }
+  </script>
+</header>
+
+
+<main id="main">
+
+<section class="ds-section">
+  <div class="container">
+    <article class="ev-detail">
+      <header class="ev-detail__header">
+        <nav class="ev-detail__crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Kezdőlap</a> · <a href="index.html#events">Események</a> · <span aria-current="page">§ 2.3</span>
+        </nav>
+        <h1 class="ev-detail__title">a védőnő jelzést tesz</h1>
+        <div class="ev-detail__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas súlyosság</span>
+          <span class="badge badge--ins">Védőnő</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+      </header>
+
+      <div class="ev-detail__body">
+        
+        <section class="ev-detail__section" aria-labelledby="ed-1">
+          <div class="ev-detail__section-num" aria-hidden="true">01</div>
+          <div>
+            <h3 id="ed-1">Hová tehet jelzést?</h3>
+            
+            <ul class="ev-detail__list">
+              <li>népegészségügynek;</li>
+<li>gyermekjóléti szolgálatnak;</li>
+<li>családsegítőnek;</li>
+<li>gyámhivatalnak;</li>
+<li>iskolának;</li>
+<li>háziorvosnak vagy iskolaorvosnak.</li>
+            </ul>
+            
+          </div>
+        </section>
+          
+
+        <section class="ev-detail__section" aria-labelledby="ed-2">
+          <div class="ev-detail__section-num" aria-hidden="true">02</div>
+          <div>
+            <h3 id="ed-2">Fő kockázat</h3>
+            
+            <ul class="ev-detail__list">
+              <li>A jelzésben szerepelhet:</li>
+<li>„oltásmegtagadás”;</li>
+<li>„együttműködés hiánya”;</li>
+<li>„szülő nem elérhető”;</li>
+<li>„szülő nem válaszol”;</li>
+<li>„szülő nem veszi át a leveleket”;</li>
+<li>„gyermek veszélyeztetése”.</li>
+            </ul>
+            
+          </div>
+        </section>
+          
+
+        <section class="ev-detail__section" aria-labelledby="ed-3">
+          <div class="ev-detail__section-num" aria-hidden="true">03</div>
+          <div>
+            <h3 id="ed-3">Mit kell kikérni?</h3>
+            
+            <ul class="ev-detail__list">
+              <li>a jelzés teljes másolatát;</li>
+<li>a jelzés dátumát;</li>
+<li>a címzett szerv nevét;</li>
+<li>a jelzés jogalapját;</li>
+<li>az átadott adatok körét;</li>
+<li>az adatkezelési jogalapot;</li>
+<li>a jelzés mellékleteit;</li>
+<li>azt, hogy a védőnő milyen iratok alapján állította a tényeket.</li>
+            </ul>
+            
+          </div>
+        </section>
+          
+
+        <section class="ev-detail__section" aria-labelledby="ed-4">
+          <div class="ev-detail__section-num" aria-hidden="true">04</div>
+          <div style="width: 100%;">
+            <h3 id="ed-4">Javasolt mondat</h3>
+            <div class="template-box" data-template>
+              <div class="template-box__head">
+                <span class="template-box__label">Másolható mondat</span>
+                <button type="button" class="copy-btn" data-copy-target="template-text-2-3-4" aria-label="Mondat másolása">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                  <span data-copy-label>Másolás</span>
+                </button>
+              </div>
+              <p class="template-box__text" id="template-text-2-3-4">„Kérem megküldeni, hogy részemről pontosan mely magatartást, mely dátummal, milyen bizonyíték alapján minősítettek oltásmegtagadásnak vagy együttműködés hiányának. Kérem továbbá a megtett jelzés teljes tartalmát és adatkezelési jogalapját.”</p>
+            </div>
+          </div>
+        </section>
+            
+
+        
+        <section class="ev-detail__section" aria-labelledby="ed-related">
+          <div class="ev-detail__section-num" aria-hidden="true">05</div>
+          <div>
+            <h3 id="ed-related">Kapcsolódó események</h3>
+            <div class="related-row">
+              
+              <a href="event-2-1.html" class="ev-card" style="margin-top: var(--sp-2);">
+                <span class="ev-card__id">§ 2.1</span>
+                <div class="ev-card__badges">
+                  <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+                </div>
+                <h3 class="ev-card__title" style="font-size: var(--fs-small); margin-top: var(--sp-1);">a védőnő telefonon, e-mailben, Messengerben vagy szóban sürget</h3>
+                <span class="ev-card__cta" style="margin-top: auto;">Részletek</span>
+              </a>
+                
+
+              <a href="event-2-2.html" class="ev-card" style="margin-top: var(--sp-2);">
+                <span class="ev-card__id">§ 2.2</span>
+                <div class="ev-card__badges">
+                  <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+                </div>
+                <h3 class="ev-card__title" style="font-size: var(--fs-small); margin-top: var(--sp-1);">a védőnő felszólítást / pótoltási értesítőt küld</h3>
+                <span class="ev-card__cta" style="margin-top: auto;">Részletek</span>
+              </a>
+                
+            </div>
+          </div>
+        </section>
+        
+
+      </div>
+    </article>
+  </div>
+</section>
+  
+</main>
+
+
+<footer class="ftr" role="contentinfo">
+  <div class="container">
+    <div class="ftr__grid">
+      <div class="ftr__col ftr__about">
+        <h4>Az oldalról</h4>
+        <p>Tájékoztató jellegű, közérthető nyelven írt eljárási útmutató szülőknek, kötelező védőoltási ügyekre. Nem minősül jogi tanácsadásnak.</p>
+        <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>AKTÍV</span>
+      </div>
+      <div class="ftr__col">
+        <h4>Tartalom</h4>
+        <ul>
+          <li><a href="index.html#events">Események</a></li>
+          <li><a href="alapkeret.html">Alapkeret</a></li>
+          <li><a href="akcioterv.html">Akcióterv</a></li>
+          <li><a href="alapmondatok.html">Alapmondatok</a></li>
+          <li><a href="tudastar.html">Tudástár</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Segítség</h4>
+        <ul>
+          <li><a href="index.html#categories">Kategóriák</a></li>
+          <li><a href="index.html#institutions">Intézmények</a></li>
+          <li><a href="tudastar.html#sulyossag">Súlyosságok</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Verzió</h4>
+        <ul>
+          <li><span class="mono" style="color: var(--color-text-subtle);">v2.0.0</span></li>
+          <li><span class="mono" style="color: var(--color-text-subtle);">Build 2026.06.02</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bottom">
+      <span>© 2026 Eljárási Térkép</span>
+      <span>Utolsó frissítés: 2026-06-02</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="script-v3.js"></script>
+</body>
+</html>

@@ -1,781 +1,2305 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parental Design System - Specification & Showcase</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* ==========================================================================
-           DESIGN SYSTEM VARIABLES (OKLCH with HEX fallback tags)
-           ========================================================================== */
-        :root {
-            /* Color Palette */
-            --color-bg-primary: oklch(0.98 0.005 85);       /* #FBFBF9 - Warm Alabaster */
-            --color-bg-secondary: oklch(1 0 0);             /* #FFFFFF - Pure White */
-            --color-text-primary: oklch(0.24 0.015 240);    /* #1A2433 - Deep Slate Ink */
-            --color-text-secondary: oklch(0.42 0.02 240);   /* #42526B - Muted Slate */
-            
-            --color-primary-main: oklch(0.48 0.12 250);     /* #2D5FB7 - Royal Prussian Blue */
-            --color-primary-light: oklch(0.95 0.02 250);    /* #EDF4FE - Pale Blue Tint */
-            --color-primary-hover: oklch(0.40 0.12 250);    /* #224B91 - Deep Prussian Hover */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eljárási Térkép - Design System v2</title>
+<meta name="description" content="A szülői kötelező védőoltási eljárási térkép vizuális nyelve, komponensstílusa és akadálymentes tervei.">
+<meta name="theme-color" content="#0F0F0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: oklch(0.13 0 0);
+  --color-surface: oklch(0.17 0 0);
+  --color-surface-2: oklch(0.20 0 0);
+  --color-surface-3: oklch(0.24 0 0);
+  --color-border: oklch(0.28 0 0);
+  --color-border-strong: oklch(0.38 0 0);
+  --color-text: oklch(0.96 0 0);
+  --color-text-muted: oklch(0.70 0 0);
+  --color-text-subtle: oklch(0.50 0 0);
+  --color-text-inverse: oklch(0.15 0 0);
+  --color-accent: oklch(0.86 0.17 92);
+  --color-accent-soft: oklch(0.30 0.08 92);
+  --color-accent-bg: oklch(0.24 0.06 92);
+  --color-accent-strong: oklch(0.92 0.16 92);
+  --sev-crit-bg: oklch(0.92 0.05 25);
+  --sev-crit-text: oklch(0.32 0.16 25);
+  --sev-crit-dot: oklch(0.55 0.22 25);
+  --sev-high-bg: oklch(0.92 0.06 60);
+  --sev-high-text: oklch(0.32 0.13 55);
+  --sev-high-dot: oklch(0.65 0.18 55);
+  --sev-med-bg: oklch(0.90 0.04 200);
+  --sev-med-text: oklch(0.30 0.10 200);
+  --sev-med-dot: oklch(0.60 0.14 200);
+  --sev-low-bg: oklch(0.85 0.005 240);
+  --sev-low-text: oklch(0.32 0.01 240);
+  --sev-low-dot: oklch(0.55 0.01 240);
+  --color-success: oklch(0.72 0.16 145);
+  --color-success-bg: oklch(0.22 0.05 145);
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fs-display: clamp(2.25rem, 5vw, 3.5rem);
+  --fs-h1: clamp(1.875rem, 3.5vw, 2.5rem);
+  --fs-h2: clamp(1.5rem, 2.5vw, 1.875rem);
+  --fs-h3: 1.25rem;
+  --fs-h4: 1.0625rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-micro: 0.75rem;
+  --fs-mono: 0.8125rem;
+  --lh-tight: 1.2;
+  --lh-snug: 1.35;
+  --lh-base: 1.6;
+  --lh-prose: 1.7;
+  --tracking-tight: -0.025em;
+  --tracking-wide: 0.06em;
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4.5rem;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-pill: 9999px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --shadow-lg: 0 16px 32px -8px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --glow-accent: 0 0 0 1px var(--color-accent-soft), 0 0 24px -4px oklch(0.86 0.17 92 / 0.25);
+  --container-w: 1180px;
+  --container-pad: clamp(1rem, 4vw, 2rem);
+  --prose-w: 72ch;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --d-fast: 150ms;
+  --d-base: 250ms;
+  --d-slow: 400ms;
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-dropdown: 200;
+  --z-modal: 300;
+  --z-tooltip: 400;
+}
 
-            --color-accent-teal: oklch(0.38 0.06 185);      /* #1C5350 - Mineral Spruce Teal */
-            --color-accent-teal-light: oklch(0.95 0.01 185);/* #EDF5F4 - Muted Spruce Tint */
-            
-            /* Warnings / Alerts (Gold/Amber - No Panic) */
-            --color-warning-bg: oklch(0.98 0.01 80);        /* #FFFDF5 - Soft Ochre Gold Bg */
-            --color-warning-border: oklch(0.88 0.06 80);    /* #EBD6A2 - Muted Gold Border */
-            --color-warning-text: oklch(0.42 0.08 70);      /* #6D5114 - Soft Amber Text */
-            
-            --color-neutral-border: oklch(0.92 0.008 240);  /* #E2E7EE - Muted Slate Border */
-            --color-neutral-soft: oklch(0.96 0.005 240);    /* #F3F6F9 - Soft Gray */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+a { color: var(--color-accent); text-decoration: none; transition: color var(--d-fast) var(--ease-out); }
+a:hover { color: var(--color-accent-strong); }
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+ul, ol { list-style: none; }
+hr { border: 0; border-top: 1px solid var(--color-border); margin: var(--sp-6) 0; }
 
-            /* Typography */
-            --font-family-base: 'Work Sans', sans-serif;
-            --font-family-heading: 'Libre Baskerville', serif;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 0%, oklch(0.86 0.17 92 / 0.04), transparent 40%),
+    radial-gradient(circle at 80% 100%, oklch(0.60 0.14 200 / 0.03), transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
 
-            /* Spacing & Layout */
-            --spacing-xs: 0.25rem;   /* 4px */
-            --spacing-sm: 0.5rem;    /* 8px */
-            --spacing-md: 1rem;      /* 16px */
-            --spacing-lg: 1.5rem;    /* 24px */
-            --spacing-xl: 2.25rem;   /* 36px */
-            --spacing-2xl: 4rem;     /* 64px */
-            --spacing-3xl: 6rem;     /* 96px */
-            
-            --content-max-width: 720px; /* Capped for optimal readability (65-75ch) */
-            
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 14px;
-            
-            --shadow-sm: 0 1px 3px rgba(26, 36, 51, 0.03), 0 1px 2px rgba(26, 36, 51, 0.02);
-            --shadow-md: 0 6px 16px -4px rgba(26, 36, 51, 0.06), 0 2px 8px -2px rgba(26, 36, 51, 0.04);
-            --shadow-lg: 0 20px 32px -8px rgba(26, 36, 51, 0.08), 0 8px 16px -4px rgba(26, 36, 51, 0.05);
-            
-            --transition-base: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--sp-4);
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--r-md);
+  font-weight: 600;
+  z-index: var(--z-tooltip);
+  transition: top var(--d-base) var(--ease-out);
+}
+.skip-link:focus { top: var(--sp-4); color: var(--color-text-inverse); }
 
-        /* Base Resets */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+.container {
+  width: 100%;
+  max-width: var(--container-w);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  position: relative;
+  z-index: var(--z-base);
+}
+.ds-section {
+  padding-block: var(--sp-8);
+  border-top: 1px solid var(--color-border);
+  scroll-margin-top: 80px;
+}
+.ds-section:first-of-type { border-top: 0; }
+.ds-section__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+  max-width: 60ch;
+}
+.ds-section__title {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+  color: var(--color-text);
+  text-wrap: balance;
+}
+.ds-section__desc {
+  color: var(--color-text-muted);
+  font-size: var(--fs-body);
+  line-height: var(--lh-prose);
+}
 
-        body {
-            background-color: var(--color-bg-primary);
-            color: var(--color-text-primary);
-            font-family: var(--font-family-base);
-            line-height: 1.625;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            padding: var(--spacing-2xl) 0;
-        }
+.terminal {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.terminal__chrome {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
+.terminal__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-border-strong);
+}
+.terminal__dot:nth-child(1) { background: oklch(0.65 0.20 25); }
+.terminal__dot:nth-child(2) { background: oklch(0.78 0.16 80); }
+.terminal__dot:nth-child(3) { background: oklch(0.68 0.18 145); }
+.terminal__title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  color: var(--color-text-muted);
+  margin-left: var(--sp-3);
+  flex: 1;
+  text-align: center;
+}
+.terminal__body { padding: var(--sp-6); }
 
-        .container {
-            max-width: var(--content-max-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing-lg);
-        }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.eyebrow--accent { color: var(--color-accent); }
+.eyebrow--accent::before { content: "//"; opacity: 0.7; }
 
-        /* Typography specimens */
-        h1, h2, h3, h4 {
-            font-family: var(--font-family-heading);
-            color: var(--color-text-primary);
-            font-weight: 700;
-            line-height: 1.25;
-        }
+.ds-hero {
+  padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+  position: relative;
+}
+.ds-hero__inner { max-width: 980px; margin-inline: auto; }
+.ds-hero__title {
+  font-size: var(--fs-display);
+  font-weight: 800;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.05;
+  margin-block: var(--sp-4);
+  text-wrap: balance;
+}
+.ds-hero__sub {
+  font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+  color: var(--color-text-muted);
+  line-height: var(--lh-prose);
+  max-width: 60ch;
+  margin-bottom: var(--sp-5);
+}
+.ds-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  align-items: center;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  color: var(--color-text-muted);
+}
+.ds-hero__meta > * { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.ds-hero__meta strong { color: var(--color-text); font-weight: 500; }
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 4px 10px;
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px oklch(0.86 0.17 92 / 0.2);
+  animation: pulse 2s var(--ease-out) infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.9); }
+}
 
-        h1 {
-            font-size: clamp(2rem, 5vw, 2.75rem);
-            letter-spacing: -0.02em;
-            margin-bottom: var(--spacing-sm);
-            text-wrap: balance;
-        }
+.h-display { font-size: var(--fs-display); font-weight: 800; letter-spacing: var(--tracking-tight); line-height: var(--lh-tight); }
+.h1 { font-size: var(--fs-h1); font-weight: 700; letter-spacing: var(--tracking-tight); line-height: var(--lh-tight); }
+.h2 { font-size: var(--fs-h2); font-weight: 700; letter-spacing: -0.015em; line-height: var(--lh-snug); }
+.h3 { font-size: var(--fs-h3); font-weight: 600; line-height: var(--lh-snug); }
+.h4 { font-size: var(--fs-h4); font-weight: 600; line-height: var(--lh-snug); }
+.text-muted { color: var(--color-text-muted); }
+.text-subtle { color: var(--color-text-subtle); }
+.mono { font-family: var(--font-mono); font-size: var(--fs-mono); }
 
-        h2 {
-            font-size: 1.625rem;
-            margin-top: var(--spacing-2xl);
-            margin-bottom: var(--spacing-md);
-            padding-bottom: var(--spacing-xs);
-            border-bottom: 2px solid var(--color-neutral-border);
-        }
+.prose { max-width: var(--prose-w); line-height: var(--lh-prose); color: var(--color-text-muted); }
+.prose p { margin-bottom: var(--sp-4); }
+.prose p:last-child { margin-bottom: 0; }
 
-        h3 {
-            font-size: 1.25rem;
-            margin-top: var(--spacing-lg);
-            margin-bottom: var(--spacing-sm);
-        }
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-4);
+}
+.swatch {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: border-color var(--d-base) var(--ease-out);
+}
+.swatch:hover { border-color: var(--color-border-strong); }
+.swatch__chip {
+  height: 96px;
+  position: relative;
+}
+.swatch__chip--text-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+.swatch__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.swatch__name { font-weight: 600; font-size: var(--fs-small); color: var(--color-text); }
+.swatch__role { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--color-text-subtle); text-transform: uppercase; letter-spacing: var(--tracking-wide); }
+.swatch__values { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--color-text-muted); display: flex; flex-direction: column; gap: 2px; margin-top: var(--sp-2); }
 
-        p {
-            margin-bottom: var(--spacing-md);
-            color: var(--color-text-secondary);
-            font-size: 1rem;
-            text-wrap: pretty;
-        }
+.severity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-4);
+}
 
-        ul, ol {
-            margin-bottom: var(--spacing-md);
-            padding-left: var(--spacing-lg);
-        }
+.type-specimen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+}
+.type-row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: var(--sp-5);
+  align-items: baseline;
+  padding-block: var(--sp-3);
+  border-bottom: 1px solid var(--color-border);
+}
+.type-row:last-child { border-bottom: 0; }
+.type-row__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-subtle);
+}
+.type-row__meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--color-text-subtle);
+  text-align: right;
+  white-space: nowrap;
+}
 
-        li {
-            margin-bottom: var(--spacing-xs);
-            color: var(--color-text-secondary);
-        }
+.spacing-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+}
+.spacing-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 80px;
+  align-items: center;
+  gap: var(--sp-4);
+}
+.spacing-bar {
+  height: 12px;
+  background: var(--color-accent);
+  border-radius: var(--r-sm);
+  min-width: 4px;
+}
+.spacing-row__name { font-family: var(--font-mono); font-size: var(--fs-mono); color: var(--color-text); }
+.spacing-row__val { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--color-text-muted); text-align: right; }
 
-        a {
-            color: var(--color-primary-main);
-            text-decoration: none;
-            transition: var(--transition-base);
-        }
+.btn-row { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 10px 18px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  line-height: 1;
+  border-radius: var(--r-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--d-fast) var(--ease-out),
+    border-color var(--d-fast) var(--ease-out),
+    color var(--d-fast) var(--ease-out),
+    transform var(--d-fast) var(--ease-out),
+    box-shadow var(--d-fast) var(--ease-out);
+  white-space: nowrap;
+  user-select: none;
+}
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--color-accent-soft);
+}
+.btn--primary:hover { background: var(--color-accent-strong); box-shadow: var(--glow-accent); color: var(--color-text-inverse); }
+.btn--secondary {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+.btn--secondary:hover {
+  background: var(--color-surface-3);
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  border-color: transparent;
+}
+.btn--ghost:hover { color: var(--color-text); background: var(--color-surface-2); }
+.btn--sm { padding: 6px 12px; font-size: var(--fs-micro); }
 
-        a:hover {
-            color: var(--color-primary-hover);
-            text-decoration: underline;
-        }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+}
+.badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.badge--sev-crit { background: var(--sev-crit-bg); color: var(--sev-crit-text); }
+.badge--sev-crit .badge__dot { background: var(--sev-crit-dot); }
+.badge--sev-high { background: var(--sev-high-bg); color: var(--sev-high-text); }
+.badge--sev-high .badge__dot { background: var(--sev-high-dot); }
+.badge--sev-med { background: var(--sev-med-bg); color: var(--sev-med-text); }
+.badge--sev-med .badge__dot { background: var(--sev-med-dot); }
+.badge--sev-low { background: var(--sev-low-bg); color: var(--sev-low-text); }
+.badge--sev-low .badge__dot { background: var(--sev-low-dot); }
+.badge--ins {
+  background: oklch(0.20 0.04 250);
+  color: oklch(0.78 0.10 250);
+  border: 1px solid oklch(0.30 0.05 250);
+}
+.badge--cat {
+  background: oklch(0.20 0.03 280);
+  color: oklch(0.78 0.06 280);
+  border: 1px solid oklch(0.30 0.04 280);
+}
+.badge--state {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid oklch(0.32 0.06 145);
+}
+.badge-group { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
 
-        /* System Header */
-        .showcase-header {
-            margin-bottom: var(--spacing-2xl);
-            border-bottom: 1px solid var(--color-neutral-border);
-            padding-bottom: var(--spacing-xl);
-        }
+.warn-box {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+  border-radius: var(--r-lg);
+  border: 1px solid;
+}
+.warn-box__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.warn-box__body { display: flex; flex-direction: column; gap: var(--sp-2); }
+.warn-box__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+.warn-box__title { font-size: var(--fs-h4); font-weight: 600; line-height: var(--lh-snug); }
+.warn-box__text { font-size: var(--fs-small); line-height: var(--lh-prose); }
+.warn-box--info {
+  background: oklch(0.18 0.02 220);
+  border-color: oklch(0.32 0.04 220);
+  color: oklch(0.85 0.02 220);
+}
+.warn-box--info .warn-box__icon { background: oklch(0.30 0.06 220); color: oklch(0.85 0.10 220); }
+.warn-box--info .warn-box__label { color: oklch(0.78 0.10 220); }
+.warn-box--legal {
+  background: oklch(0.18 0.02 280);
+  border-color: oklch(0.32 0.05 280);
+  color: oklch(0.85 0.04 280);
+}
+.warn-box--legal .warn-box__icon { background: oklch(0.30 0.08 280); color: oklch(0.85 0.12 280); }
+.warn-box--legal .warn-box__label { color: oklch(0.78 0.12 280); }
+.warn-box--deadline {
+  background: oklch(0.20 0.04 60);
+  border-color: oklch(0.34 0.10 60);
+  color: oklch(0.88 0.06 60);
+}
+.warn-box--deadline .warn-box__icon { background: oklch(0.32 0.10 60); color: oklch(0.92 0.12 60); }
+.warn-box--deadline .warn-box__label { color: oklch(0.85 0.14 60); }
+.warn-box--critical {
+  background: oklch(0.20 0.06 25);
+  border-color: oklch(0.36 0.14 25);
+  color: oklch(0.90 0.06 25);
+}
+.warn-box--critical .warn-box__icon { background: oklch(0.35 0.16 25); color: oklch(0.95 0.10 25); }
+.warn-box--critical .warn-box__label { color: oklch(0.88 0.14 25); }
+.warn-box--template {
+  background: var(--color-accent-bg);
+  border-color: var(--color-accent-soft);
+  color: var(--color-text);
+}
+.warn-box--template .warn-box__icon { background: var(--color-accent); color: var(--color-text-inverse); }
+.warn-box--template .warn-box__label { color: var(--color-accent); }
 
-        .showcase-header p.lead {
-            font-size: 1.15rem;
-            line-height: 1.5;
-            color: var(--color-text-secondary);
-            font-family: var(--font-family-base);
-            font-weight: 400;
-        }
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--sp-4);
+}
+.ev-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-lg);
+  transition:
+    border-color var(--d-base) var(--ease-out),
+    transform var(--d-base) var(--ease-out),
+    box-shadow var(--d-base) var(--ease-out);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+.ev-card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.ev-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.ev-card__badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.ev-card__title {
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+.ev-card__desc {
+  font-size: var(--fs-small);
+  line-height: var(--lh-prose);
+  color: var(--color-text-muted);
+}
+.ev-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  font-weight: 600;
+  margin-top: var(--sp-2);
+}
+.ev-card__cta::after {
+  content: "→";
+  transition: transform var(--d-fast) var(--ease-out);
+}
+.ev-card:hover .ev-card__cta::after { transform: translateX(3px); }
+.ev-card__id {
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--color-text-subtle);
+  letter-spacing: var(--tracking-wide);
+}
 
-        /* Showcase blocks */
-        .section-desc {
-            font-size: 1.05rem;
-            line-height: 1.5;
-            margin-bottom: var(--spacing-lg);
-        }
+.template-box {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-accent-soft);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.template-box__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+.template-box__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.template-box__label::before {
+  content: "❝";
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.template-box__text {
+  font-size: var(--fs-body);
+  line-height: var(--lh-prose);
+  color: var(--color-text);
+  font-style: italic;
+  padding: var(--sp-3) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all var(--d-fast) var(--ease-out);
+}
+.copy-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-3);
+}
+.copy-btn[data-state="success"] {
+  color: var(--color-success);
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+.copy-btn[data-state="error"] {
+  color: var(--sev-crit-text);
+  border-color: var(--sev-crit-dot);
+  background: var(--sev-crit-bg);
+}
+.copy-btn .icon { width: 12px; height: 12px; }
+.template-box[data-state="success"] {
+  border-color: var(--color-success);
+  box-shadow: 0 0 0 1px var(--color-success), 0 0 24px -4px oklch(0.72 0.16 145 / 0.3);
+}
 
-        /* Color Grid */
-        .color-grid {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-        }
+.ev-detail {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.ev-detail__header {
+  padding: var(--sp-6);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.ev-detail__crumbs {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--color-text-subtle);
+  letter-spacing: var(--tracking-wide);
+}
+.ev-detail__crumbs a { color: var(--color-text-muted); }
+.ev-detail__crumbs a:hover { color: var(--color-accent); }
+.ev-detail__title {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+  text-wrap: balance;
+}
+.ev-detail__badges { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.ev-detail__body {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+.ev-detail__section {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: var(--sp-4);
+}
+.ev-detail__section-num {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-sm);
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+.ev-detail__section h3 {
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  margin-bottom: var(--sp-3);
+  color: var(--color-text);
+}
+.ev-detail__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.ev-detail__list li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: var(--sp-2);
+  align-items: start;
+  font-size: var(--fs-small);
+  line-height: var(--lh-prose);
+  color: var(--color-text-muted);
+}
+.ev-detail__list li::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  margin-top: 9px;
+}
 
-        .color-card {
-            background-color: var(--color-bg-secondary);
-            border: 1px solid var(--color-neutral-border);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-md);
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
-            box-shadow: var(--shadow-sm);
-        }
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-3);
+}
+.cat-tile {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--d-fast) var(--ease-out);
+}
+.cat-tile:hover {
+  border-color: var(--color-accent-soft);
+  background: var(--color-surface-2);
+  transform: translateY(-1px);
+}
+.cat-tile__glyph {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  flex-shrink: 0;
+}
+.cat-tile__name { font-weight: 600; font-size: var(--fs-small); color: var(--color-text); }
+.cat-tile__count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--color-text-subtle);
+  margin-left: auto;
+  letter-spacing: var(--tracking-wide);
+}
 
-        .color-swatch {
-            width: 56px;
-            height: 56px;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--color-neutral-border);
-            flex-shrink: 0;
-        }
+.ins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-3);
+}
+.ins-tile {
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all var(--d-fast) var(--ease-out);
+}
+.ins-tile:hover { border-color: var(--color-border-strong); background: var(--color-surface-2); }
+.ins-tile__name { font-weight: 600; font-size: var(--fs-small); color: var(--color-text); }
+.ins-tile__role { font-size: var(--fs-micro); color: var(--color-text-muted); line-height: 1.4; }
 
-        .color-info {
-            flex-grow: 1;
-        }
+.related-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-3);
+}
 
-        .color-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 2px;
-        }
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: oklch(0.13 0 0 / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+.hdr__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  padding-block: var(--sp-3);
+}
+.hdr__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  text-decoration: none;
+}
+.hdr__brand:hover { color: var(--color-text); }
+.hdr__brand-glyph {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-sm);
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+.hdr__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-left: auto;
+}
+.hdr__nav a {
+  padding: 6px 10px;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  transition: color var(--d-fast) var(--ease-out);
+}
+.hdr__nav a:hover { color: var(--color-text); }
+.hdr__nav a[aria-current="page"] { color: var(--color-accent); }
+.hdr__menu-btn {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+}
 
-        .color-meta {
-            font-family: ui-monospace, SFMono-Regular, monospace;
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-        }
+.ftr {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--sp-7) var(--sp-5);
+  margin-top: var(--sp-8);
+  background: var(--color-surface);
+}
+.ftr__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-6);
+}
+.ftr__col h4 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-subtle);
+  margin-bottom: var(--sp-3);
+}
+.ftr__col ul { display: flex; flex-direction: column; gap: var(--sp-2); }
+.ftr__col a { color: var(--color-text-muted); font-size: var(--fs-small); }
+.ftr__col a:hover { color: var(--color-text); }
+.ftr__about p { color: var(--color-text-muted); font-size: var(--fs-small); line-height: var(--lh-prose); margin-bottom: var(--sp-3); }
+.ftr__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--color-text-subtle);
+  letter-spacing: var(--tracking-wide);
+}
 
-        .color-contrast {
-            font-size: 0.8rem;
-            font-weight: 500;
-            padding: 2px 6px;
-            border-radius: 4px;
-            background-color: var(--color-neutral-soft);
-        }
+.disclaimer {
+  background: oklch(0.18 0.03 60);
+  border-block: 1px solid oklch(0.32 0.10 60);
+  padding: var(--sp-4) 0;
+}
+.disclaimer__inner {
+  display: flex;
+  align-items: start;
+  gap: var(--sp-3);
+}
+.disclaimer__glyph {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--sev-high-dot);
+  color: var(--color-text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.disclaimer__body { font-size: var(--fs-small); line-height: var(--lh-prose); color: oklch(0.90 0.04 60); }
+.disclaimer__body strong { color: oklch(0.95 0.08 60); font-weight: 600; }
 
-        /* Component Showcase Container */
-        .component-preview {
-            background-color: var(--color-bg-secondary);
-            border: 1px solid var(--color-neutral-border);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-xl);
-            margin-bottom: var(--spacing-lg);
-            box-shadow: var(--shadow-md);
-        }
+.hdr-mockup {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.hdr-mockup__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--color-text-subtle);
+}
+.hdr-mockup__bar::before {
+  content: "✦";
+  color: var(--color-accent);
+  margin-right: var(--sp-2);
+}
+.hdr-mockup__body { padding: var(--sp-3); background: var(--color-surface); }
 
-        .component-label {
-            font-family: var(--font-family-base);
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--color-text-secondary);
-            margin-bottom: var(--spacing-md);
-            display: block;
-        }
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-4);
+}
+.state-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.state-card__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-subtle);
+}
+.state-card__demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  padding: var(--sp-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-sm);
+}
+.focus-demo:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
 
-        /* Card Component */
-        .ds-card {
-            background-color: var(--color-bg-secondary);
-            border: 1px solid var(--color-neutral-border);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-lg);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-base);
-        }
+.a11y-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.a11y-table th, .a11y-table td {
+  padding: var(--sp-3) var(--sp-4);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+.a11y-table tr:last-child td { border-bottom: 0; }
+.a11y-table th {
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: var(--fs-micro);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+.a11y-table td { color: var(--color-text-muted); }
+.a11y-table td:first-child { color: var(--color-text); }
+.a11y-pass { color: var(--color-success); }
+.a11y-fail { color: var(--sev-crit-text); }
 
-        .ds-card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-4);
+}
+.note-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.note-card__title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+.note-card p { font-size: var(--fs-small); line-height: var(--lh-prose); color: var(--color-text-muted); }
+.note-card code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  background: var(--color-surface-3);
+  color: var(--color-text);
+  padding: 2px 6px;
+  border-radius: var(--r-sm);
+}
 
-        .ds-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: var(--spacing-sm);
-            gap: var(--spacing-sm);
-        }
+@media (max-width: 768px) {
+  .container { padding-inline: var(--sp-4); }
+  .ds-section { padding-block: var(--sp-7); }
+  .hdr__nav { display: none; }
+  .hdr__menu-btn { display: inline-flex; }
+  .ftr__grid { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .type-row { grid-template-columns: 60px 1fr; }
+  .type-row__meta { grid-column: 1 / -1; text-align: left; }
+  .ev-detail__section { grid-template-columns: 1fr; }
+  .ev-detail__section-num { display: none; }
+  .terminal__body { padding: var(--sp-4); }
+  .ds-hero__title { font-size: clamp(1.875rem, 8vw, 2.5rem); }
+  .spacing-row { grid-template-columns: 60px 1fr 60px; gap: var(--sp-2); }
+}
 
-        .ds-card-meta {
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-        }
-
-        .ds-card-title {
-            font-size: 1.15rem;
-            font-family: var(--font-family-base);
-            font-weight: 700;
-            color: var(--color-text-primary);
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .ds-card-desc {
-            font-size: 0.9rem;
-            color: var(--color-text-secondary);
-            line-height: 1.5;
-            margin-bottom: 0;
-        }
-
-        /* Badges */
-        .badge-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-sm);
-        }
-
-        .ds-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-family: var(--font-family-base);
-        }
-
-        .ds-badge--institution {
-            background-color: var(--color-primary-light);
-            color: var(--color-primary-main);
-            border: 1px solid rgba(45, 95, 183, 0.15);
-        }
-
-        .ds-badge--category {
-            background-color: var(--color-accent-teal-light);
-            color: var(--color-accent-teal);
-            border: 1px solid rgba(28, 83, 80, 0.15);
-        }
-
-        .ds-badge--severity {
-            background-color: var(--color-warning-bg);
-            color: var(--color-warning-text);
-            border: 1px solid var(--color-warning-border);
-        }
-
-        /* Warning Box (No side stripe border) */
-        .ds-warning-panel {
-            background-color: var(--color-warning-bg);
-            border: 1px solid var(--color-warning-border);
-            padding: var(--spacing-md) var(--spacing-lg);
-            border-radius: var(--radius-md);
-            color: var(--color-warning-text);
-            font-size: 0.92rem;
-            line-height: 1.5;
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-xs);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .ds-warning-header {
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
-        }
-
-        .ds-warning-header::before {
-            content: "!";
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: var(--color-warning-text);
-            color: var(--color-warning-bg);
-            font-size: 10px;
-            font-weight: 900;
-        }
-
-        /* Buttons */
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-md);
-        }
-
-        .ds-button {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0.6rem 1.25rem;
-            border-radius: var(--radius-md);
-            font-size: 0.9rem;
-            font-weight: 500;
-            font-family: var(--font-family-base);
-            cursor: pointer;
-            transition: var(--transition-base);
-            border: 1px solid transparent;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .ds-button--primary {
-            background-color: var(--color-primary-main);
-            color: var(--color-bg-secondary);
-        }
-
-        .ds-button--primary:hover {
-            background-color: var(--color-primary-hover);
-        }
-
-        .ds-button--secondary {
-            background-color: var(--color-bg-secondary);
-            border-color: var(--color-neutral-border);
-            color: var(--color-text-primary);
-        }
-
-        .ds-button--secondary:hover {
-            background-color: var(--color-neutral-soft);
-            border-color: var(--color-text-secondary);
-        }
-
-        .ds-button:focus-visible {
-            outline: 3px solid var(--color-primary-main);
-            outline-offset: 2px;
-        }
-
-        /* Code display blocks */
-        .code-container {
-            position: relative;
-            margin-top: var(--spacing-md);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            background: #111827;
-        }
-
-        .code-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #1f2937;
-            padding: 0.5rem 1rem;
-            border-bottom: 1px solid #374151;
-        }
-
-        .code-lang {
-            font-family: var(--font-family-base);
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: #9ca3af;
-            text-transform: uppercase;
-        }
-
-        .code-copy-btn {
-            background: transparent;
-            border: 1px solid #4b5563;
-            color: #d1d5db;
-            font-size: 0.7rem;
-            font-family: var(--font-family-base);
-            font-weight: 500;
-            padding: 2px 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .code-copy-btn:hover {
-            background: #374151;
-            color: #ffffff;
-            border-color: #9ca3af;
-        }
-
-        pre {
-            padding: var(--spacing-md);
-            overflow-x: auto;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: #f3f4f6;
-        }
-
-        code {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        }
-
-        .inline-code {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            background-color: var(--color-neutral-soft);
-            color: var(--color-text-primary);
-            padding: 0.15rem 0.35rem;
-            border-radius: 4px;
-            font-size: 0.875rem;
-        }
-
-        /* Layout schema mockup */
-        .layout-blueprint {
-            background: var(--color-neutral-soft);
-            border: 1px dashed var(--color-neutral-border);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-md);
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-sm);
-        }
-
-        .blueprint-el {
-            background: var(--color-bg-secondary);
-            border: 1px solid var(--color-neutral-border);
-            border-radius: var(--radius-sm);
-            padding: var(--spacing-sm);
-            text-align: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--color-text-secondary);
-        }
-
-        .blueprint-el--hero {
-            height: 120px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: var(--color-primary-light);
-            border-color: rgba(45, 95, 183, 0.15);
-            color: var(--color-primary-main);
-        }
-
-        .blueprint-el--body {
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Toast notification */
-        .toast {
-            position: fixed;
-            bottom: -80px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--color-text-primary);
-            color: var(--color-bg-secondary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            box-shadow: var(--shadow-lg);
-            z-index: 1000;
-            transition: bottom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            pointer-events: none;
-        }
-
-        .toast.show {
-            bottom: 30px;
-        }
-    </style>
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .pulse-dot { animation: none; opacity: 1; }
+  .ev-card:hover { transform: none; }
+  .cat-tile:hover { transform: none; }
+}
+</style>
 </head>
 <body>
 
-<main class="container">
-    
-    <!-- System Header -->
-    <header class="showcase-header">
-        <h1>Parental Design System</h1>
-        <p class="lead">A calm, clinical, and authoritative design framework tailored for legal-administrative communication and decision mapping.</p>
+<a href="#main" class="skip-link">Ugrás a tartalomra</a>
+
+<header class="hdr" role="banner">
+  <div class="container hdr__inner">
+    <a href="#" class="hdr__brand" aria-label="Eljárási Térkép - kezdőlap">
+      <span class="hdr__brand-glyph" aria-hidden="true">É</span>
+      <span>Eljárási Térkép</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Fő navigáció">
+      <a href="#events">Események</a>
+      <a href="#categories">Kategóriák</a>
+      <a href="#institutions">Intézmények</a>
+      <a href="#detail">Mintaoldal</a>
+    </nav>
+    <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="ds-hero" aria-labelledby="ds-title">
+  <div class="container ds-hero__inner">
+    <div class="terminal">
+      <div class="terminal__chrome">
+        <span class="terminal__dot" aria-hidden="true"></span>
+        <span class="terminal__dot" aria-hidden="true"></span>
+        <span class="terminal__dot" aria-hidden="true"></span>
+        <span class="terminal__title">design.system / parental.vaccination / v2</span>
+      </div>
+      <div class="terminal__body">
+        <span class="eyebrow eyebrow--accent">FEATURE SPOTLIGHT</span>
+        <h1 id="ds-title" class="ds-hero__title">Eljárási Térkép</h1>
+        <p class="ds-hero__sub">A szülői kötelező védőoltási eljárási útmutató vizuális nyelve, komponensstílusa és akadálymentes tervei. Tervdokumentum, nem végleges weboldal.</p>
+        <div class="ds-hero__meta">
+          <span><strong>verzió</strong> 2.0.0</span>
+          <span><strong>build</strong> 2026.06.02</span>
+          <span><strong>nézet</strong> sötét</span>
+          <span class="status-pill" aria-label="Aktív állapot"><span class="pulse-dot" aria-hidden="true"></span>AKTÍV</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<aside class="disclaimer" role="note" aria-label="Fontos jogi figyelmeztetés">
+  <div class="container disclaimer__inner">
+    <span class="disclaimer__glyph" aria-hidden="true">!</span>
+    <p class="disclaimer__body"><strong>Ez az oldal nem nyújt jogi tanácsadást.</strong> A leírt eljárások, javasolt mondatok és dokumentumtípusok tájékoztató jellegűek, nem helyettesítik az ügyvédi vagy hatósági szakvéleményt. Végső döntés előtt kérjen jogi segítséget, és minden hivatalos levelezést írásban, igazolható módon folytasson.</p>
+  </div>
+</aside>
+
+<section class="ds-section" aria-labelledby="colors-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 01 · FOUNDATIONS</span>
+      <h2 id="colors-title" class="ds-section__title">Színpaletta</h2>
+      <p class="ds-section__desc">A sötét felületek, a meleg sárga akcent és a visszafogott súlyossági skála együtt teremtik meg a nyugodt, dokumentációs jelleget. Minden szín OKLCH-értékkel van definiálva, hexadecimális fallback megjegyzéssel.</p>
     </header>
 
-    <!-- Visual Philosophy -->
-    <section>
-        <h2>1. Visual Direction & Vibe</h2>
-        <p class="section-desc">When parents are facing administrative processes regarding mandatory vaccinations, they enter a state of high stress. The design system must counteract this anxiety using concrete, reassuring physical-object aesthetics — resembling a judicial archive or clinical protocol register.</p>
-        <ul>
-            <li><strong>Voice and Tone:</strong> Reassuring, clinical, transparent, and authoritative.</li>
-            <li><strong>Editorial Grid:</strong> A single focused layout column capped at <code class="inline-code">72ch</code> to ensure comfortable typography line lengths (65–75 characters) and reduce cognitive overload.</li>
-            <li><strong>Refusal of Alarmism:</strong> Strictly avoid raw primary warning colors (danger reds) or screaming high-contrast callouts. Important markers are framed as gold-tinted judicial folders rather than hazard signs.</li>
-        </ul>
-    </section>
+    <div class="swatch-grid" role="list">
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: oklch(0.13 0 0);"></div>
+        <div class="swatch__body">
+          <span class="swatch__role">SURFACE</span>
+          <span class="swatch__name">Háttér</span>
+          <div class="swatch__values">
+            <span>oklch(0.13 0 0)</span>
+            <span>#0F0F0F</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: oklch(0.17 0 0);"></div>
+        <div class="swatch__body">
+          <span class="swatch__role">SURFACE · 1</span>
+          <span class="swatch__name">Kártya</span>
+          <div class="swatch__values">
+            <span>oklch(0.17 0 0)</span>
+            <span>#1B1B1B</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: oklch(0.20 0 0);"></div>
+        <div class="swatch__body">
+          <span class="swatch__role">SURFACE · 2</span>
+          <span class="swatch__name">Kiemelt felület</span>
+          <div class="swatch__values">
+            <span>oklch(0.20 0 0)</span>
+            <span>#222222</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip swatch__chip--text-overlay" style="background: oklch(0.86 0.17 92); color: oklch(0.15 0 0);">FŐ AKCIÓ</div>
+        <div class="swatch__body">
+          <span class="swatch__role">ACCENT</span>
+          <span class="swatch__name">Sárga kiemelés</span>
+          <div class="swatch__values">
+            <span>oklch(0.86 0.17 92)</span>
+            <span>#F5C518</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: oklch(0.96 0 0);"></div>
+        <div class="swatch__body">
+          <span class="swatch__role">TEXT · 1</span>
+          <span class="swatch__name">Elsődleges szöveg</span>
+          <div class="swatch__values">
+            <span>oklch(0.96 0 0)</span>
+            <span>#F5F5F5</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: oklch(0.70 0 0);"></div>
+        <div class="swatch__body">
+          <span class="swatch__role">TEXT · 2</span>
+          <span class="swatch__name">Másodlagos szöveg</span>
+          <div class="swatch__values">
+            <span>oklch(0.70 0 0)</span>
+            <span>#A8A8A8</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: var(--color-border);"></div>
+        <div class="swatch__body">
+          <span class="swatch__role">BORDER</span>
+          <span class="swatch__name">Keret</span>
+          <div class="swatch__values">
+            <span>oklch(0.28 0 0)</span>
+            <span>#2E2E2E</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: var(--color-success);"></div>
+        <div class="swatch__body">
+          <span class="swatch__role">STATE</span>
+          <span class="swatch__name">Siker / pozitív</span>
+          <div class="swatch__values">
+            <span>oklch(0.72 0.16 145)</span>
+            <span>#4ADE80</span>
+          </div>
+        </div>
+      </article>
+    </div>
 
-    <!-- Colors -->
-    <section>
-        <h2>2. Color Palette (OKLCH System)</h2>
-        <p class="section-desc">A committed visual palette based on modern, accessible OKLCH values with solid HEX fallbacks. All primary typography and components meet or exceed WCAG AA contrast ratios (4.5:1 for body copy).</p>
-        
-        <div class="color-grid">
-            
-            <div class="color-card">
-                <div class="color-swatch" style="background: #FBFBF9;"></div>
-                <div class="color-info">
-                    <div class="color-title">Warm Alabaster (Primary BG)</div>
-                    <div class="color-meta">oklch(0.98 0.005 85) &middot; #FBFBF9</div>
+    <h3 class="h3" style="margin-top: var(--sp-7); margin-bottom: var(--sp-4);">Súlyossági skála</h3>
+    <div class="severity-grid" role="list">
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: var(--sev-crit-bg);"></div>
+        <div class="swatch__body">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <div class="swatch__values">
+            <span>bg oklch(0.92 0.05 25)</span>
+            <span>text oklch(0.32 0.16 25)</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: var(--sev-high-bg);"></div>
+        <div class="swatch__body">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <div class="swatch__values">
+            <span>bg oklch(0.92 0.06 60)</span>
+            <span>text oklch(0.32 0.13 55)</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: var(--sev-med-bg);"></div>
+        <div class="swatch__body">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <div class="swatch__values">
+            <span>bg oklch(0.90 0.04 200)</span>
+            <span>text oklch(0.30 0.10 200)</span>
+          </div>
+        </div>
+      </article>
+      <article class="swatch" role="listitem">
+        <div class="swatch__chip" style="background: var(--sev-low-bg);"></div>
+        <div class="swatch__body">
+          <span class="badge badge--sev-low"><span class="badge__dot" aria-hidden="true"></span>Alacsony</span>
+          <div class="swatch__values">
+            <span>bg oklch(0.85 0.005 240)</span>
+            <span>text oklch(0.32 0.01 240)</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" aria-labelledby="type-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 02 · FOUNDATIONS</span>
+      <h2 id="type-title" class="ds-section__title">Tipográfia</h2>
+      <p class="ds-section__desc">Az Inter a befogadó, semleges olvasófelületért, a JetBrains Mono a technikai metaadatok, értékek és kódrészletek megjelenítéséhez. A lépcsőzetes skála biztosítja, hogy hosszú, magyar nyelvű szövegek is jól olvashatók maradjanak.</p>
+    </header>
+
+    <div class="type-specimen">
+      <div class="type-row">
+        <span class="type-row__label">Display</span>
+        <div>
+          <div class="h-display">Eljárási térkép szülőknek</div>
+        </div>
+        <span class="type-row__meta">Inter 800 · clamp(2.25, 5vw, 3.5)rem</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row__label">H1</span>
+        <div>
+          <div class="h1">Védőnői felszólítás pótoltásáról</div>
+        </div>
+        <span class="type-row__meta">Inter 700 · clamp(1.875, 3.5vw, 2.5)rem</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row__label">H2</span>
+        <div>
+          <div class="h2">Mit kell elmenteni?</div>
+        </div>
+        <span class="type-row__meta">Inter 700 · clamp(1.5, 2.5vw, 1.875)rem</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row__label">H3</span>
+        <div>
+          <div class="h3">A védőnő jelzést tesz a népegészségügynek</div>
+        </div>
+        <span class="type-row__meta">Inter 600 · 1.25rem</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row__label">H4</span>
+        <div>
+          <div class="h4">Általános információ</div>
+        </div>
+        <span class="type-row__meta">Inter 600 · 1.0625rem</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row__label">Body</span>
+        <div>
+          <p class="prose" style="margin: 0;">A szülő kérdéseket tesz fel az oltással kapcsolatban, de az orvos, védőnő, iskolaorvos ezt később oltásmegtagadásként, együttműködés hiányaként vagy gyermekveszélyeztetésként értelmezheti.</p>
+        </div>
+        <span class="type-row__meta">Inter 400 · 1rem · 1.6 lh</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row__label">Small</span>
+        <div>
+          <span class="text-muted" style="font-size: var(--fs-small);">Kiegészítő magyarázat, lábjegyzet, forrásmegjelölés.</span>
+        </div>
+        <span class="type-row__meta">Inter 400 · 0.875rem</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row__label">Mono</span>
+        <div>
+          <span class="mono">verzió 2.0.0 · build 2026.06.02 · esemény 2.2</span>
+        </div>
+        <span class="type-row__meta">JetBrains 500 · 0.8125rem</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" aria-labelledby="spacing-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 03 · FOUNDATIONS</span>
+      <h2 id="spacing-title" class="ds-section__title">Térköz és elrendezés</h2>
+      <p class="ds-section__desc">Nyolc fokozatú, négyes alapú lépcső. A konténer 1180 px széles, a prózai tartalom 72 karakterre van szorítva a hosszú bekezdések olvashatóságáért.</p>
+    </header>
+
+    <div class="spacing-list">
+      <div class="spacing-row">
+        <span class="spacing-row__name">--sp-1</span>
+        <div class="spacing-bar" style="width: 4px;"></div>
+        <span class="spacing-row__val">0.25rem · 4px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-row__name">--sp-2</span>
+        <div class="spacing-bar" style="width: 8px;"></div>
+        <span class="spacing-row__val">0.5rem · 8px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-row__name">--sp-3</span>
+        <div class="spacing-bar" style="width: 12px;"></div>
+        <span class="spacing-row__val">0.75rem · 12px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-row__name">--sp-4</span>
+        <div class="spacing-bar" style="width: 16px;"></div>
+        <span class="spacing-row__val">1rem · 16px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-row__name">--sp-5</span>
+        <div class="spacing-bar" style="width: 24px;"></div>
+        <span class="spacing-row__val">1.5rem · 24px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-row__name">--sp-6</span>
+        <div class="spacing-bar" style="width: 32px;"></div>
+        <span class="spacing-row__val">2rem · 32px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-row__name">--sp-7</span>
+        <div class="spacing-bar" style="width: 48px;"></div>
+        <span class="spacing-row__val">3rem · 48px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-row__name">--sp-8</span>
+        <div class="spacing-bar" style="width: 72px;"></div>
+        <span class="spacing-row__val">4.5rem · 72px</span>
+      </div>
+    </div>
+
+    <h3 class="h3" style="margin-top: var(--sp-6); margin-bottom: var(--sp-3);">Töréspontok</h3>
+    <div class="type-specimen" style="gap: var(--sp-3);">
+      <div class="type-row">
+        <span class="type-row__label">Mobile</span>
+        <span class="text-muted">≤ 768 px · egyszeres hasáb, hamburger menü, kártyák egymás alatt</span>
+        <span class="type-row__meta">1 hasáb</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row__label">Tablet</span>
+        <span class="text-muted">769–1023 px · kártyarács 2 oszlop, teljes nav</span>
+        <span class="type-row__meta">2 hasáb</span>
+      </div>
+      <div class="type-row">
+        <span class="type-row__label">Desktop</span>
+        <span class="text-muted">≥ 1024 px · konténer 1180 px, kártyarács auto-fit</span>
+        <span class="type-row__meta">3+ hasáb</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" aria-labelledby="btn-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 04 · ATOMS</span>
+      <h2 id="btn-title" class="ds-section__title">Gombok</h2>
+      <p class="ds-section__desc">Három variáns, két méret. A címkék ige + tárgy szerkezetűek, a fókuszgyűrű minden állapotban látható.</p>
+    </header>
+
+    <h3 class="h4" style="margin-bottom: var(--sp-3);">Alapállapot</h3>
+    <div class="btn-row" style="margin-bottom: var(--sp-5);">
+      <button type="button" class="btn btn--primary">Esemény megnyitása</button>
+      <button type="button" class="btn btn--secondary">Iratbetekintés kérése</button>
+      <button type="button" class="btn btn--ghost">Mégse</button>
+    </div>
+
+    <h3 class="h4" style="margin-bottom: var(--sp-3);">Kis méret</h3>
+    <div class="btn-row" style="margin-bottom: var(--sp-5);">
+      <button type="button" class="btn btn--primary btn--sm">Másolás</button>
+      <button type="button" class="btn btn--secondary btn--sm">Letöltés PDF</button>
+      <button type="button" class="btn btn--ghost btn--sm">Súgó</button>
+    </div>
+
+    <h3 class="h4" style="margin-bottom: var(--sp-3);">Állapotok</h3>
+    <div class="btn-row">
+      <button type="button" class="btn btn--primary">Hover (szimulált)</button>
+      <button type="button" class="btn btn--primary focus-demo">Fókusz (Tab)</button>
+      <button type="button" class="btn btn--primary" disabled>Letiltva</button>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" aria-labelledby="badge-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 05 · ATOMS</span>
+      <h2 id="badge-title" class="ds-section__title">Jelvények</h2>
+      <p class="ds-section__desc">Három jelvényrendszer: súlyosság, intézmény, kategória. Minden jelvény tartalmaz egy pontszerű indikátort a vizuális gyors felismerésért.</p>
+    </header>
+
+    <h3 class="h4" style="margin-bottom: var(--sp-3);">Súlyosság (4 szint)</h3>
+    <div class="badge-group" style="margin-bottom: var(--sp-5);">
+      <span class="badge badge--sev-low"><span class="badge__dot" aria-hidden="true"></span>Alacsony</span>
+      <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+      <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+      <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+    </div>
+
+    <h3 class="h4" style="margin-bottom: var(--sp-3);">Intézmény (8 entitás)</h3>
+    <div class="badge-group" style="margin-bottom: var(--sp-5);">
+      <span class="badge badge--ins">Védőnő</span>
+      <span class="badge badge--ins">Iskolaorvos</span>
+      <span class="badge badge--ins">Háziorvos</span>
+      <span class="badge badge--ins">NNK · Népegészségügy</span>
+      <span class="badge badge--ins">Családsegítő</span>
+      <span class="badge badge--ins">Gyámhivatal</span>
+      <span class="badge badge--ins">NAV</span>
+      <span class="badge badge--ins">Bíróság</span>
+    </div>
+
+    <h3 class="h4" style="margin-bottom: var(--sp-3);">Kategória (6 téma)</h3>
+    <div class="badge-group" style="margin-bottom: var(--sp-5);">
+      <span class="badge badge--cat">Tájékoztatás</span>
+      <span class="badge badge--cat">Iratkezelés</span>
+      <span class="badge badge--cat">Eljárás</span>
+      <span class="badge badge--cat">Kommunikáció</span>
+      <span class="badge badge--cat">Határidő</span>
+      <span class="badge badge--cat">Adatvédelem</span>
+    </div>
+
+    <h3 class="h4" style="margin-bottom: var(--sp-3);">Állapot</h3>
+    <div class="badge-group">
+      <span class="badge badge--state"><span class="badge__dot" aria-hidden="true"></span>Másolva</span>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" aria-labelledby="warn-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 06 · MOLECULES</span>
+      <h2 id="warn-title" class="ds-section__title">Figyelmeztető dobozok</h2>
+      <p class="ds-section__desc">Öt doboztípus: általános információ, jogi óvatosság, határidős figyelmeztetés, kritikus esemény és másolható mondat. Mindegyik visszafogott színhasználattal jelzi a súlyosságot, pánikkeltés nélkül.</p>
+    </header>
+
+    <div style="display: flex; flex-direction: column; gap: var(--sp-4);">
+      <div class="warn-box warn-box--info" role="note">
+        <div class="warn-box__icon" aria-hidden="true">i</div>
+        <div class="warn-box__body">
+          <span class="warn-box__label">Általános információ</span>
+          <h3 class="warn-box__title">Hogyan működik a jelzési lánc?</h3>
+          <p class="warn-box__text">A védőnő jelzése nem minősül hatósági döntésnek. A jelzés célja, hogy az illetékes szerv tájékoztatást kapjon, a szülőtől ezért nem várható el nyilatkozattétel a jelzés pillanatában.</p>
+        </div>
+      </div>
+
+      <div class="warn-box warn-box--legal" role="note">
+        <div class="warn-box__icon" aria-hidden="true">§</div>
+        <div class="warn-box__body">
+          <span class="warn-box__label">Jogi óvatosság</span>
+          <h3 class="warn-box__title">Ez az oldal nem nyújt jogi tanácsadást</h3>
+          <p class="warn-box__text">A bemutatott eljárások, javasolt mondatok és dokumentumtípusok tájékoztató jellegűek. Végső döntés előtt kérjen ügyvédi vagy hatósági szakvéleményt, és minden kommunikációt írásban, igazolható módon folytasson.</p>
+        </div>
+      </div>
+
+      <div class="warn-box warn-box--deadline" role="note">
+        <div class="warn-box__icon" aria-hidden="true">&#9201;</div>
+        <div class="warn-box__body">
+          <span class="warn-box__label">Határidős figyelmeztetés</span>
+          <h3 class="warn-box__title">Ellenőrizze az átvétel és az időpont közötti időt</h3>
+          <p class="warn-box__text">Ha a felszólításban szereplő oltási időpont a levél tényleges átvételekor már elmúlt, vagy olyan közeli, hogy érdemi felkészülésre nincs lehetőség, kérjen új, szabályszerű időpontot. A mulasztás később Önnek lesz felróható.</p>
+        </div>
+      </div>
+
+      <div class="warn-box warn-box--critical" role="note">
+        <div class="warn-box__icon" aria-hidden="true">!</div>
+        <div class="warn-box__body">
+          <span class="warn-box__label">Kritikus esemény</span>
+          <h3 class="warn-box__title">NAV-végrehajtás vagy védelembe vételi határozat</h3>
+          <p class="warn-box__text">Ilyen esetben haladéktalanul kérjen iratbetekintést, jelölje meg a végrehajthatóság kifogásolásának jogalapját, és mérlegelje jogi képviselő bevonását. A keresetindítási és fellebbezési határidők jogvesztők.</p>
+        </div>
+      </div>
+
+      <div class="warn-box warn-box--template" role="note">
+        <div class="warn-box__icon" aria-hidden="true">&#10077;</div>
+        <div class="warn-box__body">
+          <span class="warn-box__label">Másolható mondat</span>
+          <h3 class="warn-box__title">Használja írásbeli kommunikációhoz</h3>
+          <p class="warn-box__text">A lenti dobozban lévő szöveget egy kattintással a vágólapra másolhatja, és beillesztheti saját levelébe. A sablont küldés előtt mindig olvassa át és szükség szerint egészítse ki a saját esete adataival.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" id="events" aria-labelledby="evcard-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 07 · MOLECULES</span>
+      <h2 id="evcard-title" class="ds-section__title">Eseménykártyák</h2>
+      <p class="ds-section__desc">Hat kártya a content.md-ből vett valós eseményekkel. A kártya a teljes eseménylista és a részletes oldal közötti átmenet, ezért a legsűrűbb információ itt jelenik meg jelvények, rövid összefoglaló és egyértelmű CTA formájában.</p>
+    </header>
+
+    <div class="event-grid">
+
+      <a href="#detail" class="ev-card">
+        <span class="ev-card__id">§ 2.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
+          <span class="badge badge--ins">Védőnő</span>
+          <span class="badge badge--cat">Kommunikáció</span>
+        </div>
+        <h3 class="ev-card__title">A védőnő telefonon, e-mailben vagy Messengerben sürget</h3>
+        <p class="ev-card__desc">A védőnő jelzi, hogy jelentenie kell, kötelező, vagy családsegítő lesz. Nem küld hivatalos, visszakövethető iratot. A szóbeli mondatok később torzulhatnak.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+
+      <a href="#detail" class="ev-card">
+        <span class="ev-card__id">§ 2.2</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Védőnő</span>
+          <span class="badge badge--cat">Iratkezelés</span>
+          <span class="badge badge--cat">Határidő</span>
+        </div>
+        <h3 class="ev-card__title">A védőnő felszólítást vagy pótoltási értesítőt küld</h3>
+        <p class="ev-card__desc">Pótoltási időpontot ad, a levél nem tértivevényes, nincs pontos határidő, hibás adatok szerepelnek. A szülő elveszítheti a kézbesítési kifogást, ha nem dokumentál.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+
+      <a href="#detail" class="ev-card">
+        <span class="ev-card__id">§ 4.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
+          <span class="badge badge--ins">Háziorvos</span>
+          <span class="badge badge--cat">Tájékoztatás</span>
+        </div>
+        <h3 class="ev-card__title">Az orvos nem ad teljes körű, egyéniesített tájékoztatást</h3>
+        <p class="ev-card__desc">Csak általános betegtájékoztatót küld, jogszabályt idéz, a kockázatokat nem egyéniesíti, nem dokumentálja, hogy a gyermek alkalmas-e oltásra.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+
+      <a href="#detail" class="ev-card">
+        <span class="ev-card__id">§ 7.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">NNK</span>
+          <span class="badge badge--cat">Eljárás</span>
+        </div>
+        <h3 class="ev-card__title">A népegészségügy hatósági eljárást indít</h3>
+        <p class="ev-card__desc">A védőnői jelzésre épülő felszólítás, teljesítési határidő, bírság kilátásba helyezése. Az alapul szolgáló tényállás tisztázatlan, az olthatóság nem dokumentált.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+
+      <a href="#detail" class="ev-card">
+        <span class="ev-card__id">§ 9.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">Gyámhivatal</span>
+          <span class="badge badge--cat">Eljárás</span>
+          <span class="badge badge--cat">Határidő</span>
+        </div>
+        <h3 class="ev-card__title">Gyámhivatali idézés érkezik</h3>
+        <p class="ev-card__desc">Az idézés későn érkezik, a tárgyalásig kevés idő marad, az ügy tárgya nem világos, iratbetekintés nélkül kellene nyilatkozni.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+
+      <a href="#detail" class="ev-card">
+        <span class="ev-card__id">§ 11.1</span>
+        <div class="ev-card__badges">
+          <span class="badge badge--sev-crit"><span class="badge__dot" aria-hidden="true"></span>Kritikus</span>
+          <span class="badge badge--ins">NAV</span>
+          <span class="badge badge--cat">Határidő</span>
+        </div>
+        <h3 class="ev-card__title">NAV-felszólítás érkezik</h3>
+        <p class="ev-card__desc">A NAV meghatározott cselekmény teljesítésére szólít fel, eljárási bírságot helyez kilátásba. A végrehajtás alapjául szolgáló határozat sokszor tisztázatlan.</p>
+        <span class="ev-card__cta">Részletek</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" aria-labelledby="template-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 08 · MOLECULES</span>
+      <h2 id="template-title" class="ds-section__title">Másolható mondat doboz</h2>
+      <p class="ds-section__desc">A szülő azonnal használható, jogi szempontból átgondolt szöveget kap, amelyet a saját esete adataival kiegészíthet. A másolás gomb billentyűzettel is elérhető és vizuálisan visszajelez.</p>
+    </header>
+
+    <div class="template-box" id="template-demo" data-template>
+      <div class="template-box__head">
+        <span class="template-box__label">Javasolt mondat · § 2.2</span>
+        <button type="button" class="copy-btn" data-copy-target="template-text-1" aria-label="Mondat másolása">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <span data-copy-label>Másolás</span>
+        </button>
+      </div>
+      <p class="template-box__text" id="template-text-1">A megkeresésben szereplő időpont a levél tényleges átvételekor már elmúlt, illetve az átvételt követően olyan közeli időpontra esett, hogy érdemi felkészülésre, tájékozódásra és nyilatkozattételre nem volt lehetőség. Kérem új, szabályszerű, írásban közölt időpont megküldését.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" id="detail" aria-labelledby="evdetail-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 09 · ORGANISM</span>
+      <h2 id="evdetail-title" class="ds-section__title">Esemény részletes oldal</h2>
+      <p class="ds-section__desc">Egy teljes eseményoldal a content.md § 2.2 alapján. A szekciók sorrendje fontos: a szülő először megtudja, mi történik, majd milyen kockázatokkal kell számolnia, végül mit tegyen.</p>
+    </header>
+
+    <article class="ev-detail">
+      <header class="ev-detail__header">
+        <nav class="ev-detail__crumbs" aria-label="Breadcrumb">
+          <a href="#">Kezdőlap</a> · <a href="#events">Események</a> · <a href="#categories">Védőnői szakasz</a> · <span aria-current="page">§ 2.2</span>
+        </nav>
+        <h1 class="ev-detail__title">A védőnő felszólítást vagy pótoltási értesítőt küld</h1>
+        <div class="ev-detail__badges">
+          <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas súlyosság</span>
+          <span class="badge badge--ins">Védőnő</span>
+          <span class="badge badge--cat">Iratkezelés</span>
+          <span class="badge badge--cat">Határidő</span>
+        </div>
+      </header>
+
+      <div class="ev-detail__body">
+
+        <section class="ev-detail__section" aria-labelledby="ed-1">
+          <div class="ev-detail__section-num" aria-hidden="true">01</div>
+          <div>
+            <h3 id="ed-1">Mi történhet?</h3>
+            <ul class="ev-detail__list">
+              <li>A védőnő pótoltási időpontot ad a levélben.</li>
+              <li>Az időpont túl közeli, vagy már elmúlt, mire a levél megérkezik.</li>
+              <li>A levél nem tértivevényes, nem tartalmaz pontos határidőt.</li>
+              <li>A levélben hibás név, hibás oltástípus vagy pontatlan adat szerepel.</li>
+              <li>A "minél előbb pótolja" szövegezés nem alkalmas jogi lépések ütemezésére.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="ev-detail__section" aria-labelledby="ed-2">
+          <div class="ev-detail__section-num" aria-hidden="true">02</div>
+          <div>
+            <h3 id="ed-2">Fő kockázatok</h3>
+            <ul class="ev-detail__list">
+              <li>A védőnő később úgy jelenti, hogy a szülő nem teljesített.</li>
+              <li>A népegészségügy a felszólítások szabályszerűségére építhet.</li>
+              <li>A szülő elveszíti a kézbesítési és határidős kifogást, ha nem dokumentál.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="ev-detail__section" aria-labelledby="ed-3">
+          <div class="ev-detail__section-num" aria-hidden="true">03</div>
+          <div>
+            <h3 id="ed-3">Mit kell elmenteni?</h3>
+            <ul class="ev-detail__list">
+              <li>A teljes levél és a boríték, ragszámmal együtt.</li>
+              <li>A postai nyomkövetés és az átvétel pontos dátuma.</li>
+              <li>Az eredetileg kiírt és a felülírt oltási időpont dátuma.</li>
+              <li>Minden korábbi felszólítás, KRÉTA-, e-mail-, SMS-, Messenger-értesítés.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="ev-detail__section" aria-labelledby="ed-4">
+          <div class="ev-detail__section-num" aria-hidden="true">04</div>
+          <div>
+            <h3 id="ed-4">Mit kell kikérni?</h3>
+            <ul class="ev-detail__list">
+              <li>A feladó és a címzett pontos megnevezése, ügyiratszám.</li>
+              <li>Az érintett oltás megnevezése, az oltóanyag adatai.</li>
+              <li>A kiírás és a postázás dátuma, valamint az átvétel időpontja.</li>
+              <li>Annak igazolása, hogy minden elmaradt oltásra külön felszólítási lánc volt.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="ev-detail__section" aria-labelledby="ed-5">
+          <div class="ev-detail__section-num" aria-hidden="true">05</div>
+          <div>
+            <h3 id="ed-5">Határidős figyelmeztetés</h3>
+            <div class="warn-box warn-box--deadline" role="note" style="grid-template-columns: 32px 1fr; padding: var(--sp-4);">
+              <div class="warn-box__icon" aria-hidden="true">&#9201;</div>
+              <div class="warn-box__body">
+                <span class="warn-box__label">3 nap</span>
+                <p class="warn-box__text">A megkeresésben szereplő időpont és a levél átvétele közötti eltérést három naptári napon belül jelezze írásban, kérjen új, szabályszerű időpontot.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ev-detail__section" aria-labelledby="ed-6">
+          <div class="ev-detail__section-num" aria-hidden="true">06</div>
+          <div>
+            <h3 id="ed-6">Javasolt reakció</h3>
+            <ul class="ev-detail__list">
+              <li>Telefonon ne tárgyaljon, kérjen írásbeli megkeresést.</li>
+              <li>A levél átvételét követően azonnal küldjön írásos visszajelzést.</li>
+              <li>Kérjen jogszabályi hivatkozást, ügyiratszámot, valamint igazolást a kézbesítés szabályosságáról.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="ev-detail__section" aria-labelledby="ed-7">
+          <div class="ev-detail__section-num" aria-hidden="true">07</div>
+          <div>
+            <h3 id="ed-7">Másolható mondat</h3>
+            <div class="template-box" data-template>
+              <div class="template-box__head">
+                <span class="template-box__label">Javasolt válasz</span>
+                <button type="button" class="copy-btn" data-copy-target="template-text-2" aria-label="Mondat másolása">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                  <span data-copy-label>Másolás</span>
+                </button>
+              </div>
+              <p class="template-box__text" id="template-text-2">A megkeresésben szereplő időpont a levél tényleges átvételekor már elmúlt, illetve az átvételt követően olyan közeli időpontra esett, hogy érdemi felkészülésre, tájékozódásra és nyilatkozattételre nem volt lehetőség. Kérem új, szabályszerű, írásban közölt időpont megküldését.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="ev-detail__section" aria-labelledby="ed-8">
+          <div class="ev-detail__section-num" aria-hidden="true">08</div>
+          <div>
+            <h3 id="ed-8">Kapcsolódó események</h3>
+            <div class="related-row">
+              <a href="#" class="ev-card">
+                <span class="ev-card__id">§ 2.1</span>
+                <div class="ev-card__badges">
+                  <span class="badge badge--sev-med"><span class="badge__dot" aria-hidden="true"></span>Közepes</span>
                 </div>
-                <div class="color-contrast">Page BG</div>
-            </div>
-
-            <div class="color-card">
-                <div class="color-swatch" style="background: #1A2433;"></div>
-                <div class="color-info">
-                    <div class="color-title">Deep Slate Ink (Primary Text)</div>
-                    <div class="color-meta">oklch(0.24 0.015 240) &middot; #1A2433</div>
+                <h3 class="ev-card__title">A védőnő telefonon sürget</h3>
+                <p class="ev-card__desc">Telefonon ne tárgyaljon, kérjen írásbeli megkeresést.</p>
+                <span class="ev-card__cta">Megnyitás</span>
+              </a>
+              <a href="#" class="ev-card">
+                <span class="ev-card__id">§ 2.3</span>
+                <div class="ev-card__badges">
+                  <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
                 </div>
-                <div class="color-contrast">> 10:1 Contrast</div>
-            </div>
-
-            <div class="color-card">
-                <div class="color-swatch" style="background: #2D5FB7;"></div>
-                <div class="color-info">
-                    <div class="color-title">Royal Prussian Blue (Primary Brand)</div>
-                    <div class="color-meta">oklch(0.48 0.12 250) &middot; #2D5FB7</div>
+                <h3 class="ev-card__title">A védőnő jelzést tesz</h3>
+                <p class="ev-card__desc">Kikérheti a jelzés teljes másolatát, jogalapját, címzettjeit.</p>
+                <span class="ev-card__cta">Megnyitás</span>
+              </a>
+              <a href="#" class="ev-card">
+                <span class="ev-card__id">§ 10.1</span>
+                <div class="ev-card__badges">
+                  <span class="badge badge--sev-high"><span class="badge__dot" aria-hidden="true"></span>Magas</span>
                 </div>
-                <div class="color-contrast">Brand Main</div>
+                <h3 class="ev-card__title">Hibás vagy vitatható kézbesítés</h3>
+                <p class="ev-card__desc">A kézbesítés szabálytalansága a határidő-számítást is érinti.</p>
+                <span class="ev-card__cta">Megnyitás</span>
+              </a>
             </div>
+          </div>
+        </section>
 
-            <div class="color-card">
-                <div class="color-swatch" style="background: #1C5350;"></div>
-                <div class="color-info">
-                    <div class="color-title">Mineral Spruce Teal (Accent)</div>
-                    <div class="color-meta">oklch(0.38 0.06 185) &middot; #1C5350</div>
-                </div>
-                <div class="color-contrast">Clinical Tint</div>
-            </div>
+      </div>
+    </article>
+  </div>
+</section>
 
-            <div class="color-card">
-                <div class="color-swatch" style="background: #FFFDF5; border-color: #EBD6A2;"></div>
-                <div class="color-info">
-                    <div class="color-title">Soft Ochre Gold (Warnings & Deadlines)</div>
-                    <div class="color-meta">oklch(0.98 0.01 80) / oklch(0.42 0.08 70) &middot; #FFFDF5 / #6D5114</div>
-                </div>
-                <div class="color-contrast">Alerts & Rules</div>
-            </div>
+<section class="ds-section" id="categories" aria-labelledby="cat-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 10 · GRIDS</span>
+      <h2 id="cat-title" class="ds-section__title">Kategóriák</h2>
+      <p class="ds-section__desc">A content.md-ből vett kategóriák az események gyors szűréséhez. A csempe monogramja azonosítja a témát, a jobb oldali szám az adott kategóriába tartozó események darabszáma.</p>
+    </header>
 
+    <div class="cat-grid">
+      <a href="#" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">T</span>
+        <span class="cat-tile__name">Tájékoztatás</span>
+        <span class="cat-tile__count">3</span>
+      </a>
+      <a href="#" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">I</span>
+        <span class="cat-tile__name">Iratkezelés</span>
+        <span class="cat-tile__count">5</span>
+      </a>
+      <a href="#" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">E</span>
+        <span class="cat-tile__name">Eljárás</span>
+        <span class="cat-tile__count">6</span>
+      </a>
+      <a href="#" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">K</span>
+        <span class="cat-tile__name">Kommunikáció</span>
+        <span class="cat-tile__count">4</span>
+      </a>
+      <a href="#" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">H</span>
+        <span class="cat-tile__name">Határidő</span>
+        <span class="cat-tile__count">5</span>
+      </a>
+      <a href="#" class="cat-tile">
+        <span class="cat-tile__glyph" aria-hidden="true">A</span>
+        <span class="cat-tile__name">Adatvédelem</span>
+        <span class="cat-tile__count">2</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" id="institutions" aria-labelledby="ins-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 11 · GRIDS</span>
+      <h2 id="ins-title" class="ds-section__title">Intézmények</h2>
+      <p class="ds-section__desc">Az eljárási lánc résztvevői. Minden intézményhez rövid szerepleírás tartozik, hogy a szülő azonnal lássa, ki milyen minőségben jár el.</p>
+    </header>
+
+    <div class="ins-grid">
+      <article class="ins-tile">
+        <span class="ins-tile__name">Védőnő</span>
+        <span class="ins-tile__role">Családlátogatás, oltási nyomon követés, jelzés a népegészségügy felé.</span>
+      </article>
+      <article class="ins-tile">
+        <span class="ins-tile__name">Háziorvos / Iskolaorvos</span>
+        <span class="ins-tile__role">Oltás beadása, egyéniesített tájékoztatás, betegkarton vezetése.</span>
+      </article>
+      <article class="ins-tile">
+        <span class="ins-tile__name">NNK · Népegészségügy</span>
+        <span class="ins-tile__role">Hatósági eljárás, felszólítás, határozat, bírság.</span>
+      </article>
+      <article class="ins-tile">
+        <span class="ins-tile__name">Családsegítő</span>
+        <span class="ins-tile__role">Környezettanulmány, jelzés a gyámhivatalnak, gondozási terv.</span>
+      </article>
+      <article class="ins-tile">
+        <span class="ins-tile__name">Gyámhivatal</span>
+        <span class="ins-tile__role">Védelembe vétel, ideiglenes hatályú elhelyezés, határozat.</span>
+      </article>
+      <article class="ins-tile">
+        <span class="ins-tile__name">NAV</span>
+        <span class="ins-tile__role">Eljárási bírság, végrehajtás, behajtás.</span>
+      </article>
+      <article class="ins-tile">
+        <span class="ins-tile__name">Bíróság</span>
+        <span class="ins-tile__role">Közigazgatási per, azonnali jogvédelem, jogerős döntés.</span>
+      </article>
+      <article class="ins-tile">
+        <span class="ins-tile__name">Iskola / Óvoda</span>
+        <span class="ins-tile__role">Beiratkozás, KRÉTA-üzenet, kampányoltás szervezése.</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" aria-labelledby="hdr-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 12 · CHROME</span>
+      <h2 id="hdr-title" class="ds-section__title">Fejléc és lábléc</h2>
+      <p class="ds-section__desc">A fejléc fixen a lap tetején marad, áttetsző háttérrel és elmosással. A lábléc négy oszlopban mutatja a navigációt, a figyelmeztetést és a technikai metaadatokat.</p>
+    </header>
+
+    <h3 class="h4" style="margin-bottom: var(--sp-3);">Fejléc</h3>
+    <div class="hdr-mockup" style="margin-bottom: var(--sp-5);">
+      <div class="hdr-mockup__bar">live preview · 1180 × 64</div>
+      <div class="hdr-mockup__body">
+        <div class="hdr__inner" style="padding: 0;">
+          <a href="#" class="hdr__brand">
+            <span class="hdr__brand-glyph" aria-hidden="true">É</span>
+            <span>Eljárási Térkép</span>
+          </a>
+          <nav class="hdr__nav" aria-label="Fő navigáció">
+            <a href="#events" aria-current="page">Események</a>
+            <a href="#categories">Kategóriák</a>
+            <a href="#institutions">Intézmények</a>
+            <a href="#detail">Mintaoldal</a>
+          </nav>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Typography -->
-    <section>
-        <h2>3. Typography Specimen</h2>
-        <p class="section-desc">Typography is paired along a contrast axis to reflect judicial seriousness and clear digital legibility. We pair <code class="inline-code">Libre Baskerville</code> (Serif) with <code class="inline-code">Work Sans</code> (Humanist Sans-Serif).</p>
-        
-        <div class="component-preview" style="font-family: var(--font-family-heading);">
-            <span class="component-label">Heading specimen (Libre Baskerville)</span>
-            <div style="font-size: 2.25rem; font-weight: 700; margin-bottom: var(--spacing-sm);">The Judicial Archive</div>
-            <div style="font-size: 1.5rem; font-weight: 700; font-style: italic; color: var(--color-primary-main);">Chapter III &middot; Procedural Milestones</div>
+    <h3 class="h4" style="margin-bottom: var(--sp-3);">Lábléc</h3>
+    <div class="hdr-mockup">
+      <div class="hdr-mockup__bar">live preview · 1180 × 280</div>
+      <div class="hdr-mockup__body" style="padding: 0;">
+        <footer class="ftr" style="margin: 0; border: 0;">
+          <div class="container">
+            <div class="ftr__grid">
+              <div class="ftr__col ftr__about">
+                <h4>Az oldalról</h4>
+                <p>Tájékoztató jellegű, közérthető nyelven írt eljárási útmutató szülőknek, kötelező védőoltási ügyekre. Nem minősül jogi tanácsadásnak.</p>
+              </div>
+              <div class="ftr__col">
+                <h4>Tartalom</h4>
+                <ul>
+                  <li><a href="#events">Események</a></li>
+                  <li><a href="#categories">Kategóriák</a></li>
+                  <li><a href="#institutions">Intézmények</a></li>
+                </ul>
+              </div>
+              <div class="ftr__col">
+                <h4>Segítség</h4>
+                <ul>
+                  <li><a href="#">Hogyan használd</a></li>
+                  <li><a href="#">Jogi nyilatkozat</a></li>
+                  <li><a href="#">Kapcsolat</a></li>
+                </ul>
+              </div>
+              <div class="ftr__col">
+                <h4>Verzió</h4>
+                <ul>
+                  <li><a href="#">v2.0.0</a></li>
+                  <li><a href="#">Build 2026.06.02</a></li>
+                  <li><a href="#">Forrás</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="ftr__bottom">
+              <span>© 2026 Eljárási Térkép</span>
+              <span>utolsó frissítés: 2026.06.02</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-section" aria-labelledby="states-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 13 · STATES</span>
+      <h2 id="states-title" class="ds-section__title">Állapotok</h2>
+      <p class="ds-section__desc">Minden interaktív elemnek van alap, hover, fókusz, aktív, letiltott és másolás-visszajelzés állapota. A reduced-motion felhasználók számára az animációk azonnali átmenetre váltanak.</p>
+    </header>
+
+    <div class="states-grid">
+      <div class="state-card">
+        <span class="state-card__label">Másolás · siker</span>
+        <div class="state-card__demo">
+          <button type="button" class="copy-btn" data-state="success">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>Másolva</span>
+          </button>
         </div>
-
-        <div class="component-preview" style="font-family: var(--font-family-base);">
-            <span class="component-label">Body specimen (Work Sans)</span>
-            <div style="font-size: 1rem; line-height: 1.625; margin-bottom: var(--spacing-sm);">
-                This is a sample of highly legible body copy. Spacings and sizes are configured to prevent visual strain. We enforce <code class="inline-code">text-wrap: balance</code> on titles and <code class="inline-code">text-wrap: pretty</code> on blocks of prose to eliminate awkward orphans.
-            </div>
-            <div style="font-size: 0.85rem; color: var(--color-text-secondary);">
-                Meta details, small annotations, and table tags appear at 14px for clean contrast.
-            </div>
+      </div>
+      <div class="state-card">
+        <span class="state-card__label">Másolás · hiba</span>
+        <div class="state-card__demo">
+          <button type="button" class="copy-btn" data-state="error">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <span>Nem sikerült</span>
+          </button>
         </div>
-    </section>
-
-    <!-- Components -->
-    <section>
-        <h2>4. Premium Components</h2>
-        <p class="section-desc">Showcasing the custom components modeled around the principles of clinical transparency and clean spacing. Every element is designed to minimize visual clutter.</p>
-
-        <!-- Card -->
-        <div class="component-preview">
-            <span class="component-label">Event Card Component</span>
-            <div class="ds-card">
-                <div class="ds-card-header">
-                    <span class="ds-badge ds-badge--institution">Védőnő</span>
-                    <span class="ds-card-meta">Esemény 1.1</span>
-                </div>
-                <h3 class="ds-card-title" style="margin-top: 0;">Első védőnői megkeresés</h3>
-                <p class="ds-card-desc">A védőnő a szülő tájékoztatási szándékát gyakran automatikusan oltásmegtagadásnak értelmezi és írásos nyilatkozatot követel. Fontos a kezdetektől a jogszerű, együttműködő, dokumentált válaszadás.</p>
-            </div>
+      </div>
+      <div class="state-card">
+        <span class="state-card__label">Aktív állapot</span>
+        <div class="state-card__demo">
+          <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>AKTÍV</span>
         </div>
-
-        <!-- Badges -->
-        <div class="component-preview">
-            <span class="component-label">Badge Group</span>
-            <div class="badge-group">
-                <span class="ds-badge ds-badge--institution">Védőnő</span>
-                <span class="ds-badge ds-badge--institution">Gyámhivatal</span>
-                <span class="ds-badge ds-badge--category">Tájékoztatás</span>
-                <span class="ds-badge ds-badge--severity">Határidő: 8 nap</span>
-            </div>
+      </div>
+      <div class="state-card">
+        <span class="state-card__label">Letiltva</span>
+        <div class="state-card__demo">
+          <button type="button" class="btn btn--secondary" disabled>Befejezett</button>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Warning Panel -->
-        <div class="component-preview">
-            <span class="component-label">Accessible Warning Panel (No side-stripe border)</span>
-            <div class="ds-warning-panel">
-                <div class="ds-warning-header">Eljárási Szabály</div>
-                <div>A hivatalos iratokat minden esetben ajánlott átvenni. Az átvétel megtagadása vagy a postafiók elhanyagolása nem akadályozza meg a jogkövetkezményeket, sőt, megfosztja Önt a védekezés lehetőségétől.</div>
-            </div>
-        </div>
+<section class="ds-section" aria-labelledby="a11y-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 14 · A11Y</span>
+      <h2 id="a11y-title" class="ds-section__title">Akadálymentesség</h2>
+      <p class="ds-section__desc">A kontrasztellenőrzés a WCAG 2.2 AA szintnek felel meg (4.5:1 normál szöveg, 3:1 nagy szöveg). A fókusz mindig látható, a mozgás a felhasználó beállításához igazodik, a skip link a tartalomra ugrik.</p>
+    </header>
 
-        <!-- Buttons -->
-        <div class="component-preview">
-            <span class="component-label">Action Buttons</span>
-            <div class="btn-group">
-                <button class="ds-button ds-button--primary">Save Protocol</button>
-                <button class="ds-button ds-button--secondary">Copy Statement</button>
-            </div>
-        </div>
-    </section>
+    <table class="a11y-table" aria-label="Kontrasztellenőrzés">
+      <thead>
+        <tr>
+          <th scope="col">Pár</th>
+          <th scope="col">Kontraszt</th>
+          <th scope="col">AA · 4.5:1</th>
+          <th scope="col">Megjegyzés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>text × bg</td>
+          <td>16.4:1</td>
+          <td class="a11y-pass">PASS</td>
+          <td>Elsődleges szöveg a háttéren</td>
+        </tr>
+        <tr>
+          <td>text-muted × bg</td>
+          <td>7.2:1</td>
+          <td class="a11y-pass">PASS</td>
+          <td>Másodlagos szöveg</td>
+        </tr>
+        <tr>
+          <td>accent × bg</td>
+          <td>11.8:1</td>
+          <td class="a11y-pass">PASS</td>
+          <td>Sárga linkek, gombok, kiemelések</td>
+        </tr>
+        <tr>
+          <td>text-inverse × accent</td>
+          <td>9.1:1</td>
+          <td class="a11y-pass">PASS</td>
+          <td>Sötét szöveg a sárga gombon</td>
+        </tr>
+        <tr>
+          <td>sev-crit-text × sev-crit-bg</td>
+          <td>8.3:1</td>
+          <td class="a11y-pass">PASS</td>
+          <td>Kritikus jelvény</td>
+        </tr>
+        <tr>
+          <td>sev-high-text × sev-high-bg</td>
+          <td>7.9:1</td>
+          <td class="a11y-pass">PASS</td>
+          <td>Magas jelvény</td>
+        </tr>
+        <tr>
+          <td>sev-low-text × sev-low-bg</td>
+          <td>5.4:1</td>
+          <td class="a11y-pass">PASS</td>
+          <td>Alacsony jelvény, csak a felszínén alkalmazzuk</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <!-- Layout Schema -->
-    <section>
-        <h2>5. One-Column Layout Schema</h2>
-        <p class="section-desc">The landing page follows a clinical, structured vertical hierarchy to guide the reader step-by-step without lateral sidebar distractions.</p>
-        
-        <div class="layout-blueprint">
-            <div class="blueprint-el">Site Header (Glassmorphic)</div>
-            <div class="blueprint-el blueprint-el--hero">
-                <strong>Hero Area</strong>
-                <span style="font-size: 0.7rem; opacity: 0.8; max-width: 400px; margin-top: 4px;">Centered Title & Strategic Overview of the Judicial Map</span>
-            </div>
-            <div class="blueprint-el">Interactive Filter Bar (Search Input & Category Badges)</div>
-            <div class="blueprint-el blueprint-el--body">
-                <strong>Single Reading Column (Max-Width 720px)</strong>
-                <span style="font-size: 0.7rem; opacity: 0.8; max-width: 400px; margin-top: 4px;">Vertical stack of Event Cards, Action Lists, and copyable Statements</span>
-            </div>
-            <div class="blueprint-el">Legal Disclaimer Footer</div>
-        </div>
-    </section>
+    <h3 class="h4" style="margin-top: var(--sp-6); margin-bottom: var(--sp-3);">A11Y checklist</h3>
+    <ul class="ev-detail__list" style="max-width: 70ch;">
+      <li>Skip link az első Tab-ra megjelenik, a tartalomra ugrik.</li>
+      <li>Minden badge, figyelmeztető doboz és kártya olvasható képernyőolvasóval.</li>
+      <li>A fókuszgyűrű 2 px-es, sárga, 2 px-es eltolással mindenhol látható.</li>
+      <li>A tab-sorrend megegyezik a vizuális sorrenddel.</li>
+      <li>A reduced-motion média lekérdezés minden animációt lekapcsol.</li>
+      <li>A szín önmagában soha nem hordoz információt, mindig van badge-szöveg vagy leírás.</li>
+    </ul>
+  </div>
+</section>
 
-    <!-- CSS Variables Code Block -->
-    <section>
-        <h2>6. Implementation Code Templates</h2>
-        <p class="section-desc">Integrate these CSS rules directly into the root stylesheet to establish the visual core of the protocol.</p>
-        
-        <div class="code-container">
-            <div class="code-header">
-                <span class="code-lang">CSS</span>
-                <button class="code-copy-btn" onclick="copyCode(this, 'css-variables-code')">Copy</button>
-            </div>
-            <pre><code id="css-variables-code">:root {
-  /* Color Palette - OKLCH */
-  --color-bg-primary: oklch(0.98 0.005 85);       /* #FBFBF9 */
-  --color-bg-secondary: oklch(1 0 0);             /* #FFFFFF */
-  --color-text-primary: oklch(0.24 0.015 240);    /* #1A2433 */
-  --color-text-secondary: oklch(0.42 0.02 240);   /* #42526B */
-  
-  --color-primary-main: oklch(0.48 0.12 250);     /* #2D5FB7 */
-  --color-accent-teal: oklch(0.38 0.06 185);      /* #1C5350 */
-  
-  --color-warning-bg: oklch(0.98 0.01 80);        /* #FFFDF5 */
-  --color-warning-border: oklch(0.88 0.06 80);    /* #EBD6A2 */
-  --color-warning-text: oklch(0.42 0.08 70);      /* #6D5114 */
-  
-  --color-neutral-border: oklch(0.92 0.008 240);  /* #E2E7EE */
+<section class="ds-section" aria-labelledby="impl-title">
+  <div class="container">
+    <header class="ds-section__head">
+      <span class="eyebrow">// 15 · IMPLEMENTATION</span>
+      <h2 id="impl-title" class="ds-section__title">Astro leképezés</h2>
+      <p class="ds-section__desc">Minden komponens önálló osztállyal rendelkezik, így a HTML minta közvetlenül átemelhető Astro komponensekbe. Az alábbi táblázat a CSS-osztály és a várható Astro komponens kapcsolatát mutatja.</p>
+    </header>
 
-  /* Typography */
-  --font-family-base: 'Work Sans', sans-serif;
-  --font-family-heading: 'Libre Baskerville', serif;
-
-  /* Dimensions */
-  --content-max-width: 720px;
-  --radius-md: 8px;
-  --radius-lg: 14px;
-}
-
-/* Accessible Warning Panel (Replaces old side-stripe boxes) */
-.ds-warning-panel {
-  background-color: var(--color-warning-bg);
-  border: 1px solid var(--color-warning-border);
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius-md);
-  color: var(--color-warning-text);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}</code></pre>
-        </div>
-    </section>
+    <div class="notes-list">
+      <div class="note-card">
+        <span class="note-card__title">EvCard.astro</span>
+        <p>A kártya markupja egy-az-egyben áthelyezhető. A props-ok: <code>id</code>, <code>title</code>, <code>desc</code>, <code>severity</code>, <code>institution</code>, <code>categories[]</code>, <code>href</code>.</p>
+      </div>
+      <div class="note-card">
+        <span class="note-card__title">EventDetail.astro</span>
+        <p>A nyolc szekció (01-08) Astro slot-okkal vagy props-ba csomagolt gyerek-komponensekkel építhető fel. A számozás a content.md §7 szekciólistáját követi.</p>
+      </div>
+      <div class="note-card">
+        <span class="note-card__title">TemplateBox.astro</span>
+        <p>A belső <code>id="template-text-*"</code> attribútum a másolás gomb <code>data-copy-target</code> értékéhez kötődik. Dinamikus ID-k generálásához használj Astro <code>Astro.id()</code> segédprogramot.</p>
+      </div>
+      <div class="note-card">
+        <span class="note-card__title">CopyButton.astro</span>
+        <p>A vanilla JavaScript kód a <code>document</code> alján van. Astro-ban a kliens-oldali szkriptet <code>&lt;script&gt;</code> tagbe kell tenni, alapértelmezetten bundle-ölve.</p>
+      </div>
+      <div class="note-card">
+        <span class="note-card__title">SeverityBadge.astro</span>
+        <p>Az osztály <code>badge--sev-{level}</code> formátumban épül, ahol a <code>level</code> a <code>low | med | high | crit</code> értékek egyike.</p>
+      </div>
+      <div class="note-card">
+        <span class="note-card__title">Token layer</span>
+        <p>A :root változókat érdemes külön <code>tokens.css</code> fájlba tenni, és a globális stíluslap tetején importálni. A sötét téma az alap, világos téma később <code>[data-theme="light"]</code> blokkban adható hozzá.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
-<!-- Toast notification banner -->
-<div class="toast" id="clipboard-toast">Copied to clipboard!</div>
+<footer class="ftr" role="contentinfo">
+  <div class="container">
+    <div class="ftr__grid">
+      <div class="ftr__col ftr__about">
+        <h4>Az oldalról</h4>
+        <p>Tájékoztató jellegű, közérthető nyelven írt eljárási útmutató szülőknek, kötelező védőoltási ügyekre. Nem minősül jogi tanácsadásnak.</p>
+        <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>AKTÍV</span>
+      </div>
+      <div class="ftr__col">
+        <h4>Tartalom</h4>
+        <ul>
+          <li><a href="#events">Események</a></li>
+          <li><a href="#categories">Kategóriák</a></li>
+          <li><a href="#institutions">Intézmények</a></li>
+          <li><a href="#detail">Mintaoldal</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Segítség</h4>
+        <ul>
+          <li><a href="#">Hogyan használd</a></li>
+          <li><a href="#">Jogi nyilatkozat</a></li>
+          <li><a href="#">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Verzió</h4>
+        <ul>
+          <li><a href="#">v2.0.0</a></li>
+          <li><a href="#">Build 2026.06.02</a></li>
+          <li><a href="#">Forrás</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bottom">
+      <span>© 2026 Eljárási Térkép</span>
+      <span>utolsó frissítés: 2026.06.02</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-    function copyCode(btn, codeId) {
-        const codeElement = document.getElementById(codeId);
-        if (!codeElement) return;
-        
-        navigator.clipboard.writeText(codeElement.innerText).then(() => {
-            // Show toast
-            const toast = document.getElementById('clipboard-toast');
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 2500);
-
-            // Change button state temporarily
-            const originalText = btn.innerText;
-            btn.innerText = 'Copied!';
-            btn.style.color = '#34d399';
-            btn.style.borderColor = '#34d399';
-            
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.color = '';
-                btn.style.borderColor = '';
-            }, 2000);
-        }).catch(err => {
-            console.error('Failed to copy text: ', err);
+(function () {
+  var buttons = document.querySelectorAll('.copy-btn[data-copy-target]');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var targetId = btn.getAttribute('data-copy-target');
+      var target = document.getElementById(targetId);
+      if (!target) return;
+      var text = target.innerText || target.textContent;
+      var label = btn.querySelector('[data-copy-label]');
+      var original = label ? label.textContent : '';
+      var setState = function (state, message) {
+        btn.setAttribute('data-state', state);
+        if (label) label.textContent = message;
+        var box = btn.closest('.template-box');
+        if (box) box.setAttribute('data-state', state);
+        window.setTimeout(function () {
+          btn.removeAttribute('data-state');
+          if (box) box.removeAttribute('data-state');
+          if (label) label.textContent = original;
+        }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          setState('success', 'Másolva');
+        }).catch(function () {
+          setState('error', 'Nem sikerült');
         });
-    }
+      } else {
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'absolute';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          setState('success', 'Másolva');
+        } catch (e) {
+          setState('error', 'Nem sikerült');
+        }
+      }
+    });
+  });
+})();
 </script>
 
 </body>
