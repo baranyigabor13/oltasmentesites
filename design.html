@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parental Design System - Specification & Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================================================
+           DESIGN SYSTEM VARIABLES (OKLCH with HEX fallback tags)
+           ========================================================================== */
+        :root {
+            /* Color Palette */
+            --color-bg-primary: oklch(0.98 0.005 85);       /* #FBFBF9 - Warm Alabaster */
+            --color-bg-secondary: oklch(1 0 0);             /* #FFFFFF - Pure White */
+            --color-text-primary: oklch(0.24 0.015 240);    /* #1A2433 - Deep Slate Ink */
+            --color-text-secondary: oklch(0.42 0.02 240);   /* #42526B - Muted Slate */
+            
+            --color-primary-main: oklch(0.48 0.12 250);     /* #2D5FB7 - Royal Prussian Blue */
+            --color-primary-light: oklch(0.95 0.02 250);    /* #EDF4FE - Pale Blue Tint */
+            --color-primary-hover: oklch(0.40 0.12 250);    /* #224B91 - Deep Prussian Hover */
+
+            --color-accent-teal: oklch(0.38 0.06 185);      /* #1C5350 - Mineral Spruce Teal */
+            --color-accent-teal-light: oklch(0.95 0.01 185);/* #EDF5F4 - Muted Spruce Tint */
+            
+            /* Warnings / Alerts (Gold/Amber - No Panic) */
+            --color-warning-bg: oklch(0.98 0.01 80);        /* #FFFDF5 - Soft Ochre Gold Bg */
+            --color-warning-border: oklch(0.88 0.06 80);    /* #EBD6A2 - Muted Gold Border */
+            --color-warning-text: oklch(0.42 0.08 70);      /* #6D5114 - Soft Amber Text */
+            
+            --color-neutral-border: oklch(0.92 0.008 240);  /* #E2E7EE - Muted Slate Border */
+            --color-neutral-soft: oklch(0.96 0.005 240);    /* #F3F6F9 - Soft Gray */
+
+            /* Typography */
+            --font-family-base: 'Work Sans', sans-serif;
+            --font-family-heading: 'Libre Baskerville', serif;
+
+            /* Spacing & Layout */
+            --spacing-xs: 0.25rem;   /* 4px */
+            --spacing-sm: 0.5rem;    /* 8px */
+            --spacing-md: 1rem;      /* 16px */
+            --spacing-lg: 1.5rem;    /* 24px */
+            --spacing-xl: 2.25rem;   /* 36px */
+            --spacing-2xl: 4rem;     /* 64px */
+            --spacing-3xl: 6rem;     /* 96px */
+            
+            --content-max-width: 720px; /* Capped for optimal readability (65-75ch) */
+            
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 14px;
+            
+            --shadow-sm: 0 1px 3px rgba(26, 36, 51, 0.03), 0 1px 2px rgba(26, 36, 51, 0.02);
+            --shadow-md: 0 6px 16px -4px rgba(26, 36, 51, 0.06), 0 2px 8px -2px rgba(26, 36, 51, 0.04);
+            --shadow-lg: 0 20px 32px -8px rgba(26, 36, 51, 0.08), 0 8px 16px -4px rgba(26, 36, 51, 0.05);
+            
+            --transition-base: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Base Resets */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            font-family: var(--font-family-base);
+            line-height: 1.625;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* Typography specimens */
+        h1, h2, h3, h4 {
+            font-family: var(--font-family-heading);
+            color: var(--color-text-primary);
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            letter-spacing: -0.02em;
+            margin-bottom: var(--spacing-sm);
+            text-wrap: balance;
+        }
+
+        h2 {
+            font-size: 1.625rem;
+            margin-top: var(--spacing-2xl);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-xs);
+            border-bottom: 2px solid var(--color-neutral-border);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            text-wrap: pretty;
+        }
+
+        ul, ol {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+
+        li {
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-text-secondary);
+        }
+
+        a {
+            color: var(--color-primary-main);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        a:hover {
+            color: var(--color-primary-hover);
+            text-decoration: underline;
+        }
+
+        /* System Header */
+        .showcase-header {
+            margin-bottom: var(--spacing-2xl);
+            border-bottom: 1px solid var(--color-neutral-border);
+            padding-bottom: var(--spacing-xl);
+        }
+
+        .showcase-header p.lead {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            color: var(--color-text-secondary);
+            font-family: var(--font-family-base);
+            font-weight: 400;
+        }
+
+        /* Showcase blocks */
+        .section-desc {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Color Grid */
+        .color-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .color-card {
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .color-swatch {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-neutral-border);
+            flex-shrink: 0;
+        }
+
+        .color-info {
+            flex-grow: 1;
+        }
+
+        .color-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .color-meta {
+            font-family: ui-monospace, SFMono-Regular, monospace;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+
+        .color-contrast {
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background-color: var(--color-neutral-soft);
+        }
+
+        /* Component Showcase Container */
+        .component-preview {
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .component-label {
+            font-family: var(--font-family-base);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        /* Card Component */
+        .ds-card {
+            background-color: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+        }
+
+        .ds-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .ds-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-sm);
+            gap: var(--spacing-sm);
+        }
+
+        .ds-card-meta {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+
+        .ds-card-title {
+            font-size: 1.15rem;
+            font-family: var(--font-family-base);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .ds-card-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Badges */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+
+        .ds-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: var(--font-family-base);
+        }
+
+        .ds-badge--institution {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-main);
+            border: 1px solid rgba(45, 95, 183, 0.15);
+        }
+
+        .ds-badge--category {
+            background-color: var(--color-accent-teal-light);
+            color: var(--color-accent-teal);
+            border: 1px solid rgba(28, 83, 80, 0.15);
+        }
+
+        .ds-badge--severity {
+            background-color: var(--color-warning-bg);
+            color: var(--color-warning-text);
+            border: 1px solid var(--color-warning-border);
+        }
+
+        /* Warning Box (No side stripe border) */
+        .ds-warning-panel {
+            background-color: var(--color-warning-bg);
+            border: 1px solid var(--color-warning-border);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            color: var(--color-warning-text);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .ds-warning-header {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .ds-warning-header::before {
+            content: "!";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--color-warning-text);
+            color: var(--color-warning-bg);
+            font-size: 10px;
+            font-weight: 900;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+
+        .ds-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.6rem 1.25rem;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-weight: 500;
+            font-family: var(--font-family-base);
+            cursor: pointer;
+            transition: var(--transition-base);
+            border: 1px solid transparent;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .ds-button--primary {
+            background-color: var(--color-primary-main);
+            color: var(--color-bg-secondary);
+        }
+
+        .ds-button--primary:hover {
+            background-color: var(--color-primary-hover);
+        }
+
+        .ds-button--secondary {
+            background-color: var(--color-bg-secondary);
+            border-color: var(--color-neutral-border);
+            color: var(--color-text-primary);
+        }
+
+        .ds-button--secondary:hover {
+            background-color: var(--color-neutral-soft);
+            border-color: var(--color-text-secondary);
+        }
+
+        .ds-button:focus-visible {
+            outline: 3px solid var(--color-primary-main);
+            outline-offset: 2px;
+        }
+
+        /* Code display blocks */
+        .code-container {
+            position: relative;
+            margin-top: var(--spacing-md);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: #111827;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1f2937;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #374151;
+        }
+
+        .code-lang {
+            font-family: var(--font-family-base);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+        }
+
+        .code-copy-btn {
+            background: transparent;
+            border: 1px solid #4b5563;
+            color: #d1d5db;
+            font-size: 0.7rem;
+            font-family: var(--font-family-base);
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .code-copy-btn:hover {
+            background: #374151;
+            color: #ffffff;
+            border-color: #9ca3af;
+        }
+
+        pre {
+            padding: var(--spacing-md);
+            overflow-x: auto;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #f3f4f6;
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+
+        .inline-code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            background-color: var(--color-neutral-soft);
+            color: var(--color-text-primary);
+            padding: 0.15rem 0.35rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+        }
+
+        /* Layout schema mockup */
+        .layout-blueprint {
+            background: var(--color-neutral-soft);
+            border: 1px dashed var(--color-neutral-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .blueprint-el {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-sm);
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+        }
+
+        .blueprint-el--hero {
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-primary-light);
+            border-color: rgba(45, 95, 183, 0.15);
+            color: var(--color-primary-main);
+        }
+
+        .blueprint-el--body {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--color-text-primary);
+            color: var(--color-bg-secondary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            transition: bottom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .toast.show {
+            bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<main class="container">
+    
+    <!-- System Header -->
+    <header class="showcase-header">
+        <h1>Parental Design System</h1>
+        <p class="lead">A calm, clinical, and authoritative design framework tailored for legal-administrative communication and decision mapping.</p>
+    </header>
+
+    <!-- Visual Philosophy -->
+    <section>
+        <h2>1. Visual Direction & Vibe</h2>
+        <p class="section-desc">When parents are facing administrative processes regarding mandatory vaccinations, they enter a state of high stress. The design system must counteract this anxiety using concrete, reassuring physical-object aesthetics — resembling a judicial archive or clinical protocol register.</p>
+        <ul>
+            <li><strong>Voice and Tone:</strong> Reassuring, clinical, transparent, and authoritative.</li>
+            <li><strong>Editorial Grid:</strong> A single focused layout column capped at <code class="inline-code">72ch</code> to ensure comfortable typography line lengths (65–75 characters) and reduce cognitive overload.</li>
+            <li><strong>Refusal of Alarmism:</strong> Strictly avoid raw primary warning colors (danger reds) or screaming high-contrast callouts. Important markers are framed as gold-tinted judicial folders rather than hazard signs.</li>
+        </ul>
+    </section>
+
+    <!-- Colors -->
+    <section>
+        <h2>2. Color Palette (OKLCH System)</h2>
+        <p class="section-desc">A committed visual palette based on modern, accessible OKLCH values with solid HEX fallbacks. All primary typography and components meet or exceed WCAG AA contrast ratios (4.5:1 for body copy).</p>
+        
+        <div class="color-grid">
+            
+            <div class="color-card">
+                <div class="color-swatch" style="background: #FBFBF9;"></div>
+                <div class="color-info">
+                    <div class="color-title">Warm Alabaster (Primary BG)</div>
+                    <div class="color-meta">oklch(0.98 0.005 85) &middot; #FBFBF9</div>
+                </div>
+                <div class="color-contrast">Page BG</div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #1A2433;"></div>
+                <div class="color-info">
+                    <div class="color-title">Deep Slate Ink (Primary Text)</div>
+                    <div class="color-meta">oklch(0.24 0.015 240) &middot; #1A2433</div>
+                </div>
+                <div class="color-contrast">> 10:1 Contrast</div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #2D5FB7;"></div>
+                <div class="color-info">
+                    <div class="color-title">Royal Prussian Blue (Primary Brand)</div>
+                    <div class="color-meta">oklch(0.48 0.12 250) &middot; #2D5FB7</div>
+                </div>
+                <div class="color-contrast">Brand Main</div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #1C5350;"></div>
+                <div class="color-info">
+                    <div class="color-title">Mineral Spruce Teal (Accent)</div>
+                    <div class="color-meta">oklch(0.38 0.06 185) &middot; #1C5350</div>
+                </div>
+                <div class="color-contrast">Clinical Tint</div>
+            </div>
+
+            <div class="color-card">
+                <div class="color-swatch" style="background: #FFFDF5; border-color: #EBD6A2;"></div>
+                <div class="color-info">
+                    <div class="color-title">Soft Ochre Gold (Warnings & Deadlines)</div>
+                    <div class="color-meta">oklch(0.98 0.01 80) / oklch(0.42 0.08 70) &middot; #FFFDF5 / #6D5114</div>
+                </div>
+                <div class="color-contrast">Alerts & Rules</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Typography -->
+    <section>
+        <h2>3. Typography Specimen</h2>
+        <p class="section-desc">Typography is paired along a contrast axis to reflect judicial seriousness and clear digital legibility. We pair <code class="inline-code">Libre Baskerville</code> (Serif) with <code class="inline-code">Work Sans</code> (Humanist Sans-Serif).</p>
+        
+        <div class="component-preview" style="font-family: var(--font-family-heading);">
+            <span class="component-label">Heading specimen (Libre Baskerville)</span>
+            <div style="font-size: 2.25rem; font-weight: 700; margin-bottom: var(--spacing-sm);">The Judicial Archive</div>
+            <div style="font-size: 1.5rem; font-weight: 700; font-style: italic; color: var(--color-primary-main);">Chapter III &middot; Procedural Milestones</div>
+        </div>
+
+        <div class="component-preview" style="font-family: var(--font-family-base);">
+            <span class="component-label">Body specimen (Work Sans)</span>
+            <div style="font-size: 1rem; line-height: 1.625; margin-bottom: var(--spacing-sm);">
+                This is a sample of highly legible body copy. Spacings and sizes are configured to prevent visual strain. We enforce <code class="inline-code">text-wrap: balance</code> on titles and <code class="inline-code">text-wrap: pretty</code> on blocks of prose to eliminate awkward orphans.
+            </div>
+            <div style="font-size: 0.85rem; color: var(--color-text-secondary);">
+                Meta details, small annotations, and table tags appear at 14px for clean contrast.
+            </div>
+        </div>
+    </section>
+
+    <!-- Components -->
+    <section>
+        <h2>4. Premium Components</h2>
+        <p class="section-desc">Showcasing the custom components modeled around the principles of clinical transparency and clean spacing. Every element is designed to minimize visual clutter.</p>
+
+        <!-- Card -->
+        <div class="component-preview">
+            <span class="component-label">Event Card Component</span>
+            <div class="ds-card">
+                <div class="ds-card-header">
+                    <span class="ds-badge ds-badge--institution">Védőnő</span>
+                    <span class="ds-card-meta">Esemény 1.1</span>
+                </div>
+                <h3 class="ds-card-title" style="margin-top: 0;">Első védőnői megkeresés</h3>
+                <p class="ds-card-desc">A védőnő a szülő tájékoztatási szándékát gyakran automatikusan oltásmegtagadásnak értelmezi és írásos nyilatkozatot követel. Fontos a kezdetektől a jogszerű, együttműködő, dokumentált válaszadás.</p>
+            </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="component-preview">
+            <span class="component-label">Badge Group</span>
+            <div class="badge-group">
+                <span class="ds-badge ds-badge--institution">Védőnő</span>
+                <span class="ds-badge ds-badge--institution">Gyámhivatal</span>
+                <span class="ds-badge ds-badge--category">Tájékoztatás</span>
+                <span class="ds-badge ds-badge--severity">Határidő: 8 nap</span>
+            </div>
+        </div>
+
+        <!-- Warning Panel -->
+        <div class="component-preview">
+            <span class="component-label">Accessible Warning Panel (No side-stripe border)</span>
+            <div class="ds-warning-panel">
+                <div class="ds-warning-header">Eljárási Szabály</div>
+                <div>A hivatalos iratokat minden esetben ajánlott átvenni. Az átvétel megtagadása vagy a postafiók elhanyagolása nem akadályozza meg a jogkövetkezményeket, sőt, megfosztja Önt a védekezés lehetőségétől.</div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="component-preview">
+            <span class="component-label">Action Buttons</span>
+            <div class="btn-group">
+                <button class="ds-button ds-button--primary">Save Protocol</button>
+                <button class="ds-button ds-button--secondary">Copy Statement</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layout Schema -->
+    <section>
+        <h2>5. One-Column Layout Schema</h2>
+        <p class="section-desc">The landing page follows a clinical, structured vertical hierarchy to guide the reader step-by-step without lateral sidebar distractions.</p>
+        
+        <div class="layout-blueprint">
+            <div class="blueprint-el">Site Header (Glassmorphic)</div>
+            <div class="blueprint-el blueprint-el--hero">
+                <strong>Hero Area</strong>
+                <span style="font-size: 0.7rem; opacity: 0.8; max-width: 400px; margin-top: 4px;">Centered Title & Strategic Overview of the Judicial Map</span>
+            </div>
+            <div class="blueprint-el">Interactive Filter Bar (Search Input & Category Badges)</div>
+            <div class="blueprint-el blueprint-el--body">
+                <strong>Single Reading Column (Max-Width 720px)</strong>
+                <span style="font-size: 0.7rem; opacity: 0.8; max-width: 400px; margin-top: 4px;">Vertical stack of Event Cards, Action Lists, and copyable Statements</span>
+            </div>
+            <div class="blueprint-el">Legal Disclaimer Footer</div>
+        </div>
+    </section>
+
+    <!-- CSS Variables Code Block -->
+    <section>
+        <h2>6. Implementation Code Templates</h2>
+        <p class="section-desc">Integrate these CSS rules directly into the root stylesheet to establish the visual core of the protocol.</p>
+        
+        <div class="code-container">
+            <div class="code-header">
+                <span class="code-lang">CSS</span>
+                <button class="code-copy-btn" onclick="copyCode(this, 'css-variables-code')">Copy</button>
+            </div>
+            <pre><code id="css-variables-code">:root {
+  /* Color Palette - OKLCH */
+  --color-bg-primary: oklch(0.98 0.005 85);       /* #FBFBF9 */
+  --color-bg-secondary: oklch(1 0 0);             /* #FFFFFF */
+  --color-text-primary: oklch(0.24 0.015 240);    /* #1A2433 */
+  --color-text-secondary: oklch(0.42 0.02 240);   /* #42526B */
+  
+  --color-primary-main: oklch(0.48 0.12 250);     /* #2D5FB7 */
+  --color-accent-teal: oklch(0.38 0.06 185);      /* #1C5350 */
+  
+  --color-warning-bg: oklch(0.98 0.01 80);        /* #FFFDF5 */
+  --color-warning-border: oklch(0.88 0.06 80);    /* #EBD6A2 */
+  --color-warning-text: oklch(0.42 0.08 70);      /* #6D5114 */
+  
+  --color-neutral-border: oklch(0.92 0.008 240);  /* #E2E7EE */
+
+  /* Typography */
+  --font-family-base: 'Work Sans', sans-serif;
+  --font-family-heading: 'Libre Baskerville', serif;
+
+  /* Dimensions */
+  --content-max-width: 720px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+}
+
+/* Accessible Warning Panel (Replaces old side-stripe boxes) */
+.ds-warning-panel {
+  background-color: var(--color-warning-bg);
+  border: 1px solid var(--color-warning-border);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  color: var(--color-warning-text);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}</code></pre>
+        </div>
+    </section>
+
+</main>
+
+<!-- Toast notification banner -->
+<div class="toast" id="clipboard-toast">Copied to clipboard!</div>
+
+<script>
+    function copyCode(btn, codeId) {
+        const codeElement = document.getElementById(codeId);
+        if (!codeElement) return;
+        
+        navigator.clipboard.writeText(codeElement.innerText).then(() => {
+            // Show toast
+            const toast = document.getElementById('clipboard-toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+
+            // Change button state temporarily
+            const originalText = btn.innerText;
+            btn.innerText = 'Copied!';
+            btn.style.color = '#34d399';
+            btn.style.borderColor = '#34d399';
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.color = '';
+                btn.style.borderColor = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -7,7 +7,7 @@
     <meta name="description" content="Végleges eljárási térkép szülőknek kötelező védőoltási ügyekben: intézmények, iratok, határidők, jogorvoslatok.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* ==========================================================================
            DESIGN RENDSZER – VÁLTOZÓK (light)
@@ -154,7 +154,7 @@
            ALAP STÍLUS
            ========================================================================== */
         * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: var(--color-bg-primary);
@@ -182,18 +182,26 @@
         }
 
         #hero .hero-container,
+        #súlyosság > h2,
         #súlyosság > p,
         #súlyosság > ul,
         #súlyosság > h3,
+        #súlyosság > .quote-box,
+        #lépések > h2,
         #lépések > p,
         #lépések > .toolbar,
         .chapter,
+        #alapmondatok > h2,
         #alapmondatok > p,
+        #akcióterv > h2,
         #akcióterv > p,
         .action-item,
+        #intézmények > h2,
         #intézmények > p,
+        #checklist > h2,
         #checklist > p,
         #checklist > h3,
+        #checklist > ol,
         .checklist {
             max-width: var(--content-max-width);
             margin-left: auto;
@@ -224,9 +232,9 @@
         ::-webkit-scrollbar-thumb { background: var(--color-neutral-border); border-radius: 5px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--color-text-secondary); }
 
-        h1 { font-size: 2.5rem; margin-bottom: var(--spacing-md); letter-spacing: -0.02em; }
-        h2 { font-size: 1.625rem; margin-top: var(--spacing-2xl); margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-sm); border-bottom: 2px solid var(--color-neutral-border); }
-        h3 { font-size: 1.25rem; margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm); }
+        h1 { font-size: 2.75rem; margin-bottom: var(--spacing-md); letter-spacing: -0.02em; }
+        h2 { font-size: 1.85rem; margin-top: var(--spacing-3xl); margin-bottom: var(--spacing-xl); padding-bottom: 0; border-bottom: none; letter-spacing: -0.02em; }
+        h3 { font-size: 1.35rem; margin-top: var(--spacing-2xl); margin-bottom: var(--spacing-md); }
         h4 { font-size: 1.05rem; margin-top: var(--spacing-md); margin-bottom: var(--spacing-xs); font-family: var(--font-family-base); font-weight: 600; }
 
         p { margin: 0 0 var(--spacing-md) 0; color: var(--color-text-secondary); }
@@ -261,25 +269,21 @@
            FEJLÉC ÉS NAVIGÁCIÓ (Glassmorphism)
            ========================================================================== */
         .site-header {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: var(--color-bg-secondary);
             border-bottom: 1px solid var(--color-neutral-border);
-            position: sticky;
-            top: 0;
+            position: relative;
             z-index: 100;
-            box-shadow: var(--shadow-sm);
             transition: background 0.3s, border-color 0.3s;
         }
         [data-theme="dark"] .site-header {
-            background: rgba(9, 13, 26, 0.85);
+            background: var(--color-bg-secondary);
             border-color: rgba(255, 255, 255, 0.05);
         }
 
         .site-header .container {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            justify-content: space-between;
             padding-top: var(--spacing-md);
             padding-bottom: var(--spacing-md);
             gap: var(--spacing-md);
@@ -289,6 +293,9 @@
             display: flex;
             flex-direction: column;
             text-decoration: none;
+            grid-column: 2;
+            text-align: center;
+            align-items: center;
         }
         .brand-title {
             font-family: var(--font-family-heading);
@@ -314,6 +321,8 @@
             display: flex;
             gap: var(--spacing-xs);
             align-items: center;
+            grid-column: 3;
+            justify-self: end;
         }
         .top-nav a {
             color: var(--color-text-secondary);
@@ -375,120 +384,119 @@
         }
 
         /* ==========================================================================
-           HERO SECTION (Warm Sand-Ivory & Amber Editorial Cover)
+           HERO SECTION (Frameless Modern Layout)
            ========================================================================== */
         .hero {
-            background: var(--color-hero-bg);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-2xl) var(--spacing-xl);
-            margin: var(--spacing-xl) auto;
-            border: 1px solid var(--color-hero-border);
-            box-shadow: var(--shadow-md);
+            background: transparent;
+            border-radius: 0;
+            padding: var(--spacing-3xl) 0;
+            margin: 0 auto;
+            border: none;
+            box-shadow: none;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            transition: var(--transition-base);
+        }
+        [data-theme="dark"] .hero {
+            background: transparent;
         }
 
-        /* Elegant SVG dot-grid visual map pattern in background */
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: radial-gradient(hsl(38, 15%, 82%) 1.5px, transparent 1.5px);
-            background-size: 24px 24px;
-            opacity: 0.35;
-            pointer-events: none;
-            z-index: 0;
-        }
-        [data-theme="dark"] .hero::before {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+            display: none;
         }
 
         .hero-container {
             display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
-            gap: var(--spacing-2xl);
-            align-items: center;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: var(--spacing-3xl);
+            align-items: flex-start;
             position: relative;
             z-index: 1;
         }
         @media (max-width: 900px) {
             .hero-container {
                 grid-template-columns: 1fr;
-                gap: var(--spacing-xl);
+                gap: var(--spacing-2xl);
             }
-            .hero { padding: var(--spacing-lg); }
+            .hero { padding: var(--spacing-xl) 0; }
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            background: var(--color-bg-secondary);
-            color: var(--color-warning-strong);
-            padding: 0.4rem 0.9rem;
+            background: var(--color-primary-light);
+            color: var(--color-primary-main);
+            padding: 0.35rem 0.75rem;
             border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            font-size: 0.7rem;
+            font-weight: 800;
             letter-spacing: 0.08em;
             margin-bottom: var(--spacing-md);
-            border: 1px solid var(--color-hero-border);
+            border: none;
             text-transform: uppercase;
-            box-shadow: var(--shadow-sm);
         }
         [data-theme="dark"] .hero-badge {
-            background: var(--color-bg-elevated);
-            color: var(--color-warning-text);
+            background: rgba(96, 165, 250, 0.1);
+            color: var(--color-primary-main);
         }
 
         .hero-content h1 {
-            font-size: 2.35rem;
-            line-height: 1.22;
+            font-family: var(--font-family-base);
+            font-size: 3.25rem;
+            line-height: 1.08;
             margin-bottom: var(--spacing-lg);
-            font-weight: 700;
+            font-weight: 900;
             color: var(--color-text-primary);
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
         }
         .hero-content .lead {
-            font-size: 1.05rem;
+            font-size: 1.125rem;
             color: var(--color-text-secondary);
             margin-bottom: var(--spacing-md);
             line-height: 1.65;
+            font-weight: 400;
         }
 
         .hero-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--color-hero-border);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-xl) var(--spacing-lg);
-            box-shadow: var(--shadow-md);
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            position: relative;
+            overflow: visible;
+        }
+        .hero-card::after {
+            display: none;
         }
         [data-theme="dark"] .hero-card {
-            background: rgba(18, 24, 41, 0.75);
-            border-color: rgba(255, 255, 255, 0.05);
+            background: transparent;
+            border: none;
+        }
+        .hero-card:hover {
+            transform: none;
+            box-shadow: none;
         }
 
         .hero-card-header h3 {
             margin-top: 0;
-            font-size: 1.08rem;
-            color: var(--color-text-primary);
-            margin-bottom: var(--spacing-lg);
+            font-size: 0.8rem;
             font-family: var(--font-family-base);
-            font-weight: 700;
-            letter-spacing: -0.01em;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            color: var(--color-text-primary);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--color-text-primary);
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
             display: flex;
             align-items: center;
             gap: 8px;
-            text-transform: uppercase;
-            font-size: 0.88rem;
-            letter-spacing: 0.05em;
-            color: var(--color-accent-teal);
-            border-bottom: 1px dashed var(--color-hero-border);
-            padding-bottom: var(--spacing-sm);
         }
         [data-theme="dark"] .hero-card-header h3 {
-            color: var(--color-primary-main);
-            border-bottom-color: rgba(255,255,255,0.05);
+            color: var(--color-text-primary);
+            border-bottom-color: var(--color-text-primary);
         }
 
         .hero-points {
@@ -497,25 +505,42 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-lg); /* Airier lists */
         }
         .hero-points li {
             display: flex;
             align-items: flex-start;
-            gap: var(--spacing-sm);
-            font-size: 0.9rem;
+            gap: var(--spacing-md);
+            font-size: 0.95rem;
             color: var(--color-text-secondary);
-            line-height: 1.45;
+            line-height: 1.5;
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--color-neutral-border);
+            transition: var(--transition-base);
+        }
+        [data-theme="dark"] .hero-points li {
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+        }
+        .hero-points li:last-child {
+            border-bottom: none;
+        }
+        .hero-points li:hover {
+            color: var(--color-text-primary);
+            padding-left: var(--spacing-xs);
         }
         .hero-point-icon {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             line-height: 1;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-accent-teal);
+            color: var(--color-text-primary);
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            transition: var(--transition-base);
         }
-        [data-theme="dark"] .hero-point-icon {
+        .hero-points li:hover .hero-point-icon {
+            transform: scale(1.2);
             color: var(--color-primary-main);
         }
 
@@ -529,41 +554,60 @@
             margin: var(--spacing-lg) 0;
         }
         .severity-card {
-            background: var(--color-bg-secondary);
-            border: 1px solid var(--color-neutral-border);
-            border-top: 4px solid var(--color-neutral-border);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-lg); /* spacious padding */
+            border: none;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
             transition: var(--transition-base);
-            box-shadow: var(--shadow-sm);
+            box-shadow: none;
         }
         .severity-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-md);
         }
-        [data-theme="dark"] .severity-card {
-            background: var(--color-bg-elevated);
-            border-color: rgba(255, 255, 255, 0.05);
-        }
         .severity-card h4 {
-            margin: 0 0 var(--spacing-xs) 0;
-            font-size: 1.05rem;
-            font-weight: 700;
+            margin: 0 0 var(--spacing-sm) 0;
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         .severity-card p {
-            font-size: 0.88rem;
-            color: var(--color-text-secondary);
+            font-size: 0.9rem;
             margin: 0;
-            line-height: 1.45;
+            line-height: 1.5;
         }
-        .severity-card.crit { border-top-color: var(--severity-crit-color); }
-        .severity-card.crit h4 { color: var(--severity-crit-color); }
-        .severity-card.high { border-top-color: var(--severity-high-color); }
-        .severity-card.high h4 { color: var(--severity-high-color); }
-        .severity-card.med { border-top-color: var(--severity-med-color); }
-        .severity-card.med h4 { color: var(--color-accent-teal); }
-        .severity-card.low { border-top-color: var(--severity-low-color); }
-        .severity-card.low h4 { color: var(--severity-low-color); }
+        .severity-card.crit { background-color: hsl(0, 100%, 97%); color: hsl(0, 84%, 25%); }
+        .severity-card.crit h4 { color: hsl(0, 84%, 40%); }
+        .severity-card.crit p { color: hsl(0, 84%, 25%); }
+
+        .severity-card.high { background-color: hsl(38, 100%, 96%); color: hsl(30, 90%, 25%); }
+        .severity-card.high h4 { color: hsl(35, 92%, 40%); }
+        .severity-card.high p { color: hsl(30, 90%, 25%); }
+
+        .severity-card.med { background-color: hsl(175, 60%, 96%); color: hsl(175, 80%, 20%); }
+        .severity-card.med h4 { color: hsl(175, 80%, 25%); }
+        .severity-card.med p { color: hsl(175, 80%, 20%); }
+
+        .severity-card.low { background-color: hsl(210, 40%, 96%); color: hsl(215, 16%, 30%); }
+        .severity-card.low h4 { color: hsl(210, 16%, 40%); }
+        .severity-card.low p { color: hsl(215, 16%, 30%); }
+
+        /* Dark mode severity colors */
+        [data-theme="dark"] .severity-card.crit { background-color: hsla(0, 84%, 60%, 0.08); color: hsl(0, 100%, 85%); }
+        [data-theme="dark"] .severity-card.crit h4 { color: hsl(0, 84%, 70%); }
+        [data-theme="dark"] .severity-card.crit p { color: hsl(0, 100%, 90%); }
+
+        [data-theme="dark"] .severity-card.high { background-color: hsla(35, 92%, 52%, 0.08); color: hsl(35, 100%, 85%); }
+        [data-theme="dark"] .severity-card.high h4 { color: hsl(35, 92%, 70%); }
+        [data-theme="dark"] .severity-card.high p { color: hsl(35, 100%, 90%); }
+
+        [data-theme="dark"] .severity-card.med { background-color: hsla(172, 66%, 50%, 0.08); color: hsl(172, 100%, 85%); }
+        [data-theme="dark"] .severity-card.med h4 { color: hsl(172, 66%, 70%); }
+        [data-theme="dark"] .severity-card.med p { color: hsl(172, 100%, 90%); }
+
+        [data-theme="dark"] .severity-card.low { background-color: hsla(215, 20%, 50%, 0.08); color: hsl(215, 20%, 85%); }
+        [data-theme="dark"] .severity-card.low h4 { color: hsl(215, 20%, 75%); }
+        [data-theme="dark"] .severity-card.low p { color: hsl(215, 20%, 90%); }
 
         /* ==========================================================================
            FEJEZET BLOKK (Lépések Registry timeline)
@@ -742,62 +786,67 @@
            Javasolt mondat doboz (Dossier Cream Legal Paper style)
            ========================================================================== */
         .quote-box {
-            background: var(--color-dossier-bg);
-            border: 1px solid var(--color-dossier-border);
+            background: hsl(38, 30%, 97%); /* Cream paper color */
+            border: 1px solid hsl(38, 18%, 88%);
             border-left: 4px solid var(--color-accent-teal);
-            padding: var(--spacing-lg);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            margin-top: var(--spacing-md);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-2xl) auto;
             position: relative;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: flex-start;
-            gap: var(--spacing-md);
-            box-shadow: var(--shadow-sm);
+            gap: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
         }
         [data-theme="dark"] .quote-box {
-            background: rgba(18, 24, 41, 0.5);
-            border-color: rgba(255,255,255,0.05);
-            border-left-color: var(--color-accent-teal);
+            background: rgba(18, 24, 41, 0.45);
+            border-color: rgba(255, 255, 255, 0.06);
+            border-left-color: var(--color-primary-main);
         }
         .quote-box::before {
             content: "Javasolt mondat";
-            position: absolute;
-            top: -10px;
-            left: var(--spacing-md);
+            position: static;
             background: var(--color-accent-teal);
             color: white;
             font-size: 0.65rem;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
-            padding: 1px 6px;
+            letter-spacing: 0.08em;
+            padding: 0.25rem 0.6rem;
             border-radius: 4px;
         }
+        [data-theme="dark"] .quote-box::before {
+            background: var(--color-primary-main);
+        }
         .quote-text {
+            font-family: var(--font-family-heading);
+            font-size: 1.125rem;
             font-style: italic;
             color: var(--color-text-primary);
-            font-size: 0.92rem;
-            line-height: 1.55;
-            flex: 1;
+            line-height: 1.6;
             margin: 0;
+            width: 100%;
         }
         .copy-btn {
+            align-self: flex-end;
             background: var(--color-bg-secondary);
             border: 1px solid var(--color-neutral-border);
             color: var(--color-text-secondary);
-            padding: 0.35rem 0.65rem;
+            padding: 0.5rem 1rem;
             border-radius: var(--radius-sm);
             cursor: pointer;
             font-size: 0.72rem;
-            font-weight: 600;
+            font-weight: 700;
             font-family: var(--font-family-base);
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             flex-shrink: 0;
             transition: var(--transition-base);
             box-shadow: var(--shadow-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         .copy-btn:hover {
             background: var(--color-primary-light);
@@ -808,6 +857,97 @@
         [data-theme="dark"] .copy-btn {
             background: var(--color-bg-elevated);
             border-color: rgba(255, 255, 255, 0.1);
+        }
+        [data-theme="dark"] .copy-btn:hover {
+            background: rgba(96, 165, 250, 0.1);
+            border-color: var(--color-primary-main);
+        }
+
+        /* ==========================================================================
+           KERÜLENDŐ / JAVASOLT COMPARISON GRID
+           ========================================================================== */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin: var(--spacing-2xl) auto;
+        }
+        @media (max-width: 600px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+        }
+        .comparison-card {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-neutral-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+        }
+        [data-theme="dark"] .comparison-card {
+            background: var(--color-bg-elevated);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+        .comparison-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .comparison-card.avoid {
+            border-left: 4px solid var(--severity-crit-color);
+        }
+        .comparison-card.suggest {
+            border-left: 4px solid var(--color-accent-teal);
+        }
+        [data-theme="dark"] .comparison-card.suggest {
+            border-left-color: var(--color-primary-main);
+        }
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+        .comparison-icon {
+            font-size: 0.9rem;
+            font-weight: 900;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .comparison-card.avoid .comparison-icon {
+            background: var(--severity-crit-bg);
+            color: var(--severity-crit-color);
+        }
+        .comparison-card.suggest .comparison-icon {
+            background: var(--color-accent-teal-light);
+            color: var(--color-accent-teal);
+        }
+        [data-theme="dark"] .comparison-card.suggest .comparison-icon {
+            background: rgba(96, 165, 250, 0.1);
+            color: var(--color-primary-main);
+        }
+        .comparison-header h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            font-weight: 800;
+            font-family: var(--font-family-base);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        .comparison-card.avoid h4 { color: var(--severity-crit-color); }
+        .comparison-card.suggest h4 { color: var(--color-accent-teal); }
+        [data-theme="dark"] .comparison-card.suggest h4 { color: var(--color-primary-main); }
+        .comparison-card p {
+            margin: 0;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: var(--color-text-secondary);
         }
         [data-theme="dark"] .copy-btn:hover {
             background: rgba(96, 165, 250, 0.1);
@@ -1195,6 +1335,26 @@
         /* ==========================================================================
            RESZPONZIVITÁS
            ========================================================================== */
+        @media (max-width: 900px) {
+            .site-header .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: var(--spacing-sm);
+                padding-top: var(--spacing-sm);
+                padding-bottom: var(--spacing-sm);
+            }
+            .brand {
+                text-align: center;
+                align-items: center;
+            }
+            .top-nav {
+                justify-content: center;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 1.85rem; }
             h2 { font-size: 1.35rem; }
@@ -1205,6 +1365,12 @@
             .top-nav { gap: 2px; }
             .top-nav a { font-size: 0.8rem; padding: 4px 6px; }
             .theme-toggle { width: 36px; height: 36px; margin-left: 2px; }
+            #main > section {
+                margin-bottom: var(--spacing-xl);
+            }
+            .site-footer {
+                margin-top: var(--spacing-xl);
+            }
         }
 
     </style>
@@ -1242,7 +1408,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">⚖️ HIVATALOS ELJÁRÁSI ÚTMUTATÓ</div>
-                <h1 id="hero-title">Végleges eljárási térkép szülőknek kötelező védőoltási ügyekben</h1>
+                <h1 id="hero-title">Oltásmentesítés a gyakorlatban</h1>
                 <p class="lead">
                     Ez az oldal azt mutatja be, milyen események történhetnek, ha a szülő a gyermek kötelező védőoltása kapcsán nem automatikusan járul hozzá, hanem előbb teljes körű tájékoztatást, olthatósági vizsgálatot, dokumentumokat, halasztást, szakvéleményt vagy jogalap-tisztázást kér.
                 </p>
@@ -1307,10 +1473,22 @@
         </div>
 
         <h3>Kerülendő és javasolt mondatok</h3>
-        <ul>
-            <li><strong>Kerülendő:</strong> „Nem oltatom be.", „Megtagadom.", „Soha nem kap oltást."</li>
-            <li><strong>Javasolt:</strong> „Nem oltásmegtagadást közöltem, hanem teljes körű, egyéniesített tájékoztatást kértem."</li>
-        </ul>
+        <div class="comparison-grid">
+            <div class="comparison-card avoid">
+                <div class="comparison-header">
+                    <span class="comparison-icon">✕</span>
+                    <h4>Kerülendő kifejezések</h4>
+                </div>
+                <p>„Nem oltatom be.", „Megtagadom.", „Soha nem kap oltást."</p>
+            </div>
+            <div class="comparison-card suggest">
+                <div class="comparison-header">
+                    <span class="comparison-icon">✓</span>
+                    <h4>Javasolt megfogalmazás</h4>
+                </div>
+                <p>„Nem oltásmegtagadást közöltem, hanem teljes körű, egyéniesített tájékoztatást kértem."</p>
+            </div>
+        </div>
         <div class="quote-box">
             <span class="quote-text">A gyermekem egészségi állapotára tekintettel az olthatóság egyedi elbírálását kérem. A döntéshez szükséges dokumentumokat és szakmai válaszokat még nem kaptam meg. A tájékoztatás teljesítéséig felelős szülői döntést nem tudok hozni.</span>
             <button class="copy-btn" type="button" aria-label="Szöveg másolása" title="Szöveg másolása">

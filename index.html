@@ -7,154 +7,191 @@
     <meta name="description" content="Végleges eljárási térkép szülőknek kötelező védőoltási ügyekben: intézmények, iratok, határidők, jogorvoslatok.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ==========================================================================
-           DESIGN RENDSZER – VÁLTOZÓK (light)
+           DESIGN SYSTEM VARIABLES (OKLCH with HEX fallback tags)
            ========================================================================== */
         :root {
-            --color-bg-primary: hsl(210, 40%, 98%);
-            --color-bg-secondary: #FFFFFF;
-            --color-bg-elevated: #FFFFFF;
-            --color-text-primary: hsl(220, 25%, 15%);
-            --color-text-secondary: hsl(215, 16%, 38%);
-            --color-primary-main: hsl(220, 90%, 56%);
-            --color-primary-light: hsl(220, 100%, 96%);
-            --color-primary-hover: hsl(220, 85%, 48%);
-            --color-accent-teal: hsl(175, 80%, 25%);
-            --color-accent-teal-light: hsl(175, 60%, 96%);
-            --color-warning-bg: hsl(40, 100%, 97%);
-            --color-warning-border: hsl(40, 90%, 75%);
-            --color-warning-text: hsl(30, 90%, 30%);
-            --color-warning-strong: hsl(25, 90%, 25%);
-            --color-neutral-border: hsl(214, 32%, 91%);
-            --color-neutral-soft: hsl(210, 40%, 95%);
-
-            /* Sophisticated Sand-Ivory Hero & Dossier Palette */
-            --color-hero-bg: hsl(38, 28%, 95%);
-            --color-hero-border: hsl(38, 15%, 86%);
-            --color-dossier-bg: hsl(38, 30%, 97%);
-            --color-dossier-border: hsl(38, 18%, 88%);
-
-            --severity-crit-color: hsl(0, 84%, 60%);
-            --severity-crit-text: hsl(0, 74%, 25%);
-            --severity-crit-bg: hsl(0, 100%, 97%);
-            --severity-crit-border: hsl(0, 82%, 88%);
-            --severity-high-color: hsl(35, 92%, 52%);
-            --severity-high-text: hsl(30, 90%, 30%);
-            --severity-high-bg: hsl(40, 100%, 97%);
-            --severity-high-border: hsl(40, 90%, 75%);
-            --severity-med-color: hsl(175, 80%, 25%);
-            --severity-low-color: hsl(210, 16%, 60%);
-            --severity-low-text: hsl(215, 16%, 38%);
-
-            --font-family-base: 'Inter', sans-serif;
-            --font-family-heading: 'Merriweather', serif;
-
-            --spacing-xs: 0.25rem;
-            --spacing-sm: 0.5rem;
-            --spacing-md: 1rem;
-            --spacing-lg: 1.5rem;
-            --spacing-xl: 2.25rem;
-            --spacing-2xl: 3.5rem;
-            --spacing-3xl: 5.5rem; /* Massive visual breathing room */
-
-            --container-max-width: 1200px;
-            --content-max-width: 850px;
+            /* Color Palette */
+            --color-bg-primary: oklch(0.98 0.005 85);       /* #FBFBF9 - Warm Alabaster */
+            --color-bg-secondary: oklch(1 0 0);             /* #FFFFFF - Pure White */
+            --color-bg-elevated: oklch(1 0 0);
+            --color-text-primary: oklch(0.24 0.015 240);    /* #1A2433 - Deep Slate Ink */
+            --color-text-secondary: oklch(0.42 0.02 240);   /* #42526B - Muted Slate */
             
-            --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 16px;
+            --color-primary-main: oklch(0.48 0.12 250);     /* #2D5FB7 - Royal Prussian Blue */
+            --color-primary-light: oklch(0.95 0.02 250);    /* #EDF4FE - Pale Blue Tint */
+            --color-primary-hover: oklch(0.40 0.12 250);    /* #224B91 - Deep Prussian Hover */
 
-            --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.03), 0 1px 2px rgba(15, 23, 42, 0.02);
-            --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
-            --shadow-lg: 0 16px 24px -6px rgba(15, 23, 42, 0.06), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
+            --color-accent-teal: oklch(0.38 0.06 185);      /* #1C5350 - Mineral Spruce Teal */
+            --color-accent-teal-light: oklch(0.95 0.01 185);/* #EDF5F4 - Muted Spruce Tint */
+            
+            /* Warnings / Alerts (Gold/Amber - No Panic) */
+            --color-warning-bg: oklch(0.98 0.01 80);        /* #FFFDF5 - Soft Ochre Gold Bg */
+            --color-warning-border: oklch(0.88 0.06 80);    /* #EBD6A2 - Muted Gold Border */
+            --color-warning-text: oklch(0.42 0.08 70);      /* #6D5114 - Soft Amber Text */
+            --color-warning-strong: oklch(0.30 0.08 70);
+            
+            --color-neutral-border: oklch(0.92 0.008 240);  /* #E2E7EE - Muted Slate Border */
+            --color-neutral-soft: oklch(0.96 0.005 240);    /* #F3F6F9 - Soft Gray */
 
-            --transition-base: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            /* Sophisticated Dossier Style */
+            --color-hero-bg: oklch(0.97 0.01 80);
+            --color-hero-border: oklch(0.88 0.06 80);
+            --color-dossier-bg: oklch(0.98 0.005 85);
+            --color-dossier-border: oklch(0.90 0.01 85);
+
+            /* Severities */
+            --severity-crit-color: oklch(0.58 0.18 20);     /* Crimson */
+            --severity-crit-bg: oklch(0.97 0.01 20);
+            --severity-crit-text: oklch(0.35 0.14 20);
+            --severity-crit-border: oklch(0.85 0.08 20);
+
+            --severity-high-color: oklch(0.68 0.15 70);     /* Amber Gold */
+            --severity-high-bg: oklch(0.98 0.015 80);
+            --severity-high-text: oklch(0.42 0.08 70);
+            --severity-high-border: oklch(0.88 0.06 80);
+
+            --severity-med-color: oklch(0.38 0.06 185);     /* Mineral Spruce */
+            --severity-med-bg: oklch(0.95 0.01 185);
+            --severity-med-text: oklch(0.25 0.04 185);
+            --severity-med-border: oklch(0.82 0.03 185);
+
+            --severity-low-color: oklch(0.55 0.02 240);     /* Muted Slate Gray */
+            --severity-low-bg: oklch(0.96 0.005 240);
+            --severity-low-text: oklch(0.38 0.015 240);
+            --severity-low-border: oklch(0.90 0.008 240);
+
+            /* Typography */
+            --font-family-base: 'Work Sans', sans-serif;
+            --font-family-heading: 'Libre Baskerville', serif;
+
+            /* Spacing & Layout */
+            --spacing-xs: 0.25rem;   /* 4px */
+            --spacing-sm: 0.5rem;    /* 8px */
+            --spacing-md: 1rem;      /* 16px */
+            --spacing-lg: 1.5rem;    /* 24px */
+            --spacing-xl: 2.25rem;   /* 36px */
+            --spacing-2xl: 3.5rem;   /* 56px */
+            --spacing-3xl: 5.5rem;   /* 88px */
+            
+            --container-max-width: 760px;
+            --content-max-width: 720px; /* Capped for optimal readability (65-75ch) */
+            
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 14px;
+            
+            --shadow-sm: 0 1px 3px rgba(26, 36, 51, 0.03), 0 1px 2px rgba(26, 36, 51, 0.02);
+            --shadow-md: 0 6px 16px -4px rgba(26, 36, 51, 0.06), 0 2px 8px -2px rgba(26, 36, 51, 0.04);
+            --shadow-lg: 0 20px 32px -8px rgba(26, 36, 51, 0.08), 0 8px 16px -4px rgba(26, 36, 51, 0.05);
+            
+            --transition-base: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ==========================================================================
-           DARK MODE
-           ========================================================================== */
+        /* Dark Mode variables */
         [data-theme="dark"] {
-            --color-bg-primary: hsl(222, 47%, 4%);
-            --color-bg-secondary: hsl(223, 47%, 7%);
-            --color-bg-elevated: hsl(223, 47%, 10%);
-            --color-text-primary: hsl(210, 40%, 98%);
-            --color-text-secondary: hsl(215, 20%, 70%);
-            --color-primary-main: hsl(217, 91%, 60%);
-            --color-primary-light: hsla(217, 91%, 60%, 0.12);
-            --color-primary-hover: hsl(217, 95%, 68%);
-            --color-accent-teal: hsl(172, 66%, 50%);
-            --color-accent-teal-light: hsla(172, 66%, 50%, 0.08);
-            --color-warning-bg: hsla(40, 100%, 50%, 0.06);
-            --color-warning-border: hsl(40, 90%, 45%);
-            --color-warning-text: hsl(40, 100%, 75%);
-            --color-warning-strong: hsl(40, 100%, 85%);
-            --color-neutral-border: hsl(223, 47%, 16%);
-            --color-neutral-soft: hsl(223, 47%, 10%);
+            --color-bg-primary: oklch(0.18 0.01 240);       /* Deep Slate Charcoal */
+            --color-bg-secondary: oklch(0.22 0.01 240);     /* Dark gray/slate */
+            --color-bg-elevated: oklch(0.25 0.01 240);
+            --color-text-primary: oklch(0.93 0.005 240);    /* Very light gray */
+            --color-text-secondary: oklch(0.72 0.01 240);   /* Muted light gray */
+            --color-primary-main: oklch(0.62 0.12 250);     /* High contrast Prussian Blue */
+            --color-primary-light: oklch(0.26 0.04 250);
+            --color-primary-hover: oklch(0.68 0.12 250);
+            
+            --color-accent-teal: oklch(0.55 0.08 185);      /* High contrast Spruce Teal */
+            --color-accent-teal-light: oklch(0.22 0.03 185);
+            
+            --color-warning-bg: oklch(0.24 0.02 80);
+            --color-warning-border: oklch(0.52 0.06 80);
+            --color-warning-text: oklch(0.88 0.04 80);
+            --color-warning-strong: oklch(0.94 0.04 80);
+            
+            --color-neutral-border: oklch(0.28 0.01 240);
+            --color-neutral-soft: oklch(0.24 0.01 240);
 
-            --color-hero-bg: hsl(223, 47%, 10%);
-            --color-hero-border: hsl(223, 47%, 18%);
-            --color-dossier-bg: hsl(223, 47%, 10%);
-            --color-dossier-border: hsl(223, 47%, 18%);
+            --color-hero-bg: oklch(0.22 0.01 240);
+            --color-hero-border: oklch(0.28 0.01 240);
+            --color-dossier-bg: oklch(0.22 0.01 240);
+            --color-dossier-border: oklch(0.28 0.01 240);
 
-            --severity-crit-color: hsl(0, 84%, 65%);
-            --severity-crit-text: hsl(0, 100%, 80%);
-            --severity-crit-bg: hsla(0, 84%, 60%, 0.12);
-            --severity-crit-border: hsl(0, 70%, 40%);
-            --severity-high-color: hsl(35, 92%, 60%);
-            --severity-high-text: hsl(40, 100%, 75%);
-            --severity-high-bg: hsla(35, 92%, 52%, 0.1);
-            --severity-high-border: hsl(35, 75%, 45%);
-            --severity-med-color: hsl(172, 66%, 50%);
-            --severity-low-color: hsl(215, 20%, 50%);
-            --severity-low-text: hsl(215, 20%, 70%);
+            --severity-crit-color: oklch(0.65 0.16 20);
+            --severity-crit-bg: oklch(0.24 0.04 20);
+            --severity-crit-text: oklch(0.95 0.02 20);
+            --severity-crit-border: oklch(0.48 0.10 20);
+
+            --severity-high-color: oklch(0.72 0.14 70);
+            --severity-high-bg: oklch(0.26 0.04 80);
+            --severity-high-text: oklch(0.96 0.02 80);
+            --severity-high-border: oklch(0.52 0.08 80);
+
+            --severity-med-color: oklch(0.55 0.08 185);
+            --severity-med-bg: oklch(0.22 0.03 185);
+            --severity-med-text: oklch(0.92 0.02 185);
+            --severity-med-border: oklch(0.38 0.05 185);
+
+            --severity-low-color: oklch(0.65 0.01 240);
+            --severity-low-bg: oklch(0.24 0.01 240);
+            --severity-low-text: oklch(0.90 0.005 240);
+            --severity-low-border: oklch(0.32 0.01 240);
         }
 
         @media (prefers-color-scheme: dark) {
             :root:not([data-theme="light"]) {
-                --color-bg-primary: hsl(222, 47%, 4%);
-                --color-bg-secondary: hsl(223, 47%, 7%);
-                --color-bg-elevated: hsl(223, 47%, 10%);
-                --color-text-primary: hsl(210, 40%, 98%);
-                --color-text-secondary: hsl(215, 20%, 70%);
-                --color-primary-main: hsl(217, 91%, 60%);
-                --color-primary-light: hsla(217, 91%, 60%, 0.12);
-                --color-primary-hover: hsl(217, 95%, 68%);
-                --color-accent-teal: hsl(172, 66%, 50%);
-                --color-accent-teal-light: hsla(172, 66%, 50%, 0.08);
-                --color-warning-bg: hsla(40, 100%, 50%, 0.06);
-                --color-warning-border: hsl(40, 90%, 45%);
-                --color-warning-text: hsl(40, 100%, 75%);
-                --color-warning-strong: hsl(40, 100%, 85%);
-                --color-neutral-border: hsl(223, 47%, 16%);
-                --color-neutral-soft: hsl(223, 47%, 10%);
+                --color-bg-primary: oklch(0.18 0.01 240);
+                --color-bg-secondary: oklch(0.22 0.01 240);
+                --color-bg-elevated: oklch(0.25 0.01 240);
+                --color-text-primary: oklch(0.93 0.005 240);
+                --color-text-secondary: oklch(0.72 0.01 240);
+                --color-primary-main: oklch(0.62 0.12 250);
+                --color-primary-light: oklch(0.26 0.04 250);
+                --color-primary-hover: oklch(0.68 0.12 250);
+                
+                --color-accent-teal: oklch(0.55 0.08 185);
+                --color-accent-teal-light: oklch(0.22 0.03 185);
+                
+                --color-warning-bg: oklch(0.24 0.02 80);
+                --color-warning-border: oklch(0.52 0.06 80);
+                --color-warning-text: oklch(0.88 0.04 80);
+                --color-warning-strong: oklch(0.94 0.04 80);
+                
+                --color-neutral-border: oklch(0.28 0.01 240);
+                --color-neutral-soft: oklch(0.24 0.01 240);
 
-                --color-hero-bg: hsl(223, 47%, 10%);
-                --color-hero-border: hsl(223, 47%, 18%);
-                --color-dossier-bg: hsl(223, 47%, 10%);
-                --color-dossier-border: hsl(223, 47%, 18%);
+                --color-hero-bg: oklch(0.22 0.01 240);
+                --color-hero-border: oklch(0.28 0.01 240);
+                --color-dossier-bg: oklch(0.22 0.01 240);
+                --color-dossier-border: oklch(0.28 0.01 240);
 
-                --severity-crit-color: hsl(0, 84%, 65%);
-                --severity-crit-text: hsl(0, 100%, 80%);
-                --severity-crit-bg: hsla(0, 84%, 60%, 0.12);
-                --severity-crit-border: hsl(0, 70%, 40%);
-                --severity-high-color: hsl(35, 92%, 60%);
-                --severity-high-text: hsl(40, 100%, 75%);
-                --severity-high-bg: hsla(35, 92%, 52%, 0.1);
-                --severity-high-border: hsl(35, 75%, 45%);
-                --severity-med-color: hsl(172, 66%, 50%);
-                --severity-low-color: hsl(215, 20%, 50%);
-                --severity-low-text: hsl(215, 20%, 70%);
+                --severity-crit-color: oklch(0.65 0.16 20);
+                --severity-crit-bg: oklch(0.24 0.04 20);
+                --severity-crit-text: oklch(0.95 0.02 20);
+                --severity-crit-border: oklch(0.48 0.10 20);
+
+                --severity-high-color: oklch(0.72 0.14 70);
+                --severity-high-bg: oklch(0.26 0.04 80);
+                --severity-high-text: oklch(0.96 0.02 80);
+                --severity-high-border: oklch(0.52 0.08 80);
+
+                --severity-med-color: oklch(0.55 0.08 185);
+                --severity-med-bg: oklch(0.22 0.03 185);
+                --severity-med-text: oklch(0.92 0.02 185);
+                --severity-med-border: oklch(0.38 0.05 185);
+
+                --severity-low-color: oklch(0.65 0.01 240);
+                --severity-low-bg: oklch(0.24 0.01 240);
+                --severity-low-text: oklch(0.90 0.005 240);
+                --severity-low-border: oklch(0.32 0.01 240);
             }
         }
 
         /* ==========================================================================
-           ALAP STÍLUS
+           BASE STYLES
            ========================================================================== */
         * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
         body {
             background-color: var(--color-bg-primary);
@@ -175,40 +212,13 @@
             padding: 0 var(--spacing-lg);
         }
 
-        /* Spacious visual margins between major sections */
+        /* One-Column vertical spacing */
         #main > section {
             margin-bottom: var(--spacing-3xl);
             padding-top: var(--spacing-md);
-        }
-
-        #hero .hero-container,
-        #súlyosság > p,
-        #súlyosság > ul,
-        #súlyosság > h3,
-        #lépések > p,
-        #lépések > .toolbar,
-        .chapter,
-        #alapmondatok > p,
-        #akcióterv > p,
-        .action-item,
-        #intézmények > p,
-        #checklist > p,
-        #checklist > h3,
-        .checklist {
             max-width: var(--content-max-width);
             margin-left: auto;
             margin-right: auto;
-        }
-
-        /* Wide Grid alignments with spacious padding gaps */
-        .severity-grid,
-        .quotes-grid,
-        .institution-grid,
-        .checklist-grid {
-            max-width: var(--container-max-width);
-            margin-left: auto;
-            margin-right: auto;
-            gap: var(--spacing-xl) !important; /* Elegant wide gap */
         }
 
         h1, h2, h3, h4 {
@@ -224,12 +234,12 @@
         ::-webkit-scrollbar-thumb { background: var(--color-neutral-border); border-radius: 5px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--color-text-secondary); }
 
-        h1 { font-size: 2.5rem; margin-bottom: var(--spacing-md); letter-spacing: -0.02em; }
-        h2 { font-size: 1.625rem; margin-top: var(--spacing-2xl); margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-sm); border-bottom: 2px solid var(--color-neutral-border); }
+        h1 { font-size: 2.25rem; margin-bottom: var(--spacing-md); letter-spacing: -0.02em; text-wrap: balance; }
+        h2 { font-size: 1.5rem; margin-top: var(--spacing-2xl); margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-xs); border-bottom: 2px solid var(--color-neutral-border); }
         h3 { font-size: 1.25rem; margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm); }
         h4 { font-size: 1.05rem; margin-top: var(--spacing-md); margin-bottom: var(--spacing-xs); font-family: var(--font-family-base); font-weight: 600; }
 
-        p { margin: 0 0 var(--spacing-md) 0; color: var(--color-text-secondary); }
+        p { margin: 0 0 var(--spacing-md) 0; color: var(--color-text-secondary); text-wrap: pretty; }
         ul, ol { padding-left: 1.5rem; margin: 0 0 var(--spacing-md) 0; }
         li { margin-bottom: var(--spacing-xs); color: var(--color-text-secondary); }
         a { color: var(--color-primary-main); text-decoration: none; font-weight: 500; transition: var(--transition-base); }
@@ -258,10 +268,10 @@
         .skip-link:focus { top: 0; }
 
         /* ==========================================================================
-           FEJLÉC ÉS NAVIGÁCIÓ (Glassmorphism)
+           HEADER (Glassmorphic & Capped to Match Grid)
            ========================================================================== */
         .site-header {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(251, 251, 249, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--color-neutral-border);
@@ -272,7 +282,7 @@
             transition: background 0.3s, border-color 0.3s;
         }
         [data-theme="dark"] .site-header {
-            background: rgba(9, 13, 26, 0.85);
+            background: rgba(29, 36, 51, 0.85);
             border-color: rgba(255, 255, 255, 0.05);
         }
 
@@ -283,6 +293,7 @@
             padding-top: var(--spacing-md);
             padding-bottom: var(--spacing-md);
             gap: var(--spacing-md);
+            max-width: var(--container-max-width);
         }
 
         .brand {
@@ -317,7 +328,7 @@
         }
         .top-nav a {
             color: var(--color-text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             padding: var(--spacing-xs) var(--spacing-sm);
             border-radius: var(--radius-sm);
@@ -347,14 +358,14 @@
             background: transparent;
             border: 1px solid var(--color-neutral-border);
             color: var(--color-text-secondary);
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: var(--radius-md);
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: var(--transition-base);
             margin-left: var(--spacing-sm);
             box-shadow: var(--shadow-sm);
@@ -363,69 +374,66 @@
             background: var(--color-primary-light);
             border-color: var(--color-primary-main);
             color: var(--color-primary-main);
-            transform: rotate(15deg);
         }
         .theme-toggle .icon-sun { display: none; }
         .theme-toggle .icon-moon { display: inline; }
         [data-theme="dark"] .theme-toggle .icon-sun { display: inline; }
         [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: inline; }
-            :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
-        }
 
         /* ==========================================================================
-           HERO SECTION (Warm Sand-Ivory & Amber Editorial Cover)
+           HERO SECTION (Centered & One-Column layout)
            ========================================================================== */
         .hero {
             background: var(--color-hero-bg);
             border-radius: var(--radius-lg);
-            padding: var(--spacing-2xl) var(--spacing-xl);
+            padding: var(--spacing-2xl) var(--spacing-lg);
             margin: var(--spacing-xl) auto;
             border: 1px solid var(--color-hero-border);
             box-shadow: var(--shadow-md);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
-        /* Elegant SVG dot-grid visual map pattern in background */
+        /* SVG dot pattern */
         .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: radial-gradient(hsl(38, 15%, 82%) 1.5px, transparent 1.5px);
+            background-image: radial-gradient(oklch(0.85 0.02 80) 1.5px, transparent 1.5px);
             background-size: 24px 24px;
-            opacity: 0.35;
+            opacity: 0.25;
             pointer-events: none;
             z-index: 0;
         }
         [data-theme="dark"] .hero::before {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
         }
 
         .hero-container {
-            display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
-            gap: var(--spacing-2xl);
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            gap: var(--spacing-xl);
             position: relative;
             z-index: 1;
+            max-width: var(--content-max-width);
+            margin: 0 auto;
         }
-        @media (max-width: 900px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: var(--spacing-xl);
-            }
-            .hero { padding: var(--spacing-lg); }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             background: var(--color-bg-secondary);
-            color: var(--color-warning-strong);
+            color: var(--color-warning-text);
             padding: 0.4rem 0.9rem;
-            border-radius: 4px;
+            border-radius: var(--radius-sm);
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.08em;
@@ -434,61 +442,46 @@
             text-transform: uppercase;
             box-shadow: var(--shadow-sm);
         }
-        [data-theme="dark"] .hero-badge {
-            background: var(--color-bg-elevated);
-            color: var(--color-warning-text);
-        }
 
         .hero-content h1 {
-            font-size: 2.35rem;
-            line-height: 1.22;
-            margin-bottom: var(--spacing-lg);
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
             font-weight: 700;
             color: var(--color-text-primary);
             letter-spacing: -0.02em;
         }
+        
         .hero-content .lead {
             font-size: 1.05rem;
             color: var(--color-text-secondary);
-            margin-bottom: var(--spacing-md);
-            line-height: 1.65;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.6;
+            text-align: center;
+            max-width: 65ch;
         }
 
         .hero-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: var(--color-bg-secondary);
             border: 1px solid var(--color-hero-border);
             border-radius: var(--radius-md);
             padding: var(--spacing-xl) var(--spacing-lg);
             box-shadow: var(--shadow-md);
-        }
-        [data-theme="dark"] .hero-card {
-            background: rgba(18, 24, 41, 0.75);
-            border-color: rgba(255, 255, 255, 0.05);
+            width: 100%;
+            text-align: left;
         }
 
         .hero-card-header h3 {
             margin-top: 0;
-            font-size: 1.08rem;
-            color: var(--color-text-primary);
-            margin-bottom: var(--spacing-lg);
+            font-size: 0.88rem;
+            color: var(--color-accent-teal);
+            margin-bottom: var(--spacing-md);
             font-family: var(--font-family-base);
             font-weight: 700;
-            letter-spacing: -0.01em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
-            font-size: 0.88rem;
             letter-spacing: 0.05em;
-            color: var(--color-accent-teal);
+            text-transform: uppercase;
             border-bottom: 1px dashed var(--color-hero-border);
             padding-bottom: var(--spacing-sm);
-        }
-        [data-theme="dark"] .hero-card-header h3 {
-            color: var(--color-primary-main);
-            border-bottom-color: rgba(255,255,255,0.05);
         }
 
         .hero-points {
@@ -497,7 +490,7 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-lg); /* Airier lists */
+            gap: var(--spacing-md);
         }
         .hero-points li {
             display: flex;
@@ -508,42 +501,39 @@
             line-height: 1.45;
         }
         .hero-point-icon {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             line-height: 1;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             color: var(--color-accent-teal);
         }
-        [data-theme="dark"] .hero-point-icon {
-            color: var(--color-primary-main);
-        }
 
         /* ==========================================================================
-           SÚLYOSSÁGI KÁRTYÁK
+           VERTICAL STACKED GRIDS & SYSTEM PANELS
            ========================================================================== */
-        .severity-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        .severity-grid,
+        .quotes-grid,
+        .institution-grid,
+        .checklist-grid {
+            display: flex;
+            flex-direction: column;
             gap: var(--spacing-md);
             margin: var(--spacing-lg) 0;
+            max-width: var(--content-max-width);
         }
+
         .severity-card {
             background: var(--color-bg-secondary);
             border: 1px solid var(--color-neutral-border);
-            border-top: 4px solid var(--color-neutral-border);
             border-radius: var(--radius-md);
-            padding: var(--spacing-lg); /* spacious padding */
+            padding: var(--spacing-lg);
             transition: var(--transition-base);
             box-shadow: var(--shadow-sm);
         }
         .severity-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-md);
-        }
-        [data-theme="dark"] .severity-card {
-            background: var(--color-bg-elevated);
-            border-color: rgba(255, 255, 255, 0.05);
         }
         .severity-card h4 {
             margin: 0 0 var(--spacing-xs) 0;
@@ -556,39 +546,29 @@
             margin: 0;
             line-height: 1.45;
         }
-        .severity-card.crit { border-top-color: var(--severity-crit-color); }
-        .severity-card.crit h4 { color: var(--severity-crit-color); }
-        .severity-card.high { border-top-color: var(--severity-high-color); }
-        .severity-card.high h4 { color: var(--severity-high-color); }
-        .severity-card.med { border-top-color: var(--severity-med-color); }
-        .severity-card.med h4 { color: var(--color-accent-teal); }
-        .severity-card.low { border-top-color: var(--severity-low-color); }
-        .severity-card.low h4 { color: var(--severity-low-color); }
+        .severity-card.crit { border: 1px solid var(--severity-crit-border); background-color: var(--severity-crit-bg); }
+        .severity-card.crit h4 { color: var(--severity-crit-text); }
+        .severity-card.high { border: 1px solid var(--severity-high-border); background-color: var(--severity-high-bg); }
+        .severity-card.high h4 { color: var(--severity-high-text); }
+        .severity-card.med { border: 1px solid var(--severity-med-border); background-color: var(--severity-med-bg); }
+        .severity-card.med h4 { color: var(--severity-med-text); }
+        .severity-card.low { border: 1px solid var(--severity-low-border); background-color: var(--severity-low-bg); }
+        .severity-card.low h4 { color: var(--severity-low-text); }
 
-        /* ==========================================================================
-           FEJEZET BLOKK (Lépések Registry timeline)
-           ========================================================================== */
+        /* Timeline Chapters */
         .chapter {
             background: var(--color-bg-secondary);
             border: 1px solid var(--color-neutral-border);
             border-radius: var(--radius-lg);
-            padding: var(--spacing-xl); /* extremely spacious padding */
+            padding: var(--spacing-xl);
             margin-bottom: var(--spacing-xl);
             box-shadow: var(--shadow-sm);
             position: relative;
             transition: var(--transition-base);
         }
         .chapter:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
             border-color: var(--color-neutral-border);
-        }
-        [data-theme="dark"] .chapter {
-            background: var(--color-bg-elevated);
-            border-color: rgba(255, 255, 255, 0.05);
-        }
-        [data-theme="dark"] .chapter:hover {
-            border-color: var(--color-primary-main);
         }
 
         .chapter-header {
@@ -599,11 +579,7 @@
             border-bottom: 1px dashed var(--color-neutral-border);
             padding-bottom: var(--spacing-sm);
         }
-        [data-theme="dark"] .chapter-header {
-            border-bottom-color: rgba(255, 255, 255, 0.05);
-        }
 
-        /* Registry Stamp styling for milestones */
         .chapter-num {
             font-family: var(--font-family-base);
             font-size: 0.72rem;
@@ -614,17 +590,12 @@
             background: var(--color-accent-teal-light);
             padding: 0.35rem 0.75rem;
             border-radius: 4px;
-            border: 1px solid rgba(13, 92, 84, 0.12);
+            border: 1px solid rgba(28, 83, 80, 0.15);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             box-shadow: var(--shadow-sm);
-        }
-        [data-theme="dark"] .chapter-num {
-            color: var(--color-primary-main);
-            background: rgba(96, 165, 250, 0.1);
-            border-color: rgba(96, 165, 250, 0.2);
         }
 
         .chapter-svg {
@@ -634,11 +605,8 @@
             flex-shrink: 0;
             transition: var(--transition-base);
         }
-        [data-theme="dark"] .chapter-svg {
-            color: var(--color-primary-main);
-        }
         .chapter:hover .chapter-svg {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .chapter h3 {
             margin: 0;
@@ -649,7 +617,7 @@
         }
 
         /* ==========================================================================
-           ESEMÉNY KÁRTYA (összecsukható)
+           EVENT CARDS (All-round Borders, Banned Side-stripes Removed)
            ========================================================================== */
         .event {
             border: 1px solid var(--color-neutral-border);
@@ -660,21 +628,13 @@
             transition: var(--transition-base);
         }
         .event:hover {
-            box-shadow: var(--shadow-sm);
-            border-color: var(--color-primary-main);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
         }
-        [data-theme="dark"] .event {
-            background: var(--color-bg-secondary);
-            border-color: rgba(255, 255, 255, 0.05);
-        }
-        [data-theme="dark"] .event:hover {
-            border-color: var(--color-primary-main);
-        }
-
-        .event.critical { border-left: 4px solid var(--severity-crit-color); }
-        .event.high { border-left: 4px solid var(--severity-high-color); }
-        .event.medium { border-left: 4px solid var(--color-accent-teal); }
-        .event.low { border-left: 4px solid var(--severity-low-color); }
+        .event.critical { border-color: var(--severity-crit-border); background-color: var(--severity-crit-bg); }
+        .event.high { border-color: var(--severity-high-border); background-color: var(--severity-high-bg); }
+        .event.medium { border-color: var(--severity-med-border); background-color: var(--severity-med-bg); }
+        .event.low { border-color: var(--severity-low-border); background-color: var(--severity-low-bg); }
 
         .event-toggle {
             width: 100%;
@@ -690,7 +650,7 @@
             color: var(--color-text-primary);
             transition: background 0.2s;
         }
-        .event-toggle:hover { background: var(--color-neutral-soft); }
+        .event-toggle:hover { background: rgba(0, 0, 0, 0.02); }
 
         .event-toggle .event-id {
             font-weight: 700;
@@ -730,23 +690,24 @@
             color: var(--color-text-secondary);
             font-size: 0.92rem;
         }
-        [data-theme="dark"] .event-body {
-            border-top-color: rgba(255, 255, 255, 0.05);
-        }
+        .event.critical .event-body { border-top-color: var(--severity-crit-border); }
+        .event.high .event-body { border-top-color: var(--severity-high-border); }
+        .event.medium .event-body { border-top-color: var(--severity-med-border); }
+        .event.low .event-body { border-top-color: var(--severity-low-border); }
+
         .event-body p { margin-top: var(--spacing-md); }
         .event-body p:first-child { margin-top: var(--spacing-md); }
         .event-body ul { margin: var(--spacing-sm) 0; }
         .event-body li { color: var(--color-text-secondary); }
 
         /* ==========================================================================
-           Javasolt mondat doboz (Dossier Cream Legal Paper style)
+           SUGGESTED STATEMENTS (Dossier Cream paper, Side-stripes Banned)
            ========================================================================== */
         .quote-box {
             background: var(--color-dossier-bg);
             border: 1px solid var(--color-dossier-border);
-            border-left: 4px solid var(--color-accent-teal);
             padding: var(--spacing-lg);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            border-radius: var(--radius-md);
             margin-top: var(--spacing-md);
             position: relative;
             display: flex;
@@ -754,11 +715,6 @@
             align-items: flex-start;
             gap: var(--spacing-md);
             box-shadow: var(--shadow-sm);
-        }
-        [data-theme="dark"] .quote-box {
-            background: rgba(18, 24, 41, 0.5);
-            border-color: rgba(255,255,255,0.05);
-            border-left-color: var(--color-accent-teal);
         }
         .quote-box::before {
             content: "Javasolt mondat";
@@ -805,14 +761,6 @@
             color: var(--color-primary-main);
             transform: translateY(-1px);
         }
-        [data-theme="dark"] .copy-btn {
-            background: var(--color-bg-elevated);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-        [data-theme="dark"] .copy-btn:hover {
-            background: rgba(96, 165, 250, 0.1);
-            border-color: var(--color-primary-main);
-        }
 
         .copy-success-bubble {
             position: fixed;
@@ -858,11 +806,36 @@
             letter-spacing: 0.05em;
             white-space: nowrap;
         }
-        .ds-badge--institution { background-color: var(--color-primary-light); color: var(--color-primary-main); }
-        .ds-badge--severity-crit { background-color: var(--severity-crit-bg); color: var(--severity-crit-text); border: 1px solid var(--severity-crit-border); }
-        .ds-badge--severity-high { background-color: var(--severity-high-bg); color: var(--severity-high-text); border: 1px solid var(--severity-high-border); }
-        .ds-badge--severity-med { background-color: var(--color-accent-teal-light); color: var(--color-accent-teal); }
-        .ds-badge--severity-low { background-color: var(--color-neutral-soft); color: var(--color-text-secondary); border: 1px solid var(--color-neutral-border); }
+        .ds-badge--institution {
+            background-color: var(--color-primary-light);
+            color: var(--color-primary-main);
+            border: 1px solid rgba(45, 95, 183, 0.15);
+        }
+        .ds-badge--category {
+            background-color: var(--color-accent-teal-light);
+            color: var(--color-accent-teal);
+            border: 1px solid rgba(28, 83, 80, 0.15);
+        }
+        .ds-badge--severity-crit {
+            background-color: var(--severity-crit-bg);
+            color: var(--severity-crit-text);
+            border: 1px solid var(--severity-crit-border);
+        }
+        .ds-badge--severity-high {
+            background-color: var(--severity-high-bg);
+            color: var(--severity-high-text);
+            border: 1px solid var(--severity-high-border);
+        }
+        .ds-badge--severity-med {
+            background-color: var(--color-accent-teal-light);
+            color: var(--color-accent-teal);
+            border: 1px solid rgba(28, 83, 80, 0.15);
+        }
+        .ds-badge--severity-low {
+            background-color: var(--color-neutral-soft);
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-neutral-border);
+        }
 
         .event-toggle .badges {
             display: flex;
@@ -871,20 +844,19 @@
         }
 
         /* ==========================================================================
-           ALAPMONDATOK (Dossier Cream textured card grid)
+           ALAPMONDATOK (Dossier Cream card list)
            ========================================================================== */
         .quotes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--spacing-xl); /* extremely spacious gap */
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
             margin: var(--spacing-lg) 0;
         }
         .quote-card {
             background: var(--color-dossier-bg);
             border: 1px solid var(--color-dossier-border);
-            border-left: 4px solid var(--color-accent-teal);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: var(--spacing-lg); /* spacious padding */
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
             box-shadow: var(--shadow-sm);
             transition: var(--transition-base);
             display: flex;
@@ -893,12 +865,8 @@
             gap: var(--spacing-sm);
         }
         .quote-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-        }
-        [data-theme="dark"] .quote-card {
-            background: rgba(18, 24, 41, 0.5);
-            border-color: rgba(255,255,255,0.05);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
         }
         .quote-card-header {
             display: flex;
@@ -907,9 +875,6 @@
             border-bottom: 1px dashed var(--color-dossier-border);
             padding-bottom: var(--spacing-sm);
             margin-bottom: var(--spacing-xs);
-        }
-        [data-theme="dark"] .quote-card-header {
-            border-bottom-color: rgba(255, 255, 255, 0.05);
         }
         .quote-card .quote-label {
             font-size: 0.72rem;
@@ -942,10 +907,6 @@
         .action-item:hover {
             border-color: var(--color-primary-main);
         }
-        [data-theme="dark"] .action-item {
-            background: var(--color-bg-elevated);
-            border-color: rgba(255, 255, 255, 0.05);
-        }
         .action-toggle {
             width: 100%;
             background: transparent;
@@ -971,10 +932,6 @@
             height: 20px;
             flex-shrink: 0;
         }
-        [data-theme="dark"] .action-svg {
-            color: var(--color-primary-main);
-        }
-
         .action-content {
             max-height: 0;
             overflow: hidden;
@@ -985,17 +942,13 @@
             padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
             border-top: 1px solid var(--color-neutral-border);
         }
-        [data-theme="dark"] .action-body {
-            border-top-color: rgba(255, 255, 255, 0.05);
-        }
-        .action-body ol { margin-top: var(--spacing-sm); }
 
         /* ==========================================================================
            INTÉZMÉNYEK
            ========================================================================== */
         .institution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: var(--spacing-md);
             margin: var(--spacing-lg) 0;
         }
@@ -1003,7 +956,7 @@
             background: var(--color-bg-secondary);
             border: 1px solid var(--color-neutral-border);
             border-radius: var(--radius-md);
-            padding: var(--spacing-xl) var(--spacing-lg); /* spacious padding */
+            padding: var(--spacing-xl) var(--spacing-lg);
             transition: var(--transition-base);
             box-shadow: var(--shadow-sm);
             display: flex;
@@ -1011,13 +964,9 @@
             gap: var(--spacing-sm);
         }
         .institution-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
             border-color: var(--color-primary-main);
-        }
-        [data-theme="dark"] .institution-card {
-            background: var(--color-bg-elevated);
-            border-color: rgba(255, 255, 255, 0.05);
         }
         .institution-icon-container {
             width: 42px;
@@ -1045,7 +994,7 @@
         }
 
         /* ==========================================================================
-           CHECKLIST (Interactive click-to-check)
+           INTERACTIVE CHECKLIST
            ========================================================================== */
         .checklist {
             background: var(--color-bg-secondary);
@@ -1055,10 +1004,6 @@
             margin: var(--spacing-md) auto;
             box-shadow: var(--shadow-sm);
         }
-        [data-theme="dark"] .checklist {
-            background: var(--color-bg-elevated);
-            border-color: rgba(255, 255, 255, 0.05);
-        }
         .checklist h4 {
             color: var(--color-accent-teal);
             margin-top: 0;
@@ -1066,9 +1011,6 @@
             font-family: var(--font-family-base);
             font-weight: 700;
             font-size: 1.05rem;
-        }
-        [data-theme="dark"] .checklist h4 {
-            color: var(--color-primary-main);
         }
 
         .checklist ul { list-style: none; padding: 0; margin: 0; }
@@ -1096,11 +1038,8 @@
             background: transparent;
             transition: var(--transition-base);
         }
-        [data-theme="dark"] .checklist li::before {
-            border-color: var(--color-accent-teal);
-        }
         .checklist li:hover::before {
-            background: rgba(15, 118, 110, 0.1);
+            background: rgba(28, 83, 80, 0.08);
         }
         
         /* Interactive Checked State */
@@ -1113,10 +1052,6 @@
             background: var(--color-accent-teal);
             border-color: var(--color-accent-teal);
         }
-        [data-theme="dark"] .checklist li.checked::before {
-            background: var(--color-primary-main);
-            border-color: var(--color-primary-main);
-        }
         .checklist li.checked::after {
             content: "✓";
             position: absolute;
@@ -1127,35 +1062,58 @@
             font-weight: 900;
         }
         .checklist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-xl);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
         }
 
         /* ==========================================================================
-           WARNING BOX ÉS DISCLAIMER
+           WARNING PANEL (No side-stripe borders)
            ========================================================================== */
-        .ds-warning-box {
+        .ds-warning-panel {
             background-color: var(--color-warning-bg);
-            border-left: 4px solid var(--color-warning-border);
+            border: 1px solid var(--color-warning-border);
             padding: var(--spacing-md) var(--spacing-lg);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            border-radius: var(--radius-md);
             color: var(--color-warning-text);
             font-size: 0.92rem;
             margin: var(--spacing-md) 0;
             box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
         }
-        .ds-warning-box strong { color: var(--color-warning-strong); }
+        .ds-warning-panel strong { color: var(--color-warning-strong); }
+
+        .ds-warning-header {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: var(--color-warning-strong);
+        }
+        .ds-warning-header::before {
+            content: "!";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--color-warning-text);
+            color: var(--color-warning-bg);
+            font-size: 10px;
+            font-weight: 900;
+        }
 
         .site-footer {
             background: var(--color-bg-secondary);
             border-top: 1px solid var(--color-neutral-border);
             margin-top: var(--spacing-3xl);
             padding: var(--spacing-xl) 0;
-        }
-        [data-theme="dark"] .site-footer {
-            background: var(--color-bg-secondary);
-            border-top-color: rgba(255, 255, 255, 0.05);
         }
         .footer-disclaimer {
             background: var(--color-warning-bg);
@@ -1172,7 +1130,7 @@
         .footer-disclaimer-icon {
             font-size: 1.3rem;
             line-height: 1;
-            color: var(--color-warning-border);
+            color: var(--color-warning-text);
         }
         .footer-disclaimer strong { color: var(--color-warning-strong); }
         .footer-meta {
@@ -1183,7 +1141,7 @@
         }
 
         /* ==========================================================================
-           TOOLBAR (lépések felett)
+           TOOLBAR & ACTION BUTTONS
            ========================================================================== */
         .toolbar {
             display: flex;
@@ -1192,21 +1150,45 @@
             flex-wrap: wrap;
         }
 
+        .ds-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.55rem 1.1rem;
+            border-radius: var(--radius-md);
+            font-size: 0.88rem;
+            font-weight: 500;
+            font-family: var(--font-family-base);
+            cursor: pointer;
+            transition: var(--transition-base);
+            border: 1px solid var(--color-neutral-border);
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            box-shadow: var(--shadow-sm);
+        }
+        .ds-button:hover {
+            background-color: var(--color-neutral-soft);
+            border-color: var(--color-text-secondary);
+        }
+        .ds-button:focus-visible {
+            outline: 3px solid var(--color-primary-main);
+            outline-offset: 2px;
+        }
+
         /* ==========================================================================
-           RESZPONZIVITÁS
+           RESPONSIVENESS
            ========================================================================== */
         @media (max-width: 600px) {
             h1 { font-size: 1.85rem; }
             h2 { font-size: 1.35rem; }
-            .hero { padding: var(--spacing-lg); }
+            .hero { padding: var(--spacing-lg) var(--spacing-md); }
             .event-toggle { flex-wrap: wrap; padding: var(--spacing-md); }
             .event-toggle .event-id { min-width: auto; }
             .event-toggle .badges { margin-top: var(--spacing-xs); width: 100%; }
             .top-nav { gap: 2px; }
             .top-nav a { font-size: 0.8rem; padding: 4px 6px; }
-            .theme-toggle { width: 36px; height: 36px; margin-left: 2px; }
+            .theme-toggle { width: 32px; height: 32px; margin-left: 2px; }
         }
-
     </style>
 </head>
 <body>
@@ -1242,7 +1224,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">⚖️ HIVATALOS ELJÁRÁSI ÚTMUTATÓ</div>
-                <h1 id="hero-title">Végleges eljárási térkép szülőknek kötelező védőoltási ügyekben</h1>
+                <h1 id="hero-title">Oltásmentesítés a gyakorlatban</h1>
                 <p class="lead">
                     Ez az oldal azt mutatja be, milyen események történhetnek, ha a szülő a gyermek kötelező védőoltása kapcsán nem automatikusan járul hozzá, hanem előbb teljes körű tájékoztatást, olthatósági vizsgálatot, dokumentumokat, halasztást, szakvéleményt vagy jogalap-tisztázást kér.
                 </p>
@@ -1284,6 +1266,11 @@
         <p>
             A szülő gyakran csak kérdéseket tesz fel, de az orvos, a védőnő, az iskolaorvos, a népegészségügy, a családsegítő vagy a gyámhivatal ezt később „oltásmegtagadásként", „együttműködés hiányaként" vagy „gyermekveszélyeztetésként" értelmezheti. A kommunikációs keret ezért kulcsfontosságú.
         </p>
+
+        <div class="ds-warning-panel">
+            <div class="ds-warning-header">Eljárási Szabály</div>
+            <div>A hivatalos iratokat minden esetben ajánlott átvenni. Az átvétel megtagadása vagy a postafiók elhanyagolása nem akadályozza meg a jogkövetkezményeket, sőt, megfosztja Önt a védekezés lehetőségétől.</div>
+        </div>
 
         <h3>Események súlyossági besorolása</h3>
         <p>Az alábbi kategóriák segítenek eldönteni, milyen gyorsan kell reagálni írásban.</p>
@@ -2782,10 +2769,9 @@
 
 <footer class="site-footer" id="disclaimer" role="contentinfo">
     <div class="container">
-        <div class="footer-disclaimer">
-            <span class="footer-disclaimer-icon">⚠️</span>
-            <div><strong>Figyelmeztetés:</strong> Az oldalon szereplő információk kizárólag tájékoztató jellegűek, nem minősülnek jogi vagy egészségügyi tanácsadásnak. Konkrét ügyben minden esetben javasolt ügyvéd, orvos vagy megfelelő szakember bevonása.
-        </div>
+        <div class="ds-warning-panel">
+            <div class="ds-warning-header">Figyelmeztetés</div>
+            <div>Az oldalon szereplő információk kizárólag tájékoztató jellegűek, nem minősülnek jogi vagy egészségügyi tanácsadásnak. Konkrét ügyben minden esetben javasolt ügyvéd, orvos vagy megfelelő szakember bevonása.</div>
         </div>
         <p class="footer-meta">Eljárási térkép szülőknek – kötelező védőoltási ügyek · Tájékoztató jellegű tartalom</p>
     </div>
