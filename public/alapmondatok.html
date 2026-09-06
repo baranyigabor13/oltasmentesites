@@ -29,6 +29,7 @@
       <a href="akcioterv.html" >Akcióterv</a>
       <a href="alapmondatok.html" aria-current="page">Alapmondatok</a>
       <a href="tudastar.html" >Tudástár</a>
+      <a href="manipulacio-anatomiaja.html" >Kézikönyv</a>
     </nav>
     <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -44,12 +45,17 @@
       <a href="akcioterv.html" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
       <a href="alapmondatok.html" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
       <a href="tudastar.html" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
+      <a href="manipulacio-anatomiaja.html"  style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
     </div>
   </div>
   <script>
     function toggleMenu() {
       const m = document.getElementById('mobile-nav');
       m.classList.toggle('is-hidden');
+      const open = !m.classList.contains('is-hidden');
+      const button = document.querySelector('.hdr__menu-btn');
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
     }
   </script>
 </header>
@@ -258,6 +264,7 @@
           <li><a href="akcioterv.html">Akcióterv</a></li>
           <li><a href="alapmondatok.html">Alapmondatok</a></li>
           <li><a href="tudastar.html">Tudástár</a></li>
+          <li><a href="manipulacio-anatomiaja.html">Kézikönyv</a></li>
         </ul>
       </div>
       <div class="ftr__col">

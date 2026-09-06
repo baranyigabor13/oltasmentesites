@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "build": "node build.js",
+    "preview": "node handbook/preview.js",
+    "test:handbook": "node handbook/verify.js"
+  },
   "dependencies": {
     "puppeteer": "^25.1.0"
   }

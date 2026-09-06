@@ -1,0 +1,2 @@
+# Preserve the attachment byte-for-byte, including its original line endings.
+handbook/source.md -text whitespace=cr-at-eol

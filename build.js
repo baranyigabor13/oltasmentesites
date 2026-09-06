@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { buildHandbook } = require('./handbook/build-handbook');
 
 // Target directory
 const DIST_DIR = path.join(__dirname, 'public');
@@ -118,6 +119,16 @@ css += `
 }
 `;
 
+css += `
+/* Shared entry point for the handbook. */
+.handbook-entry { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; padding: clamp(28px, 5vw, 56px); margin-block: 32px 56px; border: 1px solid var(--color-accent-soft); background: var(--color-accent-bg); color: var(--color-text); }
+.handbook-entry h2 { font-size: clamp(1.7rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.04em; max-width: 20ch; margin-bottom: 16px; }
+.handbook-entry p { color: var(--color-text-muted); }
+.handbook-entry > span { color: var(--color-accent); font-size: 48px; }
+.handbook-entry:hover { border-color: var(--color-accent); color: var(--color-text); }
+@media (max-width: 1100px) { .hdr__nav { display: none; } .hdr__menu-btn { display: inline-flex; } }
+@media (max-width: 480px) { .handbook-entry { gap: 16px; } .handbook-entry > span { font-size: 32px; } }
+`;
 fs.writeFileSync(path.join(DIST_DIR, 'styles-v2.css'), css);
 
 // Extract copy button JS script
@@ -596,6 +607,7 @@ function getHeader(activePage = '') {
       <a href="akcioterv.html" ${activePage === 'akcioterv' ? 'aria-current="page"' : ''}>Akcióterv</a>
       <a href="alapmondatok.html" ${activePage === 'alapmondatok' ? 'aria-current="page"' : ''}>Alapmondatok</a>
       <a href="tudastar.html" ${activePage === 'tudastar' ? 'aria-current="page"' : ''}>Tudástár</a>
+      <a href="manipulacio-anatomiaja.html" ${activePage === 'handbook' ? 'aria-current="page"' : ''}>Kézikönyv</a>
     </nav>
     <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -611,12 +623,17 @@ function getHeader(activePage = '') {
       <a href="akcioterv.html" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
       <a href="alapmondatok.html" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
       <a href="tudastar.html" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
+      <a href="manipulacio-anatomiaja.html" ${activePage === 'handbook' ? 'aria-current="page"' : ''} style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
     </div>
   </div>
   <script>
     function toggleMenu() {
       const m = document.getElementById('mobile-nav');
       m.classList.toggle('is-hidden');
+      const open = !m.classList.contains('is-hidden');
+      const button = document.querySelector('.hdr__menu-btn');
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
     }
   </script>
 </header>
@@ -641,6 +658,7 @@ function getFooter() {
           <li><a href="akcioterv.html">Akcióterv</a></li>
           <li><a href="alapmondatok.html">Alapmondatok</a></li>
           <li><a href="tudastar.html">Tudástár</a></li>
+          <li><a href="manipulacio-anatomiaja.html">Kézikönyv</a></li>
         </ul>
       </div>
       <div class="ftr__col">
@@ -740,6 +758,10 @@ const indexHtmlContent = `
 
 <section class="ds-section" id="events" aria-labelledby="events-section-title">
   <div class="container">
+    <a class="handbook-entry" href="manipulacio-anatomiaja.html">
+      <div><h2>A MANIPULÁCIÓ ANATÓMIÁJA</h2><p>Szülői kézikönyv az oltásrendszerhez</p></div>
+      <span aria-hidden="true">↗</span>
+    </a>
     <header class="ds-section__head">
       <span class="eyebrow">// ESEMÉNYEK ÉS LÉPÉSEK</span>
       <h2 id="events-section-title" class="ds-section__title">Eseménytérkép</h2>
@@ -1005,6 +1027,7 @@ fs.writeFileSync(
 );
 
 // 8. Write event details pages (event-[id].html)
+buildHandbook({ dist: DIST_DIR, getBaseTemplate });
 allEvents.forEach((ev, evIdx) => {
   const cls = classifyEvent(ev);
   const severityClassMap = {

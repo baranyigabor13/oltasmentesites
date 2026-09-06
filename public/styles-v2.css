@@ -1221,3 +1221,12 @@ body::before {
   margin-bottom: var(--sp-4);
   color: var(--color-accent);
 }
+
+/* Shared entry point for the handbook. */
+.handbook-entry { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; padding: clamp(28px, 5vw, 56px); margin-block: 32px 56px; border: 1px solid var(--color-accent-soft); background: var(--color-accent-bg); color: var(--color-text); }
+.handbook-entry h2 { font-size: clamp(1.7rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.04em; max-width: 20ch; margin-bottom: 16px; }
+.handbook-entry p { color: var(--color-text-muted); }
+.handbook-entry > span { color: var(--color-accent); font-size: 48px; }
+.handbook-entry:hover { border-color: var(--color-accent); color: var(--color-text); }
+@media (max-width: 1100px) { .hdr__nav { display: none; } .hdr__menu-btn { display: inline-flex; } }
+@media (max-width: 480px) { .handbook-entry { gap: 16px; } .handbook-entry > span { font-size: 32px; } }
