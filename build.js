@@ -596,18 +596,18 @@ function getHeader(activePage = '') {
   return `
 <header class="hdr" role="banner">
   <div class="container hdr__inner">
-    <a href="index.html" class="hdr__brand" aria-label="Eljárási Térkép - kezdőlap">
+    <a href="/" class="hdr__brand" aria-label="Eljárási Térkép - kezdőlap">
       <span class="hdr__brand-glyph" aria-hidden="true">É</span>
       <span>Eljárási Térkép</span>
     </a>
     <nav class="hdr__nav" aria-label="Fő navigáció">
-      <a href="index.html" ${activePage === 'home' ? 'aria-current="page"' : ''}>Kezdőlap</a>
-      <a href="index.html#events" ${activePage === 'events' ? 'aria-current="page"' : ''}>Eseménytérkép</a>
-      <a href="alapkeret.html" ${activePage === 'alapkeret' ? 'aria-current="page"' : ''}>Alapkeret</a>
-      <a href="akcioterv.html" ${activePage === 'akcioterv' ? 'aria-current="page"' : ''}>Akcióterv</a>
-      <a href="alapmondatok.html" ${activePage === 'alapmondatok' ? 'aria-current="page"' : ''}>Alapmondatok</a>
-      <a href="tudastar.html" ${activePage === 'tudastar' ? 'aria-current="page"' : ''}>Tudástár</a>
-      <a href="manipulacio-anatomiaja.html" ${activePage === 'handbook' ? 'aria-current="page"' : ''}>Kézikönyv</a>
+      <a href="/" ${activePage === 'home' ? 'aria-current="page"' : ''}>Kezdőlap</a>
+      <a href="/#events" ${activePage === 'events' ? 'aria-current="page"' : ''}>Eseménytérkép</a>
+      <a href="/alapkeret" ${activePage === 'alapkeret' ? 'aria-current="page"' : ''}>Alapkeret</a>
+      <a href="/akcioterv" ${activePage === 'akcioterv' ? 'aria-current="page"' : ''}>Akcióterv</a>
+      <a href="/alapmondatok" ${activePage === 'alapmondatok' ? 'aria-current="page"' : ''}>Alapmondatok</a>
+      <a href="/tudastar" ${activePage === 'tudastar' ? 'aria-current="page"' : ''}>Tudástár</a>
+      <a href="/manipulacio-anatomiaja" ${activePage === 'handbook' ? 'aria-current="page"' : ''}>Kézikönyv</a>
     </nav>
     <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -617,13 +617,13 @@ function getHeader(activePage = '') {
   </div>
   <div id="mobile-nav" class="is-hidden" style="background: var(--color-surface-2); border-bottom: 1px solid var(--color-border); padding: var(--sp-4);">
     <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
-      <a href="index.html" style="color: var(--color-text); font-weight: 500;">Kezdőlap</a>
-      <a href="index.html#events" style="color: var(--color-text); font-weight: 500;">Eseménytérkép</a>
-      <a href="alapkeret.html" style="color: var(--color-text); font-weight: 500;">Alapkeret</a>
-      <a href="akcioterv.html" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
-      <a href="alapmondatok.html" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
-      <a href="tudastar.html" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
-      <a href="manipulacio-anatomiaja.html" ${activePage === 'handbook' ? 'aria-current="page"' : ''} style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
+      <a href="/" style="color: var(--color-text); font-weight: 500;">Kezdőlap</a>
+      <a href="/#events" style="color: var(--color-text); font-weight: 500;">Eseménytérkép</a>
+      <a href="/alapkeret" style="color: var(--color-text); font-weight: 500;">Alapkeret</a>
+      <a href="/akcioterv" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
+      <a href="/alapmondatok" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
+      <a href="/tudastar" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
+      <a href="/manipulacio-anatomiaja" ${activePage === 'handbook' ? 'aria-current="page"' : ''} style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
     </div>
   </div>
   <script>
@@ -653,20 +653,20 @@ function getFooter() {
       <div class="ftr__col">
         <h4>Tartalom</h4>
         <ul>
-          <li><a href="index.html#events">Események</a></li>
-          <li><a href="alapkeret.html">Alapkeret</a></li>
-          <li><a href="akcioterv.html">Akcióterv</a></li>
-          <li><a href="alapmondatok.html">Alapmondatok</a></li>
-          <li><a href="tudastar.html">Tudástár</a></li>
-          <li><a href="manipulacio-anatomiaja.html">Kézikönyv</a></li>
+          <li><a href="/#events">Események</a></li>
+          <li><a href="/alapkeret">Alapkeret</a></li>
+          <li><a href="/akcioterv">Akcióterv</a></li>
+          <li><a href="/alapmondatok">Alapmondatok</a></li>
+          <li><a href="/tudastar">Tudástár</a></li>
+          <li><a href="/manipulacio-anatomiaja">Kézikönyv</a></li>
         </ul>
       </div>
       <div class="ftr__col">
         <h4>Segítség</h4>
         <ul>
-          <li><a href="index.html#categories">Kategóriák</a></li>
-          <li><a href="index.html#institutions">Intézmények</a></li>
-          <li><a href="tudastar.html#sulyossag">Súlyosságok</a></li>
+          <li><a href="/#categories">Kategóriák</a></li>
+          <li><a href="/#institutions">Intézmények</a></li>
+          <li><a href="/tudastar#sulyossag">Súlyosságok</a></li>
         </ul>
       </div>
       <div class="ftr__col">
@@ -698,7 +698,7 @@ function getBaseTemplate(title, bodyContent, activePage = '') {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles-v2.css">
+<link rel="stylesheet" href="/styles-v2.css">
 </head>
 <body>
 
@@ -712,7 +712,7 @@ ${bodyContent}
 
 ${getFooter()}
 
-<script src="script-v3.js"></script>
+<script src="/script-v3.js"></script>
 </body>
 </html>
 `;
@@ -744,7 +744,7 @@ const indexHtmlContent = `
     
     <div class="btn-row" style="justify-content: center; gap: var(--sp-4); margin-top: var(--sp-2);">
       <a href="#events" class="btn btn--primary" style="padding: 14px 28px; font-size: 1rem; border-radius: 100px; font-weight: 600; box-shadow: 0 4px 24px -6px var(--color-accent);">Eseménytérkép megnyitása</a>
-      <a href="alapmondatok.html" class="btn btn--secondary" style="padding: 14px 28px; font-size: 1rem; border-radius: 100px; font-weight: 600;">Másolható levelek</a>
+      <a href="/alapmondatok" class="btn btn--secondary" style="padding: 14px 28px; font-size: 1rem; border-radius: 100px; font-weight: 600;">Másolható levelek</a>
     </div>
   </div>
 </section>
@@ -758,7 +758,7 @@ const indexHtmlContent = `
 
 <section class="ds-section" id="events" aria-labelledby="events-section-title">
   <div class="container">
-    <a class="handbook-entry" href="manipulacio-anatomiaja.html">
+    <a class="handbook-entry" href="/manipulacio-anatomiaja">
       <div><h2>A MANIPULÁCIÓ ANATÓMIÁJA</h2><p>Szülői kézikönyv az oltásrendszerhez</p></div>
       <span aria-hidden="true">↗</span>
     </a>
@@ -841,7 +841,7 @@ const indexHtmlContent = `
         }
 
         return `
-      <a href="event-${ev.id.replace(/\./g, '-')}.html" class="ev-card" data-categories="${cls.categories.join(',')}" data-institution="${cls.institution}" data-severity="${cls.severity}">
+      <a href="/event-${ev.id.replace(/\./g, '-')}" class="ev-card" data-categories="${cls.categories.join(',')}" data-institution="${cls.institution}" data-severity="${cls.severity}">
         <span class="ev-card__id">§ ${ev.id}</span>
         <div class="ev-card__badges">
           <span class="badge ${sevClass}"><span class="badge__dot" aria-hidden="true"></span>${cls.severity}</span>
@@ -1052,7 +1052,7 @@ allEvents.forEach((ev, evIdx) => {
     <article class="ev-detail">
       <header class="ev-detail__header">
         <nav class="ev-detail__crumbs" aria-label="Breadcrumb">
-          <a href="index.html">Kezdőlap</a> · <a href="index.html#events">Események</a> · <span aria-current="page">§ ${ev.id}</span>
+          <a href="/">Kezdőlap</a> · <a href="/#events">Események</a> · <span aria-current="page">§ ${ev.id}</span>
         </nav>
         <h1 class="ev-detail__title">${ev.title}</h1>
         <div class="ev-detail__badges">
@@ -1121,7 +1121,7 @@ allEvents.forEach((ev, evIdx) => {
                 const rCls = classifyEvent(r);
                 const rSevClass = severityClassMap[rCls.severity];
                 return `
-              <a href="event-${r.id.replace(/\./g, '-')}.html" class="ev-card" style="margin-top: var(--sp-2);">
+              <a href="/event-${r.id.replace(/\./g, '-')}" class="ev-card" style="margin-top: var(--sp-2);">
                 <span class="ev-card__id">§ ${r.id}</span>
                 <div class="ev-card__badges">
                   <span class="badge ${rSevClass}"><span class="badge__dot" aria-hidden="true"></span>${rCls.severity}</span>

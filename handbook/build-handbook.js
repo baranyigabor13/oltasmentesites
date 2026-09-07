@@ -122,11 +122,11 @@ function buildHandbook({ dist, getBaseTemplate }) {
     <button class="hb-motion" type="button" aria-pressed="false" hidden>Mozgás kikapcsolása</button>
     <div class="hb-progress" aria-hidden="true"><span></span></div>
   </div>`;
-  const body = `${toolbar}<article class="hb-article" aria-labelledby="hb-title">${hero}${chapters.map(chapterHtml).join('')}</article><div class="hb-end"><a href="#kezikonyv">Vissza az elejére ↗</a><a href="index.html">Vissza a kezdőlapra ↗</a></div>`;
+  const body = `${toolbar}<article class="hb-article" aria-labelledby="hb-title">${hero}${chapters.map(chapterHtml).join('')}</article><div class="hb-end"><a href="#kezikonyv">Vissza az elejére ↗</a><a href="/">Vissza a kezdőlapra ↗</a></div>`;
   let html = getBaseTemplate(title.text, body, 'handbook');
-  html = html.replace('<body>', '<body class="hb-page">').replace('</head>', '<link rel="stylesheet" href="handbook.css">\n</head>')
+  html = html.replace('<body>', '<body class="hb-page">').replace('</head>', '<link rel="stylesheet" href="/handbook.css">\n</head>')
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escape(subtitle.text)}">`)
-    .replace('</body>', '<script src="handbook-scrollcraft.js"></script>\n<script src="handbook.js"></script>\n</body>');
+    .replace('</body>', '<script src="/handbook-scrollcraft.js"></script>\n<script src="/handbook.js"></script>\n</body>');
   fs.writeFileSync(path.join(dist, 'manipulacio-anatomiaja.html'), html);
   for (const file of ['handbook.css', 'handbook.js']) fs.copyFileSync(path.join(__dirname, file), path.join(dist, file));
   fs.copyFileSync(path.join(__dirname, 'vendor/scrollcraft.js'), path.join(dist, 'handbook-scrollcraft.js'));

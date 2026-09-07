@@ -67,7 +67,7 @@ async function jump(page, id, fraction = 0) {
   });
   try {
     await page.setViewport({ width: 1440, height: 1000 });
-    await page.goto(`${base}/manipulacio-anatomiaja.html`, { waitUntil: 'networkidle0' });
+    await page.goto(`${base}/manipulacio-anatomiaja`, { waitUntil: 'networkidle0' });
     assert.equal(normalize(await canonical(page)), plainSource, 'Article must match the complete original text in order');
     const actualBlocks = await page.$$eval('[data-source]', nodes => nodes.map(node => {
       const copy = node.cloneNode(true); copy.querySelectorAll('br').forEach(br => br.replaceWith('\n')); return copy.textContent.replace(/\s+/g, ' ').trim();
@@ -182,7 +182,7 @@ async function jump(page, id, fraction = 0) {
     await page.setJavaScriptEnabled(true);
     console.log('PASS 200% zoom, print PDF and complete no-JavaScript fallback');
 
-    await page.goto(`${base}/index.html`, { waitUntil: 'networkidle0' });
+    await page.goto(`${base}/`, { waitUntil: 'networkidle0' });
     assert.equal(await page.$$eval('.handbook-entry', nodes => nodes.length), 1);
     await page.type('#search-input', 'védőnő');
     const count = await page.$$eval('.ev-card', nodes => nodes.filter(n => !n.classList.contains('is-hidden')).length);
@@ -191,9 +191,9 @@ async function jump(page, id, fraction = 0) {
     await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
     await page.click('.hdr__menu-btn');
     assert.equal(await page.$eval('.hdr__menu-btn', n => n.getAttribute('aria-expanded')), 'true');
-    await page.click('#mobile-nav a[href="manipulacio-anatomiaja.html"]');
+    await page.click('#mobile-nav a[href="/manipulacio-anatomiaja"]');
     await page.waitForSelector('.hb-article');
-    assert.ok(page.url().endsWith('/manipulacio-anatomiaja.html'));
+    assert.ok(page.url().endsWith('/manipulacio-anatomiaja'));
     assert.deepEqual(errors, [], 'No browser errors');
     console.log('PASS homepage entry, existing filtering, mobile navigation and browser errors');
     const sheet = await browser.newPage();
