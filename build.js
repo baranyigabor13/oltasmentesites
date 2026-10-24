@@ -129,6 +129,7 @@ css += `
 @media (max-width: 1100px) { .hdr__nav { display: none; } .hdr__menu-btn { display: inline-flex; } }
 @media (max-width: 480px) { .handbook-entry { gap: 16px; } .handbook-entry > span { font-size: 32px; } }
 `;
+css += fs.readFileSync(path.join(__dirname, 'course/course.css'), 'utf8');
 fs.writeFileSync(path.join(DIST_DIR, 'styles-v2.css'), css);
 
 // Extract copy button JS script
@@ -608,6 +609,7 @@ function getHeader(activePage = '') {
       <a href="/alapmondatok" ${activePage === 'alapmondatok' ? 'aria-current="page"' : ''}>Alapmondatok</a>
       <a href="/tudastar" ${activePage === 'tudastar' ? 'aria-current="page"' : ''}>Tudástár</a>
       <a href="/manipulacio-anatomiaja" ${activePage === 'handbook' ? 'aria-current="page"' : ''}>Kézikönyv</a>
+      <a href="/tanfolyam" ${activePage === 'course' ? 'aria-current="page"' : ''}>Tanfolyam</a>
     </nav>
     <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -624,6 +626,7 @@ function getHeader(activePage = '') {
       <a href="/alapmondatok" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
       <a href="/tudastar" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
       <a href="/manipulacio-anatomiaja" ${activePage === 'handbook' ? 'aria-current="page"' : ''} style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
+      <a href="/tanfolyam" ${activePage === 'course' ? 'aria-current="page"' : ''} style="color: var(--color-text); font-weight: 500;">Tanfolyam</a>
     </div>
   </div>
   <script>
@@ -659,6 +662,7 @@ function getFooter() {
           <li><a href="/alapmondatok">Alapmondatok</a></li>
           <li><a href="/tudastar">Tudástár</a></li>
           <li><a href="/manipulacio-anatomiaja">Kézikönyv</a></li>
+          <li><a href="/tanfolyam">Tanfolyam</a></li>
         </ul>
       </div>
       <div class="ftr__col">
@@ -1403,4 +1407,5 @@ fs.writeFileSync(
   getBaseTemplate('Tudástár és Összefoglalás', tudastarContent, 'tudastar')
 );
 
+require('./course/build-course').buildCourse(DIST_DIR, getBaseTemplate);
 console.log('Site build completed successfully.');

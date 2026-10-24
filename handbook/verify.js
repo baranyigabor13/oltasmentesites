@@ -49,7 +49,7 @@ async function jump(page, id, fraction = 0) {
 
 (async () => {
   fs.mkdirSync(out, { recursive: true });
-  const before = fs.readdirSync(path.join(root, 'public')).map(name => [name, fs.readFileSync(path.join(root, 'public', name))]);
+  const before = fs.readdirSync(path.join(root, 'public'), { recursive: true }).filter(name => fs.statSync(path.join(root, 'public', name)).isFile()).map(name => [name, fs.readFileSync(path.join(root, 'public', name))]);
   execFileSync(process.execPath, ['build.js'], { cwd: root });
   for (const [name, data] of before) assert.ok(data.equals(fs.readFileSync(path.join(root, 'public', name))), `Rebuild changed ${name}`);
   const server = createServer();
