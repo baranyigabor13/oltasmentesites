@@ -5,8 +5,13 @@ const escape = text => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace
 const inline = text => escape(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
 
 function buildCourse(output, template) {
-  const source = fs.readFileSync(path.join(__dirname, 'fejezet-1.md'), 'utf8');
+  const titles = [];
+  fs.mkdirSync(path.join(output, 'tanfolyam'), { recursive: true });
+  for (const number of [1, 2]) {
+  const source = fs.readFileSync(path.join(__dirname, `fejezet-${number}.md`), 'utf8');
   const blocks = source.trim().split(/\r?\n\s*\r?\n/);
+  const title = blocks[2].replace(/^# /, '');
+  titles.push(title);
   const contents = [];
   let section = 0;
   const article = blocks.map((block, index) => {
@@ -27,17 +32,20 @@ function buildCourse(output, template) {
     if (block.startsWith('* ')) return `<ul data-course-source="${index}">${block.split(/\r?\n/).map(line => `<li>${inline(line.slice(2))}</li>`).join('')}</ul>`;
     return `<p data-course-source="${index}">${inline(block)}</p>`;
   }).join('\n');
-  const chapters = Array.from({ length: 10 }, (_, i) => i === 0
-    ? '<li><a href="/tanfolyam/1-fejezet"><span>1. fejezet</span><strong>A SZÜLŐI JOGI ÖNVÉDELEM ALAPJAI</strong><span class="course-status">Olvasás →</span></a></li>'
+  const videoId = { 1: 'BFwtI9GyZQs', 2: '7rR-xmfOXms' }[number];
+  const video = `<section class="course-video" aria-label="${number}. fejezet videós összefoglalója"><iframe src="https://www.youtube-nocookie.com/embed/${videoId}" title="K.O. Szülői Jogi Önvédelmi Akadémia – ${number}. fejezet videós összefoglaló" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener noreferrer">Videó megnyitása a YouTube-on ↗</a></section>`;
+  fs.writeFileSync(path.join(output, `tanfolyam/${number}-fejezet.html`), template(`${number}. fejezet – ${title}`, `
+    <div class="container course-reader"><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a>
+    ${video}<div class="course-layout"><aside class="course-sidebar"><details open><summary>A${number === 1 ? 'z első' : ' második'} fejezet tartalma</summary><nav aria-label="Fejezet tartalomjegyzéke"><ol>${contents.join('')}</ol></nav></details></aside>
+    <article class="course-prose">${article}<a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a></article></div></div>`, 'course'));
+  }
+  const chapters = Array.from({ length: 10 }, (_, i) => i < titles.length
+    ? `<li><a href="/tanfolyam/${i + 1}-fejezet"><span>${i + 1}. fejezet</span><strong>${escape(titles[i])}</strong><span class="course-status">Olvasás →</span></a></li>`
     : `<li class="course-pending"><span>${i + 1}. fejezet</span><span>Hamarosan</span></li>`).join('');
   fs.mkdirSync(path.join(output, 'tanfolyam'), { recursive: true });
   fs.writeFileSync(path.join(output, 'tanfolyam.html'), template('Tanfolyam', `
     <div class="container course-index"><p class="course-kicker">Tanfolyam · 10 fejezet</p>
     <h1>K.O. SZÜLŐI JOGI ÖNVÉDELMI AKADÉMIA</h1>
     <p class="course-intro">A tanfolyam fejezetei</p><ol class="course-chapters">${chapters}</ol></div>`, 'course'));
-  fs.writeFileSync(path.join(output, 'tanfolyam/1-fejezet.html'), template('1. fejezet – A szülői jogi önvédelem alapjai', `
-    <div class="container course-reader"><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a>
-    <div class="course-layout"><aside class="course-sidebar"><details open><summary>Az első fejezet tartalma</summary><nav aria-label="Fejezet tartalomjegyzéke"><ol>${contents.join('')}</ol></nav></details></aside>
-    <article class="course-prose">${article}<a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a></article></div></div>`, 'course'));
 }
 module.exports = { buildCourse };

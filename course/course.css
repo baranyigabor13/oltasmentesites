@@ -1,4 +1,16 @@
 .course-index, .course-reader { padding-block: clamp(32px, 6vw, 80px); }
+.course-nav { position: relative; display: flex; align-items: center; gap: 6px; }
+.course-nav summary { cursor: pointer; list-style: none; color: var(--color-accent); padding: 8px; }
+.course-nav summary::-webkit-details-marker { display: none; }
+.course-submenu { position: absolute; top: 100%; right: 0; width: 330px; padding: 12px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--r-md); box-shadow: var(--shadow-md); }
+.hdr__nav .course-submenu a { display: block; white-space: normal; padding: 12px; line-height: 1.6; }
+.course-submenu a:hover { background: var(--color-accent-bg); }
+.course-mobile-submenu { display: grid; gap: 16px; padding: 4px 0 12px 20px; border-left: 1px solid var(--color-accent); }
+.course-mobile-submenu a { color: var(--color-text-muted); line-height: 1.6; }
+.course-video { max-width: 1112px; margin: 0 auto 48px; }
+.course-video iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--color-border); border-radius: var(--r-lg); background: var(--color-surface); }
+.course-video > a { display: inline-block; color: var(--color-accent); font-size: .875rem; margin-top: 12px; }
+.course-nav summary:focus-visible, .course-nav a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 .course-index { max-width: 1000px; }
 .course-kicker, .course-status { color: var(--color-accent); font-family: var(--font-mono); }
 .course-index h1 { font-size: clamp(1.9rem, 5vw, 3.5rem); line-height: 1.15; margin-block: 24px; letter-spacing: -.035em; }

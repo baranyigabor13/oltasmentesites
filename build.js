@@ -609,7 +609,9 @@ function getHeader(activePage = '') {
       <a href="/alapmondatok" ${activePage === 'alapmondatok' ? 'aria-current="page"' : ''}>Alapmondatok</a>
       <a href="/tudastar" ${activePage === 'tudastar' ? 'aria-current="page"' : ''}>Tudástár</a>
       <a href="/manipulacio-anatomiaja" ${activePage === 'handbook' ? 'aria-current="page"' : ''}>Kézikönyv</a>
-      <a href="/tanfolyam" ${activePage === 'course' ? 'aria-current="page"' : ''}>Tanfolyam</a>
+      <div class="course-nav"><a href="/tanfolyam" ${activePage === 'course' ? 'aria-current="page"' : ''}>Tanfolyam</a>
+        <details><summary aria-label="Tanfolyam almenü">▾</summary><div class="course-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a></div></details>
+      </div>
     </nav>
     <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -627,6 +629,7 @@ function getHeader(activePage = '') {
       <a href="/tudastar" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
       <a href="/manipulacio-anatomiaja" ${activePage === 'handbook' ? 'aria-current="page"' : ''} style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
       <a href="/tanfolyam" ${activePage === 'course' ? 'aria-current="page"' : ''} style="color: var(--color-text); font-weight: 500;">Tanfolyam</a>
+      <div class="course-mobile-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a></div>
     </div>
   </div>
   <script>
