@@ -7,7 +7,7 @@ const inline = text => escape(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</stron
 function buildCourse(output, template) {
   const titles = [];
   fs.mkdirSync(path.join(output, 'tanfolyam'), { recursive: true });
-  for (const number of [1, 2]) {
+  for (const number of [1, 2, 3]) {
   const source = fs.readFileSync(path.join(__dirname, `fejezet-${number}.md`), 'utf8');
   const blocks = source.trim().split(/\r?\n\s*\r?\n/);
   const title = blocks[2].replace(/^# /, '');
@@ -32,11 +32,11 @@ function buildCourse(output, template) {
     if (block.startsWith('* ')) return `<ul data-course-source="${index}">${block.split(/\r?\n/).map(line => `<li>${inline(line.slice(2))}</li>`).join('')}</ul>`;
     return `<p data-course-source="${index}">${inline(block)}</p>`;
   }).join('\n');
-  const videoId = { 1: 'BFwtI9GyZQs', 2: '7rR-xmfOXms' }[number];
+  const videoId = { 1: 'BFwtI9GyZQs', 2: '7rR-xmfOXms', 3: 'P9NZVqIfESw' }[number];
   const video = `<section class="course-video" aria-label="${number}. fejezet videós összefoglalója"><iframe src="https://www.youtube-nocookie.com/embed/${videoId}" title="K.O. Szülői Jogi Önvédelmi Akadémia – ${number}. fejezet videós összefoglaló" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener noreferrer">Videó megnyitása a YouTube-on ↗</a></section>`;
   fs.writeFileSync(path.join(output, `tanfolyam/${number}-fejezet.html`), template(`${number}. fejezet – ${title}`, `
     <div class="container course-reader"><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a>
-    ${video}<div class="course-layout"><aside class="course-sidebar"><details open><summary>A${number === 1 ? 'z első' : ' második'} fejezet tartalma</summary><nav aria-label="Fejezet tartalomjegyzéke"><ol>${contents.join('')}</ol></nav></details></aside>
+    ${video}<div class="course-layout"><aside class="course-sidebar"><details open><summary>${{ 1: 'Az első', 2: 'A második', 3: 'A harmadik' }[number]} fejezet tartalma</summary><nav aria-label="Fejezet tartalomjegyzéke"><ol>${contents.join('')}</ol></nav></details></aside>
     <article class="course-prose">${article}<a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a></article></div></div>`, 'course'));
   }
   const chapters = Array.from({ length: 10 }, (_, i) => i < titles.length
