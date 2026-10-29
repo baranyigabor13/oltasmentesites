@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5. fejezet – VÉDŐNŐ, GYERMEKORVOS ÉS ISKOLAORVOS · Eljárási Térkép</title>
+<meta name="description" content="Szülői kötelező védőoltási eljárási térkép és információs oldal. Bizonyítható, jogszerű írásos együttműködés szülőknek.">
+<meta name="theme-color" content="#0F0F0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles-v2.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Ugrás a tartalomra</a>
+
+
+<header class="hdr" role="banner">
+  <div class="container hdr__inner">
+    <a href="/" class="hdr__brand" aria-label="Eljárási Térkép - kezdőlap">
+      <span class="hdr__brand-glyph" aria-hidden="true">É</span>
+      <span>Eljárási Térkép</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Fő navigáció">
+      <a href="/" >Kezdőlap</a>
+      <a href="/#events" >Eseménytérkép</a>
+      <a href="/alapkeret" >Alapkeret</a>
+      <a href="/akcioterv" >Akcióterv</a>
+      <a href="/alapmondatok" >Alapmondatok</a>
+      <a href="/tudastar" >Tudástár</a>
+      <a href="/manipulacio-anatomiaja" >Kézikönyv</a>
+      <div class="course-nav"><a href="/tanfolyam" aria-current="page">Tanfolyam</a>
+        <details><summary aria-label="Tanfolyam almenü">▾</summary><div class="course-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a></div></details>
+      </div>
+    </nav>
+    <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-nav" class="is-hidden" style="background: var(--color-surface-2); border-bottom: 1px solid var(--color-border); padding: var(--sp-4);">
+    <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+      <a href="/" style="color: var(--color-text); font-weight: 500;">Kezdőlap</a>
+      <a href="/#events" style="color: var(--color-text); font-weight: 500;">Eseménytérkép</a>
+      <a href="/alapkeret" style="color: var(--color-text); font-weight: 500;">Alapkeret</a>
+      <a href="/akcioterv" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
+      <a href="/alapmondatok" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
+      <a href="/tudastar" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
+      <a href="/manipulacio-anatomiaja"  style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
+      <a href="/tanfolyam" aria-current="page" style="color: var(--color-text); font-weight: 500;">Tanfolyam</a>
+      <div class="course-mobile-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a></div>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('mobile-nav');
+      m.classList.toggle('is-hidden');
+      const open = !m.classList.contains('is-hidden');
+      const button = document.querySelector('.hdr__menu-btn');
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
+    }
+  </script>
+</header>
+
+
+<main id="main">
+
+    <div class="container course-reader"><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a>
+    <section class="course-video" aria-label="5. fejezet videós összefoglalója"><iframe src="https://www.youtube-nocookie.com/embed/jndjhAHOkGM" title="K.O. Szülői Jogi Önvédelmi Akadémia – 5. fejezet videós összefoglaló" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a href="https://www.youtube.com/watch?v=jndjhAHOkGM" target="_blank" rel="noopener noreferrer">Videó megnyitása a YouTube-on ↗</a></section><div class="course-layout"><aside class="course-sidebar"><details open><summary>Az ötödik fejezet tartalma</summary><nav aria-label="Fejezet tartalomjegyzéke"><ol><li><a href="#resz-1">1. BEVEZETÉS – AMIKOR A SZÜLŐ KÉRDEZ, DE NEM KAP EGYÉRTELMŰ VÁLASZT</a></li><li><a href="#resz-2">2. AZ ELSŐ ALAPELV: A VÉDŐNŐ ÉS AZ ORVOS FELADATA NEM UGYANAZ</a></li><li><a href="#resz-3">3. A MÁSODIK ALAPELV: A SZÜLŐNEK JOGA VAN TÁJÉKOZTATÁST KÉRNI</a></li><li><a href="#resz-4">4. KÖTELES-E AZ ORVOS MINDEN KÉRDÉSRE ÍRÁSBAN VÁLASZOLNI?</a></li><li><a href="#resz-5">5. MI TÖRTÉNIK, HA CSAK EGY BETEGTÁJÉKOZTATÓT KÜLDENEK?</a></li><li><a href="#resz-6">6. A VÉDŐNŐI OLTÁSI ÉRTESÍTÉS – MIT KELL TARTALMAZNIA?</a></li><li><a href="#resz-7">7. A HÁROMSZORI ÍRÁSBELI MEGKERESÉS SZABÁLYA</a></li><li><a href="#resz-8">8. MI TÖRTÉNIK, HA A GYERMEK NEM TUD MEGJELENNI AZ OLTÁSON?</a></li><li><a href="#resz-9">9. OLTÁSI ALKALMASSÁG – KI DÖNT?</a></li><li><a href="#resz-10">10. HALASZTÁS ÉS MENTESÍTÉS – KÉT KÜLÖNBÖZŐ JOGI LEHETŐSÉG</a></li><li><a href="#resz-11">11. AZ ISKOLAI OLTÁSOK – MIT KELL TUDNIA A SZÜLŐNEK?</a></li><li><a href="#resz-12">12. AZ EGÉSZSÉGÜGYI DOKUMENTÁCIÓHOZ VALÓ JOG</a></li><li><a href="#resz-13">13. MILYEN ADATOKNAK KELL SZEREPELNIÜK AZ OLTÁSI DOKUMENTÁCIÓBAN?</a></li><li><a href="#resz-14">14. MI TÖRTÉNIK, HA AZ ORVOS MÁS SZAKEMBERHEZ IRÁNYÍT?</a></li><li><a href="#resz-15">15. MI TÖRTÉNIK, HA AZ OLTÁS UTÁN NEMKÍVÁNATOS ESEMÉNY JELENTKEZIK?</a></li><li><a href="#resz-16">16. ADATTOVÁBBÍTÁS – MIKOR ÉRTESÍTHET MÁS SZERVET A VÉDŐNŐ?</a></li><li><a href="#resz-17">17. MIT TEGYEN A SZÜLŐ, HA PONTATLAN JELENTÉS KÉSZÜLT RÓLA?</a></li><li><a href="#resz-18">18. MI TÖRTÉNIK, HA MEGROMLIK A KAPCSOLAT A VÉDŐNŐVEL VAGY AZ ORVOSSAL?</a></li><li><a href="#resz-19">19. HOGYAN KOMMUNIKÁLJUNK AZ EGÉSZSÉGÜGYI SZAKEMBEREKKEL?</a></li><li><a href="#resz-20">20. HÁROM TANULSÁGOS GYAKORLATI ESET</a></li><li><a href="#resz-21">21. HOGYAN SEGÍTHET AZ AI AZ EGÉSZSÉGÜGYI LEVELEZÉSBEN?</a></li><li><a href="#resz-22">22. HÉT FONTOS TÉVHIT, AMIT EL KELL KERÜLNI</a></li><li><a href="#resz-23">23. AZ ÖTÖDIK FEJEZET LEGFONTOSABB TANULSÁGAI</a></li><li><a href="#resz-24">24. FELHASZNÁLT ELSŐDLEGES JOGFORRÁSOK</a></li></ol></nav></details></aside>
+    <article class="course-prose"><p data-course-source="0">K.O. SZÜLŐI JOGI ÖNVÉDELMI AKADÉMIA</p>
+<p data-course-source="1">5. FEJEZET</p>
+<h1 data-course-source="2">VÉDŐNŐ, GYERMEKORVOS ÉS ISKOLAORVOS</h1>
+<p data-course-source="3">A szülő jogai, az egészségügyi tájékoztatás és a dokumentált kommunikáció</p>
+<p data-course-source="4"><strong>Tanulási szint:</strong> Kezdő–középhaladó  <br><strong>Becsült tanulási idő:</strong> 25–30 perc  <br><strong>Kapcsolódó videó:</strong> 10 perces NotebookLM-összefoglaló</p>
+<hr>
+<h2 id="resz-1" data-course-source="6">1. BEVEZETÉS – AMIKOR A SZÜLŐ KÉRDEZ, DE NEM KAP EGYÉRTELMŰ VÁLASZT</h2>
+<p data-course-source="7">Képzeljünk el egy hétköznapi helyzetet!</p>
+<p data-course-source="8">Egy szülő értesítést kap a védőnőtől, hogy gyermekének hamarosan esedékes egy kötelező védőoltás.</p>
+<p data-course-source="9">A levélben szerepel az oltás időpontja, helyszíne és néhány általános információ.</p>
+<p data-course-source="10">A szülőnek azonban kérdései vannak.</p>
+<p data-course-source="11">Szeretné tudni, pontosan melyik oltóanyagot alkalmazzák, milyen egészségügyi szempontokat vesznek figyelembe, és kitől kérhet tájékoztatást gyermeke egyedi egészségi körülményeivel kapcsolatban.</p>
+<p data-course-source="12">Ezért levelet ír a védőnőnek.</p>
+<p data-course-source="13">A védőnő azt válaszolja, hogy az orvosi kérdésekben a gyermekorvos az illetékes.</p>
+<p data-course-source="14">A szülő ezután az orvoshoz fordul.</p>
+<p data-course-source="15">Az orvos megküldi az oltóanyag általános betegtájékoztatóját, és felajánl egy személyes konzultációt.</p>
+<p data-course-source="16">A szülő továbbra is szeretne választ kapni néhány konkrét kérdésére, lehetőleg írásban is.</p>
+<p data-course-source="17">Közben közeledik az oltás időpontja.</p>
+<p data-course-source="18">A szülő bizonytalan.</p>
+<p data-course-source="19">Vajon ki köteles válaszolni?</p>
+<p data-course-source="20">Elég-e egy általános betegtájékoztató?</p>
+<p data-course-source="21">Kérhető-e részletesebb tájékoztatás?</p>
+<p data-course-source="22">Mi történik, ha a gyermek egészségügyi dokumentációja hiányos?</p>
+<p data-course-source="23">És mi a helyzet akkor, ha az oltás elmaradása miatt a védőnő értesíti a népegészségügyi hatóságot?</p>
+<p data-course-source="24"><strong>Ezeket a kérdéseket csak akkor lehet megfelelően kezelni, ha pontosan ismerjük az egyes egészségügyi szereplők feladatait és a szülő jogait.</strong></p>
+<p data-course-source="25">Ez a fejezet erre tanít meg.</p>
+<hr>
+<h2 id="resz-2" data-course-source="27">2. AZ ELSŐ ALAPELV: A VÉDŐNŐ ÉS AZ ORVOS FELADATA NEM UGYANAZ</h2>
+<p data-course-source="28">A szülők gyakran egyetlen egységes egészségügyi rendszerként tekintenek a védőnőre, a gyermekorvosra és az iskolaorvosra.</p>
+<p data-course-source="29">A valóságban azonban különböző szakmai feladatokat látnak el.</p>
+<p data-course-source="30">A feladatok egy része kapcsolódik egymáshoz, de a felelősségi körök nem azonosak.</p>
+<p data-course-source="31">Ez különösen fontos a kötelező gyermekkori védőoltásoknál.</p>
+<h3 data-course-source="32">2.1. A területi védőnő feladatai</h3>
+<p data-course-source="33">A területi védőnő munkájának egyik alapvető jogszabálya a <strong>49/2004. (V. 21.) ESzCsM rendelet</strong>.</p>
+<p data-course-source="34">A rendelet 3. §-a részletesen meghatározza a feladatait.</p>
+<p data-course-source="35">Ide tartozik többek között a várandósok gondozása, a gyermekek fejlődésének figyelemmel kísérése, a családok tájékoztatása, a szükséges szűrővizsgálatokhoz kapcsolódó feladatok ellátása, valamint az oltások szervezése és nyilvántartása.</p>
+<p data-course-source="36">A védőnőnek gyermekvédelmi jelzési feladatai is lehetnek.</p>
+<p data-course-source="37">A jogszabály tehát nem kizárólag adminisztratív szerepet biztosít számára.</p>
+<p data-course-source="38"><strong>A védőnő nem pusztán időpontokat közöl. Meghatározott egészségügyi, tájékoztatási, gondozási és jelzési feladatokat is ellát.</strong></p>
+<p data-course-source="39">Ugyanakkor a védőnő nem helyettesíti az orvos szakmai döntését azokban a kérdésekben, amelyek orvosi kompetenciába tartoznak.</p>
+<h3 data-course-source="40">2.2. A házi gyermekorvos feladatai</h3>
+<p data-course-source="41">A házi gyermekorvos munkáját többek között a <strong>4/2000. (II. 25.) EüM rendelet</strong> szabályozza.</p>
+<p data-course-source="42">Feladatkörébe tartozik a gyermekek folyamatos egészségügyi alapellátása, a betegségek felismerése és kezelése, a szükséges vizsgálatok elvégzése, az egészségügyi tanácsadás, valamint a védőoltásokkal kapcsolatos orvosi teendők.</p>
+<p data-course-source="43">A gyermekorvosnak a védőnővel is együtt kell működnie.</p>
+<p data-course-source="44">A védőoltás beadásával kapcsolatos orvosi kérdések nem pusztán adminisztratív feladatok.</p>
+<p data-course-source="45">Az orvosnak a jogszabályok és a szakmai szabályok alapján kell eljárnia.</p>
+<p data-course-source="46">Ide tartozik az oltás végrehajthatóságának egyedi elbírálása is.</p>
+<p data-course-source="47"><strong>A szülő számára fontos különbség: a védőnő szervezési és tájékoztatási feladatokat lát el, míg az oltás végrehajthatóságának orvosi megítélése a megfelelő orvos feladata.</strong></p>
+<h3 data-course-source="48">2.3. Az iskolaorvos feladatai</h3>
+<p data-course-source="49">Az iskolaorvos tevékenységének egyik alapvető jogszabálya a <strong>26/1997. (IX. 3.) NM rendelet</strong>.</p>
+<p data-course-source="50">A rendelet részletesen meghatározza az iskola-egészségügyi ellátás működését.</p>
+<p data-course-source="51">Az iskolaorvos feladatai közé tartozhatnak a meghatározott életkorhoz kapcsolódó vizsgálatok, a tanulók egészségi állapotának követése, az egészségnevelés, valamint az iskolai kötelező védőoltások elvégzése és dokumentálása.</p>
+<p data-course-source="52">Az iskolaorvos együttműködik a házi gyermekorvossal és az iskolavédőnővel.</p>
+<p data-course-source="53">Az iskolaorvos tehát nem egyszerűen az iskola alkalmazottjaként eljáró adminisztratív szereplő.</p>
+<p data-course-source="54">Egészségügyi szakmai feladatokat lát el, amelyekre betegjogi és egészségügyi szabályok is vonatkoznak.</p>
+<hr>
+<h2 id="resz-3" data-course-source="56">3. A MÁSODIK ALAPELV: A SZÜLŐNEK JOGA VAN TÁJÉKOZTATÁST KÉRNI</h2>
+<p data-course-source="57">Az egyik legfontosabb jogszabály az <strong>1997. évi CLIV. törvény az egészségügyről</strong>, röviden az Eütv.</p>
+<p data-course-source="58">A törvény 13. §-a rendelkezik a beteg tájékoztatáshoz való jogáról.</p>
+<p data-course-source="59">Ennek központi eleme, hogy a beteg egyéniesített, teljes körű tájékoztatásra jogosult.</p>
+<p data-course-source="60">Ez nem pusztán általános egészségügyi információkat jelent.</p>
+<p data-course-source="61">A tájékoztatásnak az adott betegre és az adott ellátási helyzetre is ki kell terjednie.</p>
+<p data-course-source="62">Az Eütv. 13. § (2) bekezdése több fontos témát nevesít.</p>
+<p data-course-source="63">Ilyen például a beteg egészségi állapota, a javasolt vizsgálat vagy beavatkozás, annak lehetséges előnyei és kockázatai, valamint az elmaradás lehetséges következményei.</p>
+<p data-course-source="64">A törvény 13. § (3) bekezdése külön biztosítja a további kérdezés jogát.</p>
+<p data-course-source="65">Ez rendkívül fontos.</p>
+<p data-course-source="66"><strong>A betegjogi tájékoztatás nem merül ki szükségszerűen abban, hogy a beteg vagy a szülő kapott egy általános ismertetőt.</strong></p>
+<p data-course-source="67">A személyre szabott tájékoztatás tartalma azonban mindig az adott egészségügyi helyzettől függ.</p>
+<h3 data-course-source="68">3.1. Mit jelent az egyéniesített tájékoztatás?</h3>
+<p data-course-source="69">Tegyük fel, hogy egy gyermeknél korábban valamilyen egészségügyi panasz jelentkezett.</p>
+<p data-course-source="70">A szülő szeretné tudni, hogy ennek van-e jelentősége a tervezett védőoltás szempontjából.</p>
+<p data-course-source="71">Ebben a helyzetben nem feltétlenül elegendő a szülő számára egy olyan általános tájékoztató, amely semmit nem mond az általa jelzett egyedi körülményről.</p>
+<p data-course-source="72">A megfelelő kérdés az, hogy a gyermek egészségi állapotának mely körülményeit kell orvosilag figyelembe venni, és szükséges-e további vizsgálat vagy konzultáció.</p>
+<p data-course-source="73">Az orvosi válasz tartalmát azonban nem határozhatja meg előre a szülő.</p>
+<p data-course-source="74">A szülőnek joga van kérdezni.</p>
+<p data-course-source="75">Az orvosnak pedig a szakmai szabályoknak megfelelően kell tájékoztatnia és eljárnia.</p>
+<h3 data-course-source="76">3.2. Kinek kell tájékoztatnia a szülőt?</h3>
+<p data-course-source="77">Az Eütv. 134. §-a a kezelőorvos tájékoztatási feladatait is szabályozza.</p>
+<p data-course-source="78">A kezelőorvosnak a beteg állapotának megfelelően, szakmai ismeretei és legjobb tudása szerint kell tájékoztatást adnia.</p>
+<p data-course-source="79">Kiskorú gyermek esetében a törvényben meghatározott feltételekkel a törvényes képviselő tájékoztatása is szükséges.</p>
+<p data-course-source="80">Ha tehát az oltással kapcsolatban kifejezetten orvosi szakmai kérdés merül fel, célszerű az oltást végző vagy az adott egészségügyi helyzetért felelős orvost megkeresni.</p>
+<p data-course-source="81">A védőnő ettől függetlenül a saját feladatkörében tájékoztatási kötelezettséggel rendelkezhet.</p>
+<p data-course-source="82"><strong>A szülőnek nem kell összekevernie a védőnő által nyújtott általános oltási tájékoztatást az orvos által biztosítandó, betegre szabott szakmai tájékoztatással.</strong></p>
+<hr>
+<h2 id="resz-4" data-course-source="84">4. KÖTELES-E AZ ORVOS MINDEN KÉRDÉSRE ÍRÁSBAN VÁLASZOLNI?</h2>
+<p data-course-source="85">Ez az egyik leggyakrabban felmerülő kérdés.</p>
+<p data-course-source="86">A szülők sokszor kifejezetten írásbeli választ szeretnének.</p>
+<p data-course-source="87">Ennek érthető oka van.</p>
+<p data-course-source="88">Az írásos dokumentáció később visszakereshető.</p>
+<p data-course-source="89">Egyértelművé teszi, milyen kérdések hangzottak el, és milyen tájékoztatást kaptak.</p>
+<p data-course-source="90">Ugyanakkor fontos különbséget tenni a tájékoztatáshoz való jog és a tájékoztatás formája között.</p>
+<p data-course-source="91"><strong>Az Eütv. 13. §-ából önmagában nem következik, hogy az orvos minden egyes kérdésre külön, részletes, írásbeli szakvéleményt köteles készíteni.</strong></p>
+<p data-course-source="92">A tájékoztatás történhet személyes konzultáció során is.</p>
+<p data-course-source="93">Ez önmagában nem jelenti a tájékoztatási jog megsértését.</p>
+<p data-course-source="94">A szülő azonban jogszerűen kérheti, hogy a lényeges szakmai megállapításokat és a további teendőket megfelelően dokumentálják.</p>
+<h3 data-course-source="95">Mit tehet a szülő?</h3>
+<p data-course-source="96">Érdemes röviden és pontosan megfogalmazni a konkrét egészségügyi kérdést.</p>
+<p data-course-source="97">Például:</p>
+<p data-course-source="98">„Kérem, hogy gyermekem ismert egészségügyi előzményeinek figyelembevételével tájékoztasson arról, szükségesnek tart-e további vizsgálatot a tervezett oltás előtt.”</p>
+<p data-course-source="99">Ha az orvos személyes konzultációt ajánl fel, az érdemi tájékoztatás megfelelő módja lehet.</p>
+<p data-course-source="100">A szülő ezt követően kérheti az orvosi megállapítások dokumentálását és a dokumentáció megfelelő részének megismerését.</p>
+<p data-course-source="101">A cél nem a személyes orvosi konzultáció szükségtelen kizárása.</p>
+<p data-course-source="102">Hanem az, hogy az egészségügyi kérdések tisztázása és az ügy dokumentálása egyaránt megtörténjen.</p>
+<hr>
+<h2 id="resz-5" data-course-source="104">5. MI TÖRTÉNIK, HA CSAK EGY BETEGTÁJÉKOZTATÓT KÜLDENEK?</h2>
+<p data-course-source="105">A projektben összegyűjtött tapasztalatok között többször szerepel olyan eset, amikor egy szülő részletesebb tájékoztatást kért, de az egészségügyi szolgáltatótól csak az oltóanyag általános betegtájékoztatóját kapta meg.</p>
+<p data-course-source="106">Ezt a helyzetet megfelelően kell értékelni.</p>
+<p data-course-source="107">A hivatalos betegtájékoztató fontos információforrás.</p>
+<p data-course-source="108">Tartalmazhatja a készítmény alkalmazásával kapcsolatos lényeges tudnivalókat, ellenjavallatokat és ismert mellékhatásokat.</p>
+<p data-course-source="109">Általános kérdések esetében tehát önmagában is hasznos lehet.</p>
+<p data-course-source="110">Más a helyzet, ha a szülő kifejezetten a gyermek egyedi egészségi körülményeire vonatkozó kérdést tett fel.</p>
+<p data-course-source="111">Ilyenkor azt kell vizsgálni, hogy a kapott válasz ténylegesen megválaszolta-e ezt a kérdést.</p>
+<h4 data-course-source="112">Példa</h4>
+<p data-course-source="113">A szülő azt kérdezi:</p>
+<p data-course-source="114">„Gyermekem korábbi szakorvosi leletében szereplő eltérésnek van-e jelentősége a tervezett oltás előtt?”</p>
+<p data-course-source="115">Ha válaszként kizárólag egy általános betegtájékoztató érkezik, előfordulhat, hogy a konkrét kérdés továbbra is nyitott.</p>
+<p data-course-source="116">A szülő ilyenkor ismételten kérheti az adott körülmény orvosi értékelését.</p>
+<p data-course-source="117"><strong>Fontos azonban:</strong> abból, hogy egy kérdésre még nem érkezett megfelelőnek tartott válasz, nem következik automatikusan az oltási kötelezettség felfüggesztése.</p>
+<p data-course-source="118">A tájékoztatás jogát és a kötelező védőoltásokra vonatkozó különös szabályokat együtt kell alkalmazni.</p>
+<p data-course-source="119">A projektforrások ezt visszatérő kommunikációs problémaként azonosítják, de az egyes esetek jogi megítéléséhez az eredeti levelek szükségesek.</p>
+<hr>
+<h2 id="resz-6" data-course-source="121">6. A VÉDŐNŐI OLTÁSI ÉRTESÍTÉS – MIT KELL TARTALMAZNIA?</h2>
+<p data-course-source="122">Most következik a fejezet egyik legfontosabb jogszabálya.</p>
+<p data-course-source="123">A <strong>18/1998. (VI. 3.) NM rendelet 15. § (1) bekezdés c) pontja</strong>.</p>
+<p data-course-source="124">Ez kifejezetten szabályozza a védőnő oltási értesítési feladatát.</p>
+<p data-course-source="125">A rendelkezés szerint a védőnő írásban értesíti az oltandó személy törvényes képviselőjét többek között:</p>
+<ul data-course-source="126"><li>az oltás esedékességéről és jelentőségéről;</li><li>a beadás helyszínéről és időpontjáról;</li><li>a várható általános reakciókról;</li><li>az oltás elmulasztásának következményeiről.</li></ul>
+<p data-course-source="127">Ez konkrét, ellenőrizhető jogszabályi követelmény.</p>
+<p data-course-source="128">A szülő tehát egy értesítés kézhezvétele után megvizsgálhatja, hogy az tartalmazza-e a jogszabályban megjelölt információkat.</p>
+<p data-course-source="129">Például ha az értesítésből hiányzik a beadás helyszíne vagy időpontja, indokolt lehet pontosítást kérni.</p>
+<p data-course-source="130">Ugyanakkor nem minden hiányosság jelenti automatikusan azt, hogy az oltási kötelezettség megszűnt.</p>
+<p data-course-source="131"><strong>Az értesítés szabályszerűsége és az oltási kötelezettség fennállása két különböző jogi kérdés.</strong></p>
+<hr>
+<h2 id="resz-7" data-course-source="133">7. A HÁROMSZORI ÍRÁSBELI MEGKERESÉS SZABÁLYA</h2>
+<p data-course-source="134">A 18/1998. NM rendelet 15. § (1) bekezdés b) pontja további fontos rendelkezést tartalmaz.</p>
+<p data-course-source="135">A védőnő nyilvántartja az oltásra kötelezetteket, vezeti az oltási nyilvántartást, és elmaradt oltás esetén ismételt értesítést küld.</p>
+<p data-course-source="136">A jogszabály ugyanazon oltandó személy háromszori eredménytelen írásbeli megkereséséhez kapcsolja a járási hivatal értesítését.</p>
+<p data-course-source="137">Ez a szabály a szülői ügyekben gyakorlati jelentőséggel bírhat.</p>
+<p data-course-source="138">Ha később hatósági eljárás indul, célszerű megvizsgálni, milyen értesítések történtek, mikor küldték őket, és mi volt a tartalmuk.</p>
+<p data-course-source="139">De itt is fontos elkerülni a túlzó következtetéseket.</p>
+<p data-course-source="140"><strong>A három eredménytelen írásbeli megkeresésre vonatkozó szabályból nem következik, hogy a szülőnek három alkalommal jogszerűen figyelmen kívül lehet hagynia az oltási kötelezettséget.</strong></p>
+<p data-course-source="141">Azt sem lehet automatikusan kijelenteni, hogy bármely hiányzó értesítés önmagában megszünteti a későbbi hatósági eljárás lehetőségét.</p>
+<p data-course-source="142">A konkrét jogkövetkezmény az ügy körülményeitől és a teljes szabályozástól függ.</p>
+<p data-course-source="143">Egy felkészült szülő ezért nem elkerülni akarja az értesítéseket.</p>
+<p data-course-source="144">Hanem megőrzi és pontosan nyilvántartja azokat.</p>
+<hr>
+<h2 id="resz-8" data-course-source="146">8. MI TÖRTÉNIK, HA A GYERMEK NEM TUD MEGJELENNI AZ OLTÁSON?</h2>
+<p data-course-source="147">A szülők számára fontos a <strong>18/1998. NM rendelet 14. § (2) bekezdése</strong> is.</p>
+<p data-course-source="148">A rendelkezés szerint, ha az oltásra kötelezett személy valamilyen okból nem tud megjelenni a megadott helyen és időben, ezt haladéktalanul be kell jelenteni.</p>
+<p data-course-source="149">Kiskorú esetén ez a törvényes képviselő feladata.</p>
+<p data-course-source="150">A szabály azt is rögzíti, hogy ilyenkor az oltás új időpontjáról értesítést kap az érintett.</p>
+<p data-course-source="151">Ez azt jelenti, hogy az akadályoztatás tényszerű és időben történő jelzése fontos kötelezettség.</p>
+<h4 data-course-source="152">Gyakorlati példa</h4>
+<p data-course-source="153">Egy gyermek a kitűzött időpontban betegség miatt nem tud megjelenni.</p>
+<p data-course-source="154">A szülő erről tájékoztatja az érintett egészségügyi szolgáltatót.</p>
+<p data-course-source="155">A megfelelő módszer az akadályoztatás pontos jelzése, valamint szükség esetén a vonatkozó orvosi dokumentáció rendelkezésre bocsátása.</p>
+<p data-course-source="156">Ha orvosi kérdés merül fel, a gyermek állapotát az illetékes orvosnak kell megítélnie.</p>
+<p data-course-source="157">Az akadályoztatás dokumentálása segít tisztázni, miért maradt el az adott időpont.</p>
+<p data-course-source="158"><strong>Nem szabad azonban összekeverni egy elmulasztott időpont igazolását az oltás alóli halasztással vagy mentesítéssel.</strong></p>
+<p data-course-source="159">Ezek eltérő jogi helyzetek.</p>
+<hr>
+<h2 id="resz-9" data-course-source="161">9. OLTÁSI ALKALMASSÁG – KI DÖNT?</h2>
+<p data-course-source="162">A kötelező védőoltásokkal kapcsolatos egyik legfontosabb orvosszakmai kérdés az oltás végrehajthatóságának megítélése.</p>
+<p data-course-source="163">A 18/1998. NM rendelet 4. § (1) bekezdése ezt a döntést a kezelőorvoshoz rendeli.</p>
+<p data-course-source="164">A rendelet 15. § (2) bekezdés c) pontja pedig az oltóorvos feladataként nevesíti az oltás végrehajthatóságának egyedi elbírálását.</p>
+<p data-course-source="165">Ennek fontos következménye van.</p>
+<p data-course-source="166"><strong>Az oltás általános jogszabályi kötelező jellege és a konkrét gyermek egészségügyi állapotának orvosi megítélése nem ugyanaz a kérdés.</strong></p>
+<p data-course-source="167">Ha a gyermek egészségi állapotával kapcsolatban releváns körülmény áll fenn, annak szakmai értékelése indokolt lehet.</p>
+<p data-course-source="168">A szülő ehhez fontos információkat szolgáltathat.</p>
+<p data-course-source="169">Például bemutathat korábbi leleteket, jelezheti az ismert betegségeket, vagy felhívhatja az orvos figyelmét folyamatban lévő vizsgálatokra.</p>
+<p data-course-source="170">Az orvos feladata, hogy ezeket a szakmai szabályok szerint értékelje.</p>
+<p data-course-source="171">Ugyanakkor a szülő nem követelhet orvosilag indokolatlan vizsgálatokat kizárólag azért, hogy azokkal az oltási időpontot későbbre helyezze.</p>
+<p data-course-source="172">Az orvosi döntésnek tényleges egészségügyi indokon kell alapulnia.</p>
+<hr>
+<h2 id="resz-10" data-course-source="174">10. HALASZTÁS ÉS MENTESÍTÉS – KÉT KÜLÖNBÖZŐ JOGI LEHETŐSÉG</h2>
+<p data-course-source="175">A szülők gyakran összekeverik a halasztást a mentesítéssel.</p>
+<p data-course-source="176">Pedig a kettő eltérő feltételekhez kötődik.</p>
+<p data-course-source="177">A fő jogszabály az <strong>Eütv. 58. §-a</strong>.</p>
+<h3 data-course-source="178">10.1. Halasztás</h3>
+<p data-course-source="179">A törvény meghatározott egészségügyi feltételek fennállása esetén lehetővé teszi a kötelező védőoltás elhalasztását.</p>
+<p data-course-source="180">A halasztásról a kezelőorvos dönt a jogszabályban meghatározott szempontok alapján.</p>
+<p data-course-source="181">A törvény a közegészségügyi érdeket is figyelembe veszi.</p>
+<p data-course-source="182">A kezelőorvosnak a halasztással kapcsolatban írásbeli értesítési kötelezettsége van az egészségügyi államigazgatási szerv felé.</p>
+<p data-course-source="183">A halasztás tehát nem pusztán szülői nyilatkozat.</p>
+<p data-course-source="184">Orvosi döntéshez és jogszabályi feltételekhez kapcsolódik.</p>
+<h3 data-course-source="185">10.2. Mentesítés</h3>
+<p data-course-source="186">A mentesítés tartósabb egészségügyi akadály esetén merülhet fel.</p>
+<p data-course-source="187">A törvény alapján kérelmet terjeszthet elő a kezelőorvos, a beteg vagy a beteg törvényes képviselője.</p>
+<p data-course-source="188">A kérelemhez az indokoltságot alátámasztó orvosi szakvélemény szükséges.</p>
+<p data-course-source="189">A mentesítésről az illetékes egészségügyi hatóság dönt.</p>
+<p data-course-source="190">A szabályszerűen megindult mentesítési eljárásnak az Eütv. 58. § (4) bekezdése alapján meghatározott eljárási és végrehajtási joghatásai vannak az érintett oltásra nézve.</p>
+<p data-course-source="191">Ezek azonban kizárólag a jogszabály szerinti feltételekkel alkalmazhatók.</p>
+<p data-course-source="192"><strong>Halasztást és mentesítést csak valós, szakmailag értékelhető egészségügyi körülmények alapján szabad kezdeményezni.</strong></p>
+<p data-course-source="193">Egy tájékoztatáskérés önmagában nem minősül sem halasztásnak, sem mentesítésnek.</p>
+<hr>
+<h2 id="resz-11" data-course-source="195">11. AZ ISKOLAI OLTÁSOK – MIT KELL TUDNIA A SZÜLŐNEK?</h2>
+<p data-course-source="196">Az iskolai kampányoltások esetében több szereplő működik együtt.</p>
+<p data-course-source="197">Az iskola biztosítja az ellátás megszervezéséhez szükséges intézményi kereteket.</p>
+<p data-course-source="198">Az iskolavédőnő szervezési, előkészítési és tájékoztatási feladatokat lát el.</p>
+<p data-course-source="199">Az iskolaorvos az egészségügyi szakmai feladatokat végzi.</p>
+<p data-course-source="200">A 26/1997. NM rendelet 2. és 3. számú melléklete részletesen meghatározza az iskolaorvos és az iskolavédőnő feladatait.</p>
+<p data-course-source="201">A szülőnek fontos megértenie, hogy az iskolai oltási értesítés, az orvosi döntés és az oltás dokumentálása eltérő tevékenységek.</p>
+<h3 data-course-source="202">A KRÉTA-rendszer jelentősége</h3>
+<p data-course-source="203">A 26/1997. NM rendelet 3/A. §-a alapján az iskola-egészségügyi ellátás dokumentációját a tanulmányi rendszer Iskola Egészségügyi Rendszermoduljában vezetik.</p>
+<p data-course-source="204">Ez azonban önmagában nem jelenti azt, hogy minden rendszerbejegyzés automatikusan megfelel a szülő előzetes értesítésére vonatkozó valamennyi követelménynek.</p>
+<p data-course-source="205">Egy konkrét ügyben vizsgálni kell:</p>
+<p data-course-source="206">milyen tájékoztatás történt;</p>
+<p data-course-source="207">milyen csatornán;</p>
+<p data-course-source="208">milyen tartalommal;</p>
+<p data-course-source="209">és milyen időpontban.</p>
+<p data-course-source="210">Az iskola-egészségügyi dokumentáció vezetése és a szülő megfelelő tájékoztatása kapcsolódó, de nem teljesen azonos jogi feladatok.</p>
+<h4 data-course-source="211">Mi a helyzet a szülő jelenlétével?</h4>
+<p data-course-source="212">Az Eütv. 11. § (4) bekezdése a kiskorú beteg mellett tartózkodó szülő vagy törvényes képviselő jogát ismeri el.</p>
+<p data-course-source="213">Ennek gyakorlati alkalmazását azonban az adott egészségügyi és intézményi helyzetben kell értékelni.</p>
+<p data-course-source="214">Nem helyes általánosan azt állítani, hogy egy előzetes szülői nyilatkozat minden iskolai egészségügyi vizsgálatot vagy kötelező oltást automatikusan jogellenessé tesz, ha a szülő nincs személyesen jelen.</p>
+<p data-course-source="215">Ha a szülő szeretne jelen lenni, célszerű ezt előzetesen jeleznie, és egyeztetnie az egészségügyi szolgáltatóval.</p>
+<hr>
+<h2 id="resz-12" data-course-source="217">12. AZ EGÉSZSÉGÜGYI DOKUMENTÁCIÓHOZ VALÓ JOG</h2>
+<p data-course-source="218">Az Eütv. 24. §-a az egészségügyi dokumentáció megismerésének jogát szabályozza.</p>
+<p data-course-source="219">A dokumentációhoz való hozzáférés különösen fontos akkor, ha a szülő szeretné áttekinteni gyermeke egészségügyi előzményeit.</p>
+<p data-course-source="220">Az egészségügyi dokumentáció tartalmazhat korábbi vizsgálati eredményeket, leleteket, kezelési adatokat és oltási információkat.</p>
+<p data-course-source="221">Az Eütv. 24. § (3) bekezdése lehetővé teszi a dokumentációba történő betekintést és a másolatkérést.</p>
+<p data-course-source="222">A kiskorú gyermek törvényes képviselőjének hozzáférési jogosultságát az életkorra és képviseletre vonatkozó szabályok figyelembevételével kell megítélni.</p>
+<h3 data-course-source="223">Mi történik, ha a dokumentáció hiányos?</h3>
+<p data-course-source="224">Először azt kell tisztázni, hogy a dokumentáció mely egészségügyi szolgáltatónál keletkezett.</p>
+<p data-course-source="225">Nem biztos, hogy a jelenlegi gyermekorvos valamennyi korábbi lelettel rendelkezik.</p>
+<p data-course-source="226">A szülő kérheti a szolgáltatónál kezelt dokumentáció megismerését.</p>
+<p data-course-source="227">Ha bizonyítható pontatlanságot talál, kezdeményezheti annak javítását vagy kiegészítését.</p>
+<p data-course-source="228">Az Eütv. 24. § (4) bekezdése azonban előírja, hogy a javítás során az eredeti adat megállapíthatóságát meg kell őrizni.</p>
+<p data-course-source="229">Ezért az egészségügyi dokumentáció helyesbítése nem azonos az eredeti bejegyzés nyomtalan törlésével.</p>
+<hr>
+<h2 id="resz-13" data-course-source="231">13. MILYEN ADATOKNAK KELL SZEREPELNIÜK AZ OLTÁSI DOKUMENTÁCIÓBAN?</h2>
+<p data-course-source="232">A 18/1998. NM rendelet 15. § (2) bekezdés d) pontja konkrét dokumentációs követelményeket határoz meg.</p>
+<p data-course-source="233">Az oltóorvosnak a gyermek egészségügyi dokumentációjában és az Egészségügyi Könyvben az oltás megtörténtekor rögzítenie kell:</p>
+<ul data-course-source="234"><li>az oltás dátumát;</li><li>az oltás megnevezését;</li><li>az oltóanyag nevét;</li><li>az oltóanyag gyártási számát.</li></ul>
+<p data-course-source="235">Ennek különösen fontos szerepe van az egészségügyi dokumentáció pontosságában és az alkalmazott készítmény visszakövethetőségében.</p>
+<p data-course-source="236">Ha egy korábban beadott oltás dokumentációjában hiányosság merül fel, a szülő kérheti annak tisztázását.</p>
+<p data-course-source="237">A jogszabályban előírt adatok hiánya dokumentációs kérdést vethet fel.</p>
+<p data-course-source="238">Ugyanakkor egy hiányos bejegyzésből önmagában nem következik, hogy az oltás nem történt meg, vagy hogy egészségkárosodás történt.</p>
+<p data-course-source="239">Az eredeti egészségügyi nyilvántartásokat kell ellenőrizni.</p>
+<p data-course-source="240"><strong>A pontos dokumentáció mind a gyermek egészségügyi ellátását, mind a szülő tájékozódását szolgálja.</strong></p>
+<hr>
+<h2 id="resz-14" data-course-source="242">14. MI TÖRTÉNIK, HA AZ ORVOS MÁS SZAKEMBERHEZ IRÁNYÍT?</h2>
+<p data-course-source="243">A szülői tapasztalatok között többször szerepel, hogy a gyermekorvos vagy iskolaorvos a szülőt más szakorvoshoz vagy klinikai védőoltási szaktanácsadóhoz irányította.</p>
+<p data-course-source="244">Ezt egyes szülők a kérdéseik elhárításaként értékelték.</p>
+<p data-course-source="245">A helyzet azonban összetettebb.</p>
+<p data-course-source="246">Egy egészségügyi szakember nem feltétlenül rendelkezik minden speciális szakterület teljes ismeretanyagával.</p>
+<p data-course-source="247">Bizonyos kérdésekben indokolt lehet további szakértő bevonása.</p>
+<p data-course-source="248">A házi gyermekorvos feladatköréhez is hozzátartozik a szükséges szakorvosi ellátásra irányítás.</p>
+<p data-course-source="249">Ezért a megfelelő szakemberhez történő irányítás önmagában nem jogsértés.</p>
+<h4 data-course-source="250">Mit kérhet a szülő?</h4>
+<p data-course-source="251">A szülő jogszerűen kérhet tájékoztatást arról, hogy milyen szakmai kérdés indokolja a további konzultációt.</p>
+<p data-course-source="252">Tisztázható az is, milyen leletekre vagy előzményekre van szükség.</p>
+<p data-course-source="253">Ha az orvos szakvéleményt kér, annak eredményét célszerű dokumentálni és az érintett ellátásban figyelembe venni.</p>
+<p data-course-source="254"><strong>A cél nem a további orvosi konzultáció elkerülése, hanem annak megértése, hogy milyen szakmai kérdést kell tisztázni.</strong></p>
+<hr>
+<h2 id="resz-15" data-course-source="256">15. MI TÖRTÉNIK, HA AZ OLTÁS UTÁN NEMKÍVÁNATOS ESEMÉNY JELENTKEZIK?</h2>
+<p data-course-source="257">A szülők számára fontos különbséget tenni egy egészségügyi panasz időbeli megjelenése és annak bizonyított oka között.</p>
+<p data-course-source="258">A védőoltást követően jelentkező panaszt a szakmai rendszer oltást követő nemkívánatos eseményként, röviden OKNE-ként is kezelheti.</p>
+<p data-course-source="259">Az ilyen események bejelentésének és értékelésének külön szabályai vannak.</p>
+<p data-course-source="260">A 18/1998. NM rendelet 13. § (7) bekezdése az oltó-, illetve észlelő orvos jelentési feladatait szabályozza.</p>
+<p data-course-source="261">A szülőnek különösen fontos, hogy pontosan dokumentálja a tüneteket, az időpontokat és az esetleges orvosi vizsgálatokat.</p>
+<p data-course-source="262">A feltételezett mellékhatás bejelentéséhez nem szükséges előzetesen bizonyítani az ok-okozati kapcsolatot.</p>
+<p data-course-source="263">Ugyanakkor a bejelentés ténye nem bizonyítja, hogy a panaszt az oltás okozta.</p>
+<p data-course-source="264"><strong>Az időbeli kapcsolat nem azonos az ok-okozati összefüggéssel.</strong></p>
+<p data-course-source="265">A bejelentés nem eredményez automatikusan halasztást vagy mentesítést sem.</p>
+<p data-course-source="266">Az egészségügyi állapotot és az esetleges további teendőket megfelelő szakembernek kell értékelnie.</p>
+<hr>
+<h2 id="resz-16" data-course-source="268">16. ADATTOVÁBBÍTÁS – MIKOR ÉRTESÍTHET MÁS SZERVET A VÉDŐNŐ?</h2>
+<p data-course-source="269">A szülők egyik gyakori aggodalma, hogy gyermekük egészségügyi adatai más intézményekhez kerülhetnek.</p>
+<p data-course-source="270">Például a népegészségügyi hatósághoz vagy a gyermekjóléti szolgálathoz.</p>
+<p data-course-source="271">Az egészségügyi adatok különleges személyes adatok.</p>
+<p data-course-source="272">Az adatkezeléshez megfelelő jogalap és az alkalmazandó adatvédelmi szabályok betartása szükséges.</p>
+<p data-course-source="273">Ugyanakkor a védőnőnek jogszabályban meghatározott jelentési és gyermekvédelmi jelzési kötelezettségei lehetnek.</p>
+<p data-course-source="274">A 49/2004. ESzCsM rendelet 3. §-a meghatározott helyzetekben előírja az érintett egészségügyi vagy gyermekjóléti szervek értesítését.</p>
+<p data-course-source="275">Ezért nem igaz az az általános állítás, hogy a védőnő kizárólag a szülő kifejezett hozzájárulásával továbbíthat bármilyen, gyermekével kapcsolatos információt.</p>
+<p data-course-source="276">A megfelelő kérdések inkább ezek:</p>
+<p data-course-source="277">Milyen adatokat továbbítottak?</p>
+<p data-course-source="278">Melyik szervnek?</p>
+<p data-course-source="279">Milyen célból?</p>
+<p data-course-source="280">Milyen jogszabályi rendelkezés alapján?</p>
+<p data-course-source="281">Az adattovábbítás az adott feladat ellátásához szükséges körre korlátozódott-e?</p>
+<p data-course-source="282"><strong>A jogszerűen előírt jelzési kötelezettség és az esetleges jogellenes adattovábbítás nem ugyanaz.</strong></p>
+<p data-course-source="283">A kettőt csak a konkrét körülmények alapján lehet megkülönböztetni.</p>
+<hr>
+<h2 id="resz-17" data-course-source="285">17. MIT TEGYEN A SZÜLŐ, HA PONTATLAN JELENTÉS KÉSZÜLT RÓLA?</h2>
+<p data-course-source="286">A projektben szereplő beszámolók alapján előfordult, hogy a szülők vitatták egy védőnői vagy gyermekjóléti jelentés tartalmát.</p>
+<p data-course-source="287">Például a dokumentumban az szerepelt, hogy a szülő nem működött együtt.</p>
+<p data-course-source="288">A szülő viszont korábbi levelekkel kívánta igazolni, hogy kapcsolatot tartott az egészségügyi szakemberekkel.</p>
+<p data-course-source="289">Ilyen helyzetben a megfelelő megközelítés az eredeti jelentés megismerése.</p>
+<p data-course-source="290">Ezután meg kell állapítani, hogy melyik konkrét állítás vitatott.</p>
+<p data-course-source="291">A következő lépés a rendelkezésre álló bizonyítékok összehasonlítása.</p>
+<p data-course-source="292">Ha például a jelentés szerint a szülő nem válaszolt egy megkeresésre, de rendelkezésre áll a korábbi válasz és annak feladási igazolása, ez fontos bizonyíték lehet.</p>
+<p data-course-source="293">Ugyanakkor a szülői levelezés megléte önmagában nem jelenti azt, hogy minden együttműködési kötelezettség teljesült.</p>
+<p data-course-source="294">A konkrét kifogásolt magatartást kell vizsgálni.</p>
+<p data-course-source="295"><strong>A K.O. módszerben nem általánosságban vitatjuk a jelentést, hanem a dokumentumban szereplő állításokat ellenőrizzük.</strong></p>
+<p data-course-source="296">Ez sokkal megalapozottabb megközelítés, mint a jelentést készítő személy szándékainak találgatása.</p>
+<p data-course-source="297">A projektanyagokban szereplő hasonló esetek gyakorlati tanulságok, nem önmagukban bizonyított jogsértések.</p>
+<hr>
+<h2 id="resz-18" data-course-source="299">18. MI TÖRTÉNIK, HA MEGROMLIK A KAPCSOLAT A VÉDŐNŐVEL VAGY AZ ORVOSSAL?</h2>
+<p data-course-source="300">A szülő és az egészségügyi szakember közötti bizalom fontos.</p>
+<p data-course-source="301">Előfordulhat azonban, hogy a kapcsolat tartósan megromlik.</p>
+<p data-course-source="302">A szülő úgy érzi, hogy nem kap megfelelő tájékoztatást.</p>
+<p data-course-source="303">Az egészségügyi szakember szerint pedig a kommunikáció nehézkessé vált.</p>
+<p data-course-source="304">Ilyenkor célszerű először megpróbálni tisztázni a konkrét problémát.</p>
+<p data-course-source="305">Ha ez nem vezet eredményre, további lehetőségek is felmerülhetnek.</p>
+<h3 data-course-source="306">Másik védőnő kijelölése</h3>
+<p data-course-source="307">A 49/2004. ESzCsM rendelet 2. § (7) bekezdése szerint a védőnői szolgáltatás főszabály szerint nem választható.</p>
+<p data-course-source="308">Összeférhetetlenség fennállása esetén azonban a jogszabály lehetőséget biztosít másik védőnő kijelölésének kérelmezésére.</p>
+<p data-course-source="309">A kérelmet a jogszabályban meghatározott illetékes szerv bírálja el.</p>
+<p data-course-source="310">Fontos, hogy a puszta elégedetlenség nem feltétlenül azonos a jogszabály szerinti összeférhetetlenséggel.</p>
+<p data-course-source="311">A kérelmet ezért konkrét, dokumentált körülményekkel célszerű alátámasztani.</p>
+<h3 data-course-source="312">Betegjogi képviselő bevonása</h3>
+<p data-course-source="313">Az egészségügyi ellátással kapcsolatos betegjogi problémákban segítséget nyújthat az Integrált Jogvédelmi Szolgálat betegjogi képviselője.</p>
+<p data-course-source="314">A betegjogi képviselő segíthet a betegjogok megismerésében, az egészségügyi dokumentációhoz való hozzáférésben és a panasz megfogalmazásában.</p>
+<p data-course-source="315">Ez különösen hasznos lehet akkor, ha a szülő úgy érzi, hogy az egészségügyi tájékoztatással vagy a dokumentációval kapcsolatban nem sikerült megnyugtató megoldást találni.</p>
+<p data-course-source="316">A betegjogi képviselő nem helyettesíti az orvosi szakvéleményt és nem dönt a hatósági oltási kötelezettségről.</p>
+<hr>
+<h2 id="resz-19" data-course-source="318">19. HOGYAN KOMMUNIKÁLJUNK AZ EGÉSZSÉGÜGYI SZAKEMBEREKKEL?</h2>
+<p data-course-source="319">A K.O. képzés egyik legfontosabb gyakorlati elve a dokumentált kommunikáció.</p>
+<p data-course-source="320">Ennek azonban nem az a célja, hogy minden személyes vagy telefonos beszélgetést kizárjunk.</p>
+<p data-course-source="321">Egészségügyi kérdésekben a személyes konzultáció gyakran kifejezetten fontos.</p>
+<p data-course-source="322">A cél inkább az, hogy a lényeges kérdések, válaszok és megállapítások később is visszakereshetők legyenek.</p>
+<h3 data-course-source="323">A megfelelő kommunikáció öt alapelve</h3>
+<p data-course-source="324"><strong>Első: pontosan jelöljük meg a kérdésünket.</strong></p>
+<p data-course-source="325">Ne általánosságban kérjük az összes létező egészségügyi információt.</p>
+<p data-course-source="326">Azt kérdezzük, ami ténylegesen fontos a gyermek ellátásához.</p>
+<p data-course-source="327"><strong>Második: a megfelelő szakemberhez forduljunk.</strong></p>
+<p data-course-source="328">Orvosszakmai kérdésben az orvos, szervezési kérdésben az érintett egészségügyi szolgáltató vagy védőnő lehet az illetékes.</p>
+<p data-course-source="329"><strong>Harmadik: a valós tényeket közöljük.</strong></p>
+<p data-course-source="330">Ha a gyermek beteg volt, ezt tényszerűen jelezzük.</p>
+<p data-course-source="331">Ha orvosi dokumentáció áll rendelkezésre, annak releváns tartalmát megfelelő módon mutassuk be.</p>
+<p data-course-source="332">Ne állítsunk olyat, amit nem tudunk igazolni.</p>
+<p data-course-source="333"><strong>Negyedik: kérjünk megfelelő dokumentációt.</strong></p>
+<p data-course-source="334">A személyes konzultáció után érdemes áttekinteni az egészségügyi dokumentációt, és szükség esetén pontosítást kérni.</p>
+<p data-course-source="335"><strong>Ötödik: ne keverjük össze a tájékoztatást és a hatósági jogorvoslatot.</strong></p>
+<p data-course-source="336">Az orvosnak küldött levél nem feltétlenül helyettesíti a népegészségügyi hatóságnál előterjesztendő beadványt.</p>
+<p data-course-source="337">Ha már hatósági eljárás is folyamatban van, annak határidőit külön kell kezelni.</p>
+<hr>
+<h2 id="resz-20" data-course-source="339">20. HÁROM TANULSÁGOS GYAKORLATI ESET</h2>
+<p data-course-source="340">A következő példák a projektben összegyűjtött szülői tapasztalatokon alapuló, anonimizált oktatási helyzetek.</p>
+<p data-course-source="341">Nem minősülnek jogerősen megállapított jogsértések ismertetésének.</p>
+<h3 data-course-source="342">20.1. ESET – AZ ORVOS CSAK BETEGTÁJÉKOZTATÓT KÜLDÖTT</h3>
+<p data-course-source="343">A szülő részletes kérdéseket tett fel.</p>
+<p data-course-source="344">Válaszként megkapta az oltóanyag hivatalos betegtájékoztatóját.</p>
+<p data-course-source="345">A szülő úgy érezte, hogy nem kapott választ gyermekének egyedi körülményeire.</p>
+<p data-course-source="346"><strong>Mit kell ellenőrizni?</strong></p>
+<p data-course-source="347">Milyen konkrét kérdés hangzott el?</p>
+<p data-course-source="348">Melyik kérdésre adott választ a betegtájékoztató?</p>
+<p data-course-source="349">Volt-e felajánlott személyes konzultáció?</p>
+<p data-course-source="350">Maradt-e megválaszolatlan, orvosilag releváns kérdés?</p>
+<p data-course-source="351"><strong>Tanulság:</strong> a tájékoztatás megfelelőségét a tényleges kérdések és válaszok alapján kell értékelni.</p>
+<h3 data-course-source="352">20.2. ESET – AZ OLTÁSI ÉRTESÍTÉS KÉSŐN ÉRKEZETT</h3>
+<p data-course-source="353">Egy szülő olyan oltási értesítést kapott, amelyben az oltási időpont már elmúlt vagy nagyon közeli volt.</p>
+<p data-course-source="354">Ebben az esetben a dokumentum dátumait és a kézbesítést kell megvizsgálni.</p>
+<p data-course-source="355">Fontos tisztázni, hogy történt-e korábbi értesítés.</p>
+<p data-course-source="356">Indokolt esetben új időpont vagy pontosítás kérhető.</p>
+<p data-course-source="357"><strong>Tanulság:</strong> a késedelmes értesítés kommunikációs vagy eljárási problémát jelezhet, de önmagában nem szünteti meg a kötelezettséget.</p>
+<h3 data-course-source="358">20.3. ESET – A VÉDŐNŐI JELENTÉS SZERINT NEM VOLT EGYÜTTMŰKÖDÉS</h3>
+<p data-course-source="359">A szülő a jelentés tartalmát vitatta.</p>
+<p data-course-source="360">Korábbi levelezéssel kívánta igazolni, hogy rendszeresen kommunikált az egészségügyi szakemberekkel.</p>
+<p data-course-source="361">Ebben az esetben az eredeti dokumentumokat kell összehasonlítani.</p>
+<p data-course-source="362">A hatóság vagy az intézmény által kifogásolt konkrét magatartást kell azonosítani.</p>
+<p data-course-source="363"><strong>Tanulság:</strong> az együttműködés kérdésében a tényleges cselekmények és a jogszabályi kötelezettségek számítanak, nem pusztán az, hogy melyik fél hogyan nevezi a helyzetet.</p>
+<hr>
+<h2 id="resz-21" data-course-source="365">21. HOGYAN SEGÍTHET AZ AI AZ EGÉSZSÉGÜGYI LEVELEZÉSBEN?</h2>
+<p data-course-source="366">A negyedik fejezetben megismertük a K.O. AI-módszer legfontosabb szabályát:</p>
+<p data-course-source="367"><strong>Először kérdezzen az AI, csak utána írjon!</strong></p>
+<p data-course-source="368">Ez az egészségügyi kommunikációban is hasznos.</p>
+<p data-course-source="369">Ha például egy szülő nem kapott kielégítőnek tartott tájékoztatást, az AI segíthet rendszerezni a korábban feltett kérdéseket és a kapott válaszokat.</p>
+<p data-course-source="370">Készíthet összefoglalót arról, hogy mely kérdésekre érkezett válasz, és melyek maradtak tisztázatlanok.</p>
+<p data-course-source="371">Segíthet tárgyszerű, udvarias és pontos levelet megfogalmazni.</p>
+<p data-course-source="372">Ugyanakkor az AI nem jogosult orvos helyett dönteni a gyermek olthatóságáról, halasztásáról vagy mentesítéséről.</p>
+<h4 data-course-source="373">K.O. AI-PARANCS EGÉSZSÉGÜGYI ÜGYEKHEZ</h4>
+<p data-course-source="374">„Egy védőnői vagy orvosi megkereséssel kapcsolatban szeretnék segítséget kérni.</p>
+<p data-course-source="375">Mielőtt tanácsot adnál vagy levelet írnál, először vizsgáld meg, milyen információkra van szükséged.</p>
+<p data-course-source="376">Tegyél fel legfeljebb hat célzott kérdést, egyszerű válaszlehetőségekkel.</p>
+<p data-course-source="377">Különítsd el az egészségügyi szakmai kérdéseket, a tájékoztatási joggal kapcsolatos kérdéseket és az esetleges hatósági eljárási problémákat.</p>
+<p data-course-source="378">Ne állapíts meg orvosi alkalmasságot, és ne javasolj egészségügyi halasztást valós orvosi indok nélkül.</p>
+<p data-course-source="379">A válaszaim után készíts tárgyszerű helyzetértékelést, majd szükség esetén hivatalos levéltervezetet.”</p>
+<p data-course-source="380">Ez a rövid parancs segít abban, hogy a szülő ne egy általános, minden ügyre ráhúzott választ kapjon.</p>
+<hr>
+<h2 id="resz-22" data-course-source="382">22. HÉT FONTOS TÉVHIT, AMIT EL KELL KERÜLNI</h2>
+<p data-course-source="383"><strong>Első tévhit:</strong> „A védőnőnek nincs joga más intézményt értesíteni.”</p>
+<p data-course-source="384">Ez így nem igaz. Meghatározott esetekben jogszabályi jelentési és jelzési feladatai vannak.</p>
+<p data-course-source="385"><strong>Második tévhit:</strong> „Az orvos minden kérdésemre köteles külön írásos szakvéleményt készíteni.”</p>
+<p data-course-source="386">Ez nem általános szabály. A tájékoztatáshoz való jog és a tájékoztatás formája között különbség van.</p>
+<p data-course-source="387"><strong>Harmadik tévhit:</strong> „Ha az orvos más szakorvoshoz irányít, akkor nem teljesíti a feladatát.”</p>
+<p data-course-source="388">Nem feltétlenül. A megfelelő szakorvosi konzultáció kezdeményezése szakmailag indokolt lehet.</p>
+<p data-course-source="389"><strong>Negyedik tévhit:</strong> „Ha nincs teljes körű írásbeli válasz, automatikusan megszűnik az oltási kötelezettség.”</p>
+<p data-course-source="390">Nem. A tájékoztatási jog és az oltási kötelezettség külön jogi szabályok alapján értékelendő.</p>
+<p data-course-source="391"><strong>Ötödik tévhit:</strong> „A gyermek egészségügyi dokumentációjához a szülő semmilyen módon nem férhet hozzá.”</p>
+<p data-course-source="392">Ez általánosságban nem igaz. A törvényes képviselőnek meghatározott feltételekkel vannak hozzáférési jogosultságai.</p>
+<p data-course-source="393"><strong>Hatodik tévhit:</strong> „Három védőnői értesítés hiányában semmilyen hatósági eljárás nem indulhat.”</p>
+<p data-course-source="394">Ez túlzó következtetés. A konkrét eljárási előzményeket és jogkövetkezményeket külön kell vizsgálni.</p>
+<p data-course-source="395"><strong>Hetedik tévhit:</strong> „Egy korábbi oltás után jelentkező tünet önmagában bizonyítja, hogy az oltás okozta.”</p>
+<p data-course-source="396">Nem. Az időbeli kapcsolatot és az orvosi ok-okozati összefüggést külön kell értékelni.</p>
+<hr>
+<h2 id="resz-23" data-course-source="398">23. AZ ÖTÖDIK FEJEZET LEGFONTOSABB TANULSÁGAI</h2>
+<p data-course-source="399">Ebben a fejezetben megtanultad, hogy a védőnő, a gyermekorvos és az iskolaorvos eltérő feladatokat lát el.</p>
+<p data-course-source="400">Megismerted az egészségügyi tájékoztatáshoz való jog alapját.</p>
+<p data-course-source="401">Megértetted, hogy az általános betegtájékoztató és az egyéniesített orvosi tájékoztatás nem feltétlenül ugyanaz.</p>
+<p data-course-source="402">Megismerted a védőnői oltási értesítések szabályait és a háromszori eredménytelen írásbeli megkeresés jogszabályi jelentőségét.</p>
+<p data-course-source="403">Megtanultad különválasztani az oltási időpont elmaradását, az orvosi halasztást és a mentesítést.</p>
+<p data-course-source="404">Áttekintetted az egészségügyi dokumentációhoz való jogot, valamint a jelentési és adatkezelési kötelezettségek szerepét.</p>
+<h4 data-course-source="405">A fejezet öt legfontosabb K.O. alapelve</h4>
+<p data-course-source="406"><strong>1. Tudd, hogy melyik egészségügyi szakember milyen kérdésben illetékes!</strong></p>
+<p data-course-source="407">Ne keverd össze a szervezési, tájékoztatási és orvosi döntési feladatokat.</p>
+<p data-course-source="408"><strong>2. A tájékoztatáshoz való jogodat konkrét, releváns kérdésekkel gyakorold!</strong></p>
+<p data-course-source="409">A pontos kérdések segítenek a lényeges körülmények tisztázásában.</p>
+<p data-course-source="410"><strong>3. Az oltási értesítéseket és a kapcsolódó dokumentumokat őrizd meg!</strong></p>
+<p data-course-source="411">A dátumok, a tartalom és a kézbesítési adatok később fontosak lehetnek.</p>
+<p data-course-source="412"><strong>4. Az egészségügyi kérdéseket orvosi szakmai keretek között kezeld!</strong></p>
+<p data-course-source="413">Halasztást és mentesítést csak a jogszabályban meghatározott feltételekkel lehet alkalmazni.</p>
+<p data-course-source="414"><strong>5. A hivatalos kommunikációban maradj tényszerű, együttműködő és következetes!</strong></p>
+<p data-course-source="415">A cél nem a konfliktus fokozása, hanem a gyermek érdekeinek és a szülő jogainak megfelelő képviselete.</p>
+<h3 data-course-source="416">ZÁRÓ GONDOLAT</h3>
+<p data-course-source="417">A szülőnek nem kell orvosnak lennie ahhoz, hogy kérdéseket tegyen fel.</p>
+<p data-course-source="418">Nem kell jogásznak lennie ahhoz, hogy megismerje a dokumentációhoz való jogát.</p>
+<p data-course-source="419">És nem kell minden egészségügyi szakmai kérdésben azonnal egyetértenie ahhoz, hogy megfelelően együttműködjön az ellátás során.</p>
+<p data-course-source="420">A felkészültség azonban felelősséggel is jár.</p>
+<p data-course-source="421">A gyermek egészségügyi szükségleteit, a jogszabályi kötelezettségeket és a rendelkezésre álló jogokat együttesen kell figyelembe venni.</p>
+<p data-course-source="422"><strong>A tudatos szülő nem helyettesíti az orvost, hanem megtanul megfelelően kérdezni, tájékozódni, dokumentálni és jogszerűen eljárni.</strong></p>
+<p data-course-source="423">Ez a K.O. jogi önvédelem ötödik alapköve.</p>
+<hr>
+<h2 id="resz-24" data-course-source="425">24. FELHASZNÁLT ELSŐDLEGES JOGFORRÁSOK</h2>
+<h4 data-course-source="426">1997. évi CLIV. törvény – Eütv.</h4>
+<p data-course-source="427"><strong>11. §:</strong> Kapcsolattartás és a kiskorú beteg mellett tartózkodás joga.</p>
+<p data-course-source="428"><strong>13–14. §:</strong> Egészségügyi tájékoztatáshoz való jog.</p>
+<p data-course-source="429"><strong>15–16. §:</strong> Önrendelkezési jog és törvényes képviselet.</p>
+<p data-course-source="430"><strong>24. §:</strong> Egészségügyi dokumentáció megismerése és helyesbítése.</p>
+<p data-course-source="431"><strong>57–58. §:</strong> Védőoltások, halasztás, mentesítés.</p>
+<p data-course-source="432"><strong>134. §:</strong> A kezelőorvos tájékoztatási feladatai.</p>
+<p data-course-source="433">Forrás: <a href="https://njt.jog.gov.hu/jogszabaly/1997-154-00-00.56?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Nemzeti Jogszabálytár – Eütv.</a></p>
+<h4 data-course-source="434">18/1998. (VI. 3.) NM rendelet</h4>
+<p data-course-source="435"><strong>4. § (1):</strong> Az oltás végrehajthatóságának megítélése.</p>
+<p data-course-source="436"><strong>5. §:</strong> Életkorhoz kötött kötelező védőoltások.</p>
+<p data-course-source="437"><strong>13. § (7):</strong> Oltást követő nemkívánatos események jelentése.</p>
+<p data-course-source="438"><strong>14. §:</strong> Az oltásra kötelezett személy és a törvényes képviselő kötelezettségei.</p>
+<p data-course-source="439"><strong>15. §:</strong> A védőnő és az oltóorvos feladatai.</p>
+<p data-course-source="440">Forrás: <a href="https://njt.jog.gov.hu/jogszabaly/1998-18-20-3D" target="_blank" rel="noopener noreferrer">Nemzeti Jogszabálytár – 18/1998. NM rendelet</a></p>
+<h4 data-course-source="441">49/2004. (V. 21.) ESzCsM rendelet</h4>
+<p data-course-source="442"><strong>2. § (7):</strong> Másik védőnő kijelölése összeférhetetlenség esetén.</p>
+<p data-course-source="443"><strong>3. §:</strong> A területi védőnő feladatai.</p>
+<p data-course-source="444">Forrás: <a href="https://njt.jog.gov.hu/jogszabaly/2004-49-20-0M" target="_blank" rel="noopener noreferrer">Nemzeti Jogszabálytár – Területi védőnői ellátás</a></p>
+<h4 data-course-source="445">26/1997. (IX. 3.) NM rendelet</h4>
+<p data-course-source="446"><strong>1–5. §:</strong> Az iskola-egészségügyi ellátás szervezete és feladatai.</p>
+<p data-course-source="447"><strong>3/A. §:</strong> Az iskola-egészségügyi dokumentáció vezetése.</p>
+<p data-course-source="448"><strong>2. számú melléklet:</strong> Iskolaorvosi feladatok.</p>
+<p data-course-source="449"><strong>3. számú melléklet:</strong> Iskolavédőnői feladatok.</p>
+<p data-course-source="450">Forrás: <a href="https://net.jogtar.hu/jogszabaly?docid=99700026.nm&amp;utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Nemzeti Jogszabálytár – Iskola-egészségügyi ellátás</a></p>
+<h4 data-course-source="451">4/2000. (II. 25.) EüM rendelet</h4>
+<p data-course-source="452">A háziorvosi és házi gyermekorvosi tevékenység feladatai.</p>
+<p data-course-source="453">Forrás: <a href="https://njt.jog.gov.hu/jogszabaly/2000-4-20-0B?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">Nemzeti Jogszabálytár – Házi gyermekorvosi tevékenység</a></p>
+<h4 data-course-source="454">További hivatalos források</h4>
+<p data-course-source="455"><strong>NNGYK:</strong> Védőoltásokkal kapcsolatos hivatalos tájékoztatók, módszertani dokumentumok és OKNE-információk.</p>
+<p data-course-source="456"><strong>Integrált Jogvédelmi Szolgálat:</strong> Betegjogi képviselők, betegjogi segítségnyújtás.</p>
+<p data-course-source="457">Források:</p>
+<h4 data-course-source="458">A projekt tudásbázisa</h4>
+<p data-course-source="459">A fejezet elkészítéséhez felhasználtam a K.O. projektben összegyűjtött, védőnői és orvosi kommunikációval kapcsolatos esetleírásokat.</p>
+<p data-course-source="460">Ezek a gyakorlati példák szemléltetésére szolgálnak. A jogi állításokat az elsődleges jogforrások alapján kell értékelni.</p>
+<p data-course-source="461"><strong>Jogszabályi ellenőrzés:</strong> a tananyag a 2026. október 24-én vizsgált rendelkezésekre épül. Konkrét ügyben mindig az alkalmazandó időállapotot és az egyedi körülményeket kell ellenőrizni.</p>
+<hr><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a></article></div></div>
+</main>
+
+
+<footer class="ftr" role="contentinfo">
+  <div class="container">
+    <div class="ftr__grid">
+      <div class="ftr__col ftr__about">
+        <h4>Az oldalról</h4>
+        <p>Tájékoztató jellegű, közérthető nyelven írt eljárási útmutató szülőknek, kötelező védőoltási ügyekre. Nem minősül jogi tanácsadásnak.</p>
+        <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>AKTÍV</span>
+      </div>
+      <div class="ftr__col">
+        <h4>Tartalom</h4>
+        <ul>
+          <li><a href="/#events">Események</a></li>
+          <li><a href="/alapkeret">Alapkeret</a></li>
+          <li><a href="/akcioterv">Akcióterv</a></li>
+          <li><a href="/alapmondatok">Alapmondatok</a></li>
+          <li><a href="/tudastar">Tudástár</a></li>
+          <li><a href="/manipulacio-anatomiaja">Kézikönyv</a></li>
+          <li><a href="/tanfolyam">Tanfolyam</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Segítség</h4>
+        <ul>
+          <li><a href="/#categories">Kategóriák</a></li>
+          <li><a href="/#institutions">Intézmények</a></li>
+          <li><a href="/tudastar#sulyossag">Súlyosságok</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Verzió</h4>
+        <ul>
+          <li><span class="mono" style="color: var(--color-text-subtle);">v2.0.0</span></li>
+          <li><span class="mono" style="color: var(--color-text-subtle);">Build 2026.06.02</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bottom">
+      <span>© 2026 Eljárási Térkép</span>
+      <span>Utolsó frissítés: 2026-06-02</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/script-v3.js"></script>
+</body>
+</html>
