@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6. fejezet – NÉPEGÉSZSÉGÜGYI HATÓSÁGI ELJÁRÁSOK · Eljárási Térkép</title>
+<meta name="description" content="Szülői kötelező védőoltási eljárási térkép és információs oldal. Bizonyítható, jogszerű írásos együttműködés szülőknek.">
+<meta name="theme-color" content="#0F0F0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles-v2.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Ugrás a tartalomra</a>
+
+
+<header class="hdr" role="banner">
+  <div class="container hdr__inner">
+    <a href="/" class="hdr__brand" aria-label="Eljárási Térkép - kezdőlap">
+      <span class="hdr__brand-glyph" aria-hidden="true">É</span>
+      <span>Eljárási Térkép</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Fő navigáció">
+      <a href="/" >Kezdőlap</a>
+      <a href="/#events" >Eseménytérkép</a>
+      <a href="/alapkeret" >Alapkeret</a>
+      <a href="/akcioterv" >Akcióterv</a>
+      <a href="/alapmondatok" >Alapmondatok</a>
+      <a href="/tudastar" >Tudástár</a>
+      <a href="/manipulacio-anatomiaja" >Kézikönyv</a>
+      <div class="course-nav"><a href="/tanfolyam" aria-current="page">Tanfolyam</a>
+        <details><summary aria-label="Tanfolyam almenü">▾</summary><div class="course-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a><a href="/tanfolyam/6-fejezet">6. fejezet – Népegészségügyi hatósági eljárások</a></div></details>
+      </div>
+    </nav>
+    <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-nav" class="is-hidden" style="background: var(--color-surface-2); border-bottom: 1px solid var(--color-border); padding: var(--sp-4);">
+    <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+      <a href="/" style="color: var(--color-text); font-weight: 500;">Kezdőlap</a>
+      <a href="/#events" style="color: var(--color-text); font-weight: 500;">Eseménytérkép</a>
+      <a href="/alapkeret" style="color: var(--color-text); font-weight: 500;">Alapkeret</a>
+      <a href="/akcioterv" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
+      <a href="/alapmondatok" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
+      <a href="/tudastar" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
+      <a href="/manipulacio-anatomiaja"  style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
+      <a href="/tanfolyam" aria-current="page" style="color: var(--color-text); font-weight: 500;">Tanfolyam</a>
+      <div class="course-mobile-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a><a href="/tanfolyam/6-fejezet">6. fejezet – Népegészségügyi hatósági eljárások</a></div>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('mobile-nav');
+      m.classList.toggle('is-hidden');
+      const open = !m.classList.contains('is-hidden');
+      const button = document.querySelector('.hdr__menu-btn');
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
+    }
+  </script>
+</header>
+
+
+<main id="main">
+
+    <div class="container course-reader"><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a>
+    <section class="course-video" aria-label="6. fejezet videós összefoglalója"><iframe src="https://www.youtube-nocookie.com/embed/VraLWNLnoZY" title="K.O. Szülői Jogi Önvédelmi Akadémia – 6. fejezet videós összefoglaló" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a href="https://www.youtube.com/watch?v=VraLWNLnoZY" target="_blank" rel="noopener noreferrer">Videó megnyitása a YouTube-on ↗</a></section><div class="course-layout"><aside class="course-sidebar"><details open><summary>A hatodik fejezet tartalma</summary><nav aria-label="Fejezet tartalomjegyzéke"><ol><li><a href="#resz-1">1. BEVEZETÉS – AMIKOR MÁR NEM A VÉDŐNŐ ÍR</a></li><li><a href="#resz-2">2. KI AZ A NÉPEGÉSZSÉGÜGYI HATÓSÁG?</a></li><li><a href="#resz-3">3. A NÉPEGÉSZSÉGÜGYI ELJÁRÁS LEGFONTOSABB JOGSZABÁLYAI</a></li><li><a href="#resz-4">4. HOGYAN KERÜL EGY ELMA­RADT OLTÁS A HATÓSÁG ELÉ?</a></li><li><a href="#resz-5">5. A HÁROMSZORI VÉDŐNŐI ÉRTESÍTÉS JELENTŐSÉGE</a></li><li><a href="#resz-6">6. AZ ELJÁRÁS MEGINDÍTÁSA – MIT JELENT AZ ÉRTESÍTÉS?</a></li><li><a href="#resz-7">7. AZ ÜGYFÉLI JOGOK – MIT TEHET A SZÜLŐ AZ ELJÁRÁSBAN?</a></li><li><a href="#resz-8">8. MIT KELL TENNI AZ ELSŐ NÉPEGÉSZSÉGÜGYI LEVÉL KÉZHEZVÉTELEKOR?</a></li><li><a href="#resz-9">9. HOGYAN KÉRJÜNK TELJES KÖRŰ IRATBETEKINTÉST?</a></li><li><a href="#resz-10">10. MI TÖRTÉNIK, HA PONTATLAN TÉNYÁLLÍTÁS SZEREPEL AZ IRATBAN?</a></li><li><a href="#resz-11">11. A TÁJÉKOZTATÁSHOZ VALÓ JOG ÉS A HATÓSÁGI ELJÁRÁS KAPCSOLATA</a></li><li><a href="#resz-12">12. HALASZTÁS – AMIKOR ORVOSI OKBÓL NEM LEHET AZONNAL OLTANI</a></li><li><a href="#resz-13">13. MENTESÍTÉS – AMIKOR KÜLÖN HATÓSÁGI ELJÁRÁS INDUL</a></li><li><a href="#resz-14">14. A HATÓSÁGI HATÁROZAT – AMIKOR MÁR KÖTELEZŐ DÖNTÉS SZÜLETIK</a></li><li><a href="#resz-15">15. MIKOR LEHET INDOKOLT AZ ELJÁRÁS MEGSZÜNTETÉSÉT KÉRNI?</a></li><li><a href="#resz-16">16. AZ ÜGYINTÉZÉSI HATÁRIDŐ – MI AZ IGAZSÁG A 60 NAPRÓL?</a></li><li><a href="#resz-17">17. BÍRSÁGOK – MIKOR ÉS MILYEN JOGALAPON ALKALMAZHATÓK?</a></li><li><a href="#resz-18">18. MIT KELL ELLENŐRIZNI EGY BÍRSÁGOT TARTALMAZÓ HATÁROZATBAN?</a></li><li><a href="#resz-19">19. JOGORVOSLAT – MIT LEHET TENNI EGY HATÁROZATTAL SZEMBEN?</a></li><li><a href="#resz-20">20. MI TÖRTÉNIK, HA A HATÁROZATOT NEM TELJESÍTIK?</a></li><li><a href="#resz-21">21. A GYÁMHATÓSÁG ÉS A NÉPEGÉSZSÉGÜGY VISZONYA</a></li><li><a href="#resz-22">22. HÁROM TANULSÁGOS ESET A SZÜLŐI GYAKORLATBÓL</a></li><li><a href="#resz-23">23. HÉT VESZÉLYES TÉVHIT A NÉPEGÉSZSÉGÜGYI ELJÁRÁSOKRÓL</a></li><li><a href="#resz-24">24. A K.O. AI-MÓDSZER NÉPEGÉSZSÉGÜGYI ÜGYEKBEN</a></li><li><a href="#resz-25">25. A LEVÉL ELKÉSZÍTÉSE ELŐTTI UTOLSÓ ELLENŐRZÉS</a></li><li><a href="#resz-26">26. A HATODIK FEJEZET LEGFONTOSABB TANULSÁGAI</a></li><li><a href="#resz-27">ISMERD MEG AZ ELJÁRÁS SZABÁLYAIT, ÉS MINDIG A TÉNYEKRE, A BIZONYÍTÉKOKRA ÉS AZ ELLENŐRZÖTT JOGSZABÁLYOKRA ÉPÍTS!</a></li><li><a href="#resz-28">27. FELHASZNÁLT ELSŐDLEGES JOGFORRÁSOK</a></li></ol></nav></details></aside>
+    <article class="course-prose"><p data-course-source="0">K.O. SZÜLŐI JOGI ÖNVÉDELMI AKADÉMIA</p>
+<p data-course-source="1">6. FEJEZET</p>
+<h1 data-course-source="2">NÉPEGÉSZSÉGÜGYI HATÓSÁGI ELJÁRÁSOK</h1>
+<p data-course-source="3">Hogyan védd meg jogszerűen az érdekeidet, ha a népegészségügyi hatóság eljárást indít gyermeked elmaradt kötelező védőoltása miatt?</p>
+<p data-course-source="4"><strong>Tanulási szint:</strong> Középhaladó  <br><strong>Becsült tanulási idő:</strong> 30–35 perc  <br><strong>Kapcsolódó videó:</strong> 10 perces NotebookLM-összefoglaló</p>
+<hr>
+<h2 id="resz-1" data-course-source="6">1. BEVEZETÉS – AMIKOR MÁR NEM A VÉDŐNŐ ÍR</h2>
+<p data-course-source="7">Képzelj el egy családot!</p>
+<p data-course-source="8">A gyermek egyik kötelező védőoltása elmaradt.</p>
+<p data-course-source="9">A szülő korábban kapcsolatban állt a védőnővel. Értesítéseket kapott, kérdéseket tett fel, és bizonyos egészségügyi körülmények tisztázását kérte.</p>
+<p data-course-source="10">Egy reggel azonban újabb levél érkezik.</p>
+<p data-course-source="11">Ezúttal nem a védőnőtől.</p>
+<p data-course-source="12">A borítékon a vármegyei kormányhivatal egyik járási hivatalának neve szerepel.</p>
+<p data-course-source="13">A dokumentum tetején ügyszám található.</p>
+<p data-course-source="14">A levél jogszabályokra hivatkozik, felsorolja a gyermek elmaradt oltásait, majd meghatározott határidőn belüli intézkedésre szólítja fel a törvényes képviselőt.</p>
+<p data-course-source="15">A végén jogkövetkezményeket említenek.</p>
+<p data-course-source="16">A szülő ekkor szembesül azzal, hogy az ügy új szakaszba lépett.</p>
+<p data-course-source="17"><strong>Már nem pusztán egészségügyi egyeztetés zajlik. Közigazgatási hatósági eljárás is folyamatban lehet.</strong></p>
+<p data-course-source="18">Ez lényeges különbség.</p>
+<p data-course-source="19">A hatóság jogszabályban meghatározott közhatalmi jogosítványokkal rendelkezik.</p>
+<p data-course-source="20">Eljárást folytathat le, bizonyítékokat értékelhet, kötelező döntést hozhat, és törvényi feltételek fennállása esetén jogkövetkezményeket alkalmazhat.</p>
+<p data-course-source="21">Ugyanakkor a hatóságot is kötik az eljárási szabályok.</p>
+<p data-course-source="22">A szülőt pedig meghatározott ügyféli jogok illetik meg.</p>
+<p data-course-source="23">A szülőnek ezért nem kell jogi szakemberré válnia, de meg kell tanulnia felismerni, hogy az eljárás melyik szakaszában van.</p>
+<p data-course-source="24">Tudnia kell, mikor érdemes tájékoztatást kérnie, mikor indokolt bizonyítékot benyújtania, mikor kérhet iratbetekintést, és mikor válhat szükségessé jogorvoslat.</p>
+<p data-course-source="25">Ebben a fejezetben ezt a tudást sajátítjuk el.</p>
+<p data-course-source="26"><strong>A legfontosabb alapelv: ne a hatósággal próbálj személyes vitát folytatni. Azonosítsd a pontos jogi helyzetet, és annak megfelelően cselekedj!</strong></p>
+<hr>
+<h2 id="resz-2" data-course-source="28">2. KI AZ A NÉPEGÉSZSÉGÜGYI HATÓSÁG?</h2>
+<p data-course-source="29">A hétköznapi beszédben gyakran egyszerűen NNGYK-nak vagy népegészségügynek nevezik azokat a szerveket, amelyek a kötelező védőoltásokkal kapcsolatos ügyekben eljárnak.</p>
+<p data-course-source="30">Jogilag azonban pontosabban kell fogalmazni.</p>
+<p data-course-source="31">A magyar népegészségügyi igazgatásnak több szintje van.</p>
+<p data-course-source="32">Országos szinten a Nemzeti Népegészségügyi és Gyógyszerészeti Központ, röviden NNGYK lát el meghatározott országos feladatokat.</p>
+<p data-course-source="33">Vármegyei szinten a kormányhivatalok rendelkeznek népegészségügyi feladat- és hatáskörökkel.</p>
+<p data-course-source="34">Helyi szinten pedig jellemzően a járási, illetve fővárosi kerületi hivatal népegészségügyi feladatkörben eljáró szervezeti egysége intézi az oltással kapcsolatos konkrét hatósági ügyeket.</p>
+<p data-course-source="35">A feladatmegosztás egyik fontos jogszabályi alapja a <strong>18/1998. (VI. 3.) NM rendelet 16. §-a</strong>.</p>
+<p data-course-source="36">Ez meghatározza az egyes igazgatási szintek oltásokkal kapcsolatos feladatait.</p>
+<p data-course-source="37">Az elmaradt kötelező oltás hatósági elrendelése rendszerint a járási hivatal feladatkörébe tartozik.</p>
+<h3 data-course-source="38">Miért fontos ez a különbség?</h3>
+<p data-course-source="39">Tegyük fel, hogy a szülő levelet kap a Pest Vármegyei Kormányhivatal egyik járási hivatalának népegészségügyi osztályától.</p>
+<p data-course-source="40">A dokumentumra azonban egyszerűen úgy hivatkozik, hogy „az NNGYK levele”.</p>
+<p data-course-source="41">Ez pontatlansághoz vezethet.</p>
+<p data-course-source="42">Az NNGYK és a járási hivatal ugyanis nem ugyanaz a hatósági szerv.</p>
+<p data-course-source="43">A konkrét ügyben meg kell állapítani, melyik szerv jár el, melyik hozta meg a döntést, és melyik rendelkezik az adott ügyben hatáskörrel.</p>
+<p data-course-source="44"><strong>A hatóság helyes azonosítása a megfelelő jogorvoslat és címzés szempontjából is fontos.</strong></p>
+<hr>
+<h2 id="resz-3" data-course-source="46">3. A NÉPEGÉSZSÉGÜGYI ELJÁRÁS LEGFONTOSABB JOGSZABÁLYAI</h2>
+<p data-course-source="47">A népegészségügyi oltási eljárásokat több jogszabály együttesen szabályozza.</p>
+<p data-course-source="48">Ezeket nem kell szó szerint megtanulnod, de tudnod kell, hogy melyik milyen kérdésre ad választ.</p>
+<h3 data-course-source="49">3.1. Az egészségügyről szóló törvény</h3>
+<p data-course-source="50">Az <strong>1997. évi CLIV. törvény</strong>, vagyis az Eütv. 57–58. §-a tartalmazza a kötelező védőoltások alapvető törvényi szabályait.</p>
+<p data-course-source="51">Itt találhatók többek között:</p>
+<ul data-course-source="52"><li>a kötelező védőoltások törvényi alapjai;</li><li>az orvosilag indokolt halasztás feltételei;</li><li>a mentesítési eljárás szabályai;</li><li>a törvényes képviselő meghatározott kötelezettségei;</li><li>a védőoltás hatósági elrendelésének alapja.</li></ul>
+<p data-course-source="53">Különösen fontos az <strong>Eütv. 58. § (7) bekezdése</strong>.</p>
+<p data-course-source="54">Eszerint ha a védőoltás igénybevételére köteles személy írásbeli felszólításra sem tesz eleget a kötelezettségének, az egészségügyi államigazgatási szerv a védőoltást elrendeli.</p>
+<p data-course-source="55">Ez a hatósági kötelezés egyik legfontosabb jogszabályi alapja.</p>
+<h3 data-course-source="56">3.2. A 18/1998. NM rendelet</h3>
+<p data-course-source="57">Ez a rendelet tartalmazza a járványügyi intézkedések és a kötelező védőoltások részletszabályait.</p>
+<p data-course-source="58">A képzés szempontjából különösen fontos:</p>
+<p data-course-source="59"><strong>4. §:</strong> az oltás végrehajthatóságának orvosi megítélése.</p>
+<p data-course-source="60"><strong>5. §:</strong> az életkorhoz kötött kötelező védőoltások.</p>
+<p data-course-source="61"><strong>14. §:</strong> az oltásra kötelezett személy és a törvényes képviselő kötelezettségei.</p>
+<p data-course-source="62"><strong>15. §:</strong> a védőnő és az oltóorvos feladatai.</p>
+<p data-course-source="63"><strong>16. §:</strong> a népegészségügyi igazgatási szervek feladatai.</p>
+<h3 data-course-source="64">3.3. Az általános közigazgatási rendtartás</h3>
+<p data-course-source="65">A <strong>2016. évi CL. törvény</strong>, röviden Ákr., a hatósági eljárások általános szabályait tartalmazza.</p>
+<p data-course-source="66">Ez határozza meg többek között a hatósági ügyintézés alapelveit, a nyilatkozattételt, az iratbetekintést, a bizonyítást, a határidőket, a határozatokat és a jogorvoslatokat.</p>
+<p data-course-source="67">A népegészségügyi oltási kötelezési eljárásokban az Ákr. alapvető jelentőségű.</p>
+<h3 data-course-source="68">3.4. A 2026. évi védőoltási módszertani levél</h3>
+<p data-course-source="69">A jogszabályokon kívül fontos szakmai dokumentum az NNGYK által kiadott éves védőoltási módszertani levél.</p>
+<p data-course-source="70">A 2026. március 30-án közzétett módszertani levél az adott év védőoltási tevékenységével kapcsolatos szakmai és gyakorlati feladatokat foglalja össze.</p>
+<p data-course-source="71">Ez nem helyettesíti a törvényt vagy a rendeletet, de fontos szakmai támpontot jelenthet például az oltási renddel, az ellenjavallatokkal és a dokumentációs követelményekkel kapcsolatban.</p>
+<p data-course-source="72"><strong>A K.O. módszerben mindig különválasztjuk a törvényi kötelezettséget, az eljárási szabályt és a szakmai iránymutatást.</strong></p>
+<hr>
+<h2 id="resz-4" data-course-source="74">4. HOGYAN KERÜL EGY ELMA­RADT OLTÁS A HATÓSÁG ELÉ?</h2>
+<p data-course-source="75">A kötelező gyermekkori védőoltások végrehajtását több szereplő együttműködése biztosítja.</p>
+<p data-course-source="76">A gyermek oltási státuszát az erre jogosult egészségügyi szereplők nyilvántartják.</p>
+<p data-course-source="77">A védőnő értesíti a szülőt az esedékes oltásról.</p>
+<p data-course-source="78">Ha az oltás elmarad, a rendelet ismételt értesítéseket ír elő.</p>
+<p data-course-source="79">A 18/1998. NM rendelet 15. § (1) bekezdése alapján ugyanazon oltandó háromszori eredménytelen írásbeli megkeresése esetén a védőnő értesíti a járási hivatalt.</p>
+<p data-course-source="80">Ez az értesítési és jelentési rendszer fontos része.</p>
+<p data-course-source="81">A hatóság ezután az elmaradt oltással kapcsolatos körülményeket vizsgálhatja.</p>
+<p data-course-source="82">Ennek eredményeként felszólítás, majd adott esetben kötelezést tartalmazó hatósági döntés következhet.</p>
+<p data-course-source="83">Fontos azonban, hogy az ügyek nem feltétlenül minden esetben azonos iratsorrend szerint zajlanak.</p>
+<p data-course-source="84">A konkrét eljárási lépéseket a tényleges dokumentumok és az alkalmazandó szabályok alapján kell meghatározni.</p>
+<h3 data-course-source="85">Az egyik legfontosabb tévhit</h3>
+<p data-course-source="86">A projekt tapasztalatai között visszatérő állítás:</p>
+<p data-course-source="87">„Amíg nincs hatósági határozat, addig nincs oltási kötelezettség.”</p>
+<p data-course-source="88"><strong>Ez általánosságban téves.</strong></p>
+<p data-course-source="89">Az életkorhoz kötött oltási kötelezettség jogszabály alapján áll fenn.</p>
+<p data-course-source="90">A hatósági határozat egy már létező kötelezettség érvényesítéséhez kapcsolódhat.</p>
+<p data-course-source="91">Ezért nem helyes összekeverni a jogszabályból fakadó kötelezettséget annak későbbi hatósági elrendelésével és végrehajtásával.</p>
+<p data-course-source="92"><strong>Három különböző fogalomról van szó: jogszabályi kötelezettség, hatósági kötelezés és végrehajtás.</strong></p>
+<hr>
+<h2 id="resz-5" data-course-source="94">5. A HÁROMSZORI VÉDŐNŐI ÉRTESÍTÉS JELENTŐSÉGE</h2>
+<p data-course-source="95">Most nézzünk egy gyakorlati kérdést!</p>
+<p data-course-source="96">A hatósági iratban az szerepel, hogy a védőnő három alkalommal eredménytelenül kereste meg a szülőt.</p>
+<p data-course-source="97">A szülő azonban csak egy vagy két korábbi levelet őrzött meg.</p>
+<p data-course-source="98">Mit lehet tenni?</p>
+<p data-course-source="99">Az első feladat nem az, hogy azonnal jogellenesnek minősítjük az eljárást.</p>
+<p data-course-source="100">Hanem az, hogy ellenőrizzük az előzményeket.</p>
+<p data-course-source="101">A szülő kérheti a hatósági ügyben felhasznált védőnői értesítések megismerését.</p>
+<p data-course-source="102">Különösen fontos lehet azok keltezése, tartalma, feladási időpontja és a rendelkezésre álló kézbesítési dokumentáció.</p>
+<h3 data-course-source="103">Mit kell ellenőrizni?</h3>
+<p data-course-source="104">A három értesítés valóban ugyanarra a gyermekre és az érintett oltásra vonatkozott?</p>
+<p data-course-source="105">A levelek megfelelő időben készültek?</p>
+<p data-course-source="106">A dokumentumok tartalmazták a jogszabályban előírt lényeges információkat?</p>
+<p data-course-source="107">Az értesítések ténylegesen az oltási időpont előtt történtek?</p>
+<p data-course-source="108">A szülő korábban jelzett-e akadályoztatást?</p>
+<p data-course-source="109">Mindez fontos lehet az eljárás tényállásának tisztázásában.</p>
+<p data-course-source="110">Ugyanakkor a három értesítés hiánya <strong>nem jelent minden esetben automatikus eljárásmegszüntetési okot</strong>.</p>
+<p data-course-source="111">A hatósági eljárás jogalapját, az ügyindítás körülményeit és az esetleges hiba jogkövetkezményét külön kell értékelni.</p>
+<p data-course-source="112">A projektben szerepel olyan beszámoló, amely szerint egy eljárás a védőnői értesítések problémája miatt megszűnt. Ennek pontos jogi oka azonban az eredeti megszüntető végzés nélkül nem igazolható.</p>
+<p data-course-source="113"><strong>Tanulság:</strong> a hiányzó irat bizonyítási kérdés. A bizonyítási kérdésből csak megfelelő jogszabályi elemzés után lehet jogkövetkeztetést levonni.</p>
+<hr>
+<h2 id="resz-6" data-course-source="115">6. AZ ELJÁRÁS MEGINDÍTÁSA – MIT JELENT AZ ÉRTESÍTÉS?</h2>
+<p data-course-source="116">Az Ákr. 104. §-a a hivatalból induló eljárások egyik alapvető rendelkezése.</p>
+<p data-course-source="117">A népegészségügyi oltási kötelezési ügyek jellemzően hivatalból induló hatósági eljárások.</p>
+<p data-course-source="118">Ez azt jelenti, hogy az eljárás megindításához nem feltétlenül szükséges a szülő kérelme.</p>
+<p data-course-source="119">A hatóság jogszabályi feladata alapján jár el.</p>
+<p data-course-source="120">Az Ákr. 104. § (3) bekezdése szerint a hivatalbóli eljárás az első eljárási cselekmény elvégzésének napján kezdődik.</p>
+<p data-course-source="121">A hatóság főszabály szerint értesíti az ismert ügyfelet az eljárás megindításáról, bár a törvény meghatározott esetekben lehetővé teszi az értesítés mellőzését.</p>
+<p data-course-source="122">Az értesítésben fontos információknak kell szerepelniük.</p>
+<p data-course-source="123">Ilyen például az ügy tárgya, száma, az eljárás megindításának napja és az ügyintézési határidő.</p>
+<p data-course-source="124">Az ügyféli jogokra és kötelezettségekre vonatkozó tájékoztatásnak szintén jelentősége van.</p>
+<h3 data-course-source="125">Miért fontos az eljárás kezdőnapja?</h3>
+<p data-course-source="126">Mert a hatóság ügyintézési határideje ehhez kapcsolódhat.</p>
+<p data-course-source="127">Tévedés azonban azt gondolni, hogy az eljárás feltétlenül azon a napon kezdődött, amikor a szülő átvette az első hivatalos levelet.</p>
+<p data-course-source="128">Az ügyindítás és az értesítés kézbesítése eltérő időpontban is történhet.</p>
+<p data-course-source="129">Ha ez az ügy szempontjából lényeges, indokolt lehet megismerni az első eljárási cselekmény időpontját és az azt dokumentáló iratot.</p>
+<hr>
+<h2 id="resz-7" data-course-source="131">7. AZ ÜGYFÉLI JOGOK – MIT TEHET A SZÜLŐ AZ ELJÁRÁSBAN?</h2>
+<p data-course-source="132">A népegészségügyi hatósági eljárásban az ügyfél nem pusztán a hatósági levelek címzettje.</p>
+<p data-course-source="133">Az Ákr. meghatározott eljárási jogosultságokat biztosít számára.</p>
+<h3 data-course-source="134">7.1. Nyilatkozattétel</h3>
+<p data-course-source="135">Az ügyfél előadhatja a tényállással kapcsolatos álláspontját.</p>
+<p data-course-source="136">Például jelezheti, hogy a hatóság által említett korábbi időponttal kapcsolatban dokumentált akadályoztatás történt.</p>
+<p data-course-source="137">A nyilatkozatnak tényszerűnek kell lennie.</p>
+<h3 data-course-source="138">7.2. Bizonyítékok benyújtása</h3>
+<p data-course-source="139">Az Ákr. 62. §-a a tényállás tisztázásával és a bizonyítással foglalkozik.</p>
+<p data-course-source="140">Az ügyfél releváns dokumentumokat terjeszthet elő.</p>
+<p data-course-source="141">Ilyen lehet egy korábbi válaszlevél, kézbesítési igazolás vagy orvosi dokumentum.</p>
+<p data-course-source="142">A bizonyítékoknak kapcsolódniuk kell az ügyben vizsgált körülményekhez.</p>
+<h3 data-course-source="143">7.3. Iratbetekintés</h3>
+<p data-course-source="144">Az Ákr. 33–34. §-a alapján az arra jogosult ügyfél megismerheti az eljárás számára hozzáférhető iratait.</p>
+<p data-course-source="145">Ez lehetőséget ad a korábbi jelentések, értesítések és bizonyítékok ellenőrzésére.</p>
+<h3 data-course-source="146">7.4. Észrevétel</h3>
+<p data-course-source="147">Ha az iratanyagból a szülő szerint hibás vagy hiányos tényállítás derül ki, ezt megfelelő formában jelezheti.</p>
+<h3 data-course-source="148">7.5. Jogorvoslat</h3>
+<p data-course-source="149">Ha a hatóság döntést hoz, az alkalmazandó jogszabályok alapján vizsgálni kell a jogorvoslat lehetőségét.</p>
+<p data-course-source="150">Ezek jogszerű ügyféli jogosultságok.</p>
+<p data-course-source="151">Ugyanakkor az eljárási jogok gyakorlása nem mentesít automatikusan a fennálló kötelezettségek teljesítése alól.</p>
+<p data-course-source="152"><strong>A jó jogi önvédelem egyszerre érvényesíti a jogokat és tartja szem előtt a jogszabályi kötelezettségeket.</strong></p>
+<hr>
+<h2 id="resz-8" data-course-source="154">8. MIT KELL TENNI AZ ELSŐ NÉPEGÉSZSÉGÜGYI LEVÉL KÉZHEZVÉTELEKOR?</h2>
+<p data-course-source="155">Most következik a fejezet egyik legfontosabb gyakorlati része.</p>
+<p data-course-source="156">Képzeljük el, hogy a szülő ma hivatalos levelet vett át a járási hivatal népegészségügyi osztályától.</p>
+<p data-course-source="157">Nem ismeri a jogszabályokat.</p>
+<p data-course-source="158">Nem tudja, hogy azonnal válaszolnia kell-e.</p>
+<p data-course-source="159">A K.O. módszer ilyenkor hét lépésből áll.</p>
+<h4 data-course-source="160">1. Őrizd meg az eredeti dokumentumot!</h4>
+<p data-course-source="161">Tedd el a teljes levelet és a borítékot.</p>
+<p data-course-source="162">Elektronikus kézbesítés esetén mentsd le az eredeti dokumentumot és a kézbesítési igazolást.</p>
+<h4 data-course-source="163">2. Rögzítsd az átvétel dátumát!</h4>
+<p data-course-source="164">Ez különösen fontos lehet a határidők miatt.</p>
+<h4 data-course-source="165">3. Azonosítsd az irat típusát!</h4>
+<p data-course-source="166">Eljárásindító értesítés?</p>
+<p data-course-source="167">Felszólítás?</p>
+<p data-course-source="168">Végzés?</p>
+<p data-course-source="169">Határozat?</p>
+<p data-course-source="170">A különbség meghatározhatja a következő lépést.</p>
+<h4 data-course-source="171">4. Keresd meg az összes határidőt!</h4>
+<p data-course-source="172">A teljesítési és jogorvoslati határidőket külön kell kezelni.</p>
+<h4 data-course-source="173">5. Ellenőrizd az iratban szereplő tényeket!</h4>
+<p data-course-source="174">Melyik gyermekről van szó?</p>
+<p data-course-source="175">Melyik oltásról?</p>
+<p data-course-source="176">Milyen korábbi értesítésekre hivatkoznak?</p>
+<p data-course-source="177">Milyen mulasztást állítanak?</p>
+<h4 data-course-source="178">6. Rendszerezd az előzményeket!</h4>
+<p data-course-source="179">Keresd elő a védőnői értesítéseket, a korábbi válaszokat és a releváns egészségügyi dokumentációt.</p>
+<h4 data-course-source="180">7. Válaszd ki a megfelelő jogi lépést!</h4>
+<p data-course-source="181">Ez lehet például tényállási észrevétel, iratbetekintés, meghatározott körülmény igazolása vagy szükség esetén jogorvoslat.</p>
+<p data-course-source="182"><strong>Az első levélre nem feltétlenül hosszú jogi beadvánnyal kell reagálni. A megfelelő következő lépés a tényleges eljárási helyzettől függ.</strong></p>
+<hr>
+<h2 id="resz-9" data-course-source="184">9. HOGYAN KÉRJÜNK TELJES KÖRŰ IRATBETEKINTÉST?</h2>
+<p data-course-source="185">A harmadik fejezetben már megtanultuk az iratbetekintés alapjait.</p>
+<p data-course-source="186">Most nézzük meg a népegészségügyi eljárásra alkalmazva.</p>
+<p data-course-source="187">Egy oltással kapcsolatos hatósági ügyben fontos lehet megismerni, hogy pontosan milyen dokumentumok alapján indult az eljárás.</p>
+<p data-course-source="188">Különösen érdekesek lehetnek a védőnői jelentések, a korábbi értesítések, a kézbesítési adatok és az ügyben figyelembe vett orvosi dokumentumok.</p>
+<p data-course-source="189">Az iratbetekintés során ellenőrizhető az is, hogy a hatóság milyen tényeket tekintett bizonyítottnak.</p>
+<h4 data-course-source="190">Használható megfogalmazás</h4>
+<p data-course-source="191">„Az Ákr. 33. §-ára hivatkozással kérem a [ügyszám] számú eljárásban keletkezett, számomra megismerhető iratokba történő betekintés biztosítását, különös tekintettel az eljárást megalapozó jelzésekre, a korábbi oltási értesítésekre és azok rendelkezésre álló kézbesítési adataira.”</p>
+<p data-course-source="192">A kérelem kiegészíthető elektronikus másolatkéréssel.</p>
+<p data-course-source="193">Fontos azonban, hogy az iratbetekintésnek törvényes korlátai lehetnek.</p>
+<p data-course-source="194">A kérelmet célszerű pontosan az eljáró hatósághoz benyújtani.</p>
+<p data-course-source="195"><strong>Az iratbetekintési kérelem önmagában nem állítja meg automatikusan a folyamatban lévő hatósági eljárást vagy a jogorvoslati határidőt.</strong></p>
+<p data-course-source="196">Ezért a szükséges lépéseket párhuzamosan kell kezelni.</p>
+<hr>
+<h2 id="resz-10" data-course-source="198">10. MI TÖRTÉNIK, HA PONTATLAN TÉNYÁLLÍTÁS SZEREPEL AZ IRATBAN?</h2>
+<p data-course-source="199">A projekt tapasztalatai között több olyan eset szerepel, amelyben a szülők szerint a népegészségügyi hatóság vagy valamely egészségügyi szereplő pontatlanul rögzítette az eseményeket.</p>
+<p data-course-source="200">Például egyes szülők azt kifogásolták, hogy a hatósági irat oltásmegtagadásként értékelte a helyzetüket, miközben korábbi leveleikben tájékoztatást kértek.</p>
+<p data-course-source="201">Más esetekben hibás dátum, téves személyi adat vagy nem megfelelő oltásmegnevezés jelent meg.</p>
+<p data-course-source="202">Ezeket a helyzeteket külön kell megvizsgálni.</p>
+<h3 data-course-source="203">A tényállás vitatásának három szintje</h3>
+<p data-course-source="204"><strong>Első szint: egyszerű adatpontatlanság.</strong></p>
+<p data-course-source="205">Például a gyermek születési dátuma vagy valamely korábbi levél időpontja téves.</p>
+<p data-course-source="206">Ez ellenőrizhető dokumentumokkal.</p>
+<p data-course-source="207"><strong>Második szint: vitatott esemény.</strong></p>
+<p data-course-source="208">Például a hatóság szerint a szülő nem válaszolt egy korábbi felszólításra.</p>
+<p data-course-source="209">A szülő viszont rendelkezik feladási igazolással.</p>
+<p data-course-source="210"><strong>Harmadik szint: jogi minősítés.</strong></p>
+<p data-course-source="211">Például a szülő magatartását együttműködés hiányaként vagy kötelezettségszegésként értékelik.</p>
+<p data-course-source="212">Ilyenkor már nem elegendő egyetlen dátum ellenőrzése.</p>
+<p data-course-source="213">Meg kell vizsgálni a teljes magatartást és az alkalmazandó jogszabályokat.</p>
+<h4 data-course-source="214">Fontos különbség</h4>
+<p data-course-source="215">Ha a szülő tájékoztatást kért, az valóban bizonyítható lehet.</p>
+<p data-course-source="216">De ebből nem következik automatikusan, hogy más jogszabályi kötelezettségének is eleget tett.</p>
+<p data-course-source="217">Ezért nem a szavak átnevezése a lényeg.</p>
+<p data-course-source="218"><strong>A tényleges magatartást és az eredeti dokumentumokat kell pontosan bemutatni.</strong></p>
+<p data-course-source="219">A projektben leírt hasonló esetek alapján ez visszatérő vitapont, de minden egyedi jogsértési állítást az eredeti iratok alapján kell ellenőrizni.</p>
+<hr>
+<h2 id="resz-11" data-course-source="221">11. A TÁJÉKOZTATÁSHOZ VALÓ JOG ÉS A HATÓSÁGI ELJÁRÁS KAPCSOLATA</h2>
+<p data-course-source="222">A szülők gyakran azért fordulnak a népegészségügyi hatósághoz, mert korábban nem kaptak kielégítőnek tartott egészségügyi tájékoztatást.</p>
+<p data-course-source="223">Itt fontos elhatárolni két különböző feladatkört.</p>
+<p data-course-source="224">Az egészségügyi beavatkozással kapcsolatos, gyermekre vonatkozó szakmai tájékoztatás elsősorban az egészségügyi ellátás keretében merül fel.</p>
+<p data-course-source="225">A népegészségügyi hatóság viszont az oltási kötelezettség jogszabályi érvényesítésével kapcsolatos hatósági feladatokat látja el.</p>
+<p data-course-source="226">Ezért nem feltétlenül a járási népegészségügyi hatóság feladata minden egyes egyedi orvosi kérdés megválaszolása.</p>
+<p data-course-source="227">Ugyanakkor a hatóságnak az eljárásában jelentős tényeket és a rendelkezésre álló bizonyítékokat az alkalmazandó szabályok szerint értékelnie kell.</p>
+<p data-course-source="228">Ha például a szülő olyan orvosi dokumentumot terjeszt elő, amelynek jelentősége lehet a kötelező védőoltás teljesítése szempontjából, nem helyes azt minden további vizsgálat nélkül figyelmen kívül hagyni.</p>
+<p data-course-source="229">Az orvosszakmai kérdés eldöntése azonban az erre jogosult szakember feladata marad.</p>
+<p data-course-source="230"><strong>A tájékoztatási jog gyakorlása nem azonos a kötelező oltás alóli mentesítéssel.</strong></p>
+<p data-course-source="231">És ami különösen fontos:</p>
+<p data-course-source="232"><strong>A tájékoztatáskérés önmagában nem függeszti fel automatikusan az oltási kötelezettséget vagy a hatósági eljárást.</strong></p>
+<hr>
+<h2 id="resz-12" data-course-source="234">12. HALASZTÁS – AMIKOR ORVOSI OKBÓL NEM LEHET AZONNAL OLTANI</h2>
+<p data-course-source="235">Az Eütv. 58. § (1) bekezdése meghatározott feltételekkel lehetővé teszi a kötelező védőoltás elhalasztását.</p>
+<p data-course-source="236">A halasztás alapja egészségügyi körülmény.</p>
+<p data-course-source="237">A döntést a kezelőorvos hozza meg.</p>
+<p data-course-source="238">A halasztásnak az adott gyermek egészségi állapotán és a törvényben meghatározott további feltételeken kell alapulnia.</p>
+<p data-course-source="239">A kezelőorvosnak meghatározott esetekben írásban kell értesítenie a népegészségügyi hatóságot.</p>
+<p data-course-source="240">A halasztásra okot adó körülmény megszűnése után az oltást a jogszabály alapján pótolni kell.</p>
+<h3 data-course-source="241">Miért fontos ez a hatósági eljárásban?</h3>
+<p data-course-source="242">Mert ha tényleges, orvos által megállapított halasztás áll fenn, annak jogi jelentősége lehet az érintett oltással kapcsolatos hatósági intézkedések során.</p>
+<p data-course-source="243">A szülőnek ilyenkor célszerű az orvosi dokumentációt a megfelelő eljárásban bemutatnia.</p>
+<p data-course-source="244">De fontos különbség van az alábbi helyzetek között:</p>
+<ul data-course-source="245"><li>a gyermek orvosilag dokumentáltan beteg;</li><li>a kezelőorvos elhalasztotta az oltást;</li><li>a szülő időpontot kért egy szakorvosi vizsgálatra;</li><li>a szülő saját megítélése szerint további vizsgálatot tart szükségesnek.</li></ul>
+<p data-course-source="246">Ezek nem azonos jogi jelentőségű körülmények.</p>
+<p data-course-source="247"><strong>Egy szakorvosi időpontfoglalás önmagában nem jelent automatikus, jogszabály szerinti oltáshalasztást.</strong></p>
+<p data-course-source="248">A gyermek konkrét egészségügyi helyzetének megítélése orvosi feladat.</p>
+<hr>
+<h2 id="resz-13" data-course-source="250">13. MENTESÍTÉS – AMIKOR KÜLÖN HATÓSÁGI ELJÁRÁS INDUL</h2>
+<p data-course-source="251">A mentesítés különösen fontos jogintézmény, mert az Eütv. 58. §-a kifejezetten szabályozza.</p>
+<p data-course-source="252">A mentesítés nem egyszerű időpontmódosítás.</p>
+<p data-course-source="253">Meghatározott egészségügyi körülményekhez kötött hatósági eljárás.</p>
+<p data-course-source="254">A törvény szerint a mentesítés akkor kérelmezhető, ha a védőoltás az érintett egészségi állapota miatt nem lehetséges, vagy várhatóan károsan befolyásolná az egészségét, és az erre okot adó körülmény változása belátható időn belül nem várható.</p>
+<p data-course-source="255">A kérelmet a kezelőorvos, a beteg vagy törvényes képviselője is előterjesztheti.</p>
+<p data-course-source="256">A kérelemhez az indokoltságot alátámasztó kezelőorvosi szakvéleményt kell csatolni.</p>
+<h3 data-course-source="257">Az Eütv. 58. § (4) bekezdésének jelentősége</h3>
+<p data-course-source="258">Ez a rendelkezés különösen fontos.</p>
+<p data-course-source="259">A jogszabály szerint a mentesítési eljárás alatt az érintett védőoltás tekintetében nincs helye az 58. § (7) bekezdése szerinti írásbeli felszólításnak vagy a védőoltás elrendelésének.</p>
+<p data-course-source="260">Ha az oltást már korábban elrendelték, és ezt követően az adott oltásra vonatkozó mentesítési eljárás indul, a mentesítési eljárás véglegessé vált döntéssel történő befejezéséig az oltást elrendelő határozat nem hajtható végre.</p>
+<p data-course-source="261">Ez valódi, törvényben meghatározott joghatás.</p>
+<p data-course-source="262">De kizárólag a törvény szerinti mentesítési eljáráshoz kapcsolódik.</p>
+<p data-course-source="263">Nem elegendő pusztán azt állítani, hogy a szülő majd később orvosi véleményt szeretne beszerezni.</p>
+<p data-course-source="264"><strong>A mentesítési eljárás joghatásaira csak akkor lehet megalapozottan hivatkozni, ha az adott eljárás ténylegesen és szabályszerűen megindult.</strong></p>
+<p data-course-source="265">Az orvosi szakvéleménynek valós egészségügyi körülményeket kell alátámasztania.</p>
+<hr>
+<h2 id="resz-14" data-course-source="267">14. A HATÓSÁGI HATÁROZAT – AMIKOR MÁR KÖTELEZŐ DÖNTÉS SZÜLETIK</h2>
+<p data-course-source="268">A népegészségügyi eljárás egyik legjelentősebb szakasza a hatósági döntés meghozatala.</p>
+<p data-course-source="269">Az Eütv. 58. § (7) bekezdése alapján a hatóság elrendelheti a kötelező védőoltást.</p>
+<p data-course-source="270">A döntésnek megfelelő jogszabályi alapokon kell állnia.</p>
+<p data-course-source="271">A határozatot az Ákr. 80–81. §-ának szabályai szerint kell értékelni.</p>
+<h3 data-course-source="272">Mit kell keresni a határozatban?</h3>
+<p data-course-source="273">Elsőként a rendelkező részt.</p>
+<p data-course-source="274">Ez tartalmazza, hogy a hatóság pontosan mit rendelt el.</p>
+<p data-course-source="275">Ellenőrizni kell, kire vonatkozik a döntés, melyik oltást érinti, milyen kötelezettséget tartalmaz és mikor kell teljesíteni.</p>
+<p data-course-source="276">Ezután az indokolást kell megvizsgálni.</p>
+<p data-course-source="277">A hatóság milyen bizonyítékokra és jogszabályokra alapozta a döntést?</p>
+<p data-course-source="278">Milyen korábbi értesítéseket vett figyelembe?</p>
+<p data-course-source="279">Értékelte-e a szülő releváns nyilatkozatait?</p>
+<p data-course-source="280">Figyelembe vette-e az esetleges orvosi dokumentációt?</p>
+<p data-course-source="281">Végül ellenőrizni kell a jogorvoslati tájékoztatást.</p>
+<h4 data-course-source="282">Fontos figyelmeztetés</h4>
+<p data-course-source="283"><strong>Az oltást elrendelő határozat már nem egyszerű tájékoztatás vagy udvarias kérés.</strong></p>
+<p data-course-source="284">Jogi kötelezettséget tartalmazó hatósági döntés.</p>
+<p data-course-source="285">A teljesítési határidő és a döntés végrehajthatósága különösen fontos.</p>
+<p data-course-source="286">A szülőnek ezért nem szabad azt feltételeznie, hogy egy később elküldött általános levél automatikusan megszünteti a döntés joghatásait.</p>
+<hr>
+<h2 id="resz-15" data-course-source="288">15. MIKOR LEHET INDOKOLT AZ ELJÁRÁS MEGSZÜNTETÉSÉT KÉRNI?</h2>
+<p data-course-source="289">A projektben összegyűjtött tapasztalatok között gyakran megjelenik az a cél, hogy a népegészségügyi hatóság szüntesse meg az eljárást.</p>
+<p data-course-source="290">Ez jogszerű kérelem lehet, ha annak tényleges jogi alapja van.</p>
+<p data-course-source="291">Az Ákr. 47. §-a az eljárás megszüntetésének különböző eseteit szabályozza.</p>
+<p data-course-source="292">Ilyen lehet például az eljárás okafogyottá válása.</p>
+<p data-course-source="293">A pontos feltételeket azonban mindig az adott ügy körülményei alapján kell értékelni.</p>
+<h3 data-course-source="294">Példa: az oltás időközben megtörtént</h3>
+<p data-course-source="295">Ha az eljárás megindítása után az érintett kötelezettséget igazoltan teljesítették, ez az ügy további kezelésére lényeges hatással lehet.</p>
+<p data-course-source="296">A hatóságnak értékelnie kell a teljesítés tényét.</p>
+<p data-course-source="297">Az azonban, hogy minden kapcsolódó eljárás és esetleges szankció automatikusan megszűnik-e, külön kérdés.</p>
+<h3 data-course-source="298">Példa: tévesen állapították meg az oltás elmaradását</h3>
+<p data-course-source="299">Előfordulhat, hogy az oltás megtörtént, de az adat nem jelent meg megfelelően a nyilvántartásban.</p>
+<p data-course-source="300">Ilyenkor az oltási dokumentáció és az igazolások bemutatása lényeges lehet.</p>
+<h3 data-course-source="301">Példa: az ügyben orvosi döntés született</h3>
+<p data-course-source="302">A dokumentált, jogszabályi feltételeknek megfelelő halasztás vagy mentesítés szintén befolyásolhatja az eljárást.</p>
+<p data-course-source="303">Ilyenkor az orvosi, illetve hatósági dokumentum pontos tartalma a döntő.</p>
+<h3 data-course-source="304">Mi nem elegendő önmagában?</h3>
+<p data-course-source="305">Nem alapozza meg automatikusan az eljárás megszüntetését, hogy a szülő nem ért egyet az oltási kötelezettséggel.</p>
+<p data-course-source="306">Az sem, hogy korábban tájékoztatást kért.</p>
+<p data-course-source="307">És az sem, ha valamely korábbi értesítésben kijavítható formai hiba található.</p>
+<p data-course-source="308"><strong>Az eljárás megszüntetésére irányuló kérelemnek konkrét ténybeli és jogi indokon kell alapulnia.</strong></p>
+<hr>
+<h2 id="resz-16" data-course-source="310">16. AZ ÜGYINTÉZÉSI HATÁRIDŐ – MI AZ IGAZSÁG A 60 NAPRÓL?</h2>
+<p data-course-source="311">Ez az egyik legtöbbet félreértett kérdés.</p>
+<p data-course-source="312">Az Ákr. 50. §-a szerint teljes eljárásban az általános ügyintézési határidő főszabály szerint hatvan nap.</p>
+<p data-course-source="313">A hivatalból indult eljárásokra azonban külön szabályok is vonatkoznak.</p>
+<p data-course-source="314">Az Ákr. 103. § (3) bekezdése például meghatározza, hogy a hivatalból indult eljárások ügyintézési határidejébe milyen időtartam nem számít bele.</p>
+<h3 data-course-source="315">Mi történik határidő-túllépés esetén?</h3>
+<p data-course-source="316">A határidő túllépésének lehetnek jogkövetkezményei.</p>
+<p data-course-source="317">Az Ákr. 103. § (4) bekezdése különösen fontos rendelkezést tartalmaz.</p>
+<p data-course-source="318">Eszerint, ha a hatóság a hivatalbóli eljárásban az ügyintézési határidő kétszeresét túllépi, meghatározott korlátozások érvényesülnek az alkalmazható jogkövetkezmények tekintetében.</p>
+<p data-course-source="319">A szabályt azonban nem szabad leegyszerűsíteni arra, hogy százhúsz nap után minden hatósági ügy automatikusan megszűnik.</p>
+<p data-course-source="320">A törvény nem ezt mondja.</p>
+<p data-course-source="321">A határidő számításakor vizsgálni kell:</p>
+<p data-course-source="322">az eljárás tényleges kezdőnapját;</p>
+<p data-course-source="323">az alkalmazandó ügyintézési határidőt;</p>
+<p data-course-source="324">az esetleges speciális szabályokat;</p>
+<p data-course-source="325">az eljárás felfüggesztését;</p>
+<p data-course-source="326">és a hatóság által alkalmazni kívánt jogkövetkezményt.</p>
+<p data-course-source="327"><strong>A határidő túllépése jelentős eljárási kérdés lehet, de a konkrét joghatásokat pontosan kell meghatározni.</strong></p>
+<p data-course-source="328">A szülőnek nem célszerű arra építenie az ügykezelését, hogy az idő múlása önmagában megszünteti a kötelezettséget.</p>
+<hr>
+<h2 id="resz-17" data-course-source="330">17. BÍRSÁGOK – MIKOR ÉS MILYEN JOGALAPON ALKALMAZHATÓK?</h2>
+<p data-course-source="331">A népegészségügyi ügyekben különböző jogkövetkezmények merülhetnek fel.</p>
+<p data-course-source="332">Ezeket nem szabad összekeverni.</p>
+<p data-course-source="333"><strong>Eljárási bírság</strong> az eljárási kötelezettségek megszegéséhez kapcsolódhat.</p>
+<p data-course-source="334"><strong>Egészségügyi bírság</strong> meghatározott egészségügyi és járványügyi jogszabálysértések esetén alkalmazható.</p>
+<p data-course-source="335"><strong>Végrehajtáshoz kapcsolódó jogkövetkezmény</strong> akkor kerülhet előtérbe, ha egy végrehajtható kötelezést nem teljesítenek.</p>
+<p data-course-source="336">A különbség fontos, mert eltérő jogszabályok vonatkozhatnak rájuk.</p>
+<h3 data-course-source="337">Az egészségügyi bírság jogalapja</h3>
+<p data-course-source="338">Az egészségügyi hatósági és igazgatási tevékenységről szóló <strong>1991. évi XI. törvény 13/A. §-a</strong> szabályozza az egészségügyi bírságot.</p>
+<p data-course-source="339">A rendelkezés kiterjed többek között a járványügyi előírások megsértésére.</p>
+<p data-course-source="340">A törvény természetes személyekkel szemben is lehetővé teszi egészségügyi bírság kiszabását.</p>
+<p data-course-source="341">A jogszabályban meghatározott általános bírságkeret 30 000 forinttól 5 millió forintig terjed.</p>
+<p data-course-source="342">Ez nem azt jelenti, hogy minden oltási elmaradás esetében automatikusan a legmagasabb összegű bírság alkalmazható.</p>
+<p data-course-source="343">Az adott jogsértést, a felelősséget, a megfelelő jogalapot és a szankció alkalmazásának feltételeit külön kell vizsgálni.</p>
+<p data-course-source="344"><strong>Téves az az általános állítás, hogy magánszeméllyel szemben egészségügyi bírságot egyáltalán nem lehet kiszabni.</strong></p>
+<p data-course-source="345">A bírságról rendelkező konkrét határozat jogszerűsége ugyanakkor vitatható lehet, ha annak törvényi alapja vagy indokolása hibás.</p>
+<hr>
+<h2 id="resz-18" data-course-source="347">18. MIT KELL ELLENŐRIZNI EGY BÍRSÁGOT TARTALMAZÓ HATÁROZATBAN?</h2>
+<p data-course-source="348">A szülőnek különösen fontos, hogy ne kizárólag a bírság összegére koncentráljon.</p>
+<p data-course-source="349">Először meg kell állapítani a bírság pontos jogcímét.</p>
+<p data-course-source="350">Ezután ellenőrizni kell a hatóság által megjelölt jogszabályhelyet.</p>
+<p data-course-source="351">Lényeges kérdés, hogy a hatóság milyen konkrét magatartást minősített jogsértésnek.</p>
+<p data-course-source="352">Mikor történt ez a magatartás?</p>
+<p data-course-source="353">Milyen bizonyítékok támasztják alá?</p>
+<p data-course-source="354">Milyen határidő és jogorvoslat kapcsolódik a döntéshez?</p>
+<p data-course-source="355">A bírság összegének megállapításánál figyelembe vett szempontokat is érdemes ellenőrizni.</p>
+<h3 data-course-source="356">Gyakorlati példa</h3>
+<p data-course-source="357">A hatóság egészségügyi bírságot szab ki, és indokolásában három korábbi felszólítás eredménytelenségére hivatkozik.</p>
+<p data-course-source="358">A szülő szerint az egyik értesítés csak az oltási időpont után érkezett meg.</p>
+<p data-course-source="359">Ilyenkor célszerű ellenőrizni a levelek tartalmát, a kézbesítési adatokat és azt, hogy a kifogásolt körülmény milyen jelentőséggel bír a megállapított jogsértés szempontjából.</p>
+<p data-course-source="360">Nem elegendő általánosságban azt kijelenteni, hogy a bírság jogellenes.</p>
+<p data-course-source="361"><strong>A megfelelő érvelés konkrét jogszabályhelyre, ellenőrizhető tényre és bizonyítékra épül.</strong></p>
+<hr>
+<h2 id="resz-19" data-course-source="363">19. JOGORVOSLAT – MIT LEHET TENNI EGY HATÁROZATTAL SZEMBEN?</h2>
+<p data-course-source="364">Amikor a hatóság határozatot hoz, a szülőnek meg kell vizsgálnia a jogorvoslati lehetőségeket.</p>
+<p data-course-source="365">Az Ákr. 114–118. §-ai a közigazgatási perrel és a fellebbezéssel kapcsolatos alapvető szabályokat tartalmazzák.</p>
+<p data-course-source="366">Fontos változás a korábbi közigazgatási gyakorlathoz képest, hogy a fellebbezés nem minden elsőfokú hatósági döntéssel szemben vehető igénybe.</p>
+<p data-course-source="367">Az Ákr. 116. §-a meghatározza, mikor van helye fellebbezésnek.</p>
+<p data-course-source="368">Ha fellebbezésnek nincs helye, a véglegessé vált hatósági döntés bírósági felülvizsgálata merülhet fel.</p>
+<h3 data-course-source="369">Közigazgatási per</h3>
+<p data-course-source="370">A közigazgatási perrendtartás, vagyis a Kp. 39. §-a szerint a keresetlevelet főszabály szerint a vitatott közigazgatási cselekmény közlésétől számított harminc napon belül kell benyújtani.</p>
+<p data-course-source="371">Ez azonban nem minden ügyben automatikusan alkalmazható határidő.</p>
+<p data-course-source="372">A konkrét döntés jogorvoslati tájékoztatását és a speciális rendelkezéseket mindig ellenőrizni kell.</p>
+<h3 data-course-source="373">Megállítja-e a per a végrehajtást?</h3>
+<p data-course-source="374">A keresetlevél benyújtásának főszabály szerint nincs automatikus halasztó hatálya.</p>
+<p data-course-source="375">Meghatározott feltételekkel azonnali jogvédelem kérhető a bíróságtól.</p>
+<p data-course-source="376">A Kp. 50. §-a szabályozza az azonnali jogvédelem keretében kérhető intézkedéseket.</p>
+<p data-course-source="377">Egy ilyen kérelemnek megfelelő ténybeli és jogi indokolásra van szüksége.</p>
+<p data-course-source="378"><strong>A bírósági eljárás nem egyszerű levélváltás. Rövid határidők és külön eljárási követelmények miatt indokolt lehet ügyvéd bevonása.</strong></p>
+<hr>
+<h2 id="resz-20" data-course-source="380">20. MI TÖRTÉNIK, HA A HATÁROZATOT NEM TELJESÍTIK?</h2>
+<p data-course-source="381">Ha egy hatósági döntés végrehajthatóvá válik, és a kötelezett nem teljesíti az abban foglaltakat, végrehajtási kérdések merülhetnek fel.</p>
+<p data-course-source="382">A végrehajtás során már nem feltétlenül ugyanazokat a kérdéseket vizsgálják, mint az alapeljárásban.</p>
+<p data-course-source="383">Külön kell választani:</p>
+<p data-course-source="384">az oltási kötelezettséget;</p>
+<p data-course-source="385">a kötelezettséget elrendelő hatósági döntést;</p>
+<p data-course-source="386">a döntés végrehajthatóságát;</p>
+<p data-course-source="387">és a végrehajtást foganatosító szerv intézkedéseit.</p>
+<p data-course-source="388">A NAV bizonyos ügyekben végrehajtást foganatosító szervként járhat el.</p>
+<p data-course-source="389">A végrehajtási eljárásnak saját jogorvoslati és eljárási szabályai vannak.</p>
+<p data-course-source="390">Fontos megérteni, hogy egy NAV-végrehajtási kifogás nem feltétlenül alkalmas az eredeti népegészségügyi határozat valamennyi jogi kérdésének újbóli megnyitására.</p>
+<p data-course-source="391"><strong>Ezért a hatósági alapeljárást és a későbbi végrehajtási eljárást külön kell kezelni.</strong></p>
+<p data-course-source="392">A NAV-végrehajtással a nyolcadik fejezetben részletesen foglalkozunk majd.</p>
+<hr>
+<h2 id="resz-21" data-course-source="394">21. A GYÁMHATÓSÁG ÉS A NÉPEGÉSZSÉGÜGY VISZONYA</h2>
+<p data-course-source="395">A kötelező védőoltások elmaradásával kapcsolatos ügyekben gyermekvédelmi szereplők is megjelenhetnek.</p>
+<p data-course-source="396">A védőnőnek és más egészségügyi szereplőknek meghatározott esetekben gyermekvédelmi jelzési kötelezettségük lehet.</p>
+<p data-course-source="397">A népegészségügyi és a gyermekvédelmi eljárás azonban jogilag nem azonos.</p>
+<p data-course-source="398">A népegészségügyi hatóság az oltási kötelezettség érvényesítésével kapcsolatos feladatokat látja el.</p>
+<p data-course-source="399">A gyermekjóléti szolgálat a család támogatásával és a gyermek veszélyeztetettségének kezelésével kapcsolatos feladatokat végez.</p>
+<p data-course-source="400">A gyámhatóság pedig meghatározott gyermekvédelmi intézkedésekről hozhat döntést.</p>
+<h3 data-course-source="401">Miért fontos ezt megérteni?</h3>
+<p data-course-source="402">Azért, mert ugyanaz az esemény több eljárásban is jelentőséggel bírhat.</p>
+<p data-course-source="403">De ettől még minden eljárásban a megfelelő jogalapot és tényállást kell vizsgálni.</p>
+<p data-course-source="404">Például egy folyamatban lévő népegészségügyi ügy önmagában nem jelenti automatikusan, hogy a gyermekvédelmi eljárás bármely intézkedése szükségszerűen jogszerű vagy jogellenes.</p>
+<p data-course-source="405">A gyermekvédelmi szabályok alkalmazását önállóan kell értékelni.</p>
+<p data-course-source="406"><strong>A párhuzamos eljárások dokumentációját célszerű elkülönítve vezetni, miközben az egymásra ható releváns tényeket megfelelően jelezzük.</strong></p>
+<p data-course-source="407">Ezzel a témával a hetedik fejezetben részletesen foglalkozunk.</p>
+<hr>
+<h2 id="resz-22" data-course-source="409">22. HÁROM TANULSÁGOS ESET A SZÜLŐI GYAKORLATBÓL</h2>
+<p data-course-source="410">A következő példák a projektben összegyűjtött tapasztalatokon alapulnak.</p>
+<p data-course-source="411">Oktatási céljuk a vizsgálandó jogi kérdések bemutatása.</p>
+<p data-course-source="412">A beszámolók önmagukban nem igazolják, hogy az érintett hatóságok jogsértést követtek el.</p>
+<h3 data-course-source="413">22.1. ESET – HIÁNYZÓ VÉDŐNŐI ÉRTESÍTÉSEK</h3>
+<p data-course-source="414">Egy szülő szerint több kötelező oltási értesítés nem jutott el hozzá.</p>
+<p data-course-source="415">A népegészségügyi hatóság azonban korábbi megkeresések eredménytelenségére hivatkozott.</p>
+<p data-course-source="416">A szülő rendelkezett néhány levéllel, de nem a teljes előzményi dokumentációval.</p>
+<p data-course-source="417"><strong>Mi a megfelelő vizsgálat?</strong></p>
+<p data-course-source="418">Az iratbetekintés során meg kell ismerni a hivatkozott értesítéseket és az azokhoz kapcsolódó rendelkezésre álló kézbesítési adatokat.</p>
+<p data-course-source="419">Ezután kell ellenőrizni, hogy a hatóság milyen tényállást állapított meg.</p>
+<p data-course-source="420"><strong>Tanulság:</strong> nem a levelek számának puszta vitatása a lényeg, hanem az értesítési előzmények tényszerű bizonyítása.</p>
+<h3 data-course-source="421">22.2. ESET – AZ ORVOSI KÖRÜLMÉNYEKET VITATJÁK</h3>
+<p data-course-source="422">Egy másik család szerint a gyermek egészségügyi kivizsgálása folyamatban volt, amikor a népegészségügyi eljárás megindult.</p>
+<p data-course-source="423">A szülő úgy vélte, hogy az eljárás során nem fordítottak elegendő figyelmet erre.</p>
+<p data-course-source="424"><strong>Mi a megfelelő vizsgálat?</strong></p>
+<p data-course-source="425">Meg kell állapítani, milyen egészségügyi dokumentáció állt rendelkezésre.</p>
+<p data-course-source="426">Volt-e kezelőorvosi halasztás?</p>
+<p data-course-source="427">Született-e mentesítési kérelem és az azt alátámasztó szakvélemény?</p>
+<p data-course-source="428">A dokumentáció mikor jutott a hatóság tudomására?</p>
+<p data-course-source="429"><strong>Tanulság:</strong> egy folyamatban lévő orvosi kivizsgálás és egy törvény szerinti halasztás vagy mentesítés joghatása nem azonos.</p>
+<h3 data-course-source="430">22.3. ESET – A SZÜLŐ VITATJA A HATÓSÁGI TÉNYÁLLÁST</h3>
+<p data-course-source="431">Egy harmadik esetben a szülő szerint a hatóság pontatlanul foglalta össze a korábbi kommunikációt.</p>
+<p data-course-source="432">A szülő rendelkezett korábban elküldött levelekkel.</p>
+<p data-course-source="433"><strong>Mi a megfelelő vizsgálat?</strong></p>
+<p data-course-source="434">Az eredeti szülői nyilatkozatokat össze kell hasonlítani a hatósági dokumentumban szereplő állításokkal.</p>
+<p data-course-source="435">A tényleges eltéréseket pontosan meg kell jelölni.</p>
+<p data-course-source="436">Ha az eltérés lényeges, indokolt lehet annak ügyféli észrevételben vagy a megfelelő jogorvoslati eljárásban történő előadása.</p>
+<p data-course-source="437"><strong>Tanulság:</strong> a tényszerű, bizonyítékokkal alátámasztott kifogás sokkal erősebb, mint a hatóság szándékainak találgatása.</p>
+<hr>
+<h2 id="resz-23" data-course-source="439">23. HÉT VESZÉLYES TÉVHIT A NÉPEGÉSZSÉGÜGYI ELJÁRÁSOKRÓL</h2>
+<p data-course-source="440"><strong>Első tévhit: „A szülő tájékoztatáskérése automatikusan felfüggeszti az oltási kötelezettséget.”</strong></p>
+<p data-course-source="441">Nem. A tájékoztatáskérés és a törvény szerinti halasztás vagy mentesítés külön jogintézmény.</p>
+<p data-course-source="442"><strong>Második tévhit: „Három védőnői értesítés hiányában semmilyen hatósági intézkedés nem történhet.”</strong></p>
+<p data-course-source="443">Ez túlzó következtetés. A konkrét ügyindítási és eljárási szabályokat kell vizsgálni.</p>
+<p data-course-source="444"><strong>Harmadik tévhit: „A hatósági kötelezés előtt nem létezik oltási kötelezettség.”</strong></p>
+<p data-course-source="445">Nem igaz. Az életkorhoz kötött oltási kötelezettség jogszabály alapján áll fenn.</p>
+<p data-course-source="446"><strong>Negyedik tévhit: „Ha az eljárás hatvan napig tart, automatikusan megszűnik.”</strong></p>
+<p data-course-source="447">Nem. A határidő túllépésének jogkövetkezményeit külön szabályozzák.</p>
+<p data-course-source="448"><strong>Ötödik tévhit: „Természetes személyt nem lehet egészségügyi bírsággal sújtani.”</strong></p>
+<p data-course-source="449">Ez általánosságban téves. Az 1991. évi XI. törvény meghatározott feltételekkel lehetővé teszi.</p>
+<p data-course-source="450"><strong>Hatodik tévhit: „A közigazgatási per megindítása minden végrehajtást automatikusan megállít.”</strong></p>
+<p data-course-source="451">Nem. A halasztó hatály és az azonnali jogvédelem külön kérdés.</p>
+<p data-course-source="452"><strong>Hetedik tévhit: „Ha kemény hangvételű levelet írok, a hatóság köteles megszüntetni az ügyet.”</strong></p>
+<p data-course-source="453">Nem. A döntéseket a jogszabályok és a megfelelően tisztázott tényállás alapján kell meghozni.</p>
+<p data-course-source="454"><strong>A K.O. jogi önvédelem nem ellenőrizetlen trükkökre, hanem az eljárási jogok pontos ismeretére épül.</strong></p>
+<hr>
+<h2 id="resz-24" data-course-source="456">24. A K.O. AI-MÓDSZER NÉPEGÉSZSÉGÜGYI ÜGYEKBEN</h2>
+<p data-course-source="457">A negyedik fejezetben megtanultuk:</p>
+<p data-course-source="458"><strong>Először kérdezzen az AI, csak utána írjon!</strong></p>
+<p data-course-source="459">Ez a népegészségügyi eljárásokban különösen fontos.</p>
+<p data-course-source="460">Egy hatósági levélre ugyanis nem lehet megfelelően reagálni anélkül, hogy ismernénk az ügy típusát, az előzményeket és a határidőket.</p>
+<p data-course-source="461">Ezért a következő parancsot érdemes használni.</p>
+<h3 data-course-source="462">K.O. NÉPEGÉSZSÉGÜGYI HELYZETELEMZŐ PROMPT</h3>
+<blockquote data-course-source="463"><p>Magyarországon, gyermekem kötelező védőoltásával kapcsolatban népegészségügyi hatósági megkeresést kaptam.</p><p>Mielőtt jogi tanácsot adnál vagy hivatalos levelet írnál, először vizsgáld meg, milyen lényeges információk hiányoznak.</p><p>Tegyél fel legfeljebb hat célzott kérdést, lehetőleg A–E válaszlehetőségekkel.</p><p>Különösen figyelj az irat típusára, az eljáró hatóságra, az átvétel dátumára, a határidőkre, a korábbi védőnői értesítésekre, az orvosi dokumentációra és az ügy korábbi eseményeire.</p><p>A válaszaim után készíts részletes, közérthető helyzetértékelést.</p><p>Különítsd el a bizonyított tényeket, a bizonytalan körülményeket és a lehetséges jogi problémákat.</p><p>Ellenőrizd az Eütv., az Ákr., a 18/1998. NM rendelet és az ügyben releváns további jogszabályok megfelelő rendelkezéseit.</p><p>Ne állítsd automatikusan, hogy bármely formai vagy eljárási hiba az egész eljárást érvénytelenné teszi.</p><p>Vizsgáld meg, hogy van-e sürgős teljesítési vagy jogorvoslati határidő.</p><p>Javasold a legmegfelelőbb jogszerű következő lépést.</p><p>Hivatalos levelet csak a szükséges információk tisztázása után készíts.</p><p>Ne találj ki tényeket, bizonyítékokat vagy jogszabályokat.</p></blockquote>
+<p data-course-source="464">Ez a parancs segít elkerülni az egyik leggyakoribb hibát:</p>
+<p data-course-source="465">azt, hogy a szülő egy összetett hatósági ügyben azonnal általános levélsablont használ.</p>
+<hr>
+<h2 id="resz-25" data-course-source="467">25. A LEVÉL ELKÉSZÍTÉSE ELŐTTI UTOLSÓ ELLENŐRZÉS</h2>
+<p data-course-source="468">Mielőtt a szülő bármilyen beadványt elküldene, célszerű még egyszer áttekinteni az ügyet.</p>
+<p data-course-source="469">A K.O. rendszerben ehhez öt kulcskérdést használunk.</p>
+<p data-course-source="470"><strong>1. Pontosan mit kaptam?</strong></p>
+<p data-course-source="471">A dokumentum értesítés, felszólítás, végzés vagy határozat?</p>
+<p data-course-source="472"><strong>2. Mit vár tőlem a hatóság?</strong></p>
+<p data-course-source="473">Nyilatkozatot, dokumentumot, igazolást vagy konkrét kötelezettség teljesítését?</p>
+<p data-course-source="474"><strong>3. Milyen határidőm van?</strong></p>
+<p data-course-source="475">Van-e teljesítési, megjelenési vagy jogorvoslati határidő?</p>
+<p data-course-source="476"><strong>4. Milyen tényeket tudok bizonyítani?</strong></p>
+<p data-course-source="477">Rendelkezem-e a szükséges levelekkel, igazolásokkal és orvosi dokumentumokkal?</p>
+<p data-course-source="478"><strong>5. Pontosan mit akarok kérni?</strong></p>
+<p data-course-source="479">Tájékoztatást, iratbetekintést, tényálláspontosítást, eljárásmegszüntetést vagy megfelelő jogorvoslatot?</p>
+<p data-course-source="480">Ha ezekre a kérdésekre nincs egyértelmű válasz, a levél elkészítése előtt további tisztázásra lehet szükség.</p>
+<p data-course-source="481">Kivétel, ha valamely rövid határidő miatt azonnali intézkedés indokolt.</p>
+<p data-course-source="482">Ilyenkor a határidő biztosítása elsőbbséget élvez.</p>
+<hr>
+<h2 id="resz-26" data-course-source="484">26. A HATODIK FEJEZET LEGFONTOSABB TANULSÁGAI</h2>
+<p data-course-source="485">Ebben a fejezetben megismerted a népegészségügyi hatósági eljárások alapvető működését.</p>
+<p data-course-source="486">Megtanultad, hogy a védőnői értesítések és az oltási kötelezettség hatósági érvényesítése különböző szakaszokat jelenthet.</p>
+<p data-course-source="487">Megismerted az eljárás megindítására vonatkozó szabályokat.</p>
+<p data-course-source="488">Áttekintetted az ügyféli jogokat, a nyilatkozattételt, a bizonyítékok benyújtását és az iratbetekintést.</p>
+<p data-course-source="489">Megértetted a halasztás és mentesítés jogi jelentőségét.</p>
+<p data-course-source="490">Megtanultad, hogy a hatósági kötelezés, az egészségügyi bírság és a végrehajtás különböző jogi kérdéseket vet fel.</p>
+<p data-course-source="491">Azt is megismerted, hogy a hatósági döntésekkel szemben megfelelő feltételek mellett jogorvoslat vehető igénybe.</p>
+<h4 data-course-source="492">A hatodik fejezet öt K.O. alapelve</h4>
+<p data-course-source="493"><strong>1. Mindig azonosítsd a pontos eljárási helyzetet!</strong></p>
+<p data-course-source="494">Nem minden népegészségügyi levél hatósági kötelezés.</p>
+<p data-course-source="495"><strong>2. A tényállításokat bizonyítékok alapján ellenőrizd!</strong></p>
+<p data-course-source="496">A korábbi értesítések és válaszlevelek pontos tartalma fontos lehet.</p>
+<p data-course-source="497"><strong>3. Különítsd el a jogszabályi kötelezettséget, a hatósági döntést és a végrehajtást!</strong></p>
+<p data-course-source="498">A három jogi helyzet nem ugyanaz.</p>
+<p data-course-source="499"><strong>4. Az orvosi és hatósági kérdéseket megfelelő eljárásban kezeld!</strong></p>
+<p data-course-source="500">A halasztás és a mentesítés meghatározott egészségügyi feltételekhez kötődik.</p>
+<p data-course-source="501"><strong>5. A határidőket és jogorvoslatokat mindig ellenőrizd!</strong></p>
+<p data-course-source="502">Egy jó jogi érv is elveszítheti jelentőségét, ha a szükséges lépést nem megfelelő időben teszik meg.</p>
+<h3 data-course-source="503">ZÁRÓ GONDOLAT</h3>
+<p data-course-source="504">Egy népegészségügyi hatósági eljárás komoly jogi helyzetet jelenthet egy család számára.</p>
+<p data-course-source="505">A hatóság jogszabályban meghatározott jogosítványokkal rendelkezik.</p>
+<p data-course-source="506">De a hatóságot is kötik a jogszabályok.</p>
+<p data-course-source="507">A szülőnek pedig nemcsak kötelezettségei, hanem eljárási jogai is vannak.</p>
+<p data-course-source="508">Ezeket meg kell ismerni, és megfelelő módon lehet gyakorolni.</p>
+<p data-course-source="509">A felkészültség nem azt jelenti, hogy minden hatósági döntést automatikusan vitatni kell.</p>
+<p data-course-source="510">Hanem azt, hogy a szülő képes különbséget tenni a jogszerű intézkedés, a vitatható tényállítás és a tényleges eljárási hiba között.</p>
+<p data-course-source="511"><strong>A K.O. jogi önvédelem hatodik alapköve:</strong></p>
+<h2 id="resz-27" data-course-source="512">ISMERD MEG AZ ELJÁRÁS SZABÁLYAIT, ÉS MINDIG A TÉNYEKRE, A BIZONYÍTÉKOKRA ÉS AZ ELLENŐRZÖTT JOGSZABÁLYOKRA ÉPÍTS!</h2>
+<hr>
+<h2 id="resz-28" data-course-source="514">27. FELHASZNÁLT ELSŐDLEGES JOGFORRÁSOK</h2>
+<p data-course-source="515">A fejezet jogi alapját elsősorban a következő jogszabályok képezik.</p>
+<h4 data-course-source="516">1997. évi CLIV. törvény – Eütv.</h4>
+<p data-course-source="517"><strong>13. §:</strong> A tájékoztatáshoz való jog.</p>
+<p data-course-source="518"><strong>57. §:</strong> A kötelező védőoltások általános szabályai.</p>
+<p data-course-source="519"><strong>58. § (1)–(2a):</strong> A kötelező védőoltás elhalasztása.</p>
+<p data-course-source="520"><strong>58. § (3)–(4):</strong> A mentesítési eljárás és annak joghatásai.</p>
+<p data-course-source="521"><strong>58. § (5)–(8):</strong> A nyilvántartási, értesítési és oltással kapcsolatos kötelezettségek.</p>
+<p data-course-source="522">Forrás: Nemzeti Jogszabálytár.</p>
+<h4 data-course-source="523">18/1998. (VI. 3.) NM rendelet</h4>
+<p data-course-source="524"><strong>4. §:</strong> Az oltás végrehajthatóságának orvosi megítélése.</p>
+<p data-course-source="525"><strong>5. §:</strong> Életkorhoz kötött kötelező védőoltások.</p>
+<p data-course-source="526"><strong>11. §:</strong> A védőoltások ellenjavallataihoz kapcsolódó rendelkezések.</p>
+<p data-course-source="527"><strong>14. §:</strong> Az oltásra kötelezett személy kötelezettségei.</p>
+<p data-course-source="528"><strong>15. §:</strong> A védőnő és az oltóorvos feladatai.</p>
+<p data-course-source="529"><strong>16. §:</strong> A népegészségügyi igazgatási szervek feladatai.</p>
+<p data-course-source="530">Forrás: Nemzeti Jogszabálytár, NNGYK hivatalos jogszabályi összefoglaló.</p>
+<h4 data-course-source="531">2016. évi CL. törvény – Ákr.</h4>
+<p data-course-source="532"><strong>5–6. §:</strong> Az ügyféli jogok, a jóhiszeműség és az együttműködés.</p>
+<p data-course-source="533"><strong>33–34. §:</strong> Iratbetekintés.</p>
+<p data-course-source="534"><strong>47. §:</strong> Az eljárás megszüntetése.</p>
+<p data-course-source="535"><strong>50–52. §:</strong> Ügyintézési határidők és határidő-számítás.</p>
+<p data-course-source="536"><strong>62. §:</strong> A tényállás tisztázása.</p>
+<p data-course-source="537"><strong>80–81. §:</strong> Hatósági döntések.</p>
+<p data-course-source="538"><strong>103–104. §:</strong> A hivatalból indult eljárások szabályai.</p>
+<p data-course-source="539"><strong>114–118. §:</strong> Közigazgatási per és fellebbezés.</p>
+<p data-course-source="540">Forrás: Nemzeti Jogszabálytár.</p>
+<h4 data-course-source="541">1991. évi XI. törvény</h4>
+<p data-course-source="542">Az egészségügyi hatósági és igazgatási tevékenységről.</p>
+<p data-course-source="543"><strong>13. §:</strong> Figyelmeztetés és más hatósági intézkedések.</p>
+<p data-course-source="544"><strong>13/A. §:</strong> Egészségügyi bírság.</p>
+<p data-course-source="545"><strong>13/B. §:</strong> Az egészségügyi bírság megfizetésével kapcsolatos rendelkezések.</p>
+<p data-course-source="546">Forrás: Nemzeti Jogszabálytár.</p>
+<h4 data-course-source="547">2017. évi I. törvény – Kp.</h4>
+<p data-course-source="548"><strong>39. §:</strong> A keresetlevél benyújtása.</p>
+<p data-course-source="549"><strong>50. §:</strong> Az azonnali jogvédelem.</p>
+<p data-course-source="550">Forrás: Nemzeti Jogszabálytár.</p>
+<h4 data-course-source="551">NNGYK – 2026. évi védőoltási módszertani levél</h4>
+<p data-course-source="552">Közzététel: 2026. március 30.</p>
+<p data-course-source="553">Az éves védőoltási tevékenység szakmai feladatait és részletes iránymutatását tartalmazza.</p>
+<p data-course-source="554">Forrás: NNGYK hivatalos honlapja.</p>
+<h4 data-course-source="555">A K.O. projekt tudásbázisa</h4>
+<p data-course-source="556">A fejezet elkészítésénél figyelembe vettem a projektben összegyűjtött népegészségügyi ügyekkel kapcsolatos tapasztalatokat, különösen a védőnői értesítések, az iratbetekintés, a téves tényállítások, a halasztási és mentesítési kérdések, valamint a hatósági jogorvoslatok témakörét.</p>
+<p data-course-source="557">Ezek gyakorlati esetleírások és értelmezési javaslatok. Nem helyettesítik az eredeti hatósági iratok és jogszabályok ellenőrzését.</p>
+<p data-course-source="558"><strong>Jogszabályi ellenőrzés:</strong> a tananyag a 2026. október 24-én rendelkezésre álló jogforrásokra épül. Konkrét ügyben az alkalmazandó jogszabályi időállapotot és az adott döntés tartalmát külön ellenőrizni kell.</p>
+<hr><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a></article></div></div>
+</main>
+
+
+<footer class="ftr" role="contentinfo">
+  <div class="container">
+    <div class="ftr__grid">
+      <div class="ftr__col ftr__about">
+        <h4>Az oldalról</h4>
+        <p>Tájékoztató jellegű, közérthető nyelven írt eljárási útmutató szülőknek, kötelező védőoltási ügyekre. Nem minősül jogi tanácsadásnak.</p>
+        <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>AKTÍV</span>
+      </div>
+      <div class="ftr__col">
+        <h4>Tartalom</h4>
+        <ul>
+          <li><a href="/#events">Események</a></li>
+          <li><a href="/alapkeret">Alapkeret</a></li>
+          <li><a href="/akcioterv">Akcióterv</a></li>
+          <li><a href="/alapmondatok">Alapmondatok</a></li>
+          <li><a href="/tudastar">Tudástár</a></li>
+          <li><a href="/manipulacio-anatomiaja">Kézikönyv</a></li>
+          <li><a href="/tanfolyam">Tanfolyam</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Segítség</h4>
+        <ul>
+          <li><a href="/#categories">Kategóriák</a></li>
+          <li><a href="/#institutions">Intézmények</a></li>
+          <li><a href="/tudastar#sulyossag">Súlyosságok</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Verzió</h4>
+        <ul>
+          <li><span class="mono" style="color: var(--color-text-subtle);">v2.0.0</span></li>
+          <li><span class="mono" style="color: var(--color-text-subtle);">Build 2026.06.02</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bottom">
+      <span>© 2026 Eljárási Térkép</span>
+      <span>Utolsó frissítés: 2026-06-02</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/script-v3.js"></script>
+</body>
+</html>

@@ -610,7 +610,7 @@ function getHeader(activePage = '') {
       <a href="/tudastar" ${activePage === 'tudastar' ? 'aria-current="page"' : ''}>Tudástár</a>
       <a href="/manipulacio-anatomiaja" ${activePage === 'handbook' ? 'aria-current="page"' : ''}>Kézikönyv</a>
       <div class="course-nav"><a href="/tanfolyam" ${activePage === 'course' ? 'aria-current="page"' : ''}>Tanfolyam</a>
-        <details><summary aria-label="Tanfolyam almenü">▾</summary><div class="course-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a></div></details>
+        <details><summary aria-label="Tanfolyam almenü">▾</summary><div class="course-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a><a href="/tanfolyam/6-fejezet">6. fejezet – Népegészségügyi hatósági eljárások</a></div></details>
       </div>
     </nav>
     <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
@@ -629,7 +629,7 @@ function getHeader(activePage = '') {
       <a href="/tudastar" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
       <a href="/manipulacio-anatomiaja" ${activePage === 'handbook' ? 'aria-current="page"' : ''} style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
       <a href="/tanfolyam" ${activePage === 'course' ? 'aria-current="page"' : ''} style="color: var(--color-text); font-weight: 500;">Tanfolyam</a>
-      <div class="course-mobile-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a></div>
+      <div class="course-mobile-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a><a href="/tanfolyam/6-fejezet">6. fejezet – Népegészségügyi hatósági eljárások</a></div>
     </div>
   </div>
   <script>
