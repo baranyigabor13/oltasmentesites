@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7. fejezet – GYERMEKJÓLÉT, CSALÁDSEGÍTŐ ÉS GYÁMHATÓSÁG · Eljárási Térkép</title>
+<meta name="description" content="Szülői kötelező védőoltási eljárási térkép és információs oldal. Bizonyítható, jogszerű írásos együttműködés szülőknek.">
+<meta name="theme-color" content="#0F0F0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles-v2.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Ugrás a tartalomra</a>
+
+
+<header class="hdr" role="banner">
+  <div class="container hdr__inner">
+    <a href="/" class="hdr__brand" aria-label="Eljárási Térkép - kezdőlap">
+      <span class="hdr__brand-glyph" aria-hidden="true">É</span>
+      <span>Eljárási Térkép</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Fő navigáció">
+      <a href="/" >Kezdőlap</a>
+      <a href="/#events" >Eseménytérkép</a>
+      <a href="/alapkeret" >Alapkeret</a>
+      <a href="/akcioterv" >Akcióterv</a>
+      <a href="/alapmondatok" >Alapmondatok</a>
+      <a href="/tudastar" >Tudástár</a>
+      <a href="/manipulacio-anatomiaja" >Kézikönyv</a>
+      <div class="course-nav"><a href="/tanfolyam" aria-current="page">Tanfolyam</a>
+        <details><summary aria-label="Tanfolyam almenü">▾</summary><div class="course-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a><a href="/tanfolyam/6-fejezet">6. fejezet – Népegészségügyi hatósági eljárások</a><a href="/tanfolyam/7-fejezet">7. fejezet – Gyermekjólét, családsegítő és gyámhatóság</a></div></details>
+      </div>
+    </nav>
+    <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-nav" class="is-hidden" style="background: var(--color-surface-2); border-bottom: 1px solid var(--color-border); padding: var(--sp-4);">
+    <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+      <a href="/" style="color: var(--color-text); font-weight: 500;">Kezdőlap</a>
+      <a href="/#events" style="color: var(--color-text); font-weight: 500;">Eseménytérkép</a>
+      <a href="/alapkeret" style="color: var(--color-text); font-weight: 500;">Alapkeret</a>
+      <a href="/akcioterv" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
+      <a href="/alapmondatok" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
+      <a href="/tudastar" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
+      <a href="/manipulacio-anatomiaja"  style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
+      <a href="/tanfolyam" aria-current="page" style="color: var(--color-text); font-weight: 500;">Tanfolyam</a>
+      <div class="course-mobile-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a><a href="/tanfolyam/6-fejezet">6. fejezet – Népegészségügyi hatósági eljárások</a><a href="/tanfolyam/7-fejezet">7. fejezet – Gyermekjólét, családsegítő és gyámhatóság</a></div>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('mobile-nav');
+      m.classList.toggle('is-hidden');
+      const open = !m.classList.contains('is-hidden');
+      const button = document.querySelector('.hdr__menu-btn');
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
+    }
+  </script>
+</header>
+
+
+<main id="main">
+
+    <div class="container course-reader"><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a>
+    <section class="course-video" aria-label="7. fejezet videós összefoglalója"><iframe src="https://www.youtube-nocookie.com/embed/8GfG2G-ueXU" title="K.O. Szülői Jogi Önvédelmi Akadémia – 7. fejezet videós összefoglaló" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a href="https://www.youtube.com/watch?v=8GfG2G-ueXU" target="_blank" rel="noopener noreferrer">Videó megnyitása a YouTube-on ↗</a></section><div class="course-layout"><aside class="course-sidebar"><details open><summary>A hetedik fejezet tartalma</summary><nav aria-label="Fejezet tartalomjegyzéke"><ol><li><a href="#resz-1">1. BEVEZETÉS – AMIKOR A CSALÁDSEGÍTŐ JELENTKEZIK</a></li><li><a href="#resz-2">2. A GYERMEKVÉDELMI RENDSZER ALAPJAI</a></li><li><a href="#resz-3">3. KI KICSODA A GYERMEKVÉDELMI RENDSZERBEN?</a></li><li><a href="#resz-4">4. MI AZ A GYERMEKVÉDELMI JELZŐRENDSZER?</a></li><li><a href="#resz-5">5. MI AZ A JELZŐLAP?</a></li><li><a href="#resz-6">6. MEGTUDHATJA-E A SZÜLŐ, KI TETTE A JELZÉST?</a></li><li><a href="#resz-7">7. MI SZÁMÍT VESZÉLYEZTETETTSÉGNEK?</a></li><li><a href="#resz-8">8. A KÖTELEZŐ OLTÁS ELMARADÁSA ÉS A GYERMEKVÉDELEM</a></li><li><a href="#resz-9">9. MI A CSALÁDLÁTOGATÁS?</a></li><li><a href="#resz-10">10. MI AZ A KÖRNYEZETTANULMÁNY?</a></li><li><a href="#resz-11">11. MI AZ AZ ESETKONFERENCIA?</a></li><li><a href="#resz-12">12. A VÉDELEMBE VÉTEL – MIT JELENT VALÓJÁBAN?</a></li><li><a href="#resz-13">13. HOGYAN INDUL A VÉDELEMBE VÉTELI ELJÁRÁS?</a></li><li><a href="#resz-14">14. MIKOR KELL MEGSZÜNTETNI AZ ELJÁRÁST?</a></li><li><a href="#resz-15">15. AZ EGYÜTTMŰKÖDÉS – MIÉRT ILYEN FONTOS?</a></li><li><a href="#resz-16">16. MI TÖRTÉNIK A GYÁMHATÓSÁGI TÁRGYALÁSON?</a></li><li><a href="#resz-17">17. MI TÖRTÉNIK, HA KÉSŐN ÉRKEZIK AZ IDÉZÉS?</a></li><li><a href="#resz-18">18. MIT SZABAD ALÁÍRNI?</a></li><li><a href="#resz-19">19. MI AZ EGYÉNI GONDOZÁSI-NEVELÉSI TERV?</a></li><li><a href="#resz-20">20. HOGYAN LEHET MEGSZÜNTETNI A VÉDELEMBE VÉTELT?</a></li><li><a href="#resz-21">21. MI A HELYZET A VÉDELEMBE VÉTELI HATÁROZATTAL?</a></li><li><a href="#resz-22">22. MI TÖRTÉNIK, HA TÉVES TÉNYÁLLÍTÁS SZEREPEL AZ ÜGYBEN?</a></li><li><a href="#resz-23">23. HÁROM TANULSÁGOS ESET A PROJEKT GYAKORLATÁBÓL</a></li><li><a href="#resz-24">24. HÉT TÉVHIT A GYERMEKVÉDELMI ELJÁRÁSOKRÓL</a></li><li><a href="#resz-25">25. A K.O. GYERMEKVÉDELMI AI-MÓDSZER</a></li><li><a href="#resz-26">26. MIT TEGYEN A SZÜLŐ, HA HOLNAP GYÁMHATÓSÁGI TÁRGYALÁSA LESZ?</a></li><li><a href="#resz-27">27. A HETEDIK FEJEZET LEGFONTOSABB TANULSÁGAI</a></li><li><a href="#resz-28">NE FÉLELEMBŐL, NE INDULATBÓL, HANEM TÉNYEK, BIZONYÍTÉKOK ÉS ELLENŐRZÖTT JOGSZABÁLYOK ALAPJÁN CSELEKEDJ!</a></li><li><a href="#resz-29">28. FELHASZNÁLT ELSŐDLEGES JOGFORRÁSOK</a></li></ol></nav></details></aside>
+    <article class="course-prose"><p data-course-source="0">K.O. SZÜLŐI JOGI ÖNVÉDELMI AKADÉMIA</p>
+<p data-course-source="1">7. FEJEZET</p>
+<h1 data-course-source="2">GYERMEKJÓLÉT, CSALÁDSEGÍTŐ ÉS GYÁMHATÓSÁG</h1>
+<p data-course-source="3">Jelzőlapok, veszélyeztetettség, védelembe vétel és a szülői jogok védelme</p>
+<p data-course-source="4"><strong>Tanulási szint:</strong> Középhaladó  <br><strong>Becsült tanulási idő:</strong> 30–35 perc  <br><strong>Kapcsolódó videó:</strong> 10 perces NotebookLM-összefoglaló</p>
+<hr>
+<h2 id="resz-1" data-course-source="6">1. BEVEZETÉS – AMIKOR A CSALÁDSEGÍTŐ JELENTKEZIK</h2>
+<p data-course-source="7">Képzeljünk el egy családot!</p>
+<p data-course-source="8">A szülők korábban több levelet váltottak a védőnővel és a gyermekorvossal.</p>
+<p data-course-source="9">Gyermekük egyik kötelező védőoltása elmaradt.</p>
+<p data-course-source="10">Az ügyben már népegészségügyi megkeresés is történt.</p>
+<p data-course-source="11">Egy napon azonban új szereplő jelentkezik.</p>
+<p data-course-source="12">Telefonon felhívja a szülőt a család- és gyermekjóléti szolgálat munkatársa.</p>
+<p data-course-source="13">Elmondja, hogy jelzés érkezett a családdal kapcsolatban, ezért szeretne időpontot egyeztetni egy személyes beszélgetésre.</p>
+<p data-course-source="14">A szülő meglepődik.</p>
+<p data-course-source="15">Mi köze a gyermekjóléti szolgálatnak a kötelező védőoltáshoz?</p>
+<p data-course-source="16">A gyermek megfelelően gondozott, iskolába jár, rendezett körülmények között él.</p>
+<p data-course-source="17">A szülő nem érti, miért merülhetett fel gyermekvédelmi kérdés.</p>
+<p data-course-source="18">Néhány héttel később esetkonferenciáról beszélnek.</p>
+<p data-course-source="19">Majd valaki megemlíti a védelembe vétel lehetőségét.</p>
+<p data-course-source="20">A szülő számára ekkor már az egész helyzet fenyegetőnek tűnhet.</p>
+<p data-course-source="21">Felmerülnek a kérdések:</p>
+<ul data-course-source="22"><li>Kötelező együttműködni a családsegítővel?</li><li>A gyermekjóléti munkatárs dönthet védelembe vételről?</li><li>Meg kell engedni a családlátogatást?</li><li>Mit tartalmazhat a környezettanulmány?</li><li>Ki ismerheti meg a gyermek adatait?</li><li>Hogyan vitatható egy pontatlan jelentés?</li><li>Mi történik, ha a gyámhatóság valóban eljárást indít?</li></ul>
+<p data-course-source="23">Ezekre a kérdésekre csak akkor lehet megfelelő választ adni, ha megértjük a gyermekvédelmi rendszer működését.</p>
+<p data-course-source="24"><strong>A gyermekjóléti kapcsolatfelvétel, a gyámhatósági eljárás és a védelembe vétel három különböző jogi helyzet.</strong></p>
+<p data-course-source="25">Ez a fejezet megtanít különbséget tenni közöttük.</p>
+<hr>
+<h2 id="resz-2" data-course-source="27">2. A GYERMEKVÉDELMI RENDSZER ALAPJAI</h2>
+<p data-course-source="28">A magyar gyermekvédelmi rendszer egyik legfontosabb jogszabálya az <strong>1997. évi XXXI. törvény</strong>, amelyet röviden Gyvt.-nek nevezünk.</p>
+<p data-course-source="29">A törvény célja többek között a gyermekek jogainak és érdekeinek védelme, a veszélyeztetettség megelőzése és megszüntetése, valamint a gyermekek családban történő nevelkedésének elősegítése.</p>
+<p data-course-source="30">Ez fontos kiindulópont.</p>
+<p data-course-source="31">A gyermekvédelmi rendszernek nem kizárólag az a feladata, hogy problémákat keressen a családok életében.</p>
+<p data-course-source="32">Feladata a támogatás és a megelőzés is.</p>
+<p data-course-source="33">Ugyanakkor a rendszer nem pusztán önkéntes tanácsadást biztosít.</p>
+<p data-course-source="34">Meghatározott körülmények között hatósági intézkedések is alkalmazhatók.</p>
+<p data-course-source="35">Ezért fontos megkülönböztetni az alapellátást és a hatósági gyermekvédelmi intézkedéseket.</p>
+<h3 data-course-source="36">Gyermekjóléti alapellátás</h3>
+<p data-course-source="37">Ide tartozhat például a családok támogatása, a gyermekneveléssel kapcsolatos segítségnyújtás, a tanácsadás és a veszélyeztetettség megelőzését szolgáló szociális segítőmunka.</p>
+<h3 data-course-source="38">Hatósági gyermekvédelmi intézkedés</h3>
+<p data-course-source="39">Ilyen lehet meghatározott feltételek mellett a védelembe vétel.</p>
+<p data-course-source="40">Ebben az esetben már gyámhatósági döntésről beszélünk.</p>
+<p data-course-source="41"><strong>A legfontosabb különbség: a segítségnyújtást végző szolgáltató és a kötelező hatósági döntést meghozó szerv nem azonos.</strong></p>
+<hr>
+<h2 id="resz-3" data-course-source="43">3. KI KICSODA A GYERMEKVÉDELMI RENDSZERBEN?</h2>
+<p data-course-source="44">Három szereplőt különösen fontos megismerni.</p>
+<h3 data-course-source="45">3.1. Család- és gyermekjóléti szolgálat</h3>
+<p data-course-source="46">A szolgálat helyi szinten nyújt gyermekjóléti és családsegítő szolgáltatásokat.</p>
+<p data-course-source="47">Feladatait a Gyvt. 39–40. §-a szabályozza.</p>
+<p data-course-source="48">A szolgálat kapcsolatot tarthat a családdal, tájékozódhat a gyermek helyzetéről, szociális segítséget biztosíthat, és részt vesz a gyermekvédelmi jelzőrendszer működésében.</p>
+<p data-course-source="49">A szolgálat munkatársa nem hozhat önállóan védelembe vételt elrendelő hatósági határozatot.</p>
+<p data-course-source="50">Ez azonban nem jelenti azt, hogy minden intézkedéséhez előzetes gyámhatósági határozat szükséges.</p>
+<p data-course-source="51">A szolgálatnak önálló, törvényben meghatározott feladatai vannak.</p>
+<p data-course-source="52"><strong>Tehát téves az az általános állítás, hogy a családsegítő csak akkor keresheti meg a szülőt, ha már gyámhatósági eljárás indult.</strong></p>
+<h3 data-course-source="53">3.2. Család- és gyermekjóléti központ</h3>
+<p data-course-source="54">A központ járási szinten lát el speciális gyermekjóléti feladatokat.</p>
+<p data-course-source="55">A gyermekvédelmi hatósági intézkedések előkészítésében és végrehajtásához kapcsolódó munkában különösen fontos szerepe lehet.</p>
+<p data-course-source="56">A központ esetmenedzsere részt vehet a védelembe vételi eljárásban.</p>
+<p data-course-source="57">Javaslatot készíthet, szakmai véleményt adhat, valamint meghatározott feltételekkel gondozási-nevelési tervet készít.</p>
+<p data-course-source="58">A központ azonban szintén nem azonos a gyámhatósággal.</p>
+<h3 data-course-source="59">3.3. Gyámhatóság</h3>
+<p data-course-source="60">A gyámhatóság jogszabályban meghatározott hatósági feladatokat lát el.</p>
+<p data-course-source="61">Védelembe vételi eljárást folytathat le.</p>
+<p data-course-source="62">A szükséges feltételek fennállása esetén gyermekvédelmi intézkedésekről dönthet.</p>
+<p data-course-source="63">A gyámhatósági határozat kötelező rendelkezéseket is tartalmazhat.</p>
+<p data-course-source="64"><strong>A K.O. első gyermekvédelmi szabálya: mindig azonosítsd, hogy szolgáltatóval, szakmai javaslatot készítő intézménnyel vagy tényleges hatósággal kommunikálsz!</strong></p>
+<hr>
+<h2 id="resz-4" data-course-source="66">4. MI AZ A GYERMEKVÉDELMI JELZŐRENDSZER?</h2>
+<p data-course-source="67">A gyermekvédelmi jelzőrendszer célja, hogy a gyermekeket érintő lehetséges veszélyeztető körülmények ne maradjanak észrevétlenek.</p>
+<p data-course-source="68">A Gyvt. 17. §-a meghatározza a jelzőrendszer szereplőit.</p>
+<p data-course-source="69">Ide tartozhatnak többek között az egészségügyi szolgáltatók, a védőnők, a házi gyermekorvosok, a köznevelési intézmények, a rendőrség és más, törvényben megjelölt szervek.</p>
+<p data-course-source="70">A jelzőrendszer tagjainak meghatározott körülmények között jelzési, illetve hatósági eljárás kezdeményezésére vonatkozó kötelezettségük van.</p>
+<p data-course-source="71">Ezért önmagában nem jogellenes, ha a védőnő vagy más egészségügyi szereplő gyermekvédelmi jelzést tesz.</p>
+<h3 data-course-source="72">Mit jelent egy jelzés?</h3>
+<p data-course-source="73">A jelzés azt jelenti, hogy valamely szereplő a gyermek helyzetével kapcsolatos olyan információt továbbít, amely gyermekvédelmi vizsgálatot vagy segítségnyújtást tehet szükségessé.</p>
+<p data-course-source="74">A jelzés azonban önmagában nem azonos egy gyámhatósági határozattal.</p>
+<p data-course-source="75">A jelzés tartalma és megalapozottsága vizsgálható.</p>
+<p data-course-source="76">A jelzésből nem következik automatikusan, hogy a szülő jogsértést követett el.</p>
+<p data-course-source="77">Ugyanakkor az sem igaz, hogy gyermekvédelmi eljárás csak bizonyított, már bekövetkezett egészségkárosodás esetén indulhat.</p>
+<p data-course-source="78">A gyermekvédelmi rendszernek megelőző feladatai is vannak.</p>
+<p data-course-source="79"><strong>A jelzés az intézményi tájékozódás és szükség esetén az intézkedések kiindulópontja lehet, nem pedig önmagában végleges bizonyíték minden állításra.</strong></p>
+<hr>
+<h2 id="resz-5" data-course-source="81">5. MI AZ A JELZŐLAP?</h2>
+<p data-course-source="82">A jelzőlap olyan dokumentum, amelyen egy intézmény vagy szakember gyermekvédelmi szempontból jelentős információkat továbbíthat.</p>
+<p data-course-source="83">A szülő számára különösen fontos lehet megismerni, hogy a jelzés milyen konkrét körülményekre vonatkozik.</p>
+<p data-course-source="84">Például:</p>
+<ul data-course-source="85"><li>milyen eseményt rögzítettek;</li><li>mikor történt az esemény;</li><li>milyen korábbi kapcsolatfelvételre hivatkoznak;</li><li>a közölt információ tény, észlelés vagy következtetés;</li><li>történt-e korábbi segítségnyújtás;</li><li>milyen intézkedést javasolnak.</li></ul>
+<p data-course-source="86">A jelzőlap tartalma később jelentőséggel bírhat a gyermekjóléti vagy gyámhatósági ügyben.</p>
+<p data-course-source="87">Ezért fontos a pontosság.</p>
+<h3 data-course-source="88">Mi történik, ha a jelzőlap hibás állítást tartalmaz?</h3>
+<p data-course-source="89">Tegyük fel, hogy az iratban ez szerepel:</p>
+<p data-course-source="90">„A szülő nem működik együtt.”</p>
+<p data-course-source="91">A szülő azonban korábbi levelekkel rendelkezik.</p>
+<p data-course-source="92">Ilyenkor nem az a megfelelő első lépés, hogy a jelzést tevő személyt szándékos valótlanság állításával vádolja.</p>
+<p data-course-source="93">Először meg kell ismerni a kifogásolt megállapítás pontos tartalmát.</p>
+<p data-course-source="94">Ezután össze kell vetni a rendelkezésre álló dokumentumokkal.</p>
+<p data-course-source="95"><strong>A K.O. módszerben minden vitatott állítást konkrét bizonyítékkal próbálunk ellenőrizni.</strong></p>
+<p data-course-source="96">Fontos azonban, hogy a jelzőlap nem minden esetben ismerhető meg teljes egészében.</p>
+<p data-course-source="97">A gyermekvédelmi jelzésekhez külön adatvédelmi szabályok kapcsolódnak.</p>
+<hr>
+<h2 id="resz-6" data-course-source="99">6. MEGTUDHATJA-E A SZÜLŐ, KI TETTE A JELZÉST?</h2>
+<p data-course-source="100">A gyermekvédelmi eljárásokban az iratbetekintésnek különleges korlátai lehetnek.</p>
+<p data-course-source="101">A Gyvt. 17. § (2a) bekezdése szerint a gyermek bántalmazása vagy elhanyagolása miatt jelzést tevő személy, illetve intézmény adatait a gyermekjóléti szolgáltató és a gyámhatóság külön kérelem nélkül is zártan kezeli.</p>
+<p data-course-source="102">A 15/1998. (IV. 30.) NM rendelet 11. §-a további korlátozást tartalmaz a jelzést tevő személy azonosítását lehetővé tevő iratrészek megismerésére.</p>
+<p data-course-source="103">Ez lényeges szabály.</p>
+<p data-course-source="104">A szülő tehát nem feltétlenül jogosult minden esetben a jelzést tevő személy kilétének megismerésére.</p>
+<p data-course-source="105">Ugyanakkor különbséget kell tenni a jelzést tevő személy védett adatai és a gyermekvédelmi eljárásban felhasznált tényállítások között.</p>
+<p data-course-source="106">Ha a hatóság valamely tényre alapozza döntését, annak bizonyítási és eljárási jelentőségét az alkalmazandó szabályok szerint értékelni kell.</p>
+<p data-course-source="107"><strong>A szülőnek nem a jelző személyazonosságának feltétlen megszerzésére kell összpontosítania, hanem az ügyben felhasznált, megismerhető tények és bizonyítékok ellenőrzésére.</strong></p>
+<hr>
+<h2 id="resz-7" data-course-source="109">7. MI SZÁMÍT VESZÉLYEZTETETTSÉGNEK?</h2>
+<p data-course-source="110">Most következik a fejezet egyik legfontosabb jogszabályi fogalma.</p>
+<p data-course-source="111">A Gyvt. 5. § n) pontja határozza meg a veszélyeztetettséget.</p>
+<p data-course-source="112">A fogalom lényege:</p>
+<p data-course-source="113">Olyan magatartás, mulasztás vagy körülmény következtében kialakuló állapot, amely a gyermek testi, értelmi, érzelmi vagy erkölcsi fejlődését akadályozza vagy gátolja.</p>
+<p data-course-source="114">Ez nem kizárólag a szülő szándékos magatartására vonatkozhat.</p>
+<p data-course-source="115">A gyermek környezetében fennálló más körülmények is jelentőséggel bírhatnak.</p>
+<h3 data-course-source="116">Mit kell ebből megérteni?</h3>
+<p data-course-source="117">A veszélyeztetettség nem feltétlenül azonos a már bekövetkezett sérüléssel.</p>
+<p data-course-source="118">A jogszabály a gyermek fejlődését akadályozó vagy gátló állapotokra is vonatkozik.</p>
+<p data-course-source="119">Ez azonban nem jelenti azt, hogy minden gyermekvédelmi jelzés automatikusan igazolja a veszélyeztetettséget.</p>
+<p data-course-source="120">A konkrét tényállást vizsgálni kell.</p>
+<p data-course-source="121">A hatóságnak indokolnia kell, milyen körülmények alapján alkalmazza az adott gyermekvédelmi intézkedést.</p>
+<h4 data-course-source="122">Gyakorlati példa</h4>
+<p data-course-source="123">Egy irat szerint:</p>
+<p data-course-source="124">„A gyermek veszélyeztetettsége fennáll.”</p>
+<p data-course-source="125">A szülő jogszerűen kérheti annak tisztázását, hogy az állítást mely konkrét körülmények támasztják alá.</p>
+<p data-course-source="126">Vizsgálható az is, hogy a dokumentum megjelöli-e a gyermek helyzetének releváns sajátosságait.</p>
+<p data-course-source="127"><strong>A K.O. második gyermekvédelmi szabálya: a veszélyeztetettség jogi fogalom, amelyet konkrét tények és az alkalmazandó jogszabályok alapján kell értékelni.</strong></p>
+<hr>
+<h2 id="resz-8" data-course-source="129">8. A KÖTELEZŐ OLTÁS ELMARADÁSA ÉS A GYERMEKVÉDELEM</h2>
+<p data-course-source="130">Ez a képzés szempontjából különösen fontos kérdés.</p>
+<p data-course-source="131">Magyarországon a kötelező védőoltások beadásának megtagadása gyermekvédelmi jogi jelentőséggel is járhat.</p>
+<p data-course-source="132">A <strong>15/1998. (IV. 30.) NM rendelet 11/A. § c) pont cb) alpontja</strong> a kötelező védőoltás beadásának megtagadását a gyermek súlyos elhanyagolására utaló, kiemelt veszélyeztető körülmények között nevesíti.</p>
+<p data-course-source="133">Ezt a rendelkezést minden érintett szülőnek ismernie kell.</p>
+<p data-course-source="134">A szabály különösen komollyá teszi az oltási kötelezettséggel összefüggő gyermekvédelmi helyzeteket.</p>
+<p data-course-source="135">Ugyanakkor fontos a tényállás pontos meghatározása.</p>
+<p data-course-source="136">Az oltás elmaradása, az orvos által megállapított halasztás, a jogszabály szerinti mentesítési eljárás és a kötelező oltás megtagadása nem feltétlenül azonos tényállás.</p>
+<p data-course-source="137"><strong>A szülőnek mindig a valós körülményeket kell bemutatnia.</strong></p>
+<p data-course-source="138">Nem elegendő ugyanannak a magatartásnak más elnevezést adni.</p>
+<p data-course-source="139">Ha például orvosilag dokumentált halasztás történt, annak megfelelő bizonyítéka lehet.</p>
+<p data-course-source="140">Ha mentesítési eljárás indult, annak joghatásait az egészségügyi törvény szabályozza.</p>
+<p data-course-source="141">Ha viszont a szülő a fennálló kötelezettséget ténylegesen elutasítja, annak gyermekvédelmi következményeit nem lehet pusztán egy tájékoztatáskérő levél megfogalmazásával kizárni.</p>
+<p data-course-source="142"><strong>A gyermekvédelmi ügyben a tényleges magatartás és az annak alapjául szolgáló dokumentumok számítanak.</strong></p>
+<hr>
+<h2 id="resz-9" data-course-source="144">9. MI A CSALÁDLÁTOGATÁS?</h2>
+<p data-course-source="145">A család- és gyermekjóléti szolgálat munkatársa egyes helyzetekben személyes találkozót vagy családlátogatást kezdeményezhet.</p>
+<p data-course-source="146">Ennek célja lehet a gyermek és a család körülményeinek megismerése.</p>
+<p data-course-source="147">A családlátogatás azonban nem azonos automatikusan egy hatósági helyszíni szemlével.</p>
+<p data-course-source="148">Ez fontos különbség.</p>
+<p data-course-source="149">A gyermekjóléti szolgáltatás keretében végzett családlátogatás jogi természete eltérhet a gyámhatósági eljárásban végzett hatósági cselekménytől.</p>
+<h3 data-course-source="150">Mit érdemes tisztázni?</h3>
+<p data-course-source="151">A szülő jogszerűen kérdezheti:</p>
+<p data-course-source="152">Melyik intézmény munkatársa szeretne találkozni vele?</p>
+<p data-course-source="153">Mi a kapcsolatfelvétel célja?</p>
+<p data-course-source="154">Milyen ügyhöz kapcsolódik?</p>
+<p data-course-source="155">A találkozó gyermekjóléti alapellátás keretében vagy hatósági eljáráshoz kapcsolódóan történik?</p>
+<p data-course-source="156">Készül-e dokumentáció?</p>
+<p data-course-source="157">A szülő milyen módon ismerheti meg a róla készített feljegyzést?</p>
+<p data-course-source="158">Ezek értelmes és legitim kérdések.</p>
+<p data-course-source="159">Ugyanakkor nem helyes az az általános állítás, hogy gyermekjóléti családlátogatást kizárólag külön gyámhatósági határozat alapján lehet kezdeményezni.</p>
+<p data-course-source="160">A szolgálatnak önálló törvényi feladatai vannak.</p>
+<h4 data-course-source="161">Be kell engedni a lakásba?</h4>
+<p data-course-source="162">A családlátogatás kezdeményezése önmagában nem jelent korlátlan jogosultságot a magánlakásba történő belépésre.</p>
+<p data-course-source="163">A személyes találkozó és a hatósági szemle feltételeit külön kell értékelni.</p>
+<p data-course-source="164">A szülő kérhet előzetes egyeztetést és tájékoztatást.</p>
+<p data-course-source="165">Ugyanakkor a találkozás vagy az együttműködés indokolatlan elutasítása az ügy későbbi értékelésében jelentőséggel bírhat.</p>
+<p data-course-source="166"><strong>A jó megközelítés nem az automatikus elzárkózás, hanem a jogi helyzet tisztázása és a tényleges együttműködés dokumentálása.</strong></p>
+<hr>
+<h2 id="resz-10" data-course-source="168">10. MI AZ A KÖRNYEZETTANULMÁNY?</h2>
+<p data-course-source="169">A környezettanulmány a gyermekvédelmi eljárásokban felhasználható dokumentum.</p>
+<p data-course-source="170">A gyermek és a család életkörülményeire vonatkozó releváns megállapításokat tartalmazhat.</p>
+<p data-course-source="171">A Gyvt. 130. §-a és a gyermekvédelmi eljárások részletszabályai is jelentőséggel bírhatnak.</p>
+<p data-course-source="172">A környezettanulmány célja nem a szülő életének általános minősítése.</p>
+<p data-course-source="173">Az eljárás szempontjából fontos körülményeket kell feltárnia.</p>
+<h3 data-course-source="174">Mire kell figyelni?</h3>
+<p data-course-source="175">A szülőnek érdemes ellenőriznie, hogy a dokumentumban rögzített tényállítások pontosak-e.</p>
+<p data-course-source="176">Például:</p>
+<p data-course-source="177">Megfelel-e a valóságnak a lakáskörülmények leírása?</p>
+<p data-course-source="178">Helyesek-e a gyermek ellátására vonatkozó adatok?</p>
+<p data-course-source="179">Elkülönítették-e a ténylegesen megfigyelt körülményeket a szakmai következtetésektől?</p>
+<p data-course-source="180">Rögzítették-e a szülő releváns nyilatkozatát?</p>
+<p data-course-source="181">Ha a szülő valamely megállapítást vitat, célszerű azt konkrétan megjelölnie.</p>
+<h4 data-course-source="182">Mi történik, ha valótlan állítás szerepel benne?</h4>
+<p data-course-source="183">A megfelelő első lépés az eredeti dokumentum megismerése.</p>
+<p data-course-source="184">Ezt követően bizonyítékokkal alátámasztott észrevétel terjeszthető elő.</p>
+<p data-course-source="185">A szülő kérheti a pontatlan adatok helyesbítését vagy álláspontjának megfelelő rögzítését.</p>
+<p data-course-source="186">A helyesbítési és az eljárási észrevételezési lehetőségeket azonban az adott dokumentum és az adatkezelő alapján kell meghatározni.</p>
+<p data-course-source="187"><strong>A környezettanulmány nem tévedhetetlen dokumentum, de nem is válik érvénytelenné pusztán attól, hogy a szülő nem ért egyet vele.</strong></p>
+<hr>
+<h2 id="resz-11" data-course-source="189">11. MI AZ AZ ESETKONFERENCIA?</h2>
+<p data-course-source="190">A gyermekjóléti rendszerben több szakember is részt vehet egy gyermek helyzetének értékelésében.</p>
+<p data-course-source="191">Az esetkonferencia olyan szakmai egyeztetés lehet, amelyen az érintett intézmények és szakemberek megbeszélik a gyermek helyzetét, a problémákat és a szükségesnek tartott segítségnyújtást.</p>
+<p data-course-source="192">Részt vehetnek például gyermekjóléti szakemberek, egészségügyi szereplők, oktatási intézmények képviselői és más érintettek.</p>
+<p data-course-source="193">Az esetkonferencia nem azonos a gyámhatósági tárgyalással.</p>
+<p data-course-source="194">A szakmai résztvevők javaslatokat fogalmazhatnak meg.</p>
+<p data-course-source="195">A kötelező hatósági döntést azonban az erre jogosult szerv hozza meg.</p>
+<h3 data-course-source="196">Mit érdemes megkérdezni?</h3>
+<p data-course-source="197">Ki kezdeményezte az esetkonferenciát?</p>
+<p data-course-source="198">Mi az egyeztetés célja?</p>
+<p data-course-source="199">Kik vesznek részt rajta?</p>
+<p data-course-source="200">Milyen kérdésekről fognak beszélni?</p>
+<p data-course-source="201">Készül-e emlékeztető vagy más dokumentum?</p>
+<p data-course-source="202">A szülő részt vehet-e az egyeztetés megfelelő részében?</p>
+<p data-course-source="203">A válaszokat az adott helyzetben kell vizsgálni.</p>
+<p data-course-source="204">A részvételi lehetőségeket a gyermek érdekei és a vonatkozó szakmai szabályok is befolyásolhatják.</p>
+<p data-course-source="205"><strong>Az esetkonferenciát nem érdemes automatikusan ellenséges eseménynek tekinteni. Ugyanakkor fontos, hogy a szülő megismerje a róla és gyermekéről megfogalmazott, számára hozzáférhető megállapításokat.</strong></p>
+<hr>
+<h2 id="resz-12" data-course-source="207">12. A VÉDELEMBE VÉTEL – MIT JELENT VALÓJÁBAN?</h2>
+<p data-course-source="208">A védelembe vétel a gyermekvédelmi hatósági intézkedések egyik formája.</p>
+<p data-course-source="209">Alapvető szabályait a <strong>Gyvt. 68. §-a</strong> tartalmazza.</p>
+<p data-course-source="210">A védelembe vételre meghatározott feltételek mellett akkor kerülhet sor, ha a gyermek veszélyeztetettsége az alapellátások önkéntes igénybevételével nem szüntethető meg, de megfelelő segítséggel a gyermek családi környezetben történő fejlődése biztosítható.</p>
+<p data-course-source="211">Ez rendkívül fontos.</p>
+<p data-course-source="212"><strong>A védelembe vétel nem azonos a gyermek családból történő kiemelésével.</strong></p>
+<p data-course-source="213">A Gyvt. 68. § (6) bekezdése kifejezetten kimondja, hogy a védelembe vétel nem érinti a szülő felügyeleti jogát.</p>
+<p data-course-source="214">Ugyanakkor a védelembe vétel hatósági intézkedés.</p>
+<p data-course-source="215">A gyámhatóság kötelező rendelkezéseket állapíthat meg.</p>
+<p data-course-source="216">A gyermekjóléti központ pedig meghatározott feladatokat lát el az intézkedés végrehajtásával kapcsolatban.</p>
+<p data-course-source="217">Ezért a védelembe vételt sem szabad jelentéktelen adminisztratív eseménynek tekinteni.</p>
+<p data-course-source="218"><strong>A K.O. harmadik gyermekvédelmi szabálya: a védelembe vétel célját, törvényi feltételeit és konkrét rendelkezéseit külön kell vizsgálni.</strong></p>
+<hr>
+<h2 id="resz-13" data-course-source="220">13. HOGYAN INDUL A VÉDELEMBE VÉTELI ELJÁRÁS?</h2>
+<p data-course-source="221">A részletes eljárási szabályokat a <strong>149/1997. (IX. 10.) Korm. rendelet</strong> tartalmazza.</p>
+<p data-course-source="222">A rendelet 84. §-a szabályozza a védelembe vételi eljárás megindításának egyes kérdéseit.</p>
+<p data-course-source="223">Az eljárás többek között gyermekvédelmi jelzés, kezdeményezés vagy javaslat alapján indulhat.</p>
+<p data-course-source="224">A gyámhivatal hivatalból jár el.</p>
+<p data-course-source="225">A család- és gyermekjóléti központnak fontos szerepe lehet a döntés előkészítésében.</p>
+<p data-course-source="226">A központnak az eljárásban nyilatkoznia kellhet az alapellátás eredménytelenségének okáról, az együttműködésről és a gyermek veszélyeztetettségének feltételezett okairól.</p>
+<p data-course-source="227">A szükséges dokumentumok között szerepelhet környezettanulmány és korábbi gondozási dokumentáció.</p>
+<h4 data-course-source="228">Miért fontos ez a szülőnek?</h4>
+<p data-course-source="229">Mert a védelembe vételi eljárás nem kizárólag egyetlen jelzőlap alapján értelmezhető.</p>
+<p data-course-source="230">A gyámhatóság további tényeket és dokumentumokat is vizsgálhat.</p>
+<p data-course-source="231">A szülőnek pedig lehetősége van a megfelelő eljárási jogok gyakorlására.</p>
+<p data-course-source="232"><strong>Az eljárás megindítása nem azonos a védelembe vétel elrendelésével.</strong></p>
+<hr>
+<h2 id="resz-14" data-course-source="234">14. MIKOR KELL MEGSZÜNTETNI AZ ELJÁRÁST?</h2>
+<p data-course-source="235">A <strong>149/1997. Korm. rendelet 85. §-a</strong> különösen fontos.</p>
+<p data-course-source="236">A rendelkezés alapján, ha a gyermek veszélyeztetettsége nem áll fenn, a gyámhivatal – a szabályban meghatározott kivételekkel – elutasítja a kérelmet, illetve megszünteti a hivatalból indított eljárást.</p>
+<p data-course-source="237">Ez valódi jogszabályi alap.</p>
+<p data-course-source="238">Ugyanakkor nem elegendő egyszerűen kijelenteni, hogy a gyermek nem veszélyeztetett.</p>
+<p data-course-source="239">A tényállást kell vizsgálni.</p>
+<h3 data-course-source="240">Mi történik, ha van veszélyeztetettség, de az együttműködés eredményes lehet?</h3>
+<p data-course-source="241">A rendelet 85. § (2) bekezdése fontos lehetőséget tartalmaz.</p>
+<p data-course-source="242">Ha a veszélyeztetettség fennáll, de a szülő és a gyermek vállalja az együttműködést, és ennek alapján valószínűsíthető az alapellátás eredményessége, a gyámhivatal meghatározott feltételek mellett a védelembe vétel helyett az alapellátás keretében történő segítségnyújtás megszervezéséről rendelkezhet.</p>
+<p data-course-source="243">Ezért a tényleges együttműködésnek jelentősége lehet.</p>
+<p data-course-source="244">De nem minden helyzetben elegendő.</p>
+<p data-course-source="245">A hatóság a veszélyeztetettség fennállását és megszüntetésének lehetőségét is értékeli.</p>
+<p data-course-source="246"><strong>Egy rövid együttműködési nyilatkozat önmagában nem garantálja az eljárás megszüntetését. A valós magatartás és a gyermek helyzetének értékelése döntő jelentőségű.</strong></p>
+<hr>
+<h2 id="resz-15" data-course-source="248">15. AZ EGYÜTTMŰKÖDÉS – MIÉRT ILYEN FONTOS?</h2>
+<p data-course-source="249">A K.O. gyermekvédelmi stratégia egyik alapelve a tényleges együttműködés dokumentálása.</p>
+<p data-course-source="250">A szülőnek nem feltétlenül kell minden szakmai megállapítással egyetértenie.</p>
+<p data-course-source="251">Jogszerűen vitathat pontatlan tényállításokat.</p>
+<p data-course-source="252">Kérhet tájékoztatást.</p>
+<p data-course-source="253">Iratbetekintést kezdeményezhet.</p>
+<p data-course-source="254">Bizonyítékokat nyújthat be.</p>
+<p data-course-source="255">Ugyanakkor az együttműködés nem merül ki abban, hogy valaki leírja:</p>
+<p data-course-source="256">„Együttműködöm.”</p>
+<p data-course-source="257">A gyámhatóság és a gyermekjóléti szereplők a tényleges magatartást is értékelhetik.</p>
+<p data-course-source="258">Például:</p>
+<p data-course-source="259">A szülő válaszol-e a megkeresésekre?</p>
+<p data-course-source="260">Részt vesz-e a szabályszerűen kitűzött egyeztetéseken?</p>
+<p data-course-source="261">A gyermek ellátásával kapcsolatos releváns információkat rendelkezésre bocsátja-e?</p>
+<p data-course-source="262">A vállalt feladatokat teljesíti-e?</p>
+<p data-course-source="263">A valós akadályoztatást időben jelzi-e?</p>
+<p data-course-source="264">Ezért fontos a következetes dokumentáció.</p>
+<p data-course-source="265"><strong>Az együttműködés nem egyetlen mondat, hanem ellenőrizhető magatartások összessége.</strong></p>
+<hr>
+<h2 id="resz-16" data-course-source="267">16. MI TÖRTÉNIK A GYÁMHATÓSÁGI TÁRGYALÁSON?</h2>
+<p data-course-source="268">A 149/1997. Korm. rendelet 86. §-a szabályozza a védelembe vételi eljárásban tartott tárgyalás egyes kérdéseit.</p>
+<p data-course-source="269">A gyámhivatal főszabály szerint tárgyalást tart.</p>
+<p data-course-source="270">A jogszabály meghatározott esetekben lehetővé teszi annak mellőzését, például ha a rendelkezésre álló adatok szerint nem áll fenn veszélyeztetettség.</p>
+<p data-course-source="271">A tárgyalás célja többek között a gyermek helyzetének és a szükséges intézkedéseknek a tisztázása.</p>
+<p data-course-source="272">A szülő számára különösen fontos, hogy pontosan megértse, milyen minőségben vesz részt az eljárásban.</p>
+<h3 data-course-source="273">Mire kell felkészülni?</h3>
+<p data-course-source="274">A tárgyalás előtt célszerű áttekinteni:</p>
+<p data-course-source="275">az eljárás megindításáról szóló iratot;</p>
+<p data-course-source="276">a rendelkezésre álló gyermekjóléti dokumentációt;</p>
+<p data-course-source="277">a korábbi szülői nyilatkozatokat;</p>
+<p data-course-source="278">a vitatott tényállításokat;</p>
+<p data-course-source="279">és a gyermek helyzetére vonatkozó releváns bizonyítékokat.</p>
+<p data-course-source="280">Ha a szülő szerint valamely jelentés pontatlan, ezt tárgyszerűen jelezheti.</p>
+<p data-course-source="281">A szülő kérheti, hogy lényeges nyilatkozata megfelelően kerüljön rögzítésre.</p>
+<p data-course-source="282">Fontos azonban, hogy a hatósági idézést ne tekintse egyszerű meghívásnak.</p>
+<p data-course-source="283">A szabályszerű idézéshez megjelenési kötelezettség kapcsolódhat.</p>
+<p data-course-source="284"><strong>A K.O. szabály: gyámhatósági tárgyalásra nem indulattal, hanem rendezett dokumentációval és világos tényállítással érdemes érkezni.</strong></p>
+<hr>
+<h2 id="resz-17" data-course-source="286">17. MI TÖRTÉNIK, HA KÉSŐN ÉRKEZIK AZ IDÉZÉS?</h2>
+<p data-course-source="287">A második fejezetben már megismertük az idézés alapvető szabályait.</p>
+<p data-course-source="288">Az Ákr. 58. § (2) bekezdése főszabály szerint legalább ötnapos előzetes értesülést ír elő, ha az ügy körülményeiből más nem következik.</p>
+<p data-course-source="289">Ha a szülő a tárgyalás előtt csupán néhány nappal kapja meg az idézést, indokolt lehet ellenőrizni a szabályszerűséget.</p>
+<p data-course-source="290">Fontos azonban, hogy a rövidebb értesítési idő nem minden esetben teszi automatikusan érvénytelenné az idézést.</p>
+<p data-course-source="291">A konkrét körülményeket vizsgálni kell.</p>
+<h3 data-course-source="292">Mi a megfelelő lépés?</h3>
+<p data-course-source="293">A szülő haladéktalanul jelezheti írásban a kézbesítés időpontját és az esetleges akadályoztatást.</p>
+<p data-course-source="294">Kérheti új tárgyalási időpont kitűzését.</p>
+<p data-course-source="295">Ha az iratok megismerése nélkül nem tud megfelelően nyilatkozni, ezt is közölheti.</p>
+<p data-course-source="296"><strong>Fontos:</strong> az időpontmódosítás kérése önmagában nem szünteti meg a megjelenési kötelezettséget.</p>
+<p data-course-source="297">Ezért a hatóság válaszát és az aktuális idézés joghatását is figyelni kell.</p>
+<hr>
+<h2 id="resz-18" data-course-source="299">18. MIT SZABAD ALÁÍRNI?</h2>
+<p data-course-source="300">A gyermekvédelmi ügyekben a szülő többféle dokumentummal találkozhat.</p>
+<p data-course-source="301">Ilyen lehet például:</p>
+<ul data-course-source="302"><li>a jelenlét igazolása;</li><li>egy nyilatkozat;</li><li>egy jegyzőkönyv;</li><li>egy együttműködési megállapodás;</li><li>egy gondozási-nevelési terv;</li><li>egy irat átvételének igazolása.</li></ul>
+<p data-course-source="303">Ezeknek eltérő jelentőségük lehet.</p>
+<p data-course-source="304"><strong>A legfontosabb szabály: mindig olvasd el, pontosan mit igazolsz az aláírásoddal!</strong></p>
+<p data-course-source="305">A jelenlét vagy az átvétel igazolása nem feltétlenül jelenti az irat teljes tartalmával való egyetértést.</p>
+<p data-course-source="306">Egy együttműködési nyilatkozat viszont konkrét vállalásokat is tartalmazhat.</p>
+<p data-course-source="307">Ha valamely dokumentum pontatlan, indokolt lehet annak javítását kérni.</p>
+<p data-course-source="308">Ha a szülőnek észrevétele van, kérheti annak rögzítését.</p>
+<p data-course-source="309">Ha a dokumentumot nem érti, kérhet magyarázatot.</p>
+<p data-course-source="310">Ugyanakkor nem célszerű általános szabályként azt tanácsolni, hogy a szülő semmit ne írjon alá.</p>
+<p data-course-source="311">Egy indokolatlanul megtagadott nyilatkozat vagy együttműködési vállalás az eljárásban hátrányos következtetésekhez vezethet.</p>
+<p data-course-source="312"><strong>A tudatos magatartás nem az automatikus aláírás és nem az automatikus elutasítás, hanem a dokumentum tartalmának pontos megértése.</strong></p>
+<hr>
+<h2 id="resz-19" data-course-source="314">19. MI AZ EGYÉNI GONDOZÁSI-NEVELÉSI TERV?</h2>
+<p data-course-source="315">Ha a gyámhatóság védelembe vételt rendel el, a gyermekjóléti központnak további feladatai keletkeznek.</p>
+<p data-course-source="316">A Gyvt. 68. § (4) bekezdése alapján a gyermekjóléti központ munkatársa a védelembe vételt elrendelő határozat véglegessé válásától számított tizenöt napon belül egyéni gondozási-nevelési tervet készít.</p>
+<p data-course-source="317">A terv célja a veszélyeztető körülmények megszüntetéséhez szükséges feladatok meghatározása.</p>
+<p data-course-source="318">Ebben szerepelhetnek a szülőre, a gyermekre és a közreműködő szakemberekre vonatkozó teendők.</p>
+<p data-course-source="319">A tervnek az adott gyermek helyzetéhez kell igazodnia.</p>
+<p data-course-source="320">A 15/1998. NM rendelet 33. §-a részletesen szabályozza a tervvel kapcsolatos szakmai feladatokat.</p>
+<p data-course-source="321">A korábbi iratanyagokban előfordulhat a <strong>GYSZ-5</strong> elnevezés is. A jelenlegi elektronikus nyilvántartási és dokumentációs rendszernél azonban ellenőrizni kell, hogy az adott dokumentum milyen hatályos formában készül.</p>
+<h3 data-course-source="322">Mit érdemes ellenőrizni?</h3>
+<p data-course-source="323">A terv pontosan megjelöli-e a problémát?</p>
+<p data-course-source="324">A tervezett feladatok kapcsolódnak-e a gyermek konkrét helyzetéhez?</p>
+<p data-course-source="325">Világos-e, hogy ki miért felel?</p>
+<p data-course-source="326">Vannak-e meghatározott határidők?</p>
+<p data-course-source="327">A terv tartalmaz-e olyan megállapítást, amelyet a szülő tényszerűen vitat?</p>
+<p data-course-source="328">A szülőnek lehetősége van a terv elkészítésében való megfelelő részvételre és álláspontjának közlésére.</p>
+<p data-course-source="329"><strong>A gondozási-nevelési tervnek nem általános büntetésként, hanem a konkrét gyermekvédelmi célok elérését szolgáló dokumentumként kell működnie.</strong></p>
+<hr>
+<h2 id="resz-20" data-course-source="331">20. HOGYAN LEHET MEGSZÜNTETNI A VÉDELEMBE VÉTELT?</h2>
+<p data-course-source="332">A védelembe vétel nem feltétlenül végleges intézkedés.</p>
+<p data-course-source="333">A <strong>Gyvt. 69. §-a</strong> szabályozza a megszüntetés egyes eseteit.</p>
+<p data-course-source="334">A védelembe vételt meg kell szüntetni, ha a gyermek családban történő nevelkedése az intézkedés nélkül is biztosítható.</p>
+<p data-course-source="335">Ez fontos jogszabályi lehetőség.</p>
+<p data-course-source="336">A Gyvt. 68. § (5) bekezdése szerint a gyámhatóság kérelemre bármikor, hivatalból pedig legalább évente felülvizsgálja a védelembe vétel indokoltságát.</p>
+<p data-course-source="337">Ebből következik, hogy a szülő megfelelő indokok alapján kezdeményezheti a felülvizsgálatot.</p>
+<h3 data-course-source="338">Mire érdemes alapozni a kérelmet?</h3>
+<p data-course-source="339">A gyermek aktuális helyzetére.</p>
+<p data-course-source="340">A korábbi veszélyeztető körülmények változására.</p>
+<p data-course-source="341">A ténylegesen megtett intézkedésekre.</p>
+<p data-course-source="342">Az együttműködés dokumentációjára.</p>
+<p data-course-source="343">A rendelkezésre álló szakmai és hatósági bizonyítékokra.</p>
+<p data-course-source="344">Nem elegendő pusztán kijelenteni, hogy a szülő szerint a védelembe vétel felesleges.</p>
+<p data-course-source="345">A megszüntetés jogi feltételeinek fennállását kell bemutatni.</p>
+<p data-course-source="346"><strong>A védelembe vétel megszüntetésének legerősebb alapja az, ha a gyermekvédelmi intézkedés fenntartásának törvényes feltételei már nem állnak fenn.</strong></p>
+<hr>
+<h2 id="resz-21" data-course-source="348">21. MI A HELYZET A VÉDELEMBE VÉTELI HATÁROZATTAL?</h2>
+<p data-course-source="349">A gyámhatóság a védelembe vétel elrendeléséről határozatot hoz.</p>
+<p data-course-source="350">A döntés tartalmi követelményeit többek között a 149/1997. Korm. rendelet 87. §-a és az alkalmazandó általános eljárási szabályok határozzák meg.</p>
+<p data-course-source="351">A szülőnek különösen fontos ellenőriznie:</p>
+<p data-course-source="352">milyen veszélyeztető körülményt állapítottak meg;</p>
+<p data-course-source="353">milyen bizonyítékokra hivatkozik a hatóság;</p>
+<p data-course-source="354">milyen intézkedéseket rendelnek el;</p>
+<p data-course-source="355">milyen együttműködési kötelezettségek keletkeznek;</p>
+<p data-course-source="356">és milyen jogorvoslat áll rendelkezésre.</p>
+<p data-course-source="357">Ha a szülő vitatja a döntést, az alkalmazandó jogorvoslati szabályokat kell megvizsgálni.</p>
+<p data-course-source="358">A határozat jogorvoslati tájékoztatása különösen fontos.</p>
+<p data-course-source="359">Ha közigazgatási per indítható, annak feltételeit és határidejét a közigazgatási perrendtartás alapján kell megállapítani.</p>
+<p data-course-source="360"><strong>A védelembe vételi határozat megtámadása nem azonos egy általános panaszos levél megküldésével.</strong></p>
+<p data-course-source="361">Komoly jogkövetkezmények esetén indokolt lehet ügyvéd bevonása.</p>
+<hr>
+<h2 id="resz-22" data-course-source="363">22. MI TÖRTÉNIK, HA TÉVES TÉNYÁLLÍTÁS SZEREPEL AZ ÜGYBEN?</h2>
+<p data-course-source="364">A projektben összegyűjtött tapasztalatok között több olyan eset szerepel, amelyben a szülők szerint a gyermekjóléti vagy gyámhatósági iratok pontatlan megállapításokat tartalmaztak.</p>
+<p data-course-source="365">Ilyen lehet például:</p>
+<p data-course-source="366">„A szülő nem működik együtt.”</p>
+<p data-course-source="367">„A szülő nem válaszolt a megkeresésekre.”</p>
+<p data-course-source="368">„A család elutasítja az egészségügyi ellátást.”</p>
+<p data-course-source="369">A megfelelő módszer ezekben az esetekben a konkrét állítások ellenőrzése.</p>
+<h3 data-course-source="370">A K.O. bizonyíték-módszer</h3>
+<p data-course-source="371">Először jelöljük meg a vitatott mondatot.</p>
+<p data-course-source="372">Ezután keressük meg az azt alátámasztó vagy cáfoló dokumentumokat.</p>
+<p data-course-source="373">Például korábbi leveleket, egyeztetésekről készült feljegyzéseket, időpont-visszaigazolásokat és átvételi igazolásokat.</p>
+<p data-course-source="374">Ha a szülő szerint a dokumentum hibás, írásbeli észrevételben pontosíthatja az eseményeket.</p>
+<p data-course-source="375">Fontos azonban, hogy a tényleges magatartást teljes egészében kell vizsgálni.</p>
+<p data-course-source="376">Ha a szülő egy korábbi megkeresésre válaszolt, az bizonyítható lehet.</p>
+<p data-course-source="377">De ebből nem feltétlenül következik, hogy minden más kötelezettségét is teljesítette.</p>
+<p data-course-source="378"><strong>A legerősebb védekezés nem egy általános tagadás, hanem az ellenőrizhető tények bemutatása.</strong></p>
+<hr>
+<h2 id="resz-23" data-course-source="380">23. HÁROM TANULSÁGOS ESET A PROJEKT GYAKORLATÁBÓL</h2>
+<p data-course-source="381">Az alábbi példák a K.O. projektben összegyűjtött beszámolók alapján készített, anonimizált oktatási esetek.</p>
+<p data-course-source="382">Nem tekinthetők önmagukban igazolt hatósági jogsértéseknek.</p>
+<h3 data-course-source="383">23.1. ESET – A CSALÁDSEGÍTŐ VÉDELEMBE VÉTELT EMLÍT</h3>
+<p data-course-source="384">Egy szülő arról számolt be, hogy a gyermekjóléti munkatárs egy személyes egyeztetés során védelembe vételt helyezett kilátásba.</p>
+<p data-course-source="385">A szülő ezt úgy értelmezte, mintha az intézkedésről már döntés született volna.</p>
+<p data-course-source="386"><strong>Mit kell ellenőrizni?</strong></p>
+<p data-course-source="387">Pontosan mi hangzott el?</p>
+<p data-course-source="388">A munkatárs szakmai javaslat lehetőségéről beszélt, vagy tényleges hatósági döntést állított?</p>
+<p data-course-source="389">Megindult-e már a gyámhatósági eljárás?</p>
+<p data-course-source="390">Van-e hivatalos határozat?</p>
+<p data-course-source="391"><strong>Tanulság:</strong> a szakmai javaslat és a hatósági döntés nem ugyanaz.</p>
+<h3 data-course-source="392">23.2. ESET – A SZÜLŐ VITATJA AZ EGYÜTTMŰKÖDÉS HIÁNYÁT</h3>
+<p data-course-source="393">Egy másik beszámoló szerint a gyermekjóléti iratban együttműködés hiányára hivatkoztak.</p>
+<p data-course-source="394">A szülő korábbi levelekkel rendelkezett.</p>
+<p data-course-source="395"><strong>Mit kell ellenőrizni?</strong></p>
+<p data-course-source="396">Milyen konkrét cselekményt kifogásoltak?</p>
+<p data-course-source="397">A korábbi levelek milyen körülményt igazolnak?</p>
+<p data-course-source="398">Volt-e más, nem teljesített kötelezettség?</p>
+<p data-course-source="399"><strong>Tanulság:</strong> az együttműködést tényleges cselekmények és bizonyítékok alapján kell megítélni.</p>
+<h3 data-course-source="400">23.3. ESET – VITATOTT KÖRNYEZETTANULMÁNY</h3>
+<p data-course-source="401">Egy harmadik beszámolóban a szülő szerint a környezettanulmány olyan megállapításokat tartalmazott, amelyek nem kapcsolódtak egyértelműen az ügy tárgyához.</p>
+<p data-course-source="402"><strong>Mit kell ellenőrizni?</strong></p>
+<p data-course-source="403">Milyen eljárásban készült a dokumentum?</p>
+<p data-course-source="404">Milyen célból gyűjtötték az adatokat?</p>
+<p data-course-source="405">A megállapítások relevánsak-e a gyermek helyzetének értékeléséhez?</p>
+<p data-course-source="406">A szülő nyilatkozata megfelelően szerepel-e az iratban?</p>
+<p data-course-source="407"><strong>Tanulság:</strong> a környezettanulmány tartalma vizsgálható, de a relevancia megítéléséhez az eljárás célját is ismerni kell.</p>
+<hr>
+<h2 id="resz-24" data-course-source="409">24. HÉT TÉVHIT A GYERMEKVÉDELMI ELJÁRÁSOKRÓL</h2>
+<p data-course-source="410"><strong>Első tévhit: „A családsegítő csak gyámhatósági határozattal kereshet meg.”</strong></p>
+<p data-course-source="411">Nem. A gyermekjóléti szolgálatnak önálló feladatai vannak.</p>
+<p data-course-source="412"><strong>Második tévhit: „A gyermekvédelmi jelzés automatikusan bizonyítja a veszélyeztetettséget.”</strong></p>
+<p data-course-source="413">Nem. A jelzést és az intézkedés feltételeit külön kell értékelni.</p>
+<p data-course-source="414"><strong>Harmadik tévhit: „A védelembe vétel azt jelenti, hogy elveszik a gyermeket.”</strong></p>
+<p data-course-source="415">Nem. A védelembe vétel önmagában nem érinti a szülő felügyeleti jogát.</p>
+<p data-course-source="416"><strong>Negyedik tévhit: „Ha azt írom, hogy együttműködöm, a gyámügy köteles megszüntetni az eljárást.”</strong></p>
+<p data-course-source="417">Nem. A tényleges együttműködés és a veszélyeztetettség kérdését is vizsgálni kell.</p>
+<p data-course-source="418"><strong>Ötödik tévhit: „A gyermekjóléti dokumentumok minden részét korlátozás nélkül megismerhetem.”</strong></p>
+<p data-course-source="419">Nem. A jelzések és egyes védett adatok esetében jogszabályi korlátok lehetnek.</p>
+<p data-course-source="420"><strong>Hatodik tévhit: „A gondozási-nevelési tervben bármit köteles vagyok automatikusan elfogadni.”</strong></p>
+<p data-course-source="421">Nem. A dokumentum tartalmát és az adott kötelezettség jogalapját meg kell ismerni. Ugyanakkor a jogszerűen elrendelt kötelezettségeket nem lehet következmények nélkül figyelmen kívül hagyni.</p>
+<p data-course-source="422"><strong>Hetedik tévhit: „Ha a népegészségügyi eljárás megszűnik, a gyámhatósági eljárás is automatikusan megszűnik.”</strong></p>
+<p data-course-source="423">Nem. A két eljárás jogilag elkülönül, bár az egyikben bekövetkezett releváns változás a másikban is jelentőséggel bírhat.</p>
+<hr>
+<h2 id="resz-25" data-course-source="425">25. A K.O. GYERMEKVÉDELMI AI-MÓDSZER</h2>
+<p data-course-source="426">A negyedik fejezetben megtanultuk a képzés egyik legfontosabb szabályát:</p>
+<p data-course-source="427"><strong>ELŐSZÖR KÉRDEZZEN AZ AI – CSAK UTÁNA ÍRJON!</strong></p>
+<p data-course-source="428">Gyermekvédelmi ügyekben ez különösen fontos.</p>
+<p data-course-source="429">Egy családsegítői megkeresésre ugyanis teljesen más válasz lehet megfelelő, mint egy már meghozott védelembe vételi határozatra.</p>
+<p data-course-source="430">Ezért az AI-nak először meg kell ismernie az eljárási helyzetet.</p>
+<h3 data-course-source="431">K.O. GYERMEKVÉDELMI HELYZETELEMZŐ PROMPT</h3>
+<blockquote data-course-source="432"><p>Magyarországon gyermekjóléti vagy gyámhatósági ügyben szeretnék segítséget kérni.</p><p>A célom, hogy jogszerűen, együttműködően és dokumentált módon képviseljem saját és gyermekem érdekeit.</p><p>Mielőtt jogi tanácsot adnál vagy hivatalos levelet írnál, először vizsgáld meg, milyen információk hiányoznak a pontos helyzetértékeléshez.</p><p>Tegyél fel legfeljebb hat célzott kérdést, A–E válaszlehetőségekkel.</p><p>Különösen vizsgáld meg:</p><p>1. Ki kereste meg a szülőt?<br>2. Gyermekjóléti kapcsolatfelvétel vagy gyámhatósági eljárás történt?<br>3. Milyen dokumentum érkezett?<br>4. Mikor történt a kézbesítés?<br>5. Van-e határidő vagy megjelenési kötelezettség?<br>6. Milyen konkrét veszélyeztető körülményre hivatkoznak?</p><p>A válaszaim után készíts helyzetértékelést.</p><p>Különítsd el a dokumentumokkal igazolt tényeket, a szülői nyilatkozatokat és a még tisztázandó körülményeket.</p><p>Ellenőrizd a Gyvt., az Ákr., a 149/1997. Korm. rendelet és a 15/1998. NM rendelet releváns szabályait.</p><p>Vizsgáld meg a lehetséges iratbetekintési, bizonyítási, nyilatkozattételi és jogorvoslati lehetőségeket.</p><p>Ne tekints automatikusan jogellenesnek minden gyermekvédelmi intézkedést.</p><p>Ne javasolj valótlan nyilatkozatot vagy az együttműködés indokolatlan megtagadását.</p><p>Hivatalos levelet csak a szükséges információk tisztázása után készíts.</p><p>A végén javasold a legmegfelelőbb jogszerű következő lépést.</p></blockquote>
+<p data-course-source="433">Ez a prompt segít elkerülni, hogy a szülő egy egyszerű gyermekjóléti kapcsolatfelvételt összekeverjen egy kötelező hatósági döntéssel.</p>
+<hr>
+<h2 id="resz-26" data-course-source="435">26. MIT TEGYEN A SZÜLŐ, HA HOLNAP GYÁMHATÓSÁGI TÁRGYALÁSA LESZ?</h2>
+<p data-course-source="436">Ebben a helyzetben már nincs értelme hosszadalmas, általános jogi elemzéssel kezdeni.</p>
+<p data-course-source="437">Az első feladat a sürgős teendők azonosítása.</p>
+<p data-course-source="438">A szülő ellenőrizze az idézést, annak kézbesítési dátumát és a tárgyalás időpontját.</p>
+<p data-course-source="439">Vegye elő a korábbi dokumentumokat.</p>
+<p data-course-source="440">Rendszerezze a lényeges bizonyítékokat.</p>
+<p data-course-source="441">Írja össze, mely tényállításokat kívánja pontosítani.</p>
+<p data-course-source="442">Ha valamely iratot nem ismer, jelezze az iratbetekintési igényét.</p>
+<p data-course-source="443">Ha tényleges akadályoztatás áll fenn, azt haladéktalanul és igazolható módon közölje.</p>
+<p data-course-source="444">A tárgyaláson törekedjen a pontos, tárgyszerű kommunikációra.</p>
+<p data-course-source="445">Ne tegyen valótlan nyilatkozatot.</p>
+<p data-course-source="446">Ne írjon alá olyan tartalmú nyilatkozatot, amelyet nem ért.</p>
+<p data-course-source="447">Ugyanakkor ne gondolja azt, hogy a megjelenés vagy a dokumentumok aláírásának általános megtagadása automatikusan előnyös.</p>
+<p data-course-source="448"><strong>A cél az, hogy a szülő az eljárásban ellenőrizhető, együttműködő és jogilag tudatos szereplőként jelenjen meg.</strong></p>
+<hr>
+<h2 id="resz-27" data-course-source="450">27. A HETEDIK FEJEZET LEGFONTOSABB TANULSÁGAI</h2>
+<p data-course-source="451">Ebben a fejezetben megismerted a gyermekjóléti és gyámhatósági rendszer alapvető működését.</p>
+<p data-course-source="452">Megtanultad megkülönböztetni a család- és gyermekjóléti szolgálatot, a gyermekjóléti központot és a gyámhatóságot.</p>
+<p data-course-source="453">Megismerted a gyermekvédelmi jelzőrendszer szerepét.</p>
+<p data-course-source="454">Megértetted a jelzőlapok és a zártan kezelendő adatok jelentőségét.</p>
+<p data-course-source="455">Megismerted a veszélyeztetettség jogi fogalmát.</p>
+<p data-course-source="456">Áttekintetted a családlátogatás, a környezettanulmány és az esetkonferencia szerepét.</p>
+<p data-course-source="457">Megtanultad, hogy a védelembe vétel nem azonos a gyermek családból történő kiemelésével.</p>
+<p data-course-source="458">Megismerted a védelembe vételi eljárás alapvető garanciáit, a gondozási-nevelési tervet és az intézkedés megszüntetésének lehetőségeit.</p>
+<h4 data-course-source="459">A hetedik fejezet öt K.O. alapelve</h4>
+<p data-course-source="460"><strong>1. Tudd, ki milyen feladatot lát el!</strong></p>
+<p data-course-source="461">A családsegítő, a gyermekjóléti központ és a gyámhatóság nem ugyanaz.</p>
+<p data-course-source="462"><strong>2. A veszélyeztetettség kérdését konkrét tények alapján vizsgáld!</strong></p>
+<p data-course-source="463">Az általános minősítések mögött meg kell keresni az ellenőrizhető körülményeket.</p>
+<p data-course-source="464"><strong>3. Ismerd meg az ügyedben keletkezett, számodra hozzáférhető dokumentumokat!</strong></p>
+<p data-course-source="465">Az iratbetekintés és az adatmegismerés fontos lehet.</p>
+<p data-course-source="466"><strong>4. Az együttműködésedet tényleges magatartással és dokumentumokkal igazold!</strong></p>
+<p data-course-source="467">Egyetlen nyilatkozat önmagában nem helyettesíti a jogszerű együttműködést.</p>
+<p data-course-source="468"><strong>5. A gyermekvédelmi intézkedéseket a megfelelő eljárásban és határidőben vitasd!</strong></p>
+<p data-course-source="469">A tényállási észrevétel, a felülvizsgálat és a jogorvoslat különböző jogi lehetőségek.</p>
+<h3 data-course-source="470">ZÁRÓ GONDOLAT</h3>
+<p data-course-source="471">A gyermekvédelmi eljárások különösen érzékenyek, mert a gyermek és a család életét közvetlenül érintik.</p>
+<p data-course-source="472">A szülő számára ezért fontos, hogy megértse a rendszer szereplőinek feladatait, saját jogait és kötelezettségeit.</p>
+<p data-course-source="473">Nem minden gyermekjóléti megkeresés jelent gyámhatósági eljárást.</p>
+<p data-course-source="474">Nem minden jelzés bizonyítja automatikusan a veszélyeztetettséget.</p>
+<p data-course-source="475">És nem minden gyermekvédelmi intézkedés jelenti a gyermek családból történő kiemelését.</p>
+<p data-course-source="476">Ugyanakkor a gyermekvédelmi szereplőknek törvényben meghatározott feladataik vannak, amelyeket a szülőnek is komolyan kell vennie.</p>
+<p data-course-source="477">A megfelelő hozzáállás a tényszerű, dokumentált és jogszerű ügykezelés.</p>
+<p data-course-source="478"><strong>A K.O. jogi önvédelem hetedik alapköve:</strong></p>
+<h2 id="resz-28" data-course-source="479">NE FÉLELEMBŐL, NE INDULATBÓL, HANEM TÉNYEK, BIZONYÍTÉKOK ÉS ELLENŐRZÖTT JOGSZABÁLYOK ALAPJÁN CSELEKEDJ!</h2>
+<hr>
+<h2 id="resz-29" data-course-source="481">28. FELHASZNÁLT ELSŐDLEGES JOGFORRÁSOK</h2>
+<h4 data-course-source="482">1997. évi XXXI. törvény – Gyvt.</h4>
+<p data-course-source="483"><strong>5. § n) pont:</strong> A veszélyeztetettség fogalma.</p>
+<p data-course-source="484"><strong>17. §:</strong> Gyermekvédelmi jelzőrendszer.</p>
+<p data-course-source="485"><strong>39–40/A. §:</strong> Gyermekjóléti szolgáltatás, család- és gyermekjóléti szolgálat és központ.</p>
+<p data-course-source="486"><strong>68. §:</strong> Védelembe vétel.</p>
+<p data-course-source="487"><strong>69. §:</strong> Védelembe vétel megszüntetése.</p>
+<p data-course-source="488"><strong>128–130/A. §:</strong> Meghallgatási, tényfeltárási és egyes különös gyermekvédelmi eljárási szabályok.</p>
+<p data-course-source="489">Forrás: Nemzeti Jogszabálytár, 2026. október 24-i időállapot.</p>
+<h4 data-course-source="490">149/1997. (IX. 10.) Korm. rendelet</h4>
+<p data-course-source="491"><strong>84. §:</strong> A védelembe vételi eljárás megindítása.</p>
+<p data-course-source="492"><strong>85. §:</strong> A veszélyeztetettség értékelése és a védelembe vétel feltételei.</p>
+<p data-course-source="493"><strong>86. §:</strong> A védelembe vételi tárgyalás.</p>
+<p data-course-source="494"><strong>87. §:</strong> A védelembe vételről szóló határozat tartalma.</p>
+<p data-course-source="495"><strong>Kapcsolódó rendelkezések:</strong> A védelembe vétel felülvizsgálata és megszüntetése.</p>
+<p data-course-source="496">Forrás: Nemzeti Jogszabálytár.</p>
+<h4 data-course-source="497">15/1998. (IV. 30.) NM rendelet</h4>
+<p data-course-source="498">A gyermekjóléti és gyermekvédelmi intézmények szakmai feladatai.</p>
+<p data-course-source="499"><strong>11. §:</strong> A gyermekvédelmi jelzéssel kapcsolatos egyes adatmegismerési korlátok.</p>
+<p data-course-source="500"><strong>11/A. §:</strong> Kiemelt veszélyeztető okra utaló körülmények.</p>
+<p data-course-source="501"><strong>31–33. §:</strong> Védelembe vételhez kapcsolódó gyermekjóléti feladatok és egyéni gondozási-nevelési terv.</p>
+<p data-course-source="502">Forrás: Nemzeti Jogszabálytár.</p>
+<h4 data-course-source="503">235/1997. (XII. 17.) Korm. rendelet</h4>
+<p data-course-source="504">A gyermekvédelmi szervek és szolgáltatók által kezelt személyes adatokra és nyilvántartásokra vonatkozó szabályok.</p>
+<p data-course-source="505">Forrás: Nemzeti Jogszabálytár.</p>
+<h4 data-course-source="506">2016. évi CL. törvény – Ákr.</h4>
+<p data-course-source="507"><strong>5–6. §:</strong> Ügyféli jogok, jóhiszeműség és együttműködés.</p>
+<p data-course-source="508"><strong>33–34. §:</strong> Iratbetekintés.</p>
+<p data-course-source="509"><strong>58–60. §:</strong> Idézés és megjelenési kötelezettség.</p>
+<p data-course-source="510"><strong>62. §:</strong> A tényállás tisztázása és bizonyítás.</p>
+<p data-course-source="511"><strong>80–81. §:</strong> Hatósági döntések.</p>
+<p data-course-source="512"><strong>114–118. §:</strong> Jogorvoslati szabályok.</p>
+<p data-course-source="513">Forrás: Nemzeti Jogszabálytár.</p>
+<h4 data-course-source="514">A K.O. projekt tudásbázisa</h4>
+<p data-course-source="515">A fejezetben figyelembe vettem a projektben szereplő, gyermekjóléti és gyámhatósági ügyekkel kapcsolatos esetleírásokat.</p>
+<p data-course-source="516">Különösen a következő visszatérő problémákat:</p>
+<p data-course-source="517">a gyermekjóléti megkeresés és a hatósági eljárás összekeverése; a családlátogatások és környezettanulmányok jogi természetének félreértése; a vitatott együttműködési megállapítások; a késedelmes idézések; valamint a gondozási-nevelési tervekkel kapcsolatos bizonytalanságok.</p>
+<p data-course-source="518">Ezeket oktatási példaként kezeljük, nem önmagukban bizonyított jogsértésként.</p>
+<p data-course-source="519"><strong>Fontos:</strong> a fejezet oktatási célú. Konkrét ügyben a hatályos jogszabályi időállapotot és a speciális eljárási szabályokat külön ellenőrizni kell. Súlyos gyermekvédelmi intézkedés vagy rövid jogorvoslati határidő esetén ügyvédi segítség indokolt.</p>
+<hr><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a></article></div></div>
+</main>
+
+
+<footer class="ftr" role="contentinfo">
+  <div class="container">
+    <div class="ftr__grid">
+      <div class="ftr__col ftr__about">
+        <h4>Az oldalról</h4>
+        <p>Tájékoztató jellegű, közérthető nyelven írt eljárási útmutató szülőknek, kötelező védőoltási ügyekre. Nem minősül jogi tanácsadásnak.</p>
+        <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>AKTÍV</span>
+      </div>
+      <div class="ftr__col">
+        <h4>Tartalom</h4>
+        <ul>
+          <li><a href="/#events">Események</a></li>
+          <li><a href="/alapkeret">Alapkeret</a></li>
+          <li><a href="/akcioterv">Akcióterv</a></li>
+          <li><a href="/alapmondatok">Alapmondatok</a></li>
+          <li><a href="/tudastar">Tudástár</a></li>
+          <li><a href="/manipulacio-anatomiaja">Kézikönyv</a></li>
+          <li><a href="/tanfolyam">Tanfolyam</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Segítség</h4>
+        <ul>
+          <li><a href="/#categories">Kategóriák</a></li>
+          <li><a href="/#institutions">Intézmények</a></li>
+          <li><a href="/tudastar#sulyossag">Súlyosságok</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Verzió</h4>
+        <ul>
+          <li><span class="mono" style="color: var(--color-text-subtle);">v2.0.0</span></li>
+          <li><span class="mono" style="color: var(--color-text-subtle);">Build 2026.06.02</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bottom">
+      <span>© 2026 Eljárási Térkép</span>
+      <span>Utolsó frissítés: 2026-06-02</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/script-v3.js"></script>
+</body>
+</html>
