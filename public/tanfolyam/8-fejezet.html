@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8. fejezet – NAV-végrehajtás és bírságok · Eljárási Térkép</title>
+<meta name="description" content="Szülői kötelező védőoltási eljárási térkép és információs oldal. Bizonyítható, jogszerű írásos együttműködés szülőknek.">
+<meta name="theme-color" content="#0F0F0F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles-v2.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Ugrás a tartalomra</a>
+
+
+<header class="hdr" role="banner">
+  <div class="container hdr__inner">
+    <a href="/" class="hdr__brand" aria-label="Eljárási Térkép - kezdőlap">
+      <span class="hdr__brand-glyph" aria-hidden="true">É</span>
+      <span>Eljárási Térkép</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Fő navigáció">
+      <a href="/" >Kezdőlap</a>
+      <a href="/#events" >Eseménytérkép</a>
+      <a href="/alapkeret" >Alapkeret</a>
+      <a href="/akcioterv" >Akcióterv</a>
+      <a href="/alapmondatok" >Alapmondatok</a>
+      <a href="/tudastar" >Tudástár</a>
+      <a href="/manipulacio-anatomiaja" >Kézikönyv</a>
+      <div class="course-nav"><a href="/tanfolyam" aria-current="page">Tanfolyam</a>
+        <details><summary aria-label="Tanfolyam almenü">▾</summary><div class="course-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a><a href="/tanfolyam/6-fejezet">6. fejezet – Népegészségügyi hatósági eljárások</a><a href="/tanfolyam/7-fejezet">7. fejezet – Gyermekjólét, családsegítő és gyámhatóság</a><a href="/tanfolyam/8-fejezet">8. fejezet – NAV-végrehajtás és bírságok</a></div></details>
+      </div>
+    </nav>
+    <button class="hdr__menu-btn" type="button" aria-label="Menü megnyitása" aria-expanded="false" onclick="toggleMenu()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-nav" class="is-hidden" style="background: var(--color-surface-2); border-bottom: 1px solid var(--color-border); padding: var(--sp-4);">
+    <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+      <a href="/" style="color: var(--color-text); font-weight: 500;">Kezdőlap</a>
+      <a href="/#events" style="color: var(--color-text); font-weight: 500;">Eseménytérkép</a>
+      <a href="/alapkeret" style="color: var(--color-text); font-weight: 500;">Alapkeret</a>
+      <a href="/akcioterv" style="color: var(--color-text); font-weight: 500;">Akcióterv</a>
+      <a href="/alapmondatok" style="color: var(--color-text); font-weight: 500;">Alapmondatok</a>
+      <a href="/tudastar" style="color: var(--color-text); font-weight: 500;">Tudástár</a>
+      <a href="/manipulacio-anatomiaja"  style="color: var(--color-text); font-weight: 500;">Kézikönyv</a>
+      <a href="/tanfolyam" aria-current="page" style="color: var(--color-text); font-weight: 500;">Tanfolyam</a>
+      <div class="course-mobile-submenu"><a href="/tanfolyam/1-fejezet">1. fejezet – A szülői jogi önvédelem alapjai</a><a href="/tanfolyam/2-fejezet">2. fejezet – Hivatalos iratok, határidők és kézbesítés</a><a href="/tanfolyam/3-fejezet">3. fejezet – Bizonyítékok, dokumentáció és iratbetekintés</a><a href="/tanfolyam/4-fejezet">4. fejezet – Professzionális hivatalos levelezés AI segítségével</a><a href="/tanfolyam/5-fejezet">5. fejezet – Védőnő, gyermekorvos és iskolaorvos</a><a href="/tanfolyam/6-fejezet">6. fejezet – Népegészségügyi hatósági eljárások</a><a href="/tanfolyam/7-fejezet">7. fejezet – Gyermekjólét, családsegítő és gyámhatóság</a><a href="/tanfolyam/8-fejezet">8. fejezet – NAV-végrehajtás és bírságok</a></div>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('mobile-nav');
+      m.classList.toggle('is-hidden');
+      const open = !m.classList.contains('is-hidden');
+      const button = document.querySelector('.hdr__menu-btn');
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
+    }
+  </script>
+</header>
+
+
+<main id="main">
+
+    <div class="container course-reader"><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a>
+    <section class="course-video" aria-label="8. fejezet videós összefoglalója"><iframe src="https://www.youtube-nocookie.com/embed/-BfbBW3OkgU" title="K.O. Szülői Jogi Önvédelmi Akadémia – 8. fejezet videós összefoglaló" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a href="https://www.youtube.com/watch?v=-BfbBW3OkgU" target="_blank" rel="noopener noreferrer">Videó megnyitása a YouTube-on ↗</a></section><div class="course-layout course-layout--plain">
+    <article class="course-prose"><header><p>8. FEJEZET</p><h1>NAV-végrehajtás és bírságok</h1></header><p data-course-source="0">Tanulási szint: Középhaladó–haladó Becsült tanulási idő: 30–35 perc Kapcsolódó videó: 10 perces NotebookLM-összefoglaló</p>
+<p data-course-source="1">Képzelj el egy családot!</p>
+<p data-course-source="2">A gyermek egyik kötelező védőoltása elmaradt.</p>
+<p data-course-source="3">A szülők korábban leveleztek a védőnővel, a gyermekorvossal és a népegészségügyi hatósággal.</p>
+<p data-course-source="4">A hatóság végül kötelezést tartalmazó határozatot hozott.</p>
+<p data-course-source="5">A szülő vitatta a döntés egyes megállapításait, és jogi lépéseket is kezdeményezett.</p>
+<p data-course-source="6">Néhány hónappal később újabb hivatalos levél érkezik.</p>
+<p data-course-source="7">A feladó ezúttal a Nemzeti Adó- és Vámhivatal, vagyis a NAV.</p>
+<p data-course-source="8">A levélben végrehajtási eljárásról, teljesítési kötelezettségről vagy bírságról írnak.</p>
+<p data-course-source="9">A szülő megijed.</p>
+<p data-course-source="10">Hiszen ő nem adótartozás miatt került kapcsolatba a hatóságokkal.</p>
+<p data-course-source="11">Hogyan kerülhetett egy egészségügyi ügy a NAV-hoz?</p>
+<p data-course-source="12">A NAV valóban kiszabhat újabb bírságot?</p>
+<p data-course-source="13">Ugyanazt a kötelezettséget próbálják ismét érvényesíteni?</p>
+<p data-course-source="14">Mit jelent az, hogy meghatározott cselekmény végrehajtása?</p>
+<p data-course-source="15">És mi történik, ha a szülő vitatja a korábbi hatósági határozatot?</p>
+<p data-course-source="16">Ezek komoly kérdések.</p>
+<p data-course-source="17">A megfelelő válaszhoz azonban először egy alapvető különbséget kell megértenünk.</p>
+<p data-course-source="18">A NAV-nál folyó végrehajtási eljárás nem feltétlenül ugyanannak a jogvitának a megismétlése, amely korábban a népegészségügyi hatóságnál zajlott.</p>
+<p data-course-source="19">A NAV sok esetben nem az eredeti egészségügyi kötelezettség jogszerűségéről dönt.</p>
+<p data-course-source="20">Hanem egy másik hatóság végrehajtható döntésének érvényesítésében vesz részt.</p>
+<p data-course-source="21">Ezért különösen fontos, hogy a szülő pontosan tudja:</p>
+<p data-course-source="22">Ki hozta a kötelezést? Mit kell végrehajtani? És milyen jogszabály alapján jár el a NAV?</p>
+<p data-course-source="23">Ez a fejezet erre tanít meg.</p>
+<p data-course-source="24">A NAV feladatköre nem korlátozódik a személyi jövedelemadó vagy más adók beszedésére.</p>
+<p data-course-source="25">A NAV különböző jogszabályok alapján más hatóságok által megállapított pénzfizetési kötelezettségek végrehajtásában is részt vehet.</p>
+<p data-course-source="26">Bizonyos esetekben pedig nem pénzfizetésre irányuló kötelezettségek végrehajtását is foganatosíthatja.</p>
+<p data-course-source="27">Ennek egyik legfontosabb jogszabálya:</p>
+<p data-course-source="28">2017. évi CLIII. törvény az adóhatóság által foganatosítandó végrehajtási eljárásokról.</p>
+<p data-course-source="29">Rövidítése: Avt.</p>
+<p data-course-source="30">A törvény 1. §-a meghatározza azokat az eljárásokat, amelyekben az adóhatósági végrehajtási szabályokat alkalmazni kell.</p>
+<p data-course-source="31">Az Avt. 29. §-a pedig felsorolja a végrehajtható okiratokat.</p>
+<p data-course-source="32">Ide tartozhatnak más hatóságok megfelelően végrehajtható döntései is.</p>
+<p data-course-source="33">A NAV tehát nem kizárólag a saját maga által megállapított követeléseket hajthatja végre.</p>
+<p data-course-source="34">Ezért a legelső kérdés:</p>
+<p data-course-source="35">A NAV saját hatáskörében hozott döntést, vagy más hatóság végrehajtási megkeresése alapján jár el?</p>
+<p data-course-source="36">A kettő nem ugyanaz.</p>
+<p data-course-source="37">Ha a NAV más hatóság döntését hajtja végre, akkor az eredeti döntést meghozó szerv és a végrehajtást foganatosító NAV eltérő feladatokat lát el.</p>
+<p data-course-source="38">Ez a jogorvoslatok szempontjából is döntő különbség.</p>
+<p data-course-source="39">Egy kötelező védőoltással összefüggő ügyben akár három elkülönülő jogi szakasz is megjelenhet.</p>
+<p data-course-source="40">A népegészségügyi hatóság vizsgálja az oltási kötelezettség teljesítésével kapcsolatos körülményeket.</p>
+<p data-course-source="41">Megállapíthatja a releváns tényállást.</p>
+<p data-course-source="42">Jogszabályban meghatározott feltételekkel kötelezést tartalmazó határozatot hozhat.</p>
+<p data-course-source="43">Ebben a szakaszban elsősorban az Eütv., a 18/1998. NM rendelet és az Ákr. rendelkezései jelentősek.</p>
+<p data-course-source="44">Ha a hatóság kötelező döntést hozott, külön kérdés, hogy annak végrehajtási feltételei fennállnak-e.</p>
+<p data-course-source="45">Az Ákr. 132. §-a tartalmazza a végrehajtható döntések alapvető szabályát.</p>
+<p data-course-source="46">A végleges döntésben foglalt, nem teljesített kötelezés főszabály szerint végrehajtható.</p>
+<p data-course-source="47">Speciális jogszabály azonban ettől eltérő rendelkezést tartalmazhat.</p>
+<p data-course-source="48">Az érintett ügyben ezért a döntés véglegességét, a teljesítési határidőt és az esetleges végrehajtási akadályokat együttesen kell ellenőrizni.</p>
+<p data-course-source="49">Ebben a szakaszban már az a kérdés, hogy a fennálló végrehajtható kötelezettséget hogyan lehet érvényesíteni.</p>
+<p data-course-source="50">Itt kerülhet előtérbe a NAV.</p>
+<p data-course-source="51">A három szakasz egymáshoz kapcsolódik, de eltérő eljárási szabályokat és jogorvoslati lehetőségeket érinthet.</p>
+<p data-course-source="52">A K.O. első NAV-alapelve: soha ne keverd össze az alapeljárást, a végrehajtás elrendelését és a végrehajtás foganatosítását!</p>
+<p data-course-source="53">A bírság szó önmagában nem elegendő ahhoz, hogy megértsük a dokumentum jogi természetét.</p>
+<p data-course-source="54">Ugyanis több különböző bírságtípus létezhet.</p>
+<p data-course-source="55">Ezeknek eltérő a céljuk és a jogalapjuk.</p>
+<p data-course-source="56">Az egészségügyi bírság egyik legfontosabb jogszabályi alapja az 1991. évi XI. törvény 13/A. §-a.</p>
+<p data-course-source="57">Az egészségügyi államigazgatási szerv meghatározott jogszabálysértések esetén egészségügyi bírságot szabhat ki.</p>
+<p data-course-source="58">A törvény alapján természetes személy is bírságolható.</p>
+<p data-course-source="59">A bírság általános törvényi kerete 30 000 forinttól 5 millió forintig terjed.</p>
+<p data-course-source="60">Ez azonban nem jelenti azt, hogy minden oltással kapcsolatos ügyben automatikusan bírság jár.</p>
+<p data-course-source="61">A jogsértés megállapításának és a bírság összegének törvényi feltételeit külön kell vizsgálni.</p>
+<p data-course-source="62">Az eljárási bírság más jogi kategória.</p>
+<p data-course-source="63">A hatósági vagy végrehajtási eljárásban előírt kötelezettségek megszegéséhez kapcsolódhat.</p>
+<p data-course-source="64">Például megjelenési vagy együttműködési kötelezettség megsértéséhez.</p>
+<p data-course-source="65">A NAV végrehajtási eljárásában az Avt. 22. §-a külön szabályozza az eljárási bírságot.</p>
+<p data-course-source="66">A végrehajtási költség nem azonos a bírsággal.</p>
+<p data-course-source="67">A végrehajtási eljárás során költségek, költségminimum vagy költségátalány keletkezhetnek.</p>
+<p data-course-source="68">Ezeket a törvény külön szabályozza.</p>
+<p data-course-source="69">Mert nem lehet ugyanazzal a jogi érveléssel minden pénzfizetési kötelezettséget megtámadni.</p>
+<p data-course-source="70">Először mindig meg kell állapítani:</p>
+<p data-course-source="71">Pontosan milyen jogcímen, melyik szerv és melyik döntés alapján követel pénzt?</p>
+<p data-course-source="72">Most következik a fejezet egyik legfontosabb fogalma.</p>
+<p data-course-source="73">Az Avt. 122. §-a a meghatározott cselekmény végrehajtásával foglalkozik.</p>
+<p data-course-source="74">Mit jelent ez?</p>
+<p data-course-source="75">Egyszerűen megfogalmazva:</p>
+<p data-course-source="76">Nem pénz megfizetésére, hanem valamely konkrét cselekvésre, magatartásra, annak eltűrésére vagy abbahagyására irányuló kötelezettséget.</p>
+<p data-course-source="77">Ilyen lehet például egy hatósági döntésben előírt meghatározott tevékenység elvégzése.</p>
+<p data-course-source="78">Az Avt. 122. § (1) bekezdése szerint, ha a kötelezett nem teljesíti önként a meghatározott cselekményt, a behajtást kérő hatóság megkeresi az állami adó- és vámhatóságot a végrehajtás érdekében.</p>
+<p data-course-source="79">Ez fontos rendelkezés.</p>
+<p data-course-source="80">De önmagában nem válaszolja meg, hogy egy adott egészségügyi kötelezés milyen módon hajtható végre.</p>
+<p data-course-source="81">Az egészségügyi beavatkozásokra további törvényi és szakmai követelmények is vonatkoznak.</p>
+<p data-course-source="82">Ezért egy kötelező oltással kapcsolatos ügyben mindig külön vizsgálni kell a végrehajtható döntés pontos tartalmát és a végrehajtás alkalmazható jogszabályi feltételeit.</p>
+<p data-course-source="83">Nem lehet pusztán az Avt. általános rendelkezéseiből arra következtetni, hogy a NAV bármely egészségügyi beavatkozást korlátlanul elvégezhet vagy elvégeztethet.</p>
+<p data-course-source="84">A K.O. projekt korábbi eseteiben gyakran előkerül az Avt. 122. §-a.</p>
+<p data-course-source="85">Ezért nézzük meg részletesebben!</p>
+<p data-course-source="86">A törvény több lehetséges végrehajtási lépést szabályoz.</p>
+<p data-course-source="87">Az Avt. 122. § (2) bekezdése alapján a NAV főszabály szerint felhívja a kötelezettet az önkéntes teljesítésre.</p>
+<p data-course-source="88">Ezzel együtt tájékoztatást ad a teljesítés elmulasztásának lehetséges következményeiről.</p>
+<p data-course-source="89">Ha az önkéntes teljesítés elmarad, a NAV a törvényben meghatározott feltételekkel eljárási bírságot szabhat ki.</p>
+<p data-course-source="90">Az Avt. 122. § (3) bekezdése az Avt. 22. §-ára utal.</p>
+<p data-course-source="91">A bírságot kiszabó végzésben újabb teljesítési határidőt is meg kell határozni.</p>
+<p data-course-source="92">Az Avt. 122. § (5) bekezdése szerint, ha a kötelezett az előző végzésben meghatározott határidőben sem teljesít, az eljárási bírság egy alkalommal ismételten kiszabható.</p>
+<p data-course-source="93">Ez valódi jogszabályi korlát.</p>
+<p data-course-source="94">Ugyanabban a meghatározott cselekmény végrehajtására irányuló eljárásban az ismételt bírságolásnak törvényi keretei vannak.</p>
+<p data-course-source="95">De figyelem!</p>
+<p data-course-source="96">Ebből nem következik, hogy az érintett személlyel szemben soha többé nem indulhat másik eljárás, vagy hogy más jogcímen semmilyen szankció nem alkalmazható.</p>
+<p data-course-source="97">Az eljárások jogalapját és a tényleges kötelezettségeket külön kell vizsgálni.</p>
+<p data-course-source="98">Az Avt. 122. § (6) bekezdése meghatározott feltételekkel további végrehajtási intézkedéseket tesz lehetővé.</p>
+<p data-course-source="99">A törvény az ismételt eredménytelen bírságolás mellett külön kezeli azokat a helyzeteket, amikor az életet, egészséget vagy testi épséget közvetlenül veszélyeztető körülmények megszüntetése nem tűr halasztást.</p>
+<p data-course-source="100">Ezeknek a feltételeknek az alkalmazhatóságát mindig az adott ügyben kell ellenőrizni.</p>
+<p data-course-source="101">Az Avt. 122. §-a tehát nem általános bírságmentességet biztosít, hanem a meghatározott cselekmény végrehajtásának jogszabályi rendjét állapítja meg.</p>
+<p data-course-source="102">Az Avt. 22. §-a külön szabályozza a végrehajtási eljárásban kiszabható eljárási bírság összegét.</p>
+<p data-course-source="103">A törvény alapján természetes személlyel szemben az első jogsértés esetén legfeljebb 200 000 forintos eljárási bírság szabható ki az ott meghatározott feltételek szerint.</p>
+<p data-course-source="104">Ismételt jogsértés esetén a bírság felső határa természetes személynél 500 000 forint lehet.</p>
+<p data-course-source="105">Ezek felső határok.</p>
+<p data-course-source="106">Nem automatikusan kiszabandó összegek.</p>
+<p data-course-source="107">A bírsághoz megfelelő jogalap és megállapított jogsértés szükséges.</p>
+<p data-course-source="108">Ha a szülő bírságot kiszabó NAV-végzést kap, vizsgálja meg, hogy a NAV melyik rendelkezésre hivatkozik.</p>
+<p data-course-source="109">Az Avt. 22. §-ára?</p>
+<p data-course-source="110">Az Avt. 122. §-ára?</p>
+<p data-course-source="111">Vagy más jogszabályra?</p>
+<p data-course-source="112">Azt is ellenőrizni kell, hogy pontosan milyen magatartást értékeltek jogsértésként.</p>
+<p data-course-source="113">Az ügyben első bírságról vagy ismételt bírságról van szó?</p>
+<p data-course-source="114">Milyen korábbi határidőt állapítottak meg?</p>
+<p data-course-source="115">A kötelezett kapott-e megfelelő értesítést?</p>
+<p data-course-source="116">A bírság összegének ellenőrzése mellett legalább ugyanilyen fontos a bírság jogcímének és ténybeli alapjának vizsgálata.</p>
+<p data-course-source="117">A projektben összegyűjtött tapasztalatok között többször szerepel az Avt. 124. §-a.</p>
+<p data-course-source="118">Ez a rendelkezés valóban foglalkozik a meghatározott cselekmény végrehajtásának eredménytelenségével.</p>
+<p data-course-source="119">Az Avt. 124. § (4) bekezdése meghatározott esetekben előírja a végrehajtás megszüntetését.</p>
+<p data-course-source="120">Ilyen körülmény lehet, ha a cselekmény kizárólag személyesen a kötelezett által végezhető el, és a törvényben meghatározott eljárás eredménytelen maradt.</p>
+<p data-course-source="121">Szintén jelentősége lehet annak, ha a végrehajtáshoz közreműködő szervezet nem vehető igénybe, és a további végrehajtási intézkedések sem vezetnek eredményre.</p>
+<p data-course-source="122">A törvény ilyenkor a végrehajtás megszüntetését szabályozza.</p>
+<p data-course-source="123">A végrehajtási eljárás megszüntetése nem feltétlenül azonos az eredeti hatósági kötelezettség megszűnésével.</p>
+<p data-course-source="124">Ezt minden szülőnek meg kell értenie.</p>
+<p data-course-source="125">Ha a NAV valamely végrehajtási eljárást eredménytelenség miatt megszüntet, abból önmagában még nem következik, hogy az eredeti népegészségügyi határozat hatályát vesztette.</p>
+<p data-course-source="126">A végrehajtási eljárás és az alapdöntés eltérő jogi kérdések.</p>
+<p data-course-source="127">A végrehajtás megszüntetése után felmerülő esetleges új intézkedéseket a konkrét jogszabályi feltételek alapján kell értékelni.</p>
+<p data-course-source="128">Nem állítható általánosan, hogy minden újabb eljárás jogellenes lenne.</p>
+<p data-course-source="129">Ugyanakkor egy új intézkedés jogalapja, célja és az esetleges ismételt szankciók törvényessége vizsgálható.</p>
+<p data-course-source="130">A 124/A. § további megszüntetési okokat tartalmaz.</p>
+<p data-course-source="131">Ezek közé tartozik például, ha a meghatározott cselekményt megfelelően teljesítették.</p>
+<p data-course-source="132">A törvény az elévüléshez, az eljárás eredménytelenségéhez és más meghatározott körülményekhez is megszüntetési jogkövetkezményt kapcsolhat.</p>
+<p data-course-source="133">A megfelelő jogi lépéshez azonban mindig meg kell állapítani, hogy a törvényben szereplő konkrét feltétel valóban fennáll-e.</p>
+<p data-course-source="134">A NAV meghatározott cselekmény végrehajtása érdekében jár el.</p>
+<p data-course-source="135">Időközben az eredeti kötelezettség teljesítését a behajtást kérő hatóság elfogadja.</p>
+<p data-course-source="136">Ilyenkor indokolt lehet a teljesítésről szóló dokumentumot a NAV rendelkezésére bocsátani, és kérni az eljárás megfelelő lezárását.</p>
+<p data-course-source="137">A szülő úgy tudja, hogy a NAV korábban eredménytelenség miatt lezárt egy eljárást.</p>
+<p data-course-source="138">Később ismételt megkeresés érkezik.</p>
+<p data-course-source="139">Ilyenkor először azonosítani kell, hogy valóban ugyanarról a kötelezettségről és végrehajtási ügyről van-e szó.</p>
+<p data-course-source="140">Meg kell vizsgálni a korábbi megszüntetés pontos jogalapját.</p>
+<p data-course-source="141">A következő kérdés az, hogy az újabb megkeresés milyen jogszabályi rendelkezésen alapul.</p>
+<p data-course-source="142">A jogellenesség nem feltételezhető automatikusan. De az eljárási előzmények és az új döntés jogalapja ellenőrizhető.</p>
+<p data-course-source="143">Most következik a fejezet egyik legfontosabb gyakorlati része.</p>
+<p data-course-source="144">A NAV végrehajtási intézkedéseivel szemben az egyik alapvető jogvédelmi eszköz a végrehajtási kifogás.</p>
+<p data-course-source="145">Ennek szabályait az Avt. 24–27. §-ai tartalmazzák.</p>
+<p data-course-source="146">Akkor, ha a végrehajtási eljárás során valamely végrehajtási intézkedést vagy annak elmulasztását jogsértőnek tartja az arra jogosult érintett.</p>
+<p data-course-source="147">Például felmerülhet, hogy a végrehajtó szerv a törvényben meghatározott feltételek hiányában alkalmazott valamely intézkedést.</p>
+<p data-course-source="148">A kifogásnak konkrétan meg kell jelölnie a sérelmezett cselekményt.</p>
+<p data-course-source="149">Nem elegendő általánosságban kijelenteni:</p>
+<p data-course-source="150">„Nem értek egyet a NAV eljárásával.”</p>
+<p data-course-source="151">Azt is meg kell indokolni, hogy melyik intézkedés milyen okból jogsértő.</p>
+<p data-course-source="152">Az Avt. 24. §-a alapján a végrehajtási kifogást főszabály szerint a sérelmezett intézkedésről vagy annak elmulasztásáról való tudomásszerzéstől számított 15 napon belül kell előterjeszteni.</p>
+<p data-course-source="153">A törvény végső időkorlátként 6 hónapot állapít meg az intézkedéshez, illetve annak elmaradásához kapcsolódóan.</p>
+<p data-course-source="154">Ez nem azt jelenti, hogy az érintett általában hat hónapig várhat a kifogással.</p>
+<p data-course-source="155">A tizenöt napos határidőt is figyelembe kell venni.</p>
+<p data-course-source="156">A végrehajtást foganatosító elsőfokú adóhatósághoz.</p>
+<p data-course-source="157">Az Avt. 26. §-a szabályozza a kifogás elbírálásának rendjét.</p>
+<p data-course-source="158">A kifogást a törvényben meghatározott feltételekkel a felettes adóhatóság bírálja el.</p>
+<p data-course-source="159">A K.O. második NAV-alapelve: a végrehajtási kifogásnak legyen konkrét tárgya, jogi indoka és bizonyítéka!</p>
+<p data-course-source="160">Ez az egyik legveszélyesebb félreértés.</p>
+<p data-course-source="161">Nem szabad automatikusan azt feltételezni, hogy a végrehajtási kifogás benyújtásával minden végrehajtási intézkedés leáll.</p>
+<p data-course-source="162">Az Avt. 27. §-a főszabály szerint nem biztosít általános halasztó hatályt a végrehajtási kifogásnak.</p>
+<p data-course-source="163">A törvény meghatározott kivételeket tartalmaz, például egyes árverési és foglalási helyzetekre.</p>
+<p data-course-source="164">Ezért ha a szülő kifogást nyújt be, külön kell ellenőriznie, hogy van-e a folyamatban lévő végrehajtásra ható jogszabályi rendelkezés vagy felfüggesztő döntés.</p>
+<p data-course-source="165">A kifogás benyújtása és a végrehajtás tényleges szünetelése vagy felfüggesztése nem ugyanaz.</p>
+<p data-course-source="166">Tegyük fel, hogy a szülő végrehajtási kifogást terjeszt elő.</p>
+<p data-course-source="167">Azt gondolja, hogy ezzel a NAV minden további intézkedése automatikusan megszűnik.</p>
+<p data-course-source="168">Közben azonban újabb végrehajtási cselekmény történik.</p>
+<p data-course-source="169">A szülő meglepődik.</p>
+<p data-course-source="170">A probléma abból adódhat, hogy tévesen értelmezte a kifogás joghatását.</p>
+<p data-course-source="171">A megfelelő módszer mindig az alkalmazandó halasztó hatály és az esetleges felfüggesztés külön ellenőrzése.</p>
+<p data-course-source="172">Nem minden NAV-os döntéssel szemben végrehajtási kifogás a megfelelő jogi eszköz.</p>
+<p data-course-source="173">A törvény egyes határozatokkal és végzésekkel szemben önálló fellebbezési lehetőséget is biztosít.</p>
+<p data-course-source="174">Az Avt. 28. §-a meghatározza a végrehajtási eljárásban önállóan fellebbezhető végzések körét.</p>
+<p data-course-source="175">Ilyen lehet többek között a végrehajtási kifogást elbíráló vagy visszautasító végzés.</p>
+<p data-course-source="176">A NAV hivatalos, 2026. július 15-én közzétett tájékoztatója szerint a törvényben meghatározott végrehajtási határozatokkal szembeni fellebbezés általános határideje 15 nap.</p>
+<p data-course-source="177">A pontos szabályt mindig a konkrét döntés alapján kell megállapítani.</p>
+<p data-course-source="178">Mert egy végrehajtási intézkedés kifogásolása és egy bírságot kiszabó végzés megtámadása eltérő jogi helyzet lehet.</p>
+<p data-course-source="179">A beadvány elnevezése helyett a megfelelő jogorvoslati lehetőséget kell azonosítani.</p>
+<p data-course-source="180">A K.O. módszerben nem minden NAV-levélre írunk végrehajtási kifogást. Először azt vizsgáljuk meg, milyen döntés vagy intézkedés ellen kívánunk fellépni.</p>
+<p data-course-source="181">Ez az egyik legösszetettebb helyzet.</p>
+<p data-course-source="182">Tegyük fel, hogy a népegészségügyi hatóság oltási kötelezést tartalmazó határozatot hozott.</p>
+<p data-course-source="183">A szülő a határozat ellen közigazgatási pert indított.</p>
+<p data-course-source="184">Közben NAV-végrehajtási eljárás is megindult.</p>
+<p data-course-source="185">A szülő úgy gondolja, hogy a per miatt a NAV-nak azonnal le kell állnia.</p>
+<p data-course-source="186">Ez azonban nem minden esetben igaz.</p>
+<p data-course-source="187">A közigazgatási per megindítása főszabály szerint önmagában nem biztosít általános halasztó hatályt.</p>
+<p data-course-source="188">A közigazgatási perrendtartás alapján azonban meghatározott feltételekkel azonnali jogvédelem, ezen belül halasztó hatály elrendelése kérhető.</p>
+<p data-course-source="189">A Kp. 50–52. §-ai ezért különösen fontosak.</p>
+<p data-course-source="190">A keresetlevelet valóban benyújtották?</p>
+<p data-course-source="191">Melyik határozatot támadták meg?</p>
+<p data-course-source="192">Kértek-e azonnali jogvédelmet?</p>
+<p data-course-source="193">Született-e bírósági döntés a halasztó hatályról?</p>
+<p data-course-source="194">Az adott végrehajtási eljárásra vonatkozik-e a döntés?</p>
+<p data-course-source="195">A végrehajtást foganatosító szerv tudomást szerzett-e róla?</p>
+<p data-course-source="196">Ez utóbbi kérdés gyakorlati szempontból különösen lényeges.</p>
+<p data-course-source="197">Ha bírósági döntés akadályozza a végrehajtást, annak megfelelő dokumentálása szükséges.</p>
+<p data-course-source="198">A K.O. harmadik NAV-alapelve: a folyamatban lévő jogvita és a végrehajtásra ténylegesen kiható jogi döntés nem feltétlenül ugyanaz.</p>
+<p data-course-source="199">Igen, meghatározott törvényi feltételek mellett.</p>
+<p data-course-source="200">Az Avt. 15. §-a szabályozza a végrehajtási eljárás felfüggesztését.</p>
+<p data-course-source="201">A törvény bizonyos esetekben lehetővé teszi, hogy az adóhatóság hivatalból vagy megfelelő kérelem alapján felfüggessze a végrehajtást.</p>
+<p data-course-source="202">Például jelentősége lehet annak, ha a fizetési kötelezettséget megállapító döntés megváltoztatása vagy megsemmisítése várható.</p>
+<p data-course-source="203">Kivételes esetben a kötelezett méltányolható körülményeire is lehet hivatkozni.</p>
+<p data-course-source="204">A törvény azonban ehhez megfelelő feltételeket kapcsol.</p>
+<p data-course-source="205">Ezért egy általános mondat, miszerint „kérem a végrehajtás felfüggesztését, mert nem értek egyet a követeléssel”, nem feltétlenül elegendő.</p>
+<p data-course-source="206">Meg kell határozni a felfüggesztés konkrét jogalapját.</p>
+<p data-course-source="207">Az azt alátámasztó körülményeket lehetőség szerint igazolni kell.</p>
+<p data-course-source="208">Fontos továbbá, hogy a végrehajtás szünetelése, felfüggesztése és megszüntetése különböző jogi helyzetek.</p>
+<p data-course-source="209">A hozzájuk kapcsolódó feltételek és joghatások eltérhetnek.</p>
+<p data-course-source="210">A NAV-eljárások egyik gyakorlati kockázata a pénzügyi teher.</p>
+<p data-course-source="211">Előfordulhat, hogy valaki a megállapított bírságot vagy más fizetési kötelezettséget nem tudja egy összegben teljesíteni.</p>
+<p data-course-source="212">Ilyenkor érdemes megvizsgálni a fizetési kedvezmények lehetőségét.</p>
+<p data-course-source="213">A NAV 2026. október 1-jén frissített hivatalos tájékoztatója részletesen ismerteti a magánszemélyeknek és egyéni vállalkozóknak engedélyezhető fizetési kedvezményeket.</p>
+<p data-course-source="214">Ilyen lehet például a részletfizetés vagy a fizetési halasztás.</p>
+<p data-course-source="215">Meghatározott feltételekkel a tartozás mérséklése vagy elengedése is felmerülhet.</p>
+<p data-course-source="216">Ez azonban nem minden tartozásnál és nem automatikusan lehetséges.</p>
+<p data-course-source="217">Részletfizetés: a tartozást több részletben kell teljesíteni.</p>
+<p data-course-source="218">Fizetési halasztás: a teljesítés későbbi időpontra kerülhet.</p>
+<p data-course-source="219">Mérséklés: megfelelő törvényi feltételek fennállása esetén csökkenhet a fizetendő összeg.</p>
+<p data-course-source="220">Elengedés: különösen meghatározott feltételek mellett a fizetési kötelezettség megszűnhet.</p>
+<p data-course-source="221">A megfelelő lehetőség az ügy típusától és a tartozás jogcímétől függ.</p>
+<p data-course-source="222">Egy fizetési kedvezményi kérelem nem feltétlenül jelenti azt, hogy a bírságot kiszabó döntés jogszerűségét is megtámadták.</p>
+<p data-course-source="223">A pénzügyi teljesítés megkönnyítése és a hatósági döntés jogszerűségének vitatása külön kérdés.</p>
+<p data-course-source="224">A fizetési kedvezmény nem automatikus jog, hanem jogszabályban meghatározott feltételek mellett engedélyezhető lehetőség.</p>
+<p data-course-source="225">A pénzkövetelés végrehajtása során a NAV különböző intézkedéseket alkalmazhat.</p>
+<p data-course-source="226">Ilyen lehet például a hatósági átutalási megbízás, amelyet a köznyelvben gyakran inkasszónak neveznek.</p>
+<p data-course-source="227">Szintén felmerülhet jövedelemletiltás vagy más törvényes végrehajtási eszköz.</p>
+<p data-course-source="228">Ezeknek pontos feltételeik és korlátaik vannak.</p>
+<p data-course-source="229">A végrehajtási eljárásban a követelés összegének, jogcímének, valamint a végrehajtás alá vonható vagyonnak is jelentősége van.</p>
+<p data-course-source="230">Fontos azonban elkerülni egy súlyos hibát.</p>
+<p data-course-source="231">A végrehajtás elől történő vagyoneltitkolás vagy a hatóság félrevezetése nem jogszerű védekezési módszer.</p>
+<p data-course-source="232">A megfelelő lehetőségek közé tartozhat a végrehajtási intézkedés jogszerűségének ellenőrzése, az alkalmazandó mentességek vizsgálata, a fizetési kedvezmény kérelmezése vagy szükség esetén a jogorvoslat.</p>
+<p data-course-source="233">Ha a NAV már konkrét végrehajtási intézkedést foganatosított, célszerű haladéktalanul megvizsgálni az iratokat.</p>
+<p data-course-source="234">A K.O. célja nem a vagyoni helyzet eltitkolása, hanem a törvényes jogvédelem és az indokolatlan jogkövetkezmények elkerülése.</p>
+<p data-course-source="235">Ha a szülő nem érti, milyen kötelezettséget hajtanak végre, fontos lehet az ügy pontosítása.</p>
+<p data-course-source="236">A megfelelő eljárási szabályok szerint tájékoztatást kérhet a végrehajtási ügy állásáról.</p>
+<p data-course-source="237">Különösen fontos lehet megismerni:</p>
+<ul data-course-source="238"><li>melyik hatóság kezdeményezte a végrehajtást;</li></ul>
+<ul data-course-source="239"><li>melyik döntésen alapul az eljárás;</li></ul>
+<ul data-course-source="240"><li>mi a végrehajtandó kötelezettség;</li></ul>
+<ul data-course-source="241"><li>milyen végrehajtási intézkedések történtek;</li></ul>
+<ul data-course-source="242"><li>milyen bírságokat vagy költségeket állapítottak meg;</li></ul>
+<ul data-course-source="243"><li>milyen jogorvoslat áll rendelkezésre.</li></ul>
+<p data-course-source="244">Az Avt. 122. § (1b) bekezdése meghatározott feltételekkel kifejezetten rendelkezik a végrehajtási ügy állásáról történő tájékoztatásról.</p>
+<p data-course-source="245">A hozzáférhető iratok körét és az adóhatósági titoktartási, illetve adatvédelmi szabályokat azonban az adott ügyben kell ellenőrizni.</p>
+<p data-course-source="246">„Kérem szíves tájékoztatásukat arról, hogy a végrehajtási eljárás mely végrehajtható okiraton és mely hatóság megkeresésén alapul.”</p>
+<p data-course-source="247">„Kérem a végrehajtandó kötelezettség, a végrehajtási jogcím és az ügyben alkalmazott jogszabályi rendelkezések pontos megjelölését.”</p>
+<p data-course-source="248">„Kérem az eljárásban hozott, számomra megismerhető döntések és a rendelkezésre álló végrehajtási iratok megismerésének biztosítását.”</p>
+<p data-course-source="249">Ezek önmagukban jogszerű és tárgyszerű tájékoztatáskérő megfogalmazások.</p>
+<p data-course-source="250">De fontos: a tájékoztatáskérés nem helyettesíti automatikusan a végrehajtási kifogást vagy a fellebbezést.</p>
+<p data-course-source="251">A projektben összegyűjtött tapasztalatok között több olyan beszámoló található, amely NAV-végrehajtási problémákról szól.</p>
+<p data-course-source="252">Az eseteket oktatási példaként használjuk.</p>
+<p data-course-source="253">A beszámolók önmagukban nem igazolják a hatósági jogsértést.</p>
+<p data-course-source="254">A szülő szerint a népegészségügyi eljárásban vitatott kérdések maradtak.</p>
+<p data-course-source="255">Később NAV-irat érkezett.</p>
+<p data-course-source="256">A szülő úgy gondolta, hogy a korábbi tájékoztatáskérései miatt nem indulhatott volna végrehajtás.</p>
+<p data-course-source="257">Mit kell ellenőrizni?</p>
+<p data-course-source="258">Melyik határozatot hajtják végre?</p>
+<p data-course-source="259">A döntés végrehajtható-e?</p>
+<p data-course-source="260">Van-e olyan jogszabályi rendelkezés vagy bírósági döntés, amely akadályozza a végrehajtást?</p>
+<p data-course-source="261">A korábbi szülői kérelmeknek van-e konkrét végrehajtási joghatása?</p>
+<p data-course-source="262">Tanulság: a folyamatban lévő vita nem jelent automatikus végrehajtási akadályt.</p>
+<p data-course-source="263">A projektben olyan beszámoló is szerepel, amely szerint egy NAV-végrehajtás megszűnt, majd később újabb hatósági intézkedés történt.</p>
+<p data-course-source="264">Ebben a helyzetben különösen fontos a megszüntető döntés pontos tartalma.</p>
+<p data-course-source="265">Mit kell ellenőrizni?</p>
+<p data-course-source="266">Melyik végrehajtási eljárást szüntették meg?</p>
+<p data-course-source="267">Mi volt a megszüntetés jogalapja?</p>
+<p data-course-source="268">Az alapul szolgáló kötelezettség megszűnt-e?</p>
+<p data-course-source="269">Az újabb intézkedés ugyanahhoz a döntéshez kapcsolódik-e?</p>
+<p data-course-source="270">Van-e speciális szabály az ismételt intézkedésre?</p>
+<p data-course-source="271">Tanulság: a végrehajtás lezárása és az eredeti kötelezettség megszűnése nem azonos.</p>
+<p data-course-source="272">Egy másik beszámolóban a szülő a NAV által kiszabott eljárási bírságot kívánta vitatni.</p>
+<p data-course-source="273">A korábbi hatósági kommunikációt és a gyermek egészségügyi helyzetét tartotta jelentősnek.</p>
+<p data-course-source="274">Ebben az esetben elsőként azt kell megállapítani, milyen jogszabály alapján szabták ki a bírságot.</p>
+<p data-course-source="275">Ezután ellenőrizni kell a bírságot megalapozó konkrét magatartást.</p>
+<p data-course-source="276">Lényeges lehet a korábbi határidők, értesítések és releváns dokumentumok összehasonlítása.</p>
+<p data-course-source="277">Tanulság: a bírság elleni megfelelő jogi érvelésnek az adott bírság jogcíméhez kell kapcsolódnia.</p>
+<p data-course-source="278">Ha a szülő NAV-tól kap levelet, érdemes hét kérdést végigvizsgálnia.</p>
+<p data-course-source="279">Első: pontosan milyen irat érkezett?</p>
+<p data-course-source="280">Felhívás, végzés, határozat vagy végrehajtási intézkedésről szóló értesítés?</p>
+<p data-course-source="281">Második: melyik hatóság az eredeti kötelezés jogosultja?</p>
+<p data-course-source="282">A NAV saját ügyében jár el, vagy más hatóság megkeresése alapján?</p>
+<p data-course-source="283">Harmadik: mi a végrehajtás tárgya?</p>
+<p data-course-source="284">Pénzfizetés vagy meghatározott cselekmény?</p>
+<p data-course-source="285">Negyedik: mi a végrehajtható okirat?</p>
+<p data-course-source="286">Melyik konkrét határozat vagy más okirat alapján folyik az eljárás?</p>
+<p data-course-source="287">Ötödik: van-e határidő?</p>
+<p data-course-source="288">Külön ellenőrizni kell a teljesítési és jogorvoslati határidőket.</p>
+<p data-course-source="289">Hatodik: van-e végrehajtási akadály?</p>
+<p data-course-source="290">Például megfelelő jogszabályi rendelkezés vagy ténylegesen alkalmazandó bírósági döntés.</p>
+<p data-course-source="291">Hetedik: milyen jogi eszköz alkalmazható?</p>
+<p data-course-source="292">Tájékoztatáskérés, végrehajtási kifogás, fellebbezés, fizetési kedvezmény vagy más, megfelelően megalapozott kérelem?</p>
+<p data-course-source="293">Ez a hét kérdés segít elkerülni a leggyakoribb hibát: azt, hogy a szülő a végrehajtási ügy pontos megértése nélkül kezdjen hivatalos levelet írni.</p>
+<p data-course-source="294">A negyedik fejezetben megismertük a képzés egyik legfontosabb alapelvét:</p>
+<p data-course-source="295">NAV-ügyekben ez különösen fontos.</p>
+<p data-course-source="296">Egy végrehajtási intézkedés megtámadása ugyanis eltérő jogi elemzést igényelhet, mint egy bírságot kiszabó végzés elleni fellebbezés.</p>
+<p data-course-source="297">Ezért a következő parancsot érdemes használni.</p>
+<p data-course-source="298">Magyarországon NAV-végrehajtási vagy bírságolási ügyben szeretnék segítséget kérni.</p>
+<p data-course-source="299">Az ügyem korábbi népegészségügyi vagy gyermekvédelmi hatósági eljárással állhat kapcsolatban.</p>
+<p data-course-source="300">Mielőtt jogi tanácsot adnál vagy hivatalos levelet írnál, először vizsgáld meg, milyen információk hiányoznak a pontos jogi helyzetértékeléshez.</p>
+<p data-course-source="301">Tegyél fel legfeljebb hat célzott kérdést, lehetőleg A–E válaszlehetőségekkel.</p>
+<p data-course-source="302">Elsőként ellenőrizd, hogy van-e sürgős határidő.</p>
+<p data-course-source="303">Külön vizsgáld meg:</p>
+<p data-course-source="304">NaN. Milyen NAV-irat érkezett?</p>
+<p data-course-source="305">NaN. Mikor történt a kézbesítés?</p>
+<p data-course-source="306">NaN. Melyik hatóság döntésén alapul az ügy?</p>
+<p data-course-source="307">NaN. Pénzfizetésről vagy meghatározott cselekményről van szó?</p>
+<p data-course-source="308">NaN. Milyen korábbi döntések és jogorvoslatok léteznek?</p>
+<p data-course-source="309">NaN. Milyen konkrét jogi eredményt szeretnék elérni?</p>
+<p data-course-source="310">A válaszaim után készíts helyzetértékelést.</p>
+<p data-course-source="311">Különítsd el a bizonyított tényeket, a bizonytalan körülményeket és a jogi következtetéseket.</p>
+<p data-course-source="312">Ellenőrizd az Avt., az Ákr., valamint az ügyben releváns további jogszabályok alkalmazhatóságát.</p>
+<p data-course-source="313">Külön vizsgáld meg az Avt. 22–28. §-ait, és meghatározott cselekmény végrehajtása esetén a 122–124/A. §-okat.</p>
+<p data-course-source="314">Ne állítsd, hogy valamely jogorvoslat vagy tájékoztatáskérés automatikusan felfüggeszti a végrehajtást.</p>
+<p data-course-source="315">Ne keverd össze az eredeti hatósági kötelezést a NAV által foganatosított végrehajtással.</p>
+<p data-course-source="316">Azonosítsd a lehetséges jogszerű következő lépéseket, és magyarázd el azok kockázatait.</p>
+<p data-course-source="317">Hivatalos levelet csak az ügy lényeges körülményeinek tisztázása után készíts.</p>
+<p data-course-source="318">Ne találj ki tényeket, bizonyítékokat vagy jogszabályokat.</p>
+<p data-course-source="319">Ez a parancs segít abban, hogy az AI ne egyszerűen egy hosszú, általános panaszlevelet készítsen, hanem először azonosítsa az alkalmazandó jogi szabályokat.</p>
+<p data-course-source="320">Ez így nem igaz.</p>
+<p data-course-source="321">A NAV meghatározott esetekben más hatóságok döntéseinek végrehajtásában is részt vehet.</p>
+<p data-course-source="322">Ez sem általánosan igaz.</p>
+<p data-course-source="323">A végrehajtásra ténylegesen kiható jogszabályi rendelkezéseket vagy bírósági döntést kell megvizsgálni.</p>
+<p data-course-source="324">Nem.</p>
+<p data-course-source="325">Az Avt. 27. §-a főszabály szerint nem biztosít általános halasztó hatályt.</p>
+<p data-course-source="326">Nem feltétlenül.</p>
+<p data-course-source="327">Az alapdöntés jogi sorsát külön kell értékelni.</p>
+<p data-course-source="328">Ez túlzó következtetés.</p>
+<p data-course-source="329">Az Avt. meghatározott végrehajtási eljárásokban valóban korlátozza az ismételt eljárási bírság alkalmazását.</p>
+<p data-course-source="330">Ebből azonban nem következik minden más, eltérő jogalapú intézkedés automatikus kizárása.</p>
+<p data-course-source="331">A NAV-ügyekben az első kérdés mindig a jogcím, a végrehajtható okirat és a konkrét eljárás azonosítása legyen.</p>
+<p data-course-source="332">A K.O. képzés egyik célja, hogy a szülők megértsék a hivatalos eljárásokat, és képesek legyenek az alapvető ügyintézési feladatokra.</p>
+<p data-course-source="333">Ez azonban nem jelenti azt, hogy minden NAV-végrehajtási helyzet biztonságosan kezelhető ügyvéd nélkül.</p>
+<p data-course-source="334">Különösen indokolt lehet szakember segítségét kérni, ha:</p>
+<ul data-course-source="335"><li>jelentős összegű bírságot szabtak ki;</li></ul>
+<ul data-course-source="336"><li>már konkrét végrehajtási intézkedés történt;</li></ul>
+<ul data-course-source="337"><li>rövid jogorvoslati határidő közeleg;</li></ul>
+<ul data-course-source="338"><li>több, egymással összefüggő eljárás folyik;</li></ul>
+<ul data-course-source="339"><li>az alapdöntés és a végrehajtás joghatásai vitatottak;</li></ul>
+<ul data-course-source="340"><li>bírósági azonnali jogvédelemre lehet szükség.</li></ul>
+<p data-course-source="341">Ezekben a helyzetekben egy hibás beadvány jelentős következményekkel járhat.</p>
+<p data-course-source="342">A megfelelő szakmai segítség ezért nem az önállóság feladása.</p>
+<p data-course-source="343">Hanem a tudatos ügykezelés része.</p>
+<p data-course-source="344">Ebben a fejezetben megismerted a NAV végrehajtási feladatait.</p>
+<p data-course-source="345">Megtanultad, miért kerülhet egy másik hatóságnál indult ügy a NAV-hoz.</p>
+<p data-course-source="346">Megértetted az alapeljárás, a végrehajtás elrendelése és a végrehajtás foganatosítása közötti különbséget.</p>
+<p data-course-source="347">Megismerted az egészségügyi bírság, az eljárási bírság és a végrehajtási költség eltérő jogi természetét.</p>
+<p data-course-source="348">Áttekintetted az Avt. 122–124/A. §-ait.</p>
+<p data-course-source="349">Megtanultad, hogy a végrehajtási eljárás megszüntetése nem feltétlenül eredményezi az alapul szolgáló kötelezettség megszűnését.</p>
+<p data-course-source="350">Megismerted a végrehajtási kifogás alapvető szabályait és határidejét.</p>
+<p data-course-source="351">Megértetted, miért kell külön ellenőrizni a végrehajtás felfüggesztését, a halasztó hatályt és az esetleges fizetési kedvezményeket.</p>
+<p data-course-source="352">1. Azonosítsd a NAV eljárásának pontos jogalapját!</p>
+<p data-course-source="353">Nem mindegy, hogy saját követelésről vagy más hatóság megkeresésén alapuló végrehajtásról van szó.</p>
+<p data-course-source="354">2. Különítsd el az alapdöntést és a végrehajtási intézkedést!</p>
+<p data-course-source="355">Eltérő jogorvoslati szabályok kapcsolódhatnak hozzájuk.</p>
+<p data-course-source="356">3. A bírságot mindig annak jogcíme alapján vizsgáld!</p>
+<p data-course-source="357">Az egészségügyi bírság és a végrehajtási eljárási bírság nem ugyanaz.</p>
+<p data-course-source="358">4. Soha ne feltételezz automatikus halasztó hatályt!</p>
+<p data-course-source="359">Ellenőrizd a konkrét törvényi feltételeket és az esetleges bírósági döntéseket.</p>
+<p data-course-source="360">5. A NAV-val dokumentáltan, tárgyszerűen és a megfelelő eljárási eszközt alkalmazva kommunikálj!</p>
+<p data-course-source="361">A cél nem a végrehajtás akadályozása, hanem a jogszerű, ellenőrizhető ügyintézés.</p>
+<p data-course-source="362">A NAV-tól érkező hivatalos levél sok szülő számára különösen nyomasztó lehet.</p>
+<p data-course-source="363">Pedig a NAV-eljárásnak is pontos jogszabályi keretei vannak.</p>
+<p data-course-source="364">Az intézkedések jogalapja, a végrehajtható okirat és a rendelkezésre álló jogorvoslatok megismerhetők és megfelelő feltételek mellett vizsgálhatók.</p>
+<p data-course-source="365">Ugyanakkor a végrehajtási eljárás nem olyan helyzet, amelyet érdemes figyelmen kívül hagyni.</p>
+<p data-course-source="366">A jogkövetkezmények komolyak lehetnek.</p>
+<p data-course-source="367">Ezért különösen fontos a gyors, pontos és dokumentált ügykezelés.</p>
+<p data-course-source="368">A K.O. jogi önvédelem nyolcadik alapköve:</p>
+<p data-course-source="369">1. §: A törvény hatálya.</p>
+<p data-course-source="370">15–18. §: A végrehajtás felfüggesztése, szünetelése és megszüntetése.</p>
+<p data-course-source="371">22. §: Eljárási bírság a végrehajtási eljárásban.</p>
+<p data-course-source="372">24–27. §: Végrehajtási kifogás.</p>
+<p data-course-source="373">28. §: Önálló fellebbezés.</p>
+<p data-course-source="374">29. §: Végrehajtható okiratok.</p>
+<p data-course-source="375">122. §: Meghatározott cselekmény végrehajtása.</p>
+<p data-course-source="376">123. §: Közreműködő szervezet igénybevétele.</p>
+<p data-course-source="377">124. §: A meghatározott cselekmény végrehajtásával kapcsolatos további szabályok.</p>
+<p data-course-source="378">124/A. §: A végrehajtás megszüntetésének további esetei.</p>
+<p data-course-source="379">Forrás: Nemzeti Jogszabálytár, 2026. szeptember 27-i jogszabályi időállapot.</p>
+<p data-course-source="380">80–81. §: Hatósági döntések.</p>
+<p data-course-source="381">131–138. §: A végrehajtás általános szabályai, végrehajtható döntések, elrendelés, felfüggesztés és megszüntetés.</p>
+<p data-course-source="382">Forrás: Nemzeti Jogszabálytár.</p>
+<p data-course-source="383">Az egészségügyi hatósági és igazgatási tevékenységről.</p>
+<p data-course-source="384">13/A. §: Egészségügyi bírság.</p>
+<p data-course-source="385">Forrás: Nemzeti Jogszabálytár.</p>
+<p data-course-source="386">39. §: A keresetlevél benyújtása.</p>
+<p data-course-source="387">50–52. §: Azonnali jogvédelem és a halasztó hatály elrendelése.</p>
+<p data-course-source="388">Forrás: Nemzeti Jogszabálytár.</p>
+<p data-course-source="389">56. számú információs füzet: A végrehajtási eljárás alapvető szabályai.</p>
+<p data-course-source="390">Közzétéve: 2026. július 15.</p>
+<p data-course-source="391">30.2. számú információs füzet: Fizetési kedvezmények magánszemélyeknek és egyéni vállalkozóknak.</p>
+<p data-course-source="392">Közzétéve: 2026. október 1.</p>
+<p data-course-source="393">Ezek a NAV hivatalos, gyakorlati tájékoztatói. Nem helyettesítik a törvényi rendelkezéseket, de segítik azok alkalmazását.</p>
+<p data-course-source="394">A fejezethez felhasználtam a projekt NAV-végrehajtási és bírságolási eseteiről készült összefoglalókat.</p>
+<p data-course-source="395">Kiemelt témák:</p>
+<ul data-course-source="396"><li>más hatóság döntésének NAV általi végrehajtása;</li></ul>
+<ul data-course-source="397"><li>egészségügyi és eljárási bírságok megkülönböztetése;</li></ul>
+<ul data-course-source="398"><li>meghatározott cselekmény végrehajtása;</li></ul>
+<ul data-course-source="399"><li>a végrehajtás eredménytelensége;</li></ul>
+<ul data-course-source="400"><li>ismételt intézkedések;</li></ul>
+<ul data-course-source="401"><li>végrehajtási kifogás és felfüggesztés;</li></ul>
+<ul data-course-source="402"><li>végrehajtási iratok és kézbesítési adatok ellenőrzése.</li></ul>
+<p data-course-source="403">A projektben szereplő tapasztalatok oktatási példák, nem önmagukban igazolt jogsértések.</p>
+<p data-course-source="404">Fontos: a fejezet oktatási célú. Konkrét NAV-ügyben az alkalmazandó jogszabályi időállapotot, a végrehajtható okiratot és a rendelkezésre álló jogorvoslatokat külön ellenőrizni kell.</p><a class="course-back" href="/tanfolyam">← A tanfolyam fejezetei</a></article></div></div>
+</main>
+
+
+<footer class="ftr" role="contentinfo">
+  <div class="container">
+    <div class="ftr__grid">
+      <div class="ftr__col ftr__about">
+        <h4>Az oldalról</h4>
+        <p>Tájékoztató jellegű, közérthető nyelven írt eljárási útmutató szülőknek, kötelező védőoltási ügyekre. Nem minősül jogi tanácsadásnak.</p>
+        <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>AKTÍV</span>
+      </div>
+      <div class="ftr__col">
+        <h4>Tartalom</h4>
+        <ul>
+          <li><a href="/#events">Események</a></li>
+          <li><a href="/alapkeret">Alapkeret</a></li>
+          <li><a href="/akcioterv">Akcióterv</a></li>
+          <li><a href="/alapmondatok">Alapmondatok</a></li>
+          <li><a href="/tudastar">Tudástár</a></li>
+          <li><a href="/manipulacio-anatomiaja">Kézikönyv</a></li>
+          <li><a href="/tanfolyam">Tanfolyam</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Segítség</h4>
+        <ul>
+          <li><a href="/#categories">Kategóriák</a></li>
+          <li><a href="/#institutions">Intézmények</a></li>
+          <li><a href="/tudastar#sulyossag">Súlyosságok</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <h4>Verzió</h4>
+        <ul>
+          <li><span class="mono" style="color: var(--color-text-subtle);">v2.0.0</span></li>
+          <li><span class="mono" style="color: var(--color-text-subtle);">Build 2026.06.02</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr__bottom">
+      <span>© 2026 Eljárási Térkép</span>
+      <span>Utolsó frissítés: 2026-06-02</span>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/script-v3.js"></script>
+</body>
+</html>

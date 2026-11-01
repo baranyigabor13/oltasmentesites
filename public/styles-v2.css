@@ -1276,3 +1276,5 @@ body::before {
 .course-reader a:focus-visible, .course-index a:focus-visible, .course-sidebar summary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 5px; }
 @media (max-width: 1390px) { .hdr__nav { display: none; } .hdr__menu-btn { display: inline-flex; } }
 @media (max-width: 900px) { .course-layout { grid-template-columns: minmax(0, 760px); } .course-sidebar { position: static; max-height: none; } .course-sidebar nav { max-height: 320px; overflow-y: auto; margin-top: 16px; } }
+
+.course-layout--plain { grid-template-columns: minmax(0, 760px); }
