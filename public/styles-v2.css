@@ -1278,3 +1278,7 @@ body::before {
 @media (max-width: 900px) { .course-layout { grid-template-columns: minmax(0, 760px); } .course-sidebar { position: static; max-height: none; } .course-sidebar nav { max-height: 320px; overflow-y: auto; margin-top: 16px; } }
 
 .course-layout--plain { grid-template-columns: minmax(0, 760px); }
+
+.course-submenu { max-height: calc(100dvh - 100px); overflow-y: auto; }
+#mobile-nav { max-height: calc(100dvh - 60px); overflow-y: auto; }
+.course-code { max-width: 100%; overflow-x: auto; padding: 24px; border: 1px solid var(--color-border); border-radius: var(--r-md); background: var(--color-surface); font-size: .875rem; line-height: 1.6; }
